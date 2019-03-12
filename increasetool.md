@@ -1,19 +1,43 @@
 % Herramienta InCrease
 % Casallas - Espinel - Rodríguez
 
-
+<!-- cap 4 -->
 # PLANEACIÓN DE RED INCREMENTAL
+
+<!-- 4.1 pág 53 -->
 ## INTRODUCCIÓN
 
-En este capítulo, compartimos nuestra experiencia en el despliegue de una red rural de banda ancha BWA, en esta se concluyó que incluso para un pequeño banco de pruebas como Tegola, la planificación ad-hoc es ineficiente y requiere mucho tiempo
-Ahora elaboraremos el concepto de planeamiento de red incremental y propondremos una herramienta de software que se denominara `IncrEase` para guiarnos a través de este proceso.
-La academia de la industria ofrece toneladas de software para el planeamiento de redes inalámbricas, en general ofrecen identificar el mejor lugar para ubicar  las torres de interconexión, esas herramientas a menudo no están disponibles ni son adecuados para comunicar pequeñas comunidades y pequeños WISP , que a menudo recurren a un enfoque ad-hoc para la planificación de la red.
+En este capítulo, compartimos nuestra experiencia en el despliegue de una red
+rural de banda ancha BWA, en esta se concluyó que incluso para un pequeño banco
+de pruebas como Tegola, la planificación empírica (ad-hoc) es ineficiente y
+requiere mucho tiempo. Ahora elaboraremos el concepto de planeamiento de red
+incremental y propondremos una herramienta de software que se denominará
+`IncrEase` para guiarnos a través de este proceso.  La academia y la industria
+ofrecen toneladas de software para el planeamiento de redes inalámbricas, en
+general ofrecen identificar el mejor lugar para ubicar  las torres de
+interconexión, esas herramientas a menudo no están disponibles ni son adecuadas
+para comunicar pequeñas comunidades y pequeños WISP, que a menudo recurren a un
+enfoque enpírico para la planificación de la red.
+Nuestro enfoque se centra en las necesidades de operar WISP en áreas rurales, que se
+enfrentan con el único reto de extender su cobertura con inversiones pequeñas
+en un ambiente de ganancias limitadas. La clave para tales organizaciones es
+identificar la estrategia de despliegue más económica para planear su red
+mientras se toma en consideración su cobertura. 
 
-Nuestro enfoque es en las necesidades de operar WISP en áreas rurales que se enfrentan con el único reto de extender su rendimiento con inversiones estrechas en un ambiente de ganancias limitadas. La clave para tales organizaciones es identificar la estrategia de despliegue más económica para planear su red mientras se toma en consideración su cobertura. 
+El diseño de una red fija inalámbrica de banda ancha (BWA) es significativamente
+diferente al de una red de banda ancha móvil y su proceso de planeación se puede
+beneficiar de estas dos observaciones:
 
-EL diseño de una red fija inalámbrica de banda ancha es significativamente diferente de una red de banda ancha móvil y su proceso de planeación se puede beneficiar de las dos siguientes observaciones:
 
-*  Solamente la propagación en exteriores es relevante, debido a que los dispositivos de los clientes como(Equipamiento de las instalaciones del cliente Customer Premises Equipment) están instalados tipicamente en los tejados. Teniendo en cuenta esta noción se puede decir que esto ayuda a disminuir costos o (incrementar la cobertura con el mismo costo). Debido a la menor pérdida de trayectoria,  ya que la señal no tiene que penetrar las paredes, varios estudios de mercado recientes como (mason,2010) concluyen que el uso de Los CPE son la opción más rentable para llegar al "tercio final" de la población que reside en áreas rurales.
+*  *Solamente la propagación en exteriores es relevante*, debido a que los
+   dispositivos de los clientes (Equipamiento de las instalaciones del
+   cliente *Customer Premises Equipment*) están instalados tipicamente en los
+   tejados. Teniendo en cuenta esta noción se puede decir que esto ayuda a
+   disminuir costos o (incrementar la cobertura con el mismo costo). Debido a la
+   menor pérdida de trayectoria,  ya que la señal no tiene que penetrar las
+   paredes, varios estudios de mercado recientes como (mason,2010) concluyen que
+   el uso de Los CPE son la opción más rentable para llegar al "tercio final" de
+   la población que reside en áreas rurales.
 
 
 *   Los CPE son fijos y rara vez necesitan servicios de soporte nómadas o móviles. *No hay necesidad de proporcionar cobertura en general* o sobreponer cobertura entre celdas, desde que el *handover* no sea requerido. El proceso de planificación puede concentrarse solo en ubicaciones residenciales donde se colocarán CPE al aire libre, por lo tanto, reduce el proceso de planificación, Simplificando de esta forma el aspecto del problema de planificación de cobertura. En comparación con los softwares de planificación de redes móviles, que generalmente calculan la cobertura en una cuadrícula de puntos igualmente espaciados, lo que requiere que cada uno de ellos esté por encima de un umbral de nivel de señal.
