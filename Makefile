@@ -6,3 +6,6 @@ increasetool.pdf increasetool.html:
 
 %.html: %.md
 	pandoc -f markdown -t html $< -o $@
+
+clean:
+	rm -f increasetool.pdf increasetool.html

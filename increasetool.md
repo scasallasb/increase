@@ -40,7 +40,16 @@ beneficiar de estas dos observaciones:
    la población que reside en áreas rurales.
 
 
-*   Los CPE son fijos y rara vez necesitan servicios de soporte nómadas o móviles. *No hay necesidad de proporcionar cobertura en general* o sobreponer cobertura entre celdas, desde que el *handover* no sea requerido. El proceso de planificación puede concentrarse solo en ubicaciones residenciales donde se colocarán CPE al aire libre, por lo tanto, reduce el proceso de planificación, Simplificando de esta forma el aspecto del problema de planificación de cobertura. En comparación con los softwares de planificación de redes móviles, que generalmente calculan la cobertura en una cuadrícula de puntos igualmente espaciados, lo que requiere que cada uno de ellos esté por encima de un umbral de nivel de señal.
+*   Los CPE son fijos y rara vez necesitan servicios de soporte nómada o
+    móvil. *No hay necesidad de proporcionar cobertura en general* o
+    sobreponer cobertura entre celdas, por lo que el *handover* no es necesario.
+    El proceso de planificación puede concentrarse solo en ubicaciones
+    residenciales donde se colocarán CPE al aire libre, por lo tanto, reduce el
+    proceso de planificación, Simplificando de esta forma el aspecto del
+    problema de planificación de cobertura. En comparación con los softwares de
+    planificación de redes móviles, que generalmente calculan la cobertura en
+    una cuadrícula de puntos igualmente espaciados, lo que requiere que cada uno
+    de ellos esté por encima de un umbral de nivel de señal.
 
 El modelo de redes BWA fijas rurales sigue invariablemente un modelo de dos niveles como se discutió al principio de esta tesis: un nivel de acceso de punto a multipunto (PMP) entre las torres de transmisión y los clientes. Y un nivel backhaul formado típicamente por enlaces punto a punto (PTP) o exclusivamente inalámbricos, los enlaces por cable rara vez están disponibles en las zonas rurales.
 
