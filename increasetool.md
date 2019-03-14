@@ -51,18 +51,53 @@ beneficiar de estas dos observaciones:
     una cuadrícula de puntos igualmente espaciados, lo que requiere que cada uno
     de ellos esté por encima de un umbral de nivel de señal.
 
-El modelo de redes BWA fijas rurales sigue invariablemente un modelo de dos niveles como se discutió al principio de esta tesis: un nivel de acceso de punto a multipunto (PMP) entre las torres de transmisión y los clientes. Y un nivel backhaul formado típicamente por enlaces punto a punto (PTP) o exclusivamente inalámbricos, los enlaces por cable rara vez están disponibles en las zonas rurales.
+El modelo de redes BWA fijas rurales sigue invariablemente un modelo de dos
+niveles como se discutió al principio de esta tesis: un nivel de acceso de punto
+a multipunto (PMP) entre las torres de transmisión y los clientes. Y un nivel
+backhaul formado típicamente por enlaces punto a punto (PTP) o exclusivamente
+inalámbricos, los enlaces por cable rara vez están disponibles en las zonas
+rurales.
 
-Mientras la planeación de redes inalámbricas es tradicionalmente un área muy activa por la comunidad investigación, el foco de investigación esta principalmente en redes de banda ancha móviles y redes de área local inalámbrica, como (Amaldi et al., 2003; Bosio et al., 2007; Amaldi et al., 2008; St-Hilaire, 2009). Mas importante mente, la planeación de red dirigido a un despliegue todos - a - la vez, en gran parte basado en una optimización usando métodos matemáticos y metaheurísticos como (Whitaker and Hurley, 2003; Bu et al., 2005; Raisanen and Whitaker, 2005; Gordejuela-Sanchez et al., 2009; Hurley et al., 2010).
-Sin embargo, como discutiremos a continuación, este es un enfoque poco práctico para el despliegue de WISP rurales y organizaciones comunitarias. Las investigaciones enfocadas al dominio rural son limitadas, las cuales siguen el enfoque de implementación de todos a la vez. Algunos ejemplos incluyen (Sen and Raman, 2007; Panigrahi et al., 2008).
+A pesar que la planeación de redes inalámbricas es tradicionalmente un área muy
+activa por la comunidad científica, el foco de investigación está principalmente
+en redes de banda ancha móviles y redes de área local inalámbrica, como (Amaldi
+et al., 2003; Bosio et al., 2007; Amaldi et al., 2008; St-Hilaire, 2009). Más
+importante aún es la planeación de red formulada como *todo-a-la-vez*, en gran
+parte basado en métodos matemáticos que utilizan optimizaciones y
+metaheurísticas como (Whitaker and Hurley, 2003; Bu et al., 2005; Raisanen and
+Whitaker, 2005; Gordejuela-Sanchez et al., 2009; Hurley et al., 2010).  Sin
+embargo, como discutiremos a continuación, este es un enfoque poco práctico para
+el despliegue de WISP rurales y organizaciones comunitarias. Las investigaciones
+enfocadas al dominio rural son limitadas, las cuales siguen el enfoque de
+implementación de *todo-a-la-vez*. Algunos ejemplos incluyen (Sen and Raman,
+2007; Panigrahi et al., 2008).
 
-En cambio, abogamos por la importancia de la *planificación incremental*,con una metodología de diseño que guía a los WISP, -especialmente aquellos que operan en escenarios rurales-, en la planificación de su crecimiento ampliando su cobertura. Este enfoque está basado siguiendo las siguientes observaciones:
+Nosotros, En cambio, abogamos por la importancia de la *planificación incremental*, con una
+metodología de diseño que guía a los WISP, --especialmente aquellos que operan en
+escenarios rurales--, en la planificación de su crecimiento ampliando su
+cobertura. Este enfoque está basado siguiendo las siguientes observaciones:
 
 
-* El despliegue rural esta típicamente basado en la cobertura, en lugar de ser impulsado por la capacidad, una razón de la baja densidad de población de un área rural juega un factor positivo en mantener la capacidad requerida en una pequeña celda. Otra razón es que las WISP a menudo operan con un presupuesto ajustado, por lo tanto, deben anticipar la inversión desde la etapa inicial del despliegue, aun mas, en un entorno de limitada rentabilidad como una región rural, su prioridad es alcanzar un numero alto de clientes tan temprano como sea posible en la fase de despliegue, enfocando las áreas donde los clientes estén agrupados. Una razón similar además aplicable a una comunidad o una red junta, donde toda la población de una región necesita cobertura.
-* La infraestructura de red es frecuentemente limitada o indisponible en áreas rurales, lo cual implica que el operador tenga que desplegar su propio 
-    backhaul, lo que implica costos adicionales.
-* Limitar el alcance geográfico en el que opera el WIS inicialmente es una manera efectiva de mantener el costo operacional auxiliar.
+* El despliegue rural esta típicamente *basado en la cobertura*, en lugar de
+  *basarse en la capacidad*, una razón es que  la baja densidad de población de un
+  área rural juega un factor positivo es que la capacidad de una celda se va a
+  mantener baja. Otra razón es que las WISP a menudo operan con un presupuesto
+  ajustado, por lo tanto, deben anticipar el retorno de la inversión desde la etapa inicial
+  del despliegue, aún más, en un entorno de limitada rentabilidad como una
+  región rural, su prioridad es alcanzar un numero alto de clientes potenciales tan temprano
+  como sea posible en la fase de despliegue, enfocando las áreas donde los
+  clientes estén agrupados, (ciudades grandes y poblaciones sin acceso a banda ancha).
+  Un razonamiento similar se puede aplicar redes comunitarias donde parte o toda la población 
+  de una región necesita ser cubierta.  
+  
+* La 
+  infraestructura de red (fibra, para el backhaul) normalment no está disponible
+  en áreas rurales, lo cual implica que el operador tenga que desplegar su
+  propia  capa de backhaul (inalámbrico), lo que implica costos adicionales.
+
+* Limitar el alcance geográfico en el que opera el WISP inicialmente es una
+  manera efectiva de mantener bajo el costo operacional (mercadeo, ingenieros de
+  apoyo en el sitio de los clientes etc).
 
 
 Mas allá de una inicial etapa de despliegue, el operador de red puede tomar dos acciones para extender su negocio: Incrementa la cobertura de red, o mejora las áreas ya existentes, en ambos casos, estas acciones son limitadas por el presupuesto y solo un pequeño conjunto de acciones puedan ser ejecutadas. Nuestro objetivo es, identificar sistemáticamente estos y sugerir al operador, una secuencia de acciones que resulten la mejor estrategia de despliegue, hacia este fin, nosotros desarrollaremos un código abierto llamado ‘IncrEase’ que permite planificar el paradigma de incremento en la práctica.
