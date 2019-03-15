@@ -1,46 +1,143 @@
 % Herramienta InCrease
 % Casallas - Espinel - Rodríguez
 
-
+<!-- cap 4 -->
 # PLANEACIÓN DE RED INCREMENTAL
+
+<!-- 4.1 pág 53 -->
 ## INTRODUCCIÓN
 
-En este capítulo, compartimos nuestra experiencia en el despliegue de una red rural de banda ancha BWA, en esta se concluyó que incluso para un pequeño banco de pruebas como Tegola, la planificación ad-hoc es ineficiente y requiere mucho tiempo
-Ahora elaboraremos el concepto de planeamiento de red incremental y propondremos una herramienta de software que se denominara `IncrEase` para guiarnos a través de este proceso.
-La academia de la industria ofrece toneladas de software para el planeamiento de redes inalámbricas, en general ofrecen identificar el mejor lugar para ubicar  las torres de interconexión, esas herramientas a menudo no están disponibles ni son adecuados para comunicar pequeñas comunidades y pequeños WISP , que a menudo recurren a un enfoque ad-hoc para la planificación de la red.
+En este capítulo, compartimos nuestra experiencia en el despliegue de una red
+rural de banda ancha BWA, en esta se concluyó que incluso para un pequeño banco
+de pruebas como Tegola, la planificación empírica (ad-hoc) es ineficiente y
+requiere mucho tiempo. Ahora elaboraremos el concepto de planeamiento de red
+incremental y propondremos una herramienta de software que se denominará
+`IncrEase` para guiarnos a través de este proceso.  La academia y la industria
+ofrecen toneladas de software para el planeamiento de redes inalámbricas, en
+general ofrecen identificar el mejor lugar para ubicar  las torres de
+interconexión, esas herramientas a menudo no están disponibles ni son adecuadas
+para comunicar pequeñas comunidades y pequeños WISP, que a menudo recurren a un
+enfoque enpírico para la planificación de la red.
+Nuestro enfoque se centra en las necesidades de operar WISP en áreas rurales, que se
+enfrentan con el único reto de extender su cobertura con inversiones pequeñas
+en un ambiente de ganancias limitadas. La clave para tales organizaciones es
+identificar la estrategia de despliegue más económica para planear su red
+mientras se toma en consideración su cobertura. 
 
-Nuestro enfoque es en las necesidades de operar WISP en áreas rurales que se enfrentan con el único reto de extender su rendimiento con inversiones estrechas en un ambiente de ganancias limitadas. La clave para tales organizaciones es identificar la estrategia de despliegue más económica para planear su red mientras se toma en consideración su cobertura. 
-
-EL diseño de una red fija inalámbrica de banda ancha es significativamente diferente de una red de banda ancha móvil y su proceso de planeación se puede beneficiar de las dos siguientes observaciones:
-
-*  Solamente la propagación en exteriores es relevante, debido a que los dispositivos de los clientes como(Equipamiento de las instalaciones del cliente Customer Premises Equipment) están instalados tipicamente en los tejados. Teniendo en cuenta esta noción se puede decir que esto ayuda a disminuir costos o (incrementar la cobertura con el mismo costo). Debido a la menor pérdida de trayectoria,  ya que la señal no tiene que penetrar las paredes, varios estudios de mercado recientes como (mason,2010) concluyen que el uso de Los CPE son la opción más rentable para llegar al "tercio final" de la población que reside en áreas rurales.
-
-
-*   Los CPE son fijos y rara vez necesitan servicios de soporte nómadas o móviles. *No hay necesidad de proporcionar cobertura en general* o sobreponer cobertura entre celdas, desde que el *handover* no sea requerido. El proceso de planificación puede concentrarse solo en ubicaciones residenciales donde se colocarán CPE al aire libre, por lo tanto, reduce el proceso de planificación, Simplificando de esta forma el aspecto del problema de planificación de cobertura. En comparación con los softwares de planificación de redes móviles, que generalmente calculan la cobertura en una cuadrícula de puntos igualmente espaciados, lo que requiere que cada uno de ellos esté por encima de un umbral de nivel de señal.
-
-El modelo de redes BWA fijas rurales sigue invariablemente un modelo de dos niveles como se discutió al principio de esta tesis: un nivel de acceso de punto a multipunto (PMP) entre las torres de transmisión y los clientes. Y un nivel backhaul formado típicamente por enlaces punto a punto (PTP) o exclusivamente inalámbricos, los enlaces por cable rara vez están disponibles en las zonas rurales.
-
-Mientras la planeación de redes inalámbricas es tradicionalmente un área muy activa por la comunidad investigación, el foco de investigación esta principalmente en redes de banda ancha móviles y redes de área local inalámbrica, como (Amaldi et al., 2003; Bosio et al., 2007; Amaldi et al., 2008; St-Hilaire, 2009). Mas importante mente, la planeación de red dirigido a un despliegue todos - a - la vez, en gran parte basado en una optimización usando métodos matemáticos y metaheurísticos como (Whitaker and Hurley, 2003; Bu et al., 2005; Raisanen and Whitaker, 2005; Gordejuela-Sanchez et al., 2009; Hurley et al., 2010).
-Sin embargo, como discutiremos a continuación, este es un enfoque poco práctico para el despliegue de WISP rurales y organizaciones comunitarias. Las investigaciones enfocadas al dominio rural son limitadas, las cuales siguen el enfoque de implementación de todos a la vez. Algunos ejemplos incluyen (Sen and Raman, 2007; Panigrahi et al., 2008).
-
-En cambio, abogamos por la importancia de la *planificación incremental*,con una metodología de diseño que guía a los WISP, -especialmente aquellos que operan en escenarios rurales-, en la planificación de su crecimiento ampliando su cobertura. Este enfoque está basado siguiendo las siguientes observaciones:
-
-
-* El despliegue rural esta típicamente basado en la cobertura, en lugar de ser impulsado por la capacidad, una razón de la baja densidad de población de un área rural juega un factor positivo en mantener la capacidad requerida en una pequeña celda. Otra razón es que las WISP a menudo operan con un presupuesto ajustado, por lo tanto, deben anticipar la inversión desde la etapa inicial del despliegue, aun mas, en un entorno de limitada rentabilidad como una región rural, su prioridad es alcanzar un numero alto de clientes tan temprano como sea posible en la fase de despliegue, enfocando las áreas donde los clientes estén agrupados. Una razón similar además aplicable a una comunidad o una red junta, donde toda la población de una región necesita cobertura.
-* La infraestructura de red es frecuentemente limitada o indisponible en áreas rurales, lo cual implica que el operador tenga que desplegar su propio 
-    backhaul, lo que implica costos adicionales.
-* Limitar el alcance geográfico en el que opera el WIS inicialmente es una manera efectiva de mantener el costo operacional auxiliar.
+El diseño de una red fija inalámbrica de banda ancha (BWA) es significativamente
+diferente al de una red de banda ancha móvil y su proceso de planeación se puede
+beneficiar de estas dos observaciones:
 
 
-Mas allá de una inicial etapa de despliegue, el operador de red puede tomar dos acciones para extender su negocio: Incrementa la cobertura de red, o mejora las áreas ya existentes, en ambos casos, estas acciones son limitadas por el presupuesto y solo un pequeño conjunto de acciones puedan ser ejecutadas. Nuestro objetivo es, identificar sistemáticamente estos y sugerir al operador, una secuencia de acciones que resulten la mejor estrategia de despliegue, hacia este fin, nosotros desarrollaremos un código abierto llamado ‘IncrEase’ que permite planificar el paradigma de incremento en la práctica.
-El resto del capítulo está organizado de la siguiente manera:  sección 4.2 presenta dos modos de operación soportados por la herramienta `IncrEase`: (1) `IncrEase targeted` , donde el operador selecciona una región especifica de cobertura, como parte de la expansión de la red, y (2)  `Búsqueda estratégica` , donde la herramienta guía al operador para decidir el orden de despliegue de sitios de transmisión en el horizonte de corto a largo plazo basado en la rentabilidad esperada.
+*  *Solamente la propagación en exteriores es relevante*, debido a que los
+   dispositivos de los clientes (Equipamiento de las instalaciones del
+   cliente *Customer Premises Equipment*) están instalados tipicamente en los
+   tejados. Teniendo en cuenta esta noción se puede decir que esto ayuda a
+   disminuir costos o (incrementar la cobertura con el mismo costo). Debido a la
+   menor pérdida de trayectoria,  ya que la señal no tiene que penetrar las
+   paredes, varios estudios de mercado recientes como (mason,2010) concluyen que
+   el uso de Los CPE son la opción más rentable para llegar al "tercio final" de
+   la población que reside en áreas rurales.
 
-En la sección 4.3 evaluamos la herramienta en la red NGI SpA (ver Sección 2.1.1 para más detalles sobre este WISP): Un escenario real de más de 8,000  torres desplegadas y comparar su tiempo de computo. Para validar la calidad de su salida, presentamos un conjunto de muestra de escenarios de planificación a ingenieros inalámbricos experimentados que trabajan en NGI Spa. Nosotros comparamos sus respuestas con las estrategias de despliegue propuestas por `IncrEase`, obteniendo resultados similares o mejores  en la mayoría de los casos.
+
+*   Los CPE son fijos y rara vez necesitan servicios de soporte nómada o
+    móvil. *No hay necesidad de proporcionar cobertura en general* o
+    sobreponer cobertura entre celdas, por lo que el *handover* no es necesario.
+    El proceso de planificación puede concentrarse solo en ubicaciones
+    residenciales donde se colocarán CPE al aire libre, por lo tanto, reduce el
+    proceso de planificación, Simplificando de esta forma el aspecto del
+    problema de planificación de cobertura. En comparación con los softwares de
+    planificación de redes móviles, que generalmente calculan la cobertura en
+    una cuadrícula de puntos igualmente espaciados, lo que requiere que cada uno
+    de ellos esté por encima de un umbral de nivel de señal.
+
+El modelo de redes BWA fijas rurales sigue invariablemente un modelo de dos
+niveles como se discutió al principio de esta tesis: un nivel de acceso de punto
+a multipunto (PMP) entre las torres de transmisión y los clientes. Y un nivel
+backhaul formado típicamente por enlaces punto a punto (PTP) o exclusivamente
+inalámbricos, los enlaces por cable rara vez están disponibles en las zonas
+rurales.
+
+A pesar que la planeación de redes inalámbricas es tradicionalmente un área muy
+activa por la comunidad científica, el foco de investigación está principalmente
+en redes de banda ancha móviles y redes de área local inalámbrica, como (Amaldi
+et al., 2003; Bosio et al., 2007; Amaldi et al., 2008; St-Hilaire, 2009). Más
+importante aún es la planeación de red formulada como *todo-a-la-vez*, en gran
+parte basado en métodos matemáticos que utilizan optimizaciones y
+metaheurísticas como (Whitaker and Hurley, 2003; Bu et al., 2005; Raisanen and
+Whitaker, 2005; Gordejuela-Sanchez et al., 2009; Hurley et al., 2010).  Sin
+embargo, como discutiremos a continuación, este es un enfoque poco práctico para
+el despliegue de WISP rurales y organizaciones comunitarias. Las investigaciones
+enfocadas al dominio rural son limitadas, las cuales siguen el enfoque de
+implementación de *todo-a-la-vez*. Algunos ejemplos incluyen (Sen and Raman,
+2007; Panigrahi et al., 2008).
+
+Nosotros, En cambio, abogamos por la importancia de la *planificación incremental*, con una
+metodología de diseño que guía a los WISP, --especialmente aquellos que operan en
+escenarios rurales--, en la planificación de su crecimiento ampliando su
+cobertura. Este enfoque está basado siguiendo las siguientes observaciones:
+
+
+* El despliegue rural esta típicamente *basado en la cobertura*, en lugar de
+  *basarse en la capacidad*, una razón es que  la baja densidad de población de un
+  área rural juega un factor positivo es que la capacidad de una celda se va a
+  mantener baja. Otra razón es que las WISP a menudo operan con un presupuesto
+  ajustado, por lo tanto, deben anticipar el retorno de la inversión desde la etapa inicial
+  del despliegue, aún más, en un entorno de limitada rentabilidad como una
+  región rural, su prioridad es alcanzar un numero alto de clientes potenciales tan temprano
+  como sea posible en la fase de despliegue, enfocando las áreas donde los
+  clientes estén agrupados, (ciudades grandes y poblaciones sin acceso a banda ancha).
+  Un razonamiento similar se puede aplicar redes comunitarias donde parte o toda la población 
+  de una región necesita ser cubierta.  
+  
+* La 
+  infraestructura de red (fibra, para el backhaul) normalment no está disponible
+  en áreas rurales, lo cual implica que el operador tenga que desplegar su
+  propia  capa de backhaul (inalámbrico), lo que implica costos adicionales.
+
+* Limitar el alcance geográfico en el que opera el WISP inicialmente es una
+  manera efectiva de mantener bajo el costo operacional (mercadeo, ingenieros de
+  apoyo en el sitio de los clientes etc).
+
+
+Mas allá de la etapa inicial de despliegue, el operador de red puede tomar dos
+acciones para extender su negocio: incrementa la cobertura de red, o mejora las
+áreas ya existentes, en ambos casos, estas acciones están limitadas por el
+presupuesto y solo un pequeño subconjunto de acciones pueden ser ejecutadas.
+En vez de esto nuestro objetivo  sistemáticamente identificar y sugerirle al
+operador de rede
+una secuencia de acciones que produzcan la mejor estrategia de despliegue, a
+largo plazo nosotros desarrollaremos un código abierto llamado ‘IncrEase’ que
+permite poner el práctica el pradigma de la planficación incremental. 
+
+El resto del capítulo está organizado de la siguiente manera:  la sección 4.2
+presenta dos modos de operación soportados por la herramienta `IncrEase`: 
+
+1. `IncrEase targeted`, donde el operador selecciona una región especifica de
+cobertura, como parte de la expansión de la red, y 
+2. `Búsqueda estratégica` ,
+donde la herramienta guía al operador para decidir el orden de despliegue de
+sitios de transmisión en el horizonte de corto a largo plazo basado en la
+rentabilidad esperada.
+En la sección 4.3 evaluamos la herramienta en la red NGI SpA (ver Sección 2.1.1
+para más detalles sobre este WISP): Un escenario real de más de 8000  torres
+desplegadas y medir su tiempo de computo. Para validar la calidad de su
+salida, presentamos un conjunto de muestra de escenarios de planeación a
+ingenieros RF experimentados que trabajan en NGI Spa. Entonces
+comparamos sus respuestas con las estrategias de despliegue propuestas por
+`IncrEase`, obteniendo resultados similares o mejores  en la mayoría de los
+casos.
 
 ## Herramienta `IncrEase`
 
 
-`IncrEase` es un software de código abierto, implementado como un escritorio multiplataforma en java, este está basado en la NASA World Wind Java, un GIS de software abierto y una base de datos de graficas Neo4J. Esto permite importar un operador de red, modelos y estadísticas relacionadas con el cliente de red BWA en orden sistemáticamente identificando estrategias como mejoras y extender cobertura de red.
+`IncrEase` es un software de código abierto, implementado como una aplicación de escritorio
+multiplataforma en java. Está está basado en la biblioteca GIS de software libre
+de la NASA World Wind Java y una base de datos de graficas Neo4J. Esto permite
+al operador de red importar, modelar y elaborar estadísticas relacionadas con el cliente de red BWA
+ para  sistemáticamente identificar la estrategia que mejor mejora y extiende la
+cobertura de red.
+
 Un ejemplo de cómo el flujo de información esta presentado en la figura 4,1, que es un conjunto archivos XML que contienen información estadística que esta leía y analizada. En la implementación actual nosotros consideraremos tres fuentes de información.
 La primera es demanda de cobertura:La lista de solicitud de cobertura recibida. Para posibles usuarios que están viviendo en áreas sin servicio, 
 El segundo es el conjunto de detalles sobre aquellos usuarios nuevos que *fallaron en la etapa de instalación* debido a una cobertura insuficiente. Finalmente, nosotros también importaremos un registro de *llamadas de reportes a mesas de ayuda* a WISP y localización de los usuarios existentes. Algunos datos extras pueden ser importados capturando otros factores influyentes (disponibilidad DSL, cobertura 3G, datos demográficos).
