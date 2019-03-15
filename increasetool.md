@@ -100,15 +100,44 @@ cobertura. Este enfoque está basado siguiendo las siguientes observaciones:
   apoyo en el sitio de los clientes etc).
 
 
-Mas allá de una inicial etapa de despliegue, el operador de red puede tomar dos acciones para extender su negocio: Incrementa la cobertura de red, o mejora las áreas ya existentes, en ambos casos, estas acciones son limitadas por el presupuesto y solo un pequeño conjunto de acciones puedan ser ejecutadas. Nuestro objetivo es, identificar sistemáticamente estos y sugerir al operador, una secuencia de acciones que resulten la mejor estrategia de despliegue, hacia este fin, nosotros desarrollaremos un código abierto llamado ‘IncrEase’ que permite planificar el paradigma de incremento en la práctica.
-El resto del capítulo está organizado de la siguiente manera:  sección 4.2 presenta dos modos de operación soportados por la herramienta `IncrEase`: (1) `IncrEase targeted` , donde el operador selecciona una región especifica de cobertura, como parte de la expansión de la red, y (2)  `Búsqueda estratégica` , donde la herramienta guía al operador para decidir el orden de despliegue de sitios de transmisión en el horizonte de corto a largo plazo basado en la rentabilidad esperada.
+Mas allá de la etapa inicial de despliegue, el operador de red puede tomar dos
+acciones para extender su negocio: incrementa la cobertura de red, o mejora las
+áreas ya existentes, en ambos casos, estas acciones están limitadas por el
+presupuesto y solo un pequeño subconjunto de acciones pueden ser ejecutadas.
+En vez de esto nuestro objetivo  sistemáticamente identificar y sugerirle al
+operador de rede
+una secuencia de acciones que produzcan la mejor estrategia de despliegue, a
+largo plazo nosotros desarrollaremos un código abierto llamado ‘IncrEase’ que
+permite poner el práctica el pradigma de la planficación incremental. 
 
-En la sección 4.3 evaluamos la herramienta en la red NGI SpA (ver Sección 2.1.1 para más detalles sobre este WISP): Un escenario real de más de 8,000  torres desplegadas y comparar su tiempo de computo. Para validar la calidad de su salida, presentamos un conjunto de muestra de escenarios de planificación a ingenieros inalámbricos experimentados que trabajan en NGI Spa. Nosotros comparamos sus respuestas con las estrategias de despliegue propuestas por `IncrEase`, obteniendo resultados similares o mejores  en la mayoría de los casos.
+El resto del capítulo está organizado de la siguiente manera:  la sección 4.2
+presenta dos modos de operación soportados por la herramienta `IncrEase`: 
+
+1. `IncrEase targeted`, donde el operador selecciona una región especifica de
+cobertura, como parte de la expansión de la red, y 
+2. `Búsqueda estratégica` ,
+donde la herramienta guía al operador para decidir el orden de despliegue de
+sitios de transmisión en el horizonte de corto a largo plazo basado en la
+rentabilidad esperada.
+En la sección 4.3 evaluamos la herramienta en la red NGI SpA (ver Sección 2.1.1
+para más detalles sobre este WISP): Un escenario real de más de 8000  torres
+desplegadas y medir su tiempo de computo. Para validar la calidad de su
+salida, presentamos un conjunto de muestra de escenarios de planeación a
+ingenieros RF experimentados que trabajan en NGI Spa. Entonces
+comparamos sus respuestas con las estrategias de despliegue propuestas por
+`IncrEase`, obteniendo resultados similares o mejores  en la mayoría de los
+casos.
 
 ## Herramienta `IncrEase`
 
 
-`IncrEase` es un software de código abierto, implementado como un escritorio multiplataforma en java, este está basado en la NASA World Wind Java, un GIS de software abierto y una base de datos de graficas Neo4J. Esto permite importar un operador de red, modelos y estadísticas relacionadas con el cliente de red BWA en orden sistemáticamente identificando estrategias como mejoras y extender cobertura de red.
+`IncrEase` es un software de código abierto, implementado como una aplicación de escritorio
+multiplataforma en java. Está está basado en la biblioteca GIS de software libre
+de la NASA World Wind Java y una base de datos de graficas Neo4J. Esto permite
+al operador de red importar, modelar y elaborar estadísticas relacionadas con el cliente de red BWA
+ para  sistemáticamente identificar la estrategia que mejor mejora y extiende la
+cobertura de red.
+
 Un ejemplo de cómo el flujo de información esta presentado en la figura 4,1, que es un conjunto archivos XML que contienen información estadística que esta leía y analizada. En la implementación actual nosotros consideraremos tres fuentes de información.
 La primera es demanda de cobertura:La lista de solicitud de cobertura recibida. Para posibles usuarios que están viviendo en áreas sin servicio, 
 El segundo es el conjunto de detalles sobre aquellos usuarios nuevos que *fallaron en la etapa de instalación* debido a una cobertura insuficiente. Finalmente, nosotros también importaremos un registro de *llamadas de reportes a mesas de ayuda* a WISP y localización de los usuarios existentes. Algunos datos extras pueden ser importados capturando otros factores influyentes (disponibilidad DSL, cobertura 3G, datos demográficos).
