@@ -100,12 +100,12 @@ cobertura. Este enfoque está basado siguiendo las siguientes observaciones:
   apoyo en el sitio de los clientes etc).
 
 
-Mas allá de la etapa inicial de despliegue, el operador de red puede tomar dos
+Más allá de la etapa inicial de despliegue, el operador de red puede tomar dos
 acciones para extender su negocio: incrementa la cobertura de red, o mejora las
 áreas ya existentes, en ambos casos, estas acciones están limitadas por el
 presupuesto y solo un pequeño subconjunto de acciones pueden ser ejecutadas.
 En vez de esto nuestro objetivo  sistemáticamente identificar y sugerirle al
-operador de rede
+operador de red
 una secuencia de acciones que produzcan la mejor estrategia de despliegue, a
 largo plazo nosotros desarrollaremos un código abierto llamado ‘IncrEase’ que
 permite poner el práctica el pradigma de la planficación incremental. 
@@ -138,12 +138,43 @@ al operador de red importar, modelar y elaborar estadísticas relacionadas con e
  para  sistemáticamente identificar la estrategia que mejor mejora y extiende la
 cobertura de red.
 
-Un ejemplo de cómo el flujo de información esta presentado en la figura 4,1, que es un conjunto archivos XML que contienen información estadística que esta leía y analizada. En la implementación actual nosotros consideraremos tres fuentes de información.
-La primera es demanda de cobertura:La lista de solicitud de cobertura recibida. Para posibles usuarios que están viviendo en áreas sin servicio, 
-El segundo es el conjunto de detalles sobre aquellos usuarios nuevos que *fallaron en la etapa de instalación* debido a una cobertura insuficiente. Finalmente, nosotros también importaremos un registro de *llamadas de reportes a mesas de ayuda* a WISP y localización de los usuarios existentes. Algunos datos extras pueden ser importados capturando otros factores influyentes (disponibilidad DSL, cobertura 3G, datos demográficos).
-`IncrEase` elabora cada fuente de datos en una forma de arreglo bidimensional cubriendo una región geográfica de interés, con cada valor de celda muchos “ítems” (usuarios actuales) que hacen parte de esta región. Los valores de celda están normalizados como un valor de la celda que tiene más ítems. `IncrEase` presenta visualmente tres arreglos 2D en los mapas como mapas de calor, y los combina a ellos en un promedio ponderado donde las ponderaciones están configuradas de acuerdo a cada métrica a la importancia relativa del operador. Estos mapas de calor combinado suministran una vista de las áreas que podrían beneficiarse más por la actualización de la red. En este caso el calor (celdas con altos valores en el arreglo 2D) es un indicador de cobertura inalámbrica inadecuada que puede ser quitada por una nueva torre de transmisión o un nuevo sector directivo. Los mapas de calor son almacenados en memoria y pueden acercarse, mostrarse u ocultarse seleccionando los elementos gráficos apropiados.
+Un ejemplo de tal  flujo de información está presentado en la Figura 4.1.  Un
+conjunto archivos XML contienen información estadística de la red que es leída y
+analizada. En la implementación actual nosotros consideraremos tres fuentes de
+información.  La primera es la *demanda de cobertura*: La lista de solicitudes
+de cobertura recibidas (puede ser por ejemplo en la página del proveedor WISP),
+para posibles usuarios que están viviendo en áreas sin servicio. El segundo es
+el conjunto de detalles sobre aquellos usuarios nuevos que *fallaron en la etapa
+de instalación* debido a una cobertura insuficiente.  Finalmente, nosotros
+también importaremos un registro de *llamadas de reportes a mesas de ayuda* a
+WISP y localización de los usuarios existentes. Algunos datos extras pueden ser
+importados capturando otros factores influyentes (disponibilidad de DSL,
+cobertura 3G, datos demográficos etc.).  `IncrEase` elabora cada fuente de datos
+para formar un arreglo bidimensional cubriendo ls región geográfica de interés,
+con cada valor de celda representando cuántos "ítems" (usuarios actuales) que
+hacen parte de la región de la celda. Los valores de celda son entonces
+normalizados como una fracción de la  celda que tiene más ítems. `IncrEase`
+presenta visualmente tres arreglos 2D en los mapas como mapas de calor, y los
+combina como un promedio ponderado donde las ponderaciones están configuradas de
+acuerdo a cada métrica a la importancia relativa del operador. Estos mapas de
+calor combinados suministran una vista de las áreas que podrían beneficiarse más
+por la actualización de la red. En este caso el calor (celdas con altos valores
+en el arreglo 2D) es un indicador de cobertura inalámbrica inadecuada que puede
+ser quitada por una nueva torre de transmisión o un nuevo sector directivo. Los
+mapas de calor son almacenados en memoria y pueden acercarse, mostrarse u
+ocultarse seleccionando los elementos gráficos apropiados.
 
-`IncrEase` puede importar una lista adicional de torres disponibles para ser instaladas como un inventario podría incluir torres que ya existan disponibles para arrendar de un operador de torres, o posibles lugares donde  se puedan construir nuevas torres. Una descripción XML de la topología del lugar, Incluyendo la ubicación y la altura de cada torre y la configuración y el número de antenas del sector también se pueden importar a `IncrEase`. Tal información es usada para generar una “capa de cobertura de red” con una granularidad configurable, el cálculo de línea de vista de cada torre existente y considerando el azimut e inclinación de los sectores existentes. Y un parámetro de máxima distancia que especifica el rango admisible para enlaces inalámbricos en el nivel de acceso.
+`IncrEase` puede importar una lista adicional de torres disponibles para ser
+instaladas. Este inventario podría incluir torres que ya existan disponibles
+(por ejemplo para arrendar de otro operador), o posibles lugares donde  se puedan
+construir nuevas torres. Una descripción XML de la topología del lugar,
+incluyendo la ubicación y la altura de cada torre y la configuración y el número
+de antenas del sector también se pueden importar a `IncrEase`. Tal información
+es usada para generar una capa de "cobertura de red" con una granularidad
+configurable, el cálculo de línea de vista de cada torre existente y
+considerando el azimut e inclinación de los sectores existentes y un parámetro
+de máxima distancia que especifica el rango admisible para enlaces inalámbricos
+en el nivel de acceso.
 
 
 ![Ejemplo de flujo de informacion en la herramienta `IncrEase`](figure4_1.png)
@@ -153,14 +184,25 @@ Definimos las siguientes notaciones como recordatorio del capítulo:
 
 * $T$: Es el conjunto de todas las torres (instaladas y viables)
 
-* $N$: Es el subconjunto de $T$ de sólo torres que están actualmente utilizadas en la topología de red
+* $N$: Es el subconjunto de $T$ de sólo torres que están actualmente utilizadas
+* en la topología de red
 
-* $H(t)$: Es la cantidad total de calor para la torre $t \in T$ . definidas como la suma de los valores cubiertos de la celda de calor por la torre.
+* $H(t)$: Es la cantidad total de calor para la torre $t \in T$ . definidas como
+* la suma de los valores cubiertos de la celda de calor por la torre.
 
 * $C(t)$: es el costo de instalación de la torre $T$
 
-AL iniciar el software realiza un paso de precálculo en memoria de las estructuras que se necesitan a largo plazo.  El más importante es G, un grafo  no dirigido de  "intervisibilidad"
-En el cual los vértices son elementos de $T$. Dos torres de $t_1 t_2 \in T$ son conectados por un vértice que están en línea de vista y no más lejos que la máxima distancia permitida para enlaces punto a punto.  Como G es muy lejos de completar el grafo nosotros guardamos G en una base de datos interna de grafos.que permite para almacenamiento de grafos dispersos y debido a que el cálculo de línea de vista es computacionalmente intenso. La base de datos de grafos es almacenada persistentemente en el disco ahorrando tiempo en llamados subsecuentes posteriores, 
+Al iniciar el software realiza un paso de precálculo en memoria de las
+estructuras que se necesitan a largo plazo.  El más importante es G, un grafo
+no dirigido de  "intervisibilidad" En el cual los vértices son elementos de $T$.
+Dos torres de $t_1 t_2 \in T$ son conectados por un vértice que están en línea
+de vista y no más lejos que la máxima distancia permitida para enlaces punto a
+punto.  Como $G$ es muy lejos de completar el grafo nosotros guardamos $G$ en una
+base de datos interna de grafos.que permite para almacenamiento de grafos
+dispersos y debido a que el cálculo de línea de vista es computacionalmente
+intenso. La base de datos de grafos es almacenada persistentemente en el disco
+ahorrando tiempo en llamados subsecuentes posteriores, 
+
 
 La herramienta ofrece dos modos operacionales 
 
