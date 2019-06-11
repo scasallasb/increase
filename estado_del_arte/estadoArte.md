@@ -1,18 +1,36 @@
 % Estado del Arte
 % Casallas - Espinel - Rodríguez
 
+##Brecha Digital
+Es para el año 1995 cuando eclosionan para la población dos tecnologías totalmente disruptivas, el internet y la telefonía móvil, las cuales sugieren una nueva revolución, la llamada revolución digital, que a su vez crea la sociedad de la información(S.I), dando inicio al planteamiento sobre cómo medir y modelizar la S.I, el nivel de desarrollo digital y el impacto del desarrollo digital en el ser humano. En cuanto al acceso a internet a través  de las Tecnologías de la información y las comunicaciones (TIC) ha tenido un auge exponencial en los últimos años, sin embargo, se ve limitado a países desarrollados o zonas metropolitanas de países en desarrollo [sen], lo que explica la diferencia que existe entre unas comunidades con poco o ningún acceso a las TIC [maseratti] y otras con acceso casi universal a telefonía fija, móvil e Internet de banda ancha, es así que resulta el concepto de Brecha Digital entendiendose como la ausencia de una o varias dimensiones contenidas en el desarrollo digital.
 
-El acceso a internet por medio de las Tecnologías de la información y las comunicaciones (TIC) ha tenido un auge exponencial en los últimos años, sin embargo, se ha limitado a países desarrollados o zonas metropolitanas de países en desarrollo [sen], esto explica  la diferencia que existe entre unas comunidades con poco o ningún acceso a las TIC y otras con acceso casi universal a telefonía fija y móvil,Internet de banda ancha. Esto es realmente lamentable para los países en desarrollo como la India, donde alrededor del 74% de la población es rural y está en el lado equivocado de la brecha digital. una forma de cerrar esta brecha es mejorando  la conectividad en cada pueblo.
+El sector TIC que infiere en la industria tecnológica [maseratti] aportando a las redes y telecomunicaciones  y a las competencias digitales hace alusión al nivel de alfabetización digital de la población en zonas rurales siendo un factor que inhibe la Brecha Digital. En relación con lo anterior las poblaciones sin acceso a las TIC poseen un bajo nivel socioeconómico, viven en zonas de difícil acceso con condiciones climatológicas desfavorables e incluso con ineficiencia o inexistencia de redes eléctricas, al mismo tiempo, las personas que viven en áreas rurales sufren el efecto de la brecha digital incluso más fuerte que los habitantes urbanos, debido a que no pueden acceder a servicios como el aprendizaje a distancia, la salud y el comercio electrónico [Bernardi].
+
+##Planeación de Redes Inalámbricas
+
+Con el objetivo de reducir la brecha digital, autores [Bernardi, maseratti, sen] han propuesto como solución la planeación y despliegue de redes de banda ancha inalámbrica en zonas rurales.Por otra parte, un factor clave es la conectividad, que hace alusión a la disponibilidad que tiene un dispositivo para conectarse a otro o conectarse a una red, es por eso, que cerrar esta brecha requiere proporcionar conectividad a internet en todos los pueblos.
+
+Disminuir la brecha digital es una tarea en la que tecnologías como IEEE 802.11 ha mostrado gran crecimiento y aceptación como solución debido a su bajo costo [Sen], aunque esta tecnología fue diseñada para conexión inalámbrica en interiores, se ha establecido la posibilidad de utilizar 802.11 en redes de larga distancia [sen, Bernardi].
+
+Para mejorar la conectividad en grandes zonas de cobertura se han utilizado tecnologías emergentes como la 802.16 WIMAX, pero todavía no ha escalado a la producción en masa competitiva, haciendo que los equipos sean más costosos, por esto los autores detallan que para estos casos la solución más viable es utilizar las tecnologías 802.11 de Wifi, ya que ha tenido un amplio crecimiento y gran aceptabilidad como una solución de acceso inalámbrico por su bajo precio.
+
+### Factores clave
+
+A continuación se detallan factores innatos claves de la planeación de redes inalámbricas.
+
+* Costos de depliegue
+* Costos de implementación
+* Expansión de la red 
+* Coberturad e la red
+* Retorno de la inversión
+* Sector económico y social de la población rural
+
+## Trabajos de investigación
+
+La planeación de redes inalámbricas es un área muy activa por la comunidad científica, sin embargo el foco de las investigaciones  son las redes de banda ancha móvil y las redes de área local inalámbrica. En cuanto a los trabajos disponibles en este campo, se puede  encontrar una generalidad de los problemas mas importantes en la planeación de redes móviles en  [Hitlarie2008], donde se  presenta una literatura detallada de los problemas que se presentan  en la planeación de la topología celular 3G, la cual, esta basada en el Sistema universal de telecomunicaciones móviles **UMTS** (“*Universal Mobile Telecommunications System*”); para entender las dificultades que se presentan en la planeación, es importante  hacer una pequeña descripción de la arquitectura UMTS.
 
 
-El sector TIC que infiere en la industria tecnológica aporta a las redes y telecomunicaciones  y las competencias digitales haciendo alusión al nivel de alfabetización digital de la población en zonas rurales son factores que inhiben la Brecha Digital, una alternativa para disminuir el margen de diferencia entre países con acceso a las TIC  son las Redes Libres comunitarias (__RLC__), entendidas no solo como redes de computadores sino como redes comunitarias implementadas en poblaciones vulnerables donde el acceso a la información es una posibilidad y no una realidad [Gordillo, 2013]. Poblaciones sin acceso a las TIC poseen un bajo nivel socio-económico, viven en zonas de difícil acceso con condiciones climatológicas desfavorables e incluso con ineficiencia o inexistencia de redes eléctricas.  Las personas que viven en áreas rurales sufren el efecto de la brecha digital incluso más fuerte que los habitantes urbanos, porque no pueden acceder a servicios como el aprendizaje a distancia, la salud y el comercio electrónico[Bernardi]. 
-
-Con el objetivo de reducir la brecha digital, autores [Bernardi, maseratti, sen] han propuesto como solución las redes de banda ancha inalámbrica en zonas rurales,para esto es necesario realizar un despliegue de infraestructura de la red, sin embargo, para tener un óptimo despliegue es necesario la planeación de redes inalámbricas. 
-
-La planeación de redes inalámbricas es un área muy activa por la comunidad científica, sin embargo el foco de las las investigaciones  están principalmente en la planeación de redes móviles. En cuanto a los trabajos disponibles en este campo, se puede  encontrar una generalidad de los problemas mas importantes en la planeación de redes móviles en  [Hitlarie2008], donde se  presenta una literatura detallada de los problemas que se presentan  en la planeación de la topología celular 3G, la cual, esta basada en el Sistema universal de telecomunicaciones móviles **UMTS** (“*Universal Mobile Telecommunications System*”); para entender las dificultades que se presentan en la planeación, es importante  hacer una pequeña descripción de la arquitectura UMTS.
-
-
-## Arquitectura UMTS
+### Arquitectura UMTS
 
 
 Una arquitectura típica de   UMTS se muestra en la figura (1), donde se observa que una red UMTS esta dividida en dos partes: la *red de acceso* y la *red de núcleo*. La primera, es también llamada red  UMTS  de radio terrestre **UTRAN**, la cual esta compuesta por muchos  subsistemas de red de radio **RNS** (“*radio network subsystem*”). Cada RNS contiene un controlador de red de radio **RNC** (“*radio network controller*” ) y una o mas estaciones bases *BS* (“*base estation*”).
@@ -30,7 +48,7 @@ La parte de los subproblemas que se necesita abordar con mas detalle, son los de
 
 
 
-### Subproblema de celdas o localización de estación base
+#### Subproblema de celdas o localización de estación base
 
 El problema inicial de planeación es cubrir todos los usuarios móviles en un determinado
 área con el número mínimo de BSs. En la planeación de celdas se encarga de resolver los siguientes items:
@@ -84,16 +102,9 @@ Los operadores genéticos se aplican a cada padre  para formar un nuevo hijo, qu
 
 El aspecto clave de este marco es una decodificador que utiliza un orden de ubicaciones de sitios candidatos para construir una celda. En este trabajo se concluyo que los algoritmos son similares en sus resultados en términos reales, sin embargo se encuentran algunas diferencias, el  NGSA-II y SPEA2, tienen resultados similares en cuanto al rendimiento, el algoritmo PESA generalmente obtiene ligeramente una baja calidad en el conjunto de soluciones, pero en cuanto a la velocidad de convergencia y distribución de soluciones tiene el mejor desempeño. En cuanto a SEAMO, se destaca por su simplicidad, su elegancia conceptual, su fácil implementación y su velocidad de ejecución , pero su simplicidad impide tener calidad en cuanto a la distribución de las soluciones obtenidas y en el bajo rendimiento en los factores medidos en el desarrollo del test. Para finalizar el trabajo, los autores determinaron que el algoritmo NSGA-II tiene el mejor rendimiento, siendo el que mejor se podría implementar en la planeación de celdas ya que obtuvo los mejores resultados de calidad en las soluciones obtenidas.
 
-
-
-Disminuir la brecha digital es una tarea en la que tecnologías como IEEE 802.11 ha mostrado gran crecimiento y aceptación como solución debido a su bajo costo [Sen], aunque esta tecnología fue diseñada para conexión inalámbrica en interiores, se ha establecido la posibilidad de utilizar 802.11 en redes de larga distancia [sent, Bernardi].
-
-Para mejorar la conectividad en grandes zonas de cobertura se han utilizado tecnologías emergentes como la 802.16 WIMAX, pero todavía no ha escalado a la producción en masa competitiva, haciendo que los equipos sean más caros, por esto los autores detallan que para estos casos la solución más viable es utilizar las tecnologías 802.11 de Wifi, ya que ha tenido un amplio crecimiento y gran aceptabilidad como una solución de acceso inalámbrica por su bajo precio.
-
-
 _Sent_ propone la posibilidad de usar IEEE 802.11 como una opción para proporcionar conectividad a internet en zonas rurales en desarrollo permitiendoles acceso a los servicios de tecnología de información y comunicación. Las tecnologías 802.11 se  ha presentado como una opción de bajo costo y efectiva para cubrir largas distancias, ya que permite que zonas muy amplias puedan conectarse a un nodo de  línea terrestre con conectividad a internet de forma cableada (como fibra óptica) por medio de enlaces inalámbricos. Cada enlace inalámbrico corresponde a una antena en una torre instalada en cada pueblo, estos deben tener línea de vista **L.O.S.** (*line of sight*).
 
-Gracias a su bajo costo esta tecnología sirve como herramienta para la planificación de redes minimizando el costo del sistema, se convierte entonces en una tarea trivial ya que tiene en cuenta los siguientes conjuntos de variables:
+Gracias a su bajo costo esta tecnología sirve como herramienta para la planificación de redes minimizando el costo del sistema, se convierte entonces en una tarea trivial ya que tiene en cuenta los siguientes conjuntos de variables: 
 
 1. Afectan el coste del sistema
     - Topología de la red
@@ -185,7 +196,7 @@ Para la implementación de IncrEase se toman tres fuentes:
 
 Además se obtienen otros datos de factores influyentes como la disponibilidad DSL, la cobertura de red 3G y datos demográficos. IncrEase  a través de datos en forma de arreglo bidimensional cubre regiones de interés y con ello obtiene mapas de calor (áreas de mayor beneficio por la actualización de la red). En estos mapas a mayor calor menor es la cobertura, una posible solución es la instalación de una torre a partir de una lista de torres disponibles en esa área. 
 
-##Modo de operación herramienta IncrEase
+###Modo de operación herramienta IncrEase
 
 Flujo de información de la herramienta 
 
@@ -200,30 +211,6 @@ La contribución de Bernardi es potenciar el negocio de los pequeños proveedore
 
 
 Aunque existen estructuras de algoritmos para solucionar problemáticas en la planeación incremental de redes inalámbricas [Whitaker] proporciona información sobre la evolución de modelos y técnicas para la planificación automática de servicios inalámbricos celulares, cabe resaltar que la documentación existente hace énfasis en redes móviles, sin embargo, este concepto es aplicable para el despliegue de redes inalámbricas rurales. Dentro de la planificación de los sistemas de comunicación inalámbrica se [whitaker] da claridad en los modelos de requerimientos, tales como la información sobre la ubicación de los lugares para la transmisión, este es necesario para establecer una optima conectividad, además de proporcionar información sobre el servicio prestado, aquí se tienen en cuenta los puntos de prueba de recepción (RTP), los puntos de prueba de servicio (STP)y los puntos de prueba de Tráfico (TTP). En cuanto a las especificaciones del equipo, se refiere al tipo y número de antenas a usar; incluye también un modelo de propagación para determinar la perdida de propagación de la señal de al antena al usuario.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
