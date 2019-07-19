@@ -1,11 +1,6 @@
 import networkx as nx
 from  matplotlib import pyplot as plt
 g=nx.Graph()
-
-
-
-
-
 H=nx.path_graph(11)
 g.add_nodes_from(H)
 g.add_node('inicio')

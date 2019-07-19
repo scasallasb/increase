@@ -1,0 +1,414 @@
+%% plantilla Beamer de  https://code.google.com/p/pyprop/ Tore Birkeland
+
+
+\newcommand{\seccion}[1] {
+\section{#1}
+
+\begin{frame} % frame
+        \begin{center}
+                \Huge
+                \textcolor{lbluegreen}{#1}
+        \end{center}
+\end{frame}
+}
+
+\documentclass{beamer}
+\usepackage{pgf,pgfpages}
+\usepackage{graphicx}
+\usepackage{units}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\setbeamertemplate{title page}
+{
+  \vbox{}
+  \vfill
+ \begin{raggedright}
+      \vskip0.25em%
+      {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}        
+      \vskip13em%
+    \begin{beamercolorbox}[sep=4pt,center]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%    
+    \end{beamercolorbox}%
+    \vskip1em\par
+    \begin{beamercolorbox}[sep=4pt,center]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=4pt,center]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    
+%\vspace{-20pt} %<-- right here
+    \begin{beamercolorbox}[sep=8pt,center]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}\vskip0.5em
+   \end{raggedright}
+  \vfill
+}
+
+
+\mode<presentation>
+{
+  \usetheme{ift}
+  \setbeamercovered{transparent}
+  \setbeamertemplate{items}[square]
+}
+
+\usefonttheme[onlymath]{serif}
+\setbeamerfont{frametitle}{size=\LARGE,series=\bfseries}
+
+\definecolor{uibred}{RGB}{170, 0, 0}
+\definecolor{uibblue}{RGB}{0, 84, 115}
+\definecolor{uibgreen}{RGB}{119, 175, 0}
+%\definecolor{uibgreen}{RGB}{50, 105, 0}
+\definecolor{uiborange}{RGB}{217, 89, 0}
+
+
+\beamertemplatenavigationsymbolsempty
+
+
+\include{macros}
+
+%\includeonlyframes{current}
+
+
+\defbeamertemplate{enumerate item}{mycircle}
+{
+  %\usebeamerfont*{item projected}%
+  %\usebeamercolor[bg]{item projected}%
+  \begin{pgfpicture}{0ex}{0ex}{1.5ex}{0ex}
+	%\pgfcircle[fill]{\pgfpoint{0pt}{.75ex}}{1.25ex}
+    \pgfbox[center,base]{\color{uibblue}\insertenumlabel.}
+  \end{pgfpicture}%
+}
+[action]
+{\setbeamerfont{item projected}{size=\scriptsize}}
+\setbeamertemplate{enumerate item}[mycircle]
+
+
+
+
+\title{The solution for the construction topology problem for rural wireless networks}
+\author{Milton J. Ríos Rivera \and Leonardo Rodríguez Mújica }
+\institute{Universidad de Cundinamarca}
+\date{Abril 2015}
+
+\begin{document}
+
+
+\setbeamertemplate{background}
+ {\includegraphics[width=\paperwidth,height=\paperheight]{portada.pdf}}
+\setbeamertemplate{footline}[default]
+
+\begin{frame}
+  \titlepage
+  \vspace{5cm}
+\end{frame}
+
+%
+% Set the background for the rest of the slides.
+% Insert infoline at the end
+%
+\setbeamertemplate{background}
+ {\includegraphics[width=\paperwidth,height=\paperheight]{fondo}}
+\setbeamertemplate{footline}[ifttheme]
+
+%--------------------------------------------------------------------
+%                          Introduction
+%--------------------------------------------------------------------
+
+\seccion{Introducción}
+
+
+%--------------------------------------------------------------------
+%                          Outline
+%--------------------------------------------------------------------
+
+\subsection{Motivaciones}
+
+\begin{frame}
+	\frametitle{¿Por qué?}
+	
+	\begin{columns}
+		\column{0.6\textwidth}
+			\parbox[c][0.8\textheight]{0.8\textwidth}
+			{
+				\includegraphics<1>[width=0.5\textwidth]{figurer/udec-logo.jpg}
+%% http://upload.wikimedia.org/wikipedia/commons/7/7b/Mapa_Provincia_del_Sumapaz.JPG
+				\includegraphics<2>[width=0.7\textwidth]{figurer/mapa-sumapaz.jpg}
+%% http://www.mintic.gov.co/portal/vivedigital/612/w3-propertyvalue-642.html
+				\includegraphics<3>[width=\textwidth]{figurer/tics.png}
+%% http://www.mintic.gov.co/portal/vivedigital/612/articles-1510_recurso_1.pdf pág 31
+				\includegraphics<4>[width=\textwidth]{figurer/estudiante.jpg}
+				\includegraphics<5>[width=0.5\textwidth]{figurer/torres.jpg}
+			}
+		
+		
+		\column{0.4\textwidth}
+			\begin{tabular}{l}
+				 \onslide<1->{La institución} \\
+				 \onslide<2->{La región del Sumapaz} \\
+				 \onslide<3->{Brecha digital} \\
+				 \onslide<4->{I. E. Rurales} \\
+				 \onslide<5->{Infraestructura} \\
+			\end{tabular}
+	\end{columns}
+
+\end{frame}
+
+\seccion{ Problema de construcción  de la topología}
+
+
+\subsection{Requerimientos}
+\begin{frame}
+	\frametitle{Requerimientos del problema}
+
+	\begin{columns}
+		\column{0.5\textwidth}
+			\parbox[c][0.8\textheight]{0.9\textwidth}
+			{
+				\includegraphics<1>[width=\textwidth]{figurer/nodos.pdf}
+				\includegraphics<2>[width=\textwidth]{figurer/tipos-de-torres.jpg}
+				\includegraphics<3>[width=\textwidth]{figurer/torres.pdf}
+				\includegraphics<4>[width=\textwidth]{figurer/fresnel.pdf}
+			}
+		
+		
+		\column{0.5\textwidth}
+			\begin{tabular}{l}
+				 \onslide<1->{Conectividad} \\
+				 \onslide<2->{Altura máxima de las torres} \\
+				 \onslide<3->{Naturaleza de la función de costos} \\
+				 \onslide<4->{Pérdidas por espacio libre y} \\
+				 \onslide<4->{línea de vista} \\
+			\end{tabular}
+	\end{columns}
+\end{frame}
+
+
+
+\subsection{Complejidad de Calculo}
+
+\begin{frame} % frame
+	\frametitle{Complejidad de Calculo}
+
+
+    Los autores de del algorimo: Panigrahi-Duttat-Naiswal-Naidu-Rastogi
+    determinan que el algoritmo óptimo
+    es  {\em NP-hard}, con una reducción del
+    conjunto de vértices conectados no
+    mejor que un factor logarítmico $O(\log n)$, sin embargo, demuestran
+    que por medio de
+    una aproximación se consigue un comportamiento de reducción constante a
+    través de un algoritmo voraz llamado TC-ALGO 
+
+\end{frame}
+
+%\begin{itemize}
+%		\item 
+%		\item 
+%		\item 
+%		\item 
+%		\item 
+%	\end{itemize}
+
+
+\seccion{Ecuación de Costos}
+
+\subsection{Ecuación de costos: aplicada a la región}
+       
+\begin{frame}
+	\frametitle{Costos en Colombia}
+
+        \parbox[c][2.5cm]{\textwidth}
+        {
+             $$
+                        c(h)=\left\{
+                        \begin{array}{ll}
+                            250000 & si \,\,0 < \leq h \leq 20m\\
+                            550000h+B & si \,\, 20 < h \leq 60 m
+                        \end{array}
+                        \right .
+                    $$
+        }
+
+        \parbox[c][4cm]{\textwidth}
+        {
+                \begin{center}
+                        \includegraphics<1>[width=0.7\textwidth]{figurer/torres.pdf}
+                \end{center}
+        }
+\end{frame}
+
+       
+\seccion{Descripción del algoritmo} 
+
+
+
+\begin{frame}
+        \frametitle{Algoritmo TC-ALGO}
+
+        \begin{columns}
+                \column{0.5\textwidth}
+                        \parbox[c][0.8\textheight]{0.9\textwidth}
+                        {
+                                \includegraphics<1->[width=\textwidth]{figurer/star_tc_algo.pdf}
+                        }
+                
+                 
+                \column{0.5\textwidth}
+                                \onslide<1->{$G(V,E)$ determina la estructura de la entrada de la red, }   
+                                \onslide<2->{donde $V$ es el conjunto de nodos, }  
+                                \onslide<3->{$E$ es el conjunto de aristas} 
+                                \onslide<4->{y $|V|=n$ número de nodos.} \\
+                                \onslide<5->{Un subgrafo denominado
+                                $COVER(h)$ es el conjunto de aristas que
+                            son establecidas por la función de altura $h$. }
+                                \onslide<6->{Al inicio $h=0$, $COVER(h)
+                                =\emptyset$ y $COMP(h)=n$.}
+                                \onslide<7->{El algoritmo finaliza cuando $COMP(h)=1$}
+        \end{columns}
+\end{frame}
+
+\subsection{El problema}
+
+\begin{frame}
+    \frametitle{El problema a resolver}
+    {\Large
+El problema es encontrar una función de altura que represente el menor
+    costo total posible, para un subgrafo conectado y expandido.
+$$min \left( \sum_{u \in V} c[h(u)] \right) $$}
+\end{frame}    
+
+\seccion{Desarrollo de la aplicación}
+
+\subsection{Topología inicial}
+
+\begin{frame} % frame
+	\frametitle{Topología de la red}
+	
+
+   	\begin{columns}
+		\column{0.5\textwidth}
+			\parbox[c][0.8\textheight]{0.9\textwidth}
+			{
+				\includegraphics<1>[width=0.9\textwidth]{figurer/topologia.pdf}
+				\includegraphics<2>[width=\textwidth]{figurer/red-veredas-simple.pdf}
+				\includegraphics<3>[width=0.9\textwidth]{figurer/veredas.pdf}
+				\includegraphics<4>[width=\textwidth]{figurer/topo_inicial.pdf}
+			}
+		
+		
+		\column{0.5\textwidth}
+			\begin{tabular}{l}
+				 \onslide<1->{Conectividad VPN} \\
+				 \onslide<2->{Red en veredas} \\
+				 \onslide<3->{Ubicación Geográfica} \\
+				 \onslide<4->{Mapas SRTM} \\
+			\end{tabular}
+	\end{columns}
+\end{frame}
+
+\subsection{Características del diseño de la topología}
+
+\begin{frame} % frame
+	\frametitle{Grafo inicial}
+	\begin{itemize}
+		\item <1-> El grafo de entrada
+ $G_i (V_i , E_i)$ se establece completamente conectado 
+		\item<2->  El costo de este enlace provienen de su altura
+		\item <3->Decartar los enlaces que no
+cumplen el valor de altura máxima $h_{max}$ 
+		\item <4->$h_o (u, v)$ es la función de obstrucciones en el trayecto del enlace
+la cual describe el perfil del terreno entre los nodos
+$u$ y $v$
+	\end{itemize}
+\end{frame}
+
+\subsection{Algoritmo de optimización TC-ALGO}
+
+\begin{frame} % frame
+	\parbox[c][5cm]{\textwidth}
+	{
+        \frametitle{Resultados}
+		\begin{center}
+			\includegraphics<1>[width=8cm]{figurer/grafo-inicial.pdf}
+			\includegraphics<2>[width=8cm]{figurer/resul-tcalgo2.pdf}
+			\includegraphics<3>[width=7cm]{figurer/cabrera.png}
+			\includegraphics<4>[width=7cm]{figurer/ingcabreranl.png}
+			\includegraphics<5>[width=7cm]{figurer/covercabrera.png}
+		\end{center}
+	}
+
+    \begin{center}   
+     \only<1> {Enlaces que se pierden debido a la topografía del
+    terreno}
+    \only <2> {Resultado de costos y de densidad de los grafos
+        resultantes}
+    \only<3> {Grafo de entrada $G$ de Cabrera totalmente
+        conectado}
+    \only<4> {Grafo inicial $G_i$ de Cabrera luego de
+            seleccionar los nodos con restricción de altura} 
+    \only<5> {Grafo de salida de Cabrera con los enlaces
+            cubiertos}
+    \end{center}        
+\end{frame}
+
+\seccion{Trabajo futuro} 
+
+\begin{frame} % frame
+	\frametitle{Trabajo futuro}
+     {\bf Problema de conectividad}\\
+      Debido a que en el algoritmo se descartan nodos que se esperaban
+       inicialmente estuvieran conectados a la topologia de red final, esto
+       se 
+        soluciona agragando nodos a la red en puntos geograficos
+        especificos que
+         agreguen dicho beneficio de conectividad. Dado esto se pretende:
+
+	\begin{itemize}
+		\item <1-> Encontrar puntos en el terreno que
+permitan conectar los nodos que en un principio resultaron inalcanzables
+bajo las consideraciones de este trabajo.
+		\item <2->Determinar la eficiencia de dicho algoritmo 
+	\end{itemize}
+\end{frame}
+
+\subsection{Créditos} 
+
+\begin{frame} % frame
+	\frametitle{Origen de las imágenes}
+    {\bf Wikimedia Commons}
+
+\begin{itemize}
+        \item Mapa del Sumapaz - File:Mapa\_Provincia\_del\_Sumapaz.JPG
+    \end{itemize}
+
+{\bf MinTic }
+
+\begin{itemize}
+        \item Joven con computador - articles-1510\_recursoi\_1.pdf
+        \item Tabla hitos y metas - http://www.mintic.gov.co/portal/vivedigital/612/w3-propertyvalue-642.html
+\end{itemize}
+
+{\bf Plantilla Beamer}
+
+\begin{itemize}
+    \item  Tore Birkeland. https://code.google.com/p/pyprop/
+\end{itemize}
+
+\end{frame}    
+
+\section{ Preguntas}
+\subsection{Preguntas}
+\begin{frame}
+				\includegraphics[width=0.8\textwidth]{preguntas.pdf}
+
+\end{frame}
+
+\end{document}

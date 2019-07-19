@@ -1,0 +1,30 @@
+def georefxc():
+    import xlrd as xl
+    b=xl.open_workbook("inesu.xls")
+    sh=b.sheet_by_index(1)
+    co=[]
+    co2={}
+    for rx in range(sh.nrows):  
+        co.append((rx,[sh.cell_value(rowx=rx,colx=2),sh.cell_value(rowx=rx,colx=0)]))
+        try:
+            co2[sh.cell_value(rowx=rx,colx=0)][rx]=[sh.cell_value(rowx=rx,colx=7),sh.cell_value(rowx=rx,colx=6)]
+        except KeyError:
+            co2[sh.cell_value(rowx=rx,colx=0)]={rx:[sh.cell_value(rowx=rx,colx=7),sh.cell_value(rowx=rx,colx=6)]}
+    return co2
+def la_lon():
+    import xlrd as xl
+    b=xl.open_workbook("inesu.xls")
+    sh=b.sheet_by_index(1)
+    co={}
+    co1={}
+    coco={}
+    for rx in range(sh.nrows):  
+        co[rx]=sh.cell_value(rowx=rx,colx=7)
+        co1[rx]=sh.cell_value(rowx=rx,colx=6)
+        coco[rx]=(sh.cell_value(rowx=rx,colx=7),sh.cell_value(rowx=rx,colx=6))
+    return coco
+
+def georefsq():
+    pass
+
+print la_lon()
