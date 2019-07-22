@@ -5,7 +5,7 @@
 
 ## Brecha Digital
 
-En el año 1995 eclosionan para la población dos tecnologías totalmente disruptivas, internet y la telefonía móvil, ellas sugieren una nueva revolución, la llamada revolución digital, que a su vez crea la sociedad de la información(S.I), dando inicio al planteamiento sobre cómo medir y modelizar la S.I, el nivel de desarrollo digital y el impacto del desarrollo digital en el ser humano.De igual manera, el acceso a internet a través  de las Tecnologías de la información y las comunicaciones (TIC) ha tenido un auge exponencial en los últimos años, en efecto, este avance se presenta en países desarrollados o zonas metropolitanas de países en desarrollo [sen], sin embargo, existen unas comunidades con poco o ningún acceso a las TIC [maseratti] y otras con acceso casi universal a telefonía fija, móvil e Internet de banda ancha, es así que resulta el concepto de Brecha Digital entendiendose como la ausencia de una o varias dimensiones contenidas en el desarrollo digital. En relación con lo anterior, las poblaciones sin acceso a las TIC poseen un bajo nivel socioeconómico, viven en zonas de difícil acceso con condiciones climatológicas desfavorables e incluso con ineficiencia o inexistencia de redes eléctricas, al mismo tiempo, las personas que viven en áreas rurales sufren el efecto de la brecha digital incluso más fuerte que los habitantes urbanos, debido a que no pueden acceder a servicios como el aprendizaje a distancia, la salud y el comercio electrónico [Bernardi]. 
+En el año 1995 eclosionan para la población dos tecnologías totalmente disruptivas, internet y la telefonía móvil, ellas sugieren una nueva revolución, la llamada revolución digital, que a su vez crea la sociedad de la información(S.I), dando inicio al planteamiento sobre cómo medir y modelizar la S.I, el nivel de desarrollo digital y el impacto del desarrollo digital en el ser humano. De igual manera, el acceso a internet a través  de las Tecnologías de la información y las comunicaciones (TIC) ha tenido un auge exponencial en los últimos años, en efecto, este avance se presenta en países desarrollados o zonas metropolitanas de países en desarrollo [sen], sin embargo, existen unas comunidades con poco o ningún acceso a las TIC [maseratti] y otras con acceso casi universal a telefonía fija, móvil e Internet de banda ancha, es así que resulta el concepto de Brecha Digital entendiendose como la ausencia de una o varias dimensiones contenidas en el desarrollo digital. En relación con lo anterior, las poblaciones sin acceso a las TIC poseen un bajo nivel socioeconómico, viven en zonas de difícil acceso con condiciones climatológicas desfavorables e incluso con ineficiencia o inexistencia de redes eléctricas, al mismo tiempo, las personas que viven en áreas rurales sufren el efecto de la brecha digital incluso más fuerte que los habitantes urbanos, debido a que no pueden acceder a servicios como el aprendizaje a distancia, la salud y el comercio electrónico [Bernardi]. 
 
 
 ## Redes Libres comunitarias 
@@ -44,22 +44,22 @@ La planeación de redes inalámbricas es un área muy activa por la comunidad ci
 A continuación se detallan factores claves de la planeación de redes inalámbricas.
 
 * Costos de depliegue:
- Valor inicial de instalación de la red 
+ valor inicial de instalación de la red 
 
 * Costos de implementación:
- Coste del mantenimiento y funcionamiento de la red
+ coste del mantenimiento y funcionamiento de la red
 
 * Expansión de la red:
- Crecimiento de la red, abarcando más territorio
+ crecimiento de la red, abarcando más territorio
 
 * Coberturad de la red:
  Área geográfica que cubre la red
 
 * Capacidad de la red: 
-Ancho de banda requerido para la transferencia de datos 
+ancho de banda requerido para la transferencia de datos 
 
 * Retorno de la inversión:
- Beneficio obtenido en relación a la inversión realizada
+ beneficio obtenido en relación a la inversión realizada
 
 
 ## Algoritmos utilizados en la planeación
@@ -153,11 +153,11 @@ A diferencia de los dos algoritmos anteriores, el *PESA* no tiene un  tamaño de
 
 La principal diferencia entre SEAMO y otro algoritmo, es que este es de estado estable y solo mantiene una población(de un tamaño constante $n$). La principal ventaja del algoritmo SEAMO es su simplicidad, el cual usa la dispocicion de todos los mecanismos de selección basado en fitness o rango. El avance de la busqueda esta definido por tres simples reglas:
 
-los padres solo son remplazados por su propia descendencia.
+* los padres solo son remplazados por su propia descendencia.
 
-Las poblaciones duplicadas son eliminadas.
+* Las poblaciones duplicadas son eliminadas.
 
-La descendencia solo puede reemplazar a los padres si es superior: elitismo.
+* La descendencia solo puede reemplazar a los padres si es superior: elitismo.
 
 Los operadores genéticos se aplican a cada padre  para formar un nuevo hijo, que se considera para la sustitución en la población de padres según las tres reglas. Este proceso se repite hasta la terminación.
 
