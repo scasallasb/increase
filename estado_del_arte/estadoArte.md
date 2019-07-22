@@ -83,19 +83,19 @@ La técnica meta-heurística (TS) de búsqueda de tabúes opera utilizando el pr
 
 # ESTADO DEL ARTE
 
-## Redes móviles UMTS
+## Planeación de redes móviles UMTS  
 
-En [@hilarie2008], se presenta una literatura detallada de los problemas que se presentan  en la planeación de la topología celular 3G, la cual, esta basada en el Sistema universal de telecomunicaciones móviles **UMTS** (“*Universal Mobile Telecommunications System*”); para entender las dificultades que se presentan en la planeación, es importante  hacer una pequeña descripción de la arquitectura UMTS.
+En [@hilarie2008], se presenta una literatura detallada de los problemas que se presentan  en la planeación de la topología celular 3G, la cual está basada en el Sistema universal de telecomunicaciones móviles **UMTS** (“*Universal Mobile Telecommunications System*”); para entender las dificultades que se presentan en la planeación, es importante  hacer una pequeña descripción de la arquitectura UMTS.
 
 
-Una arquitectura típica de   UMTS se muestra en la figura (1), donde se observa que una red UMTS está dividida en dos partes: la *red de acceso* y la *red de núcleo*. La primera, es también llamada red  UMTS  de radio terrestre **UTRAN**, la cual esta compuesta por muchos  subsistemas de red de radio **RNS** (“*radio network subsystem*”). Cada RNS contiene un controlador de red de radio **RNC** (“*radio network controller*”) y una o mas estaciones bases *BS* (“*base estation*”).
+Una arquitectura típica de   UMTS se muestra en la figura (1), donde se observa que una red UMTS está dividida en dos partes: la *red de acceso* y la *red de núcleo*. La primera, es también llamada red  UMTS  de radio terrestre **UTRAN**, la cual está compuesta por muchos  subsistemas de red de radio **RNS** (“*radio network subsystem*”). Cada RNS contiene un controlador de red de radio **RNC** (“*radio network controller*”) y una o mas estaciones bases *BS* (“*base estation*”).
 
 
 Las estaciones bases (en este caso son los *nodos B*) son usados  para trasmitir/recibir radiofrecuencia  hacia/desde los usuarios móviles, mientras que las RNC se ocupa de los recursos y la gestión de trafico de datos. El principal objetivo de la UTRAN (“*UMTS Terrestrial Radio Access Network*”) es hacer el enlace entre los usuarios móviles y el núcleo red.
 
 <!-- estructura de la planeación -->
 
-## Planeación de Celda
+### Planeación de Celda
 
 El autor *Hitlarie*, descompone la planeación de las redes móviles de manera modular, con el fin de reducir  la complejidad y los divide en los siguientes subproblemas:
 
@@ -106,7 +106,7 @@ El autor *Hitlarie*, descompone la planeación de las redes móviles de manera m
 La parte de los subproblemas que se necesita abordar con más detalle, son los de planeación  de celdas, ya que se asemeja más al enfoque que se necesita en la planeación de redes inalámbricas de banda ancha; a continuación se describe dicho subproblema, así como algunos trabajos que se han realizado.
 
 <!-- Descripción  de subproblema de celdas... -->
-### Subproblema de celdas o localización de estación base
+#### Subproblemas  de planeación de celdas
 
 El problema inicial de planeación es cubrir todos los usuarios móviles en un 
 área determinada con el número mínimo de BSs. En la planeación de celdas se encarga de resolver los siguientes items:
@@ -118,25 +118,35 @@ El problema inicial de planeación es cubrir todos los usuarios móviles en un
 * Asignación de usuarios móviles a la BS.
 
 
-Los problemas de planeación pueden variar dependiendo en la planeación de red objetivo. Usualmente, en la planeación de red se requiere:
+Los problemas de planeación pueden variar dependiendo en la planeación de red objetivo. Usualmente, en la planeación de red se requiere 
 
 * Minimizar los costos de la red. 
 * Maximizar la calidad de la señal. 
 * Maximizar el área de cobertura. 
 
-Sin embargo esto puede ser contradictorio,ya que por ejemplo, si se quiere maximizar la cobertura se necesitaran desplegar mas BSs y esto por supuesto, aumentara los costos.
+Sin embargo, esto puede ser contradictorio, ya que, por ejemplo, si se quiere maximizar la 
+cobertura se necesitarán desplegar más BSs y esto por supuesto, aumentara los costos. 
 
-Al principio la planeación de redes inalámbricas se realizaba teniendo en cuenta la predicción de la señal, sin embargo en las redes UMTS, la planeación de radio no puede ser solo basado en la predicción de la señal sino que se deben tener en cuenta la distribución de trafico. 
-En esta parte aparece gran cantidad de literatura del autor Amaldi,en \cite{Amaldi2003}, el autor contextualiza que en la planeación de radio en el El sistema global para las comunicaciones móviles **GSM** (“Global System for Mobile communications”) se realizaba en dos fases, la fase de planeación de cobertura donde se define la mejor localización de las BSs teniendo en cuenta los modelos de propagación y la fase de planeación de frecuencia, que define el numero de canales para cada BS teniendo en cuenta la calidad de la señal de interferencia de radio **SIR** (“Signal-to-Interference Ratio”).
+Al principio la planeación de redes inalámbricas se realizaba teniendo en cuenta la predicción 
+de la señal, sin embargo, en las redes UMTS, la planeación de radio no puede ser solo basado 
+en la predicción de la señal, sino que se deben tener en cuenta la distribución de tráfico. En 
+esta parte aparece gran cantidad de literatura del autor Amaldi, en [@amaldi2003], el autor contextualiza 
+que en la planeación de radio en el Sistema Global para las Comunicaciones Móviles GSM 
+(“Global System for Mobile communications”) se realizaba en dos fases, la fase de planeación 
+de cobertura donde se define la mejor localización de las BSs teniendo en cuenta los modelos 
+de propagación y la fase de planeación de frecuencia, que define el número de canales para 
+cada BS teniendo en cuenta la calidad de la señal de interferencia de radio SIR (“Signal-to- 
+Interference Ratio”). 
 
-Sin embargo, teniendo en cuenta el Acceso múltiple por división de código de banda ancha W-CDMA(“*Wideband Code Division Multiple Access*”), esto ya no se puede realizar en estas dos fases, debido a que el ancho de banda es compartido por todas las conexiones activas y no por la frecuencia asignada, así como también el área de cobertura de cada BS es afectada por la cantidad de trafico. 
+Sin embargo, teniendo en cuenta el Acceso Múltiple por División de Código de Banda Ancha W-CDMA (“*Wideband Code Division Multiple Access*”), esto ya no se puede realizar en estas dos fases, debido a que el ancho de banda es compartido por todas las conexiones activas y no por la frecuencia asignada, así como también el área de cobertura de cada BS es afectada por la cantidad de tráfico. 
 
-Para la planeación de celdas, se tiene en cuenta los parámetros de calidad de la SIR, en el cual se define una SIR mínima, el cual depende de la potencia recibida; Esta depende de la potencia trasmitida y las atenuaciones de señal en la propagación, por ende la potencia trasmitida se puede ajustar para minimizar la interferencia, aquí aparece un concepto importante, el cual es el control de potencia **PC**(“*power control*”), en donde se ajusta la potencia de trasmisión para cumplir dos objetivos, la potencia objetivo recibida $P_{tar}$ y la SIR objetivo $SIR_{tar}$. En este articulo *Amaldi* propone un modelo de programación matemática, que ayuda en la decisión de planear redes móviles, teniendo en cuenta la mejor localización y configuración de las BSs, teniendo en cuenta el modelo de propagación *Hata*, donde se ajusta el PC y  este a su vez es probado con un algoritmo aleatorio voraz, el cual añade o remueve BSs de la topología; En este artículo se describe el rendimiento de esta solución dando resultados óptimos  y también demuestra que este problema es un problema típico de NP-hard. 
+Para la planeación de celdas, se tiene en cuenta los parámetros de calidad de la SIR, en el cual se define una SIR mínima, el cual depende de la potencia recibida; Esta depende de la potencia trasmitida y las atenuaciones de señal en la propagación, por ende la potencia trasmitida se puede ajustar para minimizar la interferencia, aquí aparece un concepto importante, el cual es el control de potencia **PC** (“*power control*”), en donde se ajusta la potencia de trasmisión para cumplir dos objetivos, la potencia objetivo recibida $P_{tar}$ y la SIR objetivo $SIR_{tar}$. En este articulo *Amaldi* propone un modelo de programación matemática, que ayuda en la decisión de planear redes móviles, teniendo en cuenta la mejor localización y configuración de las BSs, teniendo en cuenta el modelo de propagación *Hata*, donde se ajusta el PC y  este a su vez es probado con un algoritmo aleatorio voraz, el cual añade o remueve BSs de la topología; En este artículo se describe el rendimiento de esta solución dando resultados óptimos  y también demuestra que este problema es un problema típico de NP-hard. 
 
 
-En la planeación de redes, ha menudo se utiliza la optimización de varios objetivos, mas conocido como optimización multi-objetivo, el cual es diferente de una optimización simple , puesto que aquí solo importa optimizar un parámetro, dando como resultado el mejor diseño o la mejor optimización, teniendo en cuenta un máximo o un mínimo global que dependerá del objetivo de la optimización (maximizar o minimizar), sin embargo en  la optimización multi-objetivo, existe mas de una solución optima con respecto a todos los objetivos; aquí, el objetivo consiste en encontrar un optimo de pareto, el cual nos dice que una solución es optima  cuando no existe otra solución tal que mejore en un objetivo sin empeorar al menos uno de los otros.
+ 
+En la planeación de redes, a menudo se utiliza la optimización de varios objetivos, más conocido como optimización multiobjetivo, el cual es diferente de una optimización simple , puesto que aquí solo importa optimizar un parámetro, dando como resultado el mejor diseño o la mejor optimización, teniendo en cuenta un máximo o un mínimo global que dependerá del objetivo de la optimización (maximizar o minimizar), sin embargo en  la optimización multiobjetivo, existe más de una solución óptima con respecto a todos los objetivos; aquí, el objetivo consiste en encontrar un óptimo de Pareto, el cual nos dice que una solución es óptima  cuando no existe otra solución tal que mejore en un objetivo sin empeorar al menos uno de los otros. 
 
-Como se ha visto anteriormente, en la planeación se pueden abordar diferentes objetivos(lugar de instalación de BS, configuración, altura, potencia, etc), sin embargo, al momento de planificar la red, atacar todos los problemas al tiempo es un problema complejo, por esto, se han venido implementando algoritmos multi-objetivos, generalmente para estos casos se han venido desarrollando algoritmos genéticos AG, en el trabajo de (Raisanen and Whitaker, 2005), los autores recolectan  cuatro estados del arte de algoritmos genéticos multi-objetivo, donde  los ponen a prueba para planificar una red aumentando la cobertura teniendo en cuenta los costos  y los comparan teniendo en cuenta su desempeño en ciertas pruebas sintetizadas ; los autores toman como referencia los algoritmos: **SPEA2**, **NSGAII**, **PGSA** y  **SEAMO**. A continuación de hará una breve descripción de cada uno.
+Como se ha visto anteriormente, en la planeación se pueden abordar diferentes objetivos (lugar de instalación de BS, configuración, altura, potencia, etc.), sin embargo, al momento de planificar la red, atacar todos los problemas al tiempo es un problema complejo, por esto, se han venido implementando algoritmos multiobjetivo, generalmente para estos casos se han venido desarrollando algoritmos genéticos **AG**, en el trabajo de (@raisanen2005), los autores recolectan cuatro estados del arte de algoritmos genéticos multiobjetivo, donde  los ponen a prueba para planificar una red aumentando la cobertura teniendo en cuenta los costos  y los comparan teniendo en cuenta su desempeño en ciertas pruebas sintetizadas ; los autores toman como referencia los algoritmos: **SPEA2**, **NSGAII**, **PGSA** y **SEAMO**. A continuación, se hará una breve descripción de cada uno. 
 
 * **SPEA2** (*The Strength Pareto Evolutionary Algorithm version II*): 
 
