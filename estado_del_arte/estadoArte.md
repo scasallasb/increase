@@ -5,7 +5,7 @@
 
 ## Brecha Digital
 
-En el año 1995 eclosionan para la población dos tecnologías totalmente disruptivas, el internet y la telefonía móvil, ellas sugieren una nueva revolución, la llamada revolución digital, que a su vez crea la sociedad de la información(S.I), dando inicio al planteamiento sobre cómo medir y modelizar la S.I, el nivel de desarrollo digital y el impacto del desarrollo digital en el ser humano.De igual manera, el acceso a internet a través  de las Tecnologías de la información y las comunicaciones (TIC) ha tenido un auge exponencial en los últimos años, en efecto, este avance se presenta en países desarrollados o zonas metropolitanas de países en desarrollo [sen], sin embargo, existen unas comunidades con poco o ningún acceso a las TIC [maseratti] y otras con acceso casi universal a telefonía fija, móvil e Internet de banda ancha, es así que resulta el concepto de Brecha Digital entendiendose como la ausencia de una o varias dimensiones contenidas en el desarrollo digital. En relación con lo anterior, las poblaciones sin acceso a las TIC poseen un bajo nivel socioeconómico, viven en zonas de difícil acceso con condiciones climatológicas desfavorables e incluso con ineficiencia o inexistencia de redes eléctricas, al mismo tiempo, las personas que viven en áreas rurales sufren el efecto de la brecha digital incluso más fuerte que los habitantes urbanos, debido a que no pueden acceder a servicios como el aprendizaje a distancia, la salud y el comercio electrónico [Bernardi]. 
+En el año 1995 eclosionan para la población dos tecnologías totalmente disruptivas, internet y la telefonía móvil, ellas sugieren una nueva revolución, la llamada revolución digital, que a su vez crea la sociedad de la información(S.I), dando inicio al planteamiento sobre cómo medir y modelizar la S.I, el nivel de desarrollo digital y el impacto del desarrollo digital en el ser humano.De igual manera, el acceso a internet a través  de las Tecnologías de la información y las comunicaciones (TIC) ha tenido un auge exponencial en los últimos años, en efecto, este avance se presenta en países desarrollados o zonas metropolitanas de países en desarrollo [sen], sin embargo, existen unas comunidades con poco o ningún acceso a las TIC [maseratti] y otras con acceso casi universal a telefonía fija, móvil e Internet de banda ancha, es así que resulta el concepto de Brecha Digital entendiendose como la ausencia de una o varias dimensiones contenidas en el desarrollo digital. En relación con lo anterior, las poblaciones sin acceso a las TIC poseen un bajo nivel socioeconómico, viven en zonas de difícil acceso con condiciones climatológicas desfavorables e incluso con ineficiencia o inexistencia de redes eléctricas, al mismo tiempo, las personas que viven en áreas rurales sufren el efecto de la brecha digital incluso más fuerte que los habitantes urbanos, debido a que no pueden acceder a servicios como el aprendizaje a distancia, la salud y el comercio electrónico [Bernardi]. 
 
 
 ## Redes Libres comunitarias 
@@ -35,71 +35,55 @@ desarrollo.
 
 Con el objetivo de reducir la brecha digital, autores [Bernardi, maseratti, sen] han propuesto como solución la planeación y despliegue de redes de banda ancha inalámbrica en zonas rurales.
 
+La comunicación inalámbrica es aquella que se produce mediante transmision y recepción de señales electromagnética sin ninguna guía, empleando como medio el aire o el espacio vacio. Para ello es necesario hablar de conectividad, concepto que hace alusión a la disponibilidad que tiene un dispositivo para conectarse a otro o conectarse a una red, es por eso, que cerrar esta brecha requiere proporcionar conectividad a Internet en todos los pueblos.
 
-Para ello es necesario hablar de conectividad, siendo un factor clave que hace alusión a la disponibilidad que tiene un dispositivo para conectarse a otro o conectarse a una red, es por eso, que cerrar esta brecha requiere proporcionar conectividad a Internet en todos los pueblos.
-
-La planeación de redes inalámbricas es un área muy activa por la comunidad científica, sin embargo el foco de las investigaciones  son las redes de banda ancha móvil y las redes de área local inalámbrica.
+La planeación de redes inalámbricas es un área muy activa por la comunidad científica, sin embargo, el foco de las investigaciones  son las redes de banda ancha móvil y las redes de área local inalámbrica.
 
 ### Factores clave de planeación 
 
 A continuación se detallan factores claves de la planeación de redes inalámbricas.
 
 * Costos de depliegue:
+ Valor inicial de instalación de la red 
 
 * Costos de implementación:
+ Coste del mantenimiento y funcionamiento de la red
 
 * Expansión de la red:
- Creciemiento de la red, abarcando más territorio
+ Crecimiento de la red, abarcando más territorio
 
 * Coberturad de la red:
- En zonas rurales prevalece mantener la cobertura de servicios de internet en diferentes lugares sobre la capacidad.
+ Área geográfica que cubre la red
 
 * Capacidad de la red: 
 Ancho de banda requerido para la transferencia de datos 
 
 * Retorno de la inversión:
- Referente para pequeños proveedores de internet inalámbrico (WISP)
+ Beneficio obtenido en relación a la inversión realizada
 
-* Sector económico y social de la población rural: 
-Delimitantes socioeconómicos del poder adquisitivo de los habitantes
 
 ## Algoritmos utilizados en la planeación
 
 Aunque existen estructuras de algoritmos para solucionar problemáticas en la planeación incremental de redes inalámbricas [Whitaker] proporciona información acerca de los enfoques propuestos para el diseño de redes, que muestran la evolución de modelos y técnicas para la planificación automática de servicios inalámbricos celulares, cabe resaltar que la documentación existente hace énfasis en redes móviles, sin embargo, este concepto es aplicable para el despliegue de redes inalámbricas rurales. Dicho lo anterior, whitaker facilita la descripción de diferentes clases de algoritmos que se pueden usar para realizar la planeación automática de redes inalambricas.
 
-
-
-* **Algoritmos codiciosos**
-<!-- Descripción -->
-<!-- cómo se aplica -->
-Codiciosos (o secuenciales) los algoritmos simplemente ponen en marcha y configuran los transmisores de la mejor manera posible en algún orden, sin que sea posible la reconfiguración o la puesta en marcha. Estos enfoques se utilizan para generar una red inicial y tener un mayor desarrollo. Un problema crucial se relaciona con la forma en que se ordenan los sitios candidatos y las configuraciones antes de aplicar el algoritmo. Tales métodos, por ejemplo, han sido investigados por problemas relacionados con la gráfica y la asignación de frecuencia en [11, 12]. 
-
-* **Algoritmos exactos**
-Existe una variedad de algoritmos que son capaces de buscar una solución exacta a un problema. Estos enfoques deben probar todas las combinaciones posibles de diseños de red potenciales y, con frecuencia, operar rechazando soluciones que contengan redes o redes parciales no deseables. Los algoritmos que operan sobre esta base incluyen el seguimiento y la verificación hacia adelante. Sin embargo, debido a la naturaleza difícil del problema, los algoritmos de este tipo solo pueden ejecutarse hasta el agotamiento en pequeños problemas de prueba. En consecuencia, se pueden relajar con una terminación temprana o usarse para explorar selectivamente regiones limitadas desde el espacio de búsqueda de todos los diseños de red posibles, como en [32, 33, 34, 44].
+* **Algoritmos voraces**
+Es una estrategia de búsqueda por la cual se sigue una heurística consistente en elegir la opción óptima en cada paso local con la esperanza de llegar a una solución general óptima. El procedimiento central del algoritmo voraz apunta a asignar las mejores ubicaciones posibles a un conjunto dado de estaciones base activas.@{Amaldi,2001}
 
 * **Algoritmos genéticos (GA)** 
-Estos algoritmos imitan algunos de los procesos de evolución y selección natural al mantener una población de soluciones candidatas que están representadas por una cadena de genes (con frecuencia binarios). Con el tiempo, la población evoluciona a través de procesos que emulan procesos biológicos como la reproducción. Los miembros de la población se combinan para producir descendientes. Introducido por Holanda [21], el concepto básico es que los fuertes tienden a adaptarse y sobrevivir, mientras que los débiles tienden a desaparecer. Los artículos [29, 28, 19, 22, 13] muestran enfoques para la planificación celular utilizando GA.
-
-* **Annealing Simulado (SA)**
-Annealing simulado (SA) es una meta-heurística derivada de la mecánica estadística. El método opera utilizando el principio de vecindad y mide soluciones potenciales usando una función de costo. Permite que la búsqueda continúe con la función de costo, lo que reduce la mayor parte del tiempo (suponiendo una minimización), pero la función de costo puede aumentar ocasionalmente para permitir el escape de mínimos locales que no son globales. Las posibilidades de aceptar una solución peor están controladas por un parámetro en el algoritmo. El procedimiento de recocido simulado de Kirkpatrick et al. [27] varía este parámetro utilizando un programa de recocido que generalmente reduce la posibilidad de escapar de los mínimos locales con el tiempo. Para un tratamiento detallado del recocido simulado, se hace referencia al lector [2]. Los enfoques para la planificación celular en [4, 10, 31, 6, 23]
+Estos algoritmos imitan algunos de los procesos de evolución y selección natural al mantener una población de soluciones candidatas que están representadas por una cadena de genes (con frecuencia binarios). Con el tiempo, la población evoluciona a través de procesos que emulan procesos biológicos como la reproducción. Los miembros de la población se combinan para producir descendientes. El concepto básico es que los fuertes tienden a adaptarse y sobrevivir, mientras que los débiles tienden a desaparecer. @{withaker} En la planeación de redes se utiliza la optimización de varios objetivos, estos se conoce como optimización multiobjetivo, en la que existe más de una solución óptima con respecto a todos los objetivos, entre ellos lugar de instalación de una torre, configuración de una antena, altura, etc.
 
 * **Tabu Search (TS)**
-La técnica meta-heurística (TS) de búsqueda de tabúes opera utilizando el principio de vecindad como para escalar colinas. Sin embargo, en un intento por evitar los ciclos y proporcionar un mecanismo para escapar de soluciones óptimas pero no globales, algunos movimientos, en una iteración particular, pueden clasificarse como tabú o tabú. Los movimientos se clasifican como tabú al considerar el historial a corto y largo plazo de la secuencia de movimientos. También hay criterios de aspiración que anulan los movimientos de tabú si se aplican circunstancias particulares. 
+La técnica meta-heurística (TS) de búsqueda de tabúes opera utilizando el principio de vecindad como para escalar colinas. Sin embargo, en un intento por evitar los ciclos y proporcionar un mecanismo para escapar de soluciones óptimas pero no globales, algunos movimientos, en una iteración particular, pueden clasificarse como tabú o tabúes. Los movimientos se clasifican como tabú al considerar el historial a corto y largo plazo de la secuencia de movimientos. También hay criterios de aspiración que anulan los movimientos de tabú si se aplican circunstancias particulares. Este algoritmo permite encontrar una ubicación de las torres en la fase de planeación para lograr un óptimo rendimiento de la red.
 
-
-* **Algoritmos de adaptación para diseño de red automático**
-El diseño automático de la red se puede realizar para poner en marcha los transmisores de varias maneras. El software puede estar diseñado para comisionar un número exacto o un número máximo fijo de transmisores, o puede tener total libertad. Estos objetivos pueden afectar significativamente la forma en que se aborda el problema y se diseña el algoritmo. Adicionalmente la aplicación de algoritmos debe tener en cuenta resolver conflictos y tensiones. Con respecto a la puesta en marcha de los transmisores, los transmisores de alta potencia y poco distribuidos pueden proporcionar una cobertura adecuada al tiempo que minimizan los costos pero puede proporcionar una capacidad de red inadecuada. Además, las regiones de entrega pueden ser difíciles de establecer sin instanciar las regiones de interferencia en este escenario. Definir los objetivos operativos deseados debe ser considerado. El gasto computacional y de infraestructura para proporcionar el último porcentaje de la cobertura máxima posible o la utilización del tráfico puede ser significativo. A nivel de configuración de infraestructura, la inclinación, el acimut, la configuración de potencia máxima y la elección de la antena y la sectorización están disponibles para sintonizar en sitios comisionados si el algoritmo no se limita a elegir transmisores preconfigurados. Es importante destacar que estos parámetros son cruciales para el dimensionamiento de la celda, es decir, un ajuste fino para proporcionar un traspaso y una interferencia máxima adecuada. Tenga en cuenta que estos objetivos pueden ser difíciles de satisfacer si solo se especifican instancias limitadas de preconfiguración en los sitios potenciales.
 
 ## Representación de topologia
 
 ## Python y Networkx
 
 
-
 # ESTADO DEL ARTE {-}
 ## Redes móviles UMTS
 
-<!-- arquitectura-->
 En [Hitlarie2008], se presenta una literatura detallada de los problemas que se presentan  en la planeación de la topología celular 3G, la cual, esta basada en el Sistema universal de telecomunicaciones móviles **UMTS** (“*Universal Mobile Telecommunications System*”); para entender las dificultades que se presentan en la planeación, es importante  hacer una pequeña descripción de la arquitectura UMTS.
 
 
@@ -180,13 +164,10 @@ Los operadores genéticos se aplican a cada padre  para formar un nuevo hijo, qu
 
 El aspecto clave de este marco es una decodificador que utiliza un orden de ubicaciones de sitios candidatos para construir una celda. En este trabajo se concluyo que los algoritmos son similares en sus resultados en términos reales, sin embargo se encuentran algunas diferencias, el  NGSA-II y SPEA2, tienen resultados similares en cuanto al rendimiento, el algoritmo PESA generalmente obtiene ligeramente una baja calidad en el conjunto de soluciones, pero en cuanto a la velocidad de convergencia y distribución de soluciones tiene el mejor desempeño. En cuanto a SEAMO, se destaca por su simplicidad, su elegancia conceptual, su fácil implementación y su velocidad de ejecución , pero su simplicidad impide tener calidad en cuanto a la distribución de las soluciones obtenidas y en el bajo rendimiento en los factores medidos en el desarrollo del test. Para finalizar el trabajo, los autores determinaron que el algoritmo NSGA-II tiene el mejor rendimiento, siendo el que mejor se podría implementar en la planeación de celdas ya que obtuvo los mejores resultados de calidad en las soluciones obtenidas.
 
-### IEEE 802.16
+### Redes WiMAX
 
-## Redes de área Local (LAN)
 
 ## Redes BWA en zonas Rurales
-
-### IEEE 802.11
 
 _Sen_ propone la posibilidad de usar IEEE 802.11 como una opción para proporcionar conectividad a internet en zonas rurales en desarrollo permitiendoles acceso a los servicios de tecnología de información y comunicación. Las tecnologías 802.11 se  ha presentado como una opción de bajo costo y efectiva para cubrir largas distancias, ya que permite que zonas muy amplias puedan conectarse a un nodo de  línea terrestre con conectividad a internet de forma cableada (como fibra óptica) por medio de enlaces inalámbricos. Cada enlace inalámbrico corresponde a una antena en una torre instalada en cada pueblo, estos deben tener línea de vista **L.O.S.** (*line of sight*).
 
@@ -220,22 +201,22 @@ El problema de construcción de la topología se puede establecer como:
 
 “ *Teniendo en cuenta, (a) las ubicaciones (coordenadas $<x, y, z>$) de un conjunto de aldeas que se proporcionarán con conectividad de red y la de la línea terrestre que proporciona y (b) el requisito de ancho de banda específico por nodo de aldea, lo que es la topología de costo mínimo que satisface las tres restricciones: rendimiento, interferencia y potencia.* ”
 
-### Consideraciones de diseño y enfoque de solución para las variables
+### Consideraciones de diseño y enfoque de solución
 
-#### Topología de Búsqueda (TS): 
+* Topología de Búsqueda (TS): 
 
 Explorar el espacio de búsqueda para encontrar la topología de la red, se hace uso del algoritmo Branch-and-bound (Algoritmo de ramificación y límite), con ello se construye la topología de árbol.
       
-#### Asignación de altura (HA):
+* Asignación de altura (HA):
 Consiste en la altura óptima de las torres en las ubicaciones dadas una vez que se ha formado la topología, para ello se utiliza un conjunto de ecuaciones de programación lineal (LP).
 
-#### Asignación de Antena (AA):
+* Asignación de Antena (AA):
 Asignación apropiada de las antenas y sus respectivas orientaciones, se desarrolla un algoritmo heurístico de tiempo complejo polinómico.
 
-#### Asignación de Potencias (PA):
+* Asignación de Potencias (PA):
 Proporcionar las potencias de transmisión en los radios del sistema usando LP.
 
-El objetivo principal es el de reducir el mínimo costo de implementación, sabiendo que el rendimiento de la red depende del tipo de enrutamiento y del protocolo MAC implementado. Por su simplicidad se propone la topología de árbol ya que proporciona una fácil conectividad y para este caso no aborda la tolerancia a fallos, cabe resaltar que utiliza un enrutamiento fijo.
+El objetivo principal de sen es el de reducir el mínimo costo de implementación, sabiendo que el rendimiento de la red depende del tipo de enrutamiento y del protocolo MAC implementado. Por su simplicidad se propone la topología de árbol ya que proporciona una fácil conectividad y para este caso no aborda la tolerancia a fallos, cabe resaltar que utiliza un enrutamiento fijo.
 
 
 El problema radica en el hecho de que las zonas rurales tienen baja densidad de usuarios y grandes distancias entre grupos de usuarios, esto conlleva a que compañías de telecomunicaciones o proveedores de internet (ISP) vean poco atractiva la inversión en estos lugares debido al costo inicial de infraestructura y despliegue de la red y bajo retorno de su inversión. 
@@ -265,27 +246,6 @@ La falta de herramientas de software para el diseño, gestión y evaluación de 
 - Planeación de redes 
 - Administración de redes
 
-
-## Herramienta IncrEase
-
-Se desarrolla un software de código abierto IncrEase implementado como una aplicación de escritorio multiplataforma en Java. IncrEase esta basado en un GIS de software libre de la NASA World Wind Java y en una base de datos gráfica Neo4J. 
-
-Para la implementación de IncrEase se toman tres fuentes: 
-
-- Demanda de la cobertura: Posibles usuarios de zonas rurales que no tienen acceso al servicio
-- Usuarios que fallaron en la etapa de instalación: Cobertura insuficiente 
-- Reporte mesas de ayuda:  Localización de los usuarios existentes
-
-Además se obtienen otros datos de factores influyentes como la disponibilidad DSL, la cobertura de red 3G y datos demográficos. IncrEase  a través de datos en forma de arreglo bidimensional cubre regiones de interés y con ello obtiene mapas de calor (áreas de mayor beneficio por la actualización de la red). En estos mapas a mayor calor menor es la cobertura, una posible solución es la instalación de una torre a partir de una lista de torres disponibles en esa área. 
-
-### Modo de operación herramienta IncrEase
-
-Flujo de información de la herramienta 
-
-
-- IncrEase Targeted: En este modo de operación el operador selecciona una región específica de cobertura, como parte de expansión de la red
-      
-- Búsqueda Estratégica: Dónde la herramienta guía al operador para decidir el orden de despliegue de sitios de transmisión en el horizonte de corto o largo plazo basado en la rentabilidad esperada
       
 La contribución de Bernardi es potenciar el negocio de los pequeños proveedores de internet inalámbrico (WISP) en zonas rurales a través de un sistema de software, haciéndolo más eficiente reduciendo la brecha digital.
 
