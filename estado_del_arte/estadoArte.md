@@ -42,7 +42,7 @@ La planeación de redes inalámbricas es un área muy activa por la comunidad ci
 
 ### Factores clave de planeación 
 
-A continuación se detallan factores innatos claves de la planeación de redes inalámbricas.
+A continuación se detallan factores claves de la planeación de redes inalámbricas.
 
 * Costos de depliegue:
 
