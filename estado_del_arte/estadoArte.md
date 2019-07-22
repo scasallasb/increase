@@ -5,15 +5,30 @@
 
 ## Brecha Digital
 
-En el año 1995 eclosionan para la población dos tecnologías totalmente disruptivas, el internet y la telefonía móvil, ellas sugieren una nueva revolución, la llamada revolución digital, que a su vez crea la sociedad de la información(S.I), dando inicio al planteamiento sobre cómo medir y modelizar la S.I, el nivel de desarrollo digital y el impacto del desarrollo digital en el ser humano.
-
-El acceso a Internet a través de las tecnologías de la Información y las Comunicaciones (TIC) ha tenido un auge exponencial en los últimos años, sin embargo, este avance solo se ha presentado de manera significativa en países desarrollados y zonas metropolitanas de países en desarrollo [sen], es por esto, que  existen comunidades con poco o ningún acceso a las TIC y otras con acceso casi universal a telefonía fija, móvil e Internet de banda ancha, es así que resulta el concepto de Brecha Digital [maseratti]. 
-
-En relación con lo anterior, las poblaciones sin acceso a las TIC  por lo general poseen, un bajo nivel socioeconómico, viven en zonas de difícil acceso con condiciones climatológicas desfavorables e incluso con ineficiencia o inexistencia de redes eléctricas, al mismo tiempo, las personas que viven en áreas rurales sufren el efecto de la brecha digital incluso más fuerte que los habitantes urbanos, debido a que no pueden acceder a servicios como el aprendizaje a distancia, la salud y el comercio electrónico [Bernardi]. Una alternativa para disminuir el margen de diferencia entre países con acceso a las TIC son las Redes Libres comunitarias (**RLC**), entendidas no solo como redes de computadores sino como redes comunitarias implementadas en poblaciones vulnerables donde el acceso a la información es una posibilidad y no una realidad [Gordillo, 2013].[@amaldi2003]
+En el año 1995 eclosionan para la población dos tecnologías totalmente disruptivas, el internet y la telefonía móvil, ellas sugieren una nueva revolución, la llamada revolución digital, que a su vez crea la sociedad de la información(S.I), dando inicio al planteamiento sobre cómo medir y modelizar la S.I, el nivel de desarrollo digital y el impacto del desarrollo digital en el ser humano.De igual manera, el acceso a internet a través  de las Tecnologías de la información y las comunicaciones (TIC) ha tenido un auge exponencial en los últimos años, en efecto, este avance se presenta en países desarrollados o zonas metropolitanas de países en desarrollo [sen], sin embargo, existen unas comunidades con poco o ningún acceso a las TIC [maseratti] y otras con acceso casi universal a telefonía fija, móvil e Internet de banda ancha, es así que resulta el concepto de Brecha Digital entendiendose como la ausencia de una o varias dimensiones contenidas en el desarrollo digital. En relación con lo anterior, las poblaciones sin acceso a las TIC poseen un bajo nivel socioeconómico, viven en zonas de difícil acceso con condiciones climatológicas desfavorables e incluso con ineficiencia o inexistencia de redes eléctricas, al mismo tiempo, las personas que viven en áreas rurales sufren el efecto de la brecha digital incluso más fuerte que los habitantes urbanos, debido a que no pueden acceder a servicios como el aprendizaje a distancia, la salud y el comercio electrónico [Bernardi]. 
 
 
 ## Redes Libres comunitarias 
 
+Una alternativa para disminuir la brecha digital, son las redes Libres comunitarias (RLC), entendidas no solo como redes de computadores sino como redes comunitarias
+implementadas en poblaciones vulnerables donde el acceso a la información es una posibilidad y no una realidad (Gordillo, 2013).
+
+Una red libre comunitaria, es una red troncal, dividida en subconjunto de redes construidas y gestionadas de manera colectiva por la comunidad, la cual se
+involucra en la red de forma activa y participativa. Estas redes se caracterizan principalmente por ser abiertas, libres y neutrales.
+
+- son abiertas por que todo el mundo tiene el derecho a conocer la forma en que
+se construyen.
+- son libres ya que el acceso a esta red está impulsado por un principio de no
+discriminación, por lo que son de acceso universal.
+- son neutrales porque cualquier solución técnica disponible se puede emplear para ampliar la red, y porque la red se puede utilizar para trasmitir datos de
+cualquier tipo por cualquier participante, incluyendo también fines comerciales(guifi.net).
+
+Debido a que las redes comunitarias por lo general se encuentran desplegadas en áreas geográficamente separadas, se utilizan tecnologías inalámbricas como mesh y
+radioenlaces usando bandas libres como la de 2,4 GHz; Las tecnologías inalámbricas son ampliamente utilizadas en áreas rurales, ya que, por cuestiones de acceso e
+infraestructura, las tecnologías cableadas no resultan ser viables para estos casos, dando como solución las redes inalámbricas comunitarias (WCN) (flickenger. 2008).
+Además, en este tipo de redes, se emplean materiales que pueden ser adquiridos por la comunidad, y donde este autor muestra una guía detallada para realizar conexiones
+inalámbricas, que permitan conectar con un ancho de banda significativo lugares remotos y de difícil acceso, además de tener un enfoque orientado a países en
+desarrollo.
 
 
 ## Planeación de Redes Inalámbricas
