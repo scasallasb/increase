@@ -6,14 +6,14 @@ doc=estadoArte
 
 OPT= --variable=papersize:letter --variable=geometry:"margin=2cm" --variable=fontsize:12pt --variable=fontfamily=utopia --variable=documentclass=article  --number-sections --toc
 
-BIB = --filter pandoc-citeproc --bibliography=refer.bib -S
+BIB = --filter pandoc-citeproc --bibliography=refer.bib 
 
 #--variabla=lof --variable=lot 
 
 ${doc}.pdf: ${doc}.md refer.bib 
 	@echo "Haciendo documento $@"
 	#@gpp -T $< | pandoc ${OPT} -f markdown -t latex  -o $@
-	pandoc ${OPT}  ${BIB} -f markdown -t latex $< -o $@
+	pandoc ${OPT}  ${BIB} -f markdown+smart -t latex $< -o $@
 
 ${doc}.doc: ${doc}.md
 	@echo "Haciendo word $@"

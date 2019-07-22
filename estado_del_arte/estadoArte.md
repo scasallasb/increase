@@ -67,7 +67,7 @@ ancho de banda requerido para la transferencia de datos
 Aunque existen estructuras de algoritmos para solucionar problemáticas en la planeación incremental de redes inalámbricas [Whitaker] proporciona información acerca de los enfoques propuestos para el diseño de redes, que muestran la evolución de modelos y técnicas para la planificación automática de servicios inalámbricos celulares, cabe resaltar que la documentación existente hace énfasis en redes móviles, sin embargo, este concepto es aplicable para el despliegue de redes inalámbricas rurales. Dicho lo anterior, whitaker facilita la descripción de diferentes clases de algoritmos que se pueden usar para realizar la planeación automática de redes inalambricas.
 
 * **Algoritmos voraces**
-Es una estrategia de búsqueda por la cual se sigue una heurística consistente en elegir la opción óptima en cada paso local con la esperanza de llegar a una solución general óptima. El procedimiento central del algoritmo voraz apunta a asignar las mejores ubicaciones posibles a un conjunto dado de estaciones base activas.@{Amaldi,2001}
+Es una estrategia de búsqueda por la cual se sigue una heurística consistente en elegir la opción óptima en cada paso local con la esperanza de llegar a una solución general óptima. El procedimiento central del algoritmo voraz apunta a asignar las mejores ubicaciones posibles a un conjunto dado de estaciones base activas.(@amaldi2001)
 
 * **Algoritmos genéticos (GA)** 
 Estos algoritmos imitan algunos de los procesos de evolución y selección natural al mantener una población de soluciones candidatas que están representadas por una cadena de genes (con frecuencia binarios). Con el tiempo, la población evoluciona a través de procesos que emulan procesos biológicos como la reproducción. Los miembros de la población se combinan para producir descendientes. El concepto básico es que los fuertes tienden a adaptarse y sobrevivir, mientras que los débiles tienden a desaparecer. @{withaker} En la planeación de redes se utiliza la optimización de varios objetivos, estos se conoce como optimización multiobjetivo, en la que existe más de una solución óptima con respecto a todos los objetivos, entre ellos lugar de instalación de una torre, configuración de una antena, altura, etc.
@@ -81,10 +81,11 @@ La técnica meta-heurística (TS) de búsqueda de tabúes opera utilizando el pr
 ## Python y Networkx
 
 
-# ESTADO DEL ARTE {-}
+# ESTADO DEL ARTE
+
 ## Redes móviles UMTS
 
-En [Hitlarie2008], se presenta una literatura detallada de los problemas que se presentan  en la planeación de la topología celular 3G, la cual, esta basada en el Sistema universal de telecomunicaciones móviles **UMTS** (“*Universal Mobile Telecommunications System*”); para entender las dificultades que se presentan en la planeación, es importante  hacer una pequeña descripción de la arquitectura UMTS.
+En [@hilarie2008], se presenta una literatura detallada de los problemas que se presentan  en la planeación de la topología celular 3G, la cual, esta basada en el Sistema universal de telecomunicaciones móviles **UMTS** (“*Universal Mobile Telecommunications System*”); para entender las dificultades que se presentan en la planeación, es importante  hacer una pequeña descripción de la arquitectura UMTS.
 
 
 Una arquitectura típica de   UMTS se muestra en la figura (1), donde se observa que una red UMTS está dividida en dos partes: la *red de acceso* y la *red de núcleo*. La primera, es también llamada red  UMTS  de radio terrestre **UTRAN**, la cual esta compuesta por muchos  subsistemas de red de radio **RNS** (“*radio network subsystem*”). Cada RNS contiene un controlador de red de radio **RNC** (“*radio network controller*”) y una o mas estaciones bases *BS* (“*base estation*”).
@@ -110,7 +111,6 @@ La parte de los subproblemas que se necesita abordar con más detalle, son los d
 El problema inicial de planeación es cubrir todos los usuarios móviles en un 
 área determinada con el número mínimo de BSs. En la planeación de celdas se encarga de resolver los siguientes items:
 
-
 * Optimizar el número de BSs.
 * Mejor localización para instalar BSs.
 * Escoger el tipo o modelo de BSs.
@@ -118,7 +118,8 @@ El problema inicial de planeación es cubrir todos los usuarios móviles en un
 * Asignación de usuarios móviles a la BS.
 
 
-Los problemas de planeación pueden variar dependiendo en la planeación de red objetivo. Usualmente, en la planeación de red se requiere 
+Los problemas de planeación pueden variar dependiendo en la planeación de red objetivo. Usualmente, en la planeación de red se requiere:
+
 * Minimizar los costos de la red. 
 * Maximizar la calidad de la señal. 
 * Maximizar el área de cobertura. 
