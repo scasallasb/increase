@@ -12,7 +12,7 @@
 
 @Article{amaldi2003,
   author  = {Amaldi, E., Capone, A. y Malucelli, F.},
-  title   = {Planning UMTS base station location: optimization models with power control and algorithms},
+  title   = {Planning {UMTS} base station location: optimization models with power control and algorithms},
   journal = {IEEE Transactions on Wireless Communications},
   year    = {2003},
   volume  = {2},
@@ -22,8 +22,8 @@
 }
 
 @Article{amaldi2001,
-  author  = {Amaldi, E., Capone, A. & Malucelli, F.},
-  title   = {Optimizing base station siting in UMTS networks},
+  author  = {Amaldi, E., Capone, A. y Malucelli, F.},
+  title   = {Optimizing base station siting in {UMTS} networks},
   journal = {IEEE Vehicular Technology Conference (VTC),},
   year    = {2001},
   volume  = {4},
@@ -44,7 +44,7 @@
 }
 
 @Article{raisanen2005,
-  author  = {Raisanen, L. & Whitaker, R. M.},
+  author  = {Raisanen, L. y Whitaker, R. M.},
   title   = {Comparison and evaluation of multiple objective genetic algorithms for the antenna placement problem},
   journal = {Mobile Networks and Applications},
   year    = {2005},
@@ -54,7 +54,7 @@
 }
 
 @Article{sen2007,
-  author  = {Sayandeep Sen & Bhaskaran Raman},
+  author  = {Sayandeep Sen y Bhaskaran Raman},
   title   = {Long distance wireless mesh network planning: problem formulation and solution.},
   journal = {ACM Int. conference on World Wide Web (WWW)},
   year    = {2007},
@@ -62,8 +62,8 @@
   month   = Mayo,
 }
 
-@Book{flickenger2008,
-  title     = {REDES INALMBRICAS EN LOS PAISES EN DESARROLLO : Una guia practica para planificar y construir infraestructuras de telecomunicaciones de bajo costo},
+@Book{flickenger2013,
+  title     = {REDES INALMBRICAS EN LOS PAISES EN : Una guia practica para planificar y construir infraestructuras de telecomunicaciones de bajo costo},
   publisher = {Hacker Friendly LLC},
   year      = {2013},
   author    = {Flickenger,Rob (Ed.)},
@@ -74,7 +74,7 @@
 }
 
 @Article{amaldi2008,
-  author  = {Amaldi, E., Capone, A., & Malucelli, F.},
+  author  = {Amaldi, E., Capone, A., y Malucelli, F.},
   title   = {Radio planning and coverage optimization of 3G cellular networks},
   journal = {Springer Science},
   year    = {2008},
@@ -82,7 +82,7 @@
   month   = Enero,
 }
 
-@Article{bu2005,
+@Article{tian2005,
   author  = {Tian Bu; Mun Choon Chan y R. Ramjee},
   title   = {Designing wireless radio access networks for third generation cellular networks},
   journal = {Proceedings IEEE 24th Annual Joint Conference of the IEEE Computer and Communications Societies.},
@@ -92,7 +92,7 @@
 }
 
 @Article{rios2015,
-  author  = {Milton J. Ríos Rivera & Leonardo Rodríguez Mújica},
+  author  = {Milton J. Ríos Rivera y Leonardo Rodríguez Mújica},
   title   = {Solución al problema de construcción de la topología en redes rurales inalámbricas},
   journal = {IEEE Colombian Conference on Communication and Computing (IEEE COLCOM 2015)},
   year    = {2015},
@@ -210,29 +210,6 @@
   publisher = {MASERATTI: Mejora de la atención sanitaria en entornos rurales mediante aplicaciones de telemedicina sobre tecnologías inalámbricas},
   year      = {2011},
   editor    = {Alvaro Rendon Gallon, Patricia Jeanneth Ludeña Gonzales y Andres Martinez Fernandez},
-}
-
-
-@MastersThesis{sen,
-  author = {Sayandeep Sen},
-  title  = {Topology Planning for Long Distance Wireless Mesh Networks},
-  school = {Indian Institute of Technology,},
-  year   = {2006},
-}
-
-@Article{gordejuela2009,
-  author  = {Gordejuela-Sanchez, F., Juttner, A., & Zhang, J.},
-  title   = {A multiobjective optimization framework for IEEE 802.16e network design and performance analysis.},
-  journal = {Proc. of IEEE Journal on Selected Areas in Communications},
-  year    = {2009},
-}
-
-@Article{Whitaker,
-  author  = {Whitaker, R. & Hurley, S.},
-  title   = {Evolution of planning for wireless communication systems.},
-  journal = {Proc. of Annual Hawaii Int. Conference on System Sciences},
-  year    = {2003},
-  pages   = {10},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

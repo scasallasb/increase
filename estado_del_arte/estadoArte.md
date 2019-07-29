@@ -1,10 +1,6 @@
  
 
-% MARCO TEÓRICO 
 
-% Casallas - Espinel - Rodríguez 
-
- 
 
 # MARCO TEÓRICO  
 
@@ -14,7 +10,7 @@
 
  
 
-En el año 1995 eclosionan para la población dos tecnologías totalmente disruptivas, Internet y la telefonía móvil, ellas sugieren una nueva revolución, la llamada revolución digital, que a su vez crea la sociedad de la información (S.I), dando inicio al planteamiento sobre cómo medir y modelizar la S.I, el nivel de desarrollo digital y el impacto del desarrollo digital en el ser humano. De igual manera, el acceso a Internet a través de las Tecnologías de la Información y las Comunicaciones (TIC) ha tenido un auge exponencial en los últimos años, en efecto, este avance se presenta en países desarrollados o zonas metropolitanas de países en desarrollo [sen], sin embargo, existen unas comunidades con poco o ningún acceso a las TIC (@maseratti2011) y otras con acceso casi universal a telefonía fija, móvil e Internet de banda ancha, es así que resulta el concepto de Brecha Digital entendiéndose como la ausencia de una o varias dimensiones contenidas en el desarrollo digital. En relación con lo anterior, las poblaciones sin acceso a las TIC poseen un bajo nivel socioeconómico, viven en zonas de difícil acceso con condiciones climatológicas desfavorables e incluso con ineficiencia o inexistencia de redes eléctricas, al mismo tiempo, las personas que viven en áreas rurales sufren el efecto de la brecha digital incluso más fuerte que los habitantes urbanos, debido a que no pueden acceder a servicios como el aprendizaje a distancia, la salud y el comercio electrónico (@bernardi2012).
+En el año 1995 eclosionan para la población dos tecnologías totalmente disruptivas, Internet y la telefonía móvil, ellas sugieren una nueva revolución, la llamada revolución digital, que a su vez crea la sociedad de la información (S.I), dando inicio al planteamiento sobre cómo medir y modelizar la S.I, el nivel de desarrollo digital y el impacto del desarrollo digital en el ser humano. De igual manera, el acceso a Internet a través de las Tecnologías de la Información y las Comunicaciones (TIC) ha tenido un auge exponencial en los últimos años, en efecto, este avance se presenta en países desarrollados o zonas metropolitanas de países en desarrollo [@sen2007], sin embargo, existen unas comunidades con poco o ningún acceso a las TIC (@maseratti2011) y otras con acceso casi universal a telefonía fija, móvil e Internet de banda ancha, es así que resulta el concepto de Brecha Digital entendiéndose como la ausencia de una o varias dimensiones contenidas en el desarrollo digital. En relación con lo anterior, las poblaciones sin acceso a las TIC poseen un bajo nivel socioeconómico, viven en zonas de difícil acceso con condiciones climatológicas desfavorables e incluso con ineficiencia o inexistencia de redes eléctricas, al mismo tiempo, las personas que viven en áreas rurales sufren el efecto de la brecha digital incluso más fuerte que los habitantes urbanos, debido a que no pueden acceder a servicios como el aprendizaje a distancia, la salud y el comercio electrónico (@bernardi2012).
  
 
 ## Redes Libres Comunitarias  
@@ -48,9 +44,7 @@ cualquier tipo por cualquier participante, incluyendo también fines comerciales
 
 Debido a que las redes comunitarias por lo general se encuentran desplegadas en áreas geográficamente separadas, se utilizan tecnologías inalámbricas como mesh y radioenlaces usando bandas libres como la de 2,4 GHz; las tecnologías inalámbricas son ampliamente utilizadas en áreas rurales, ya que, por cuestiones de acceso e infraestructura, las tecnologías cableadas no resultan ser viables para estos casos, dando como solución las redes inalámbricas comunitarias (WCN)  en donde ya se han realizado trabajos importantes como se muestra en (@flickenger2008), cabe añadir, que este tipo de redes tienen un enfoque orientado a países en desarrollo. 
 
- 
 
- 
 
 ## Planeación de Redes Inalámbricas 
 
@@ -66,41 +60,17 @@ Una red inalámbrica es la interconexión de varios nodos entre sí mediante la 
 
 A continuación, se detallan factores claves de la planeación de redes inalámbricas. 
 
- 
+* Costos de despliegue: valor inicial de instalación de la red.
 
-* Costos de despliegue: 
+* Costos de implementación: coste del mantenimiento y funcionamiento de la red. 
 
- valor inicial de instalación de la red.
+* Expansión de la red: crecimiento de la red, abarcando más territorio. 
 
- 
+* Cobertura de la red: área geográfica que cubre la red.
 
-* Costos de implementación: 
+* Capacidad de la red: ancho de banda requerido para la transferencia de datos.
 
- coste del mantenimiento y funcionamiento de la red. 
-
- 
-
-* Expansión de la red: 
-
- crecimiento de la red, abarcando más territorio. 
-
- 
-
-* Cobertura de la red: 
-
- área geográfica que cubre la red.
-
- 
-
-* Capacidad de la red: 
-
-ancho de banda requerido para la transferencia de datos.
-
- 
-
-* Retorno de la inversión: 
-
- beneficio obtenido en relación a la inversión realizada. 
+* Retorno de la inversión: beneficio obtenido en relación a la inversión realizada. 
 
  
 
@@ -135,39 +105,34 @@ La búsqueda Tabú es un algoritmo heurístico de nivel superior para resolver p
 
  
 
-Topología se refiere a la configuración de la red, es decir, a su forma de conectividad física en la que los dispositivos intercambian datos entre sí. (https://books.google.es/books?hl=es&lr=&id=RmYvfnMKrsgC&oi=fnd&pg=PP1&dq=topolog%C3%ADa+de+redes&ots=iFmkBjNoM&sig=fBeKGo2cNkYJbpajFXnwHbKod7M#v=onepage&q&f=false) 
+Topología se refiere a la configuración de la red, es decir, a su forma de conectividad física en la que los dispositivos intercambian datos entre sí.
 
-Para diseñar la infraestructura de la topología de la red requerida, es necesario describir la topología por medio del uso de grafos ya que es a través de esta estructura de datos que se elabora el procesamiento computacional del problema (@Rios) 
-
- 
-
-    **Grafo** 
-
-Un grafo en el ámbito de las ciencias de la computación es un tipo abstracto de datos (TAD), que consiste en un conjunto de nodos (también llamados vértices) y un conjunto de arcos (aristas) que establecen relaciones entre los nodos. Formalmente se representa mediante el par {G=(V, A)}, dónde: 
+Para diseñar la infraestructura de la topología de la red requerida, es necesario describir la topología por medio del uso de grafos ya que es a través de esta estructura de datos que se elabora el procesamiento computacional del problema (@rios2015) 
 
  
 
-    {V} es un conjunto de objetos llamados vértices o nodos  
+### Grafo 
 
-    {A} es un conjunto de objetos denominados aristas o arcos  
+Un grafo en el ámbito de las ciencias de la computación es un tipo abstracto de datos (TAD), que consiste en un conjunto de nodos (también llamados vértices) y un conjunto de arcos (aristas) que establecen relaciones entre los nodos. Formalmente se representa mediante el par $G=(V, A)$, dónde: 
 
-    Las aristas representan relaciones entre los vértices, de forma que una arista es un par {(u,v)} de vértices de {V} 
+ 
+
+* $V$ es un conjunto de objetos llamados vértices o nodos.
+
+* $A$ es un conjunto de objetos denominados aristas o arcos.
+
+* Las aristas representan relaciones entre los vértices, de forma que una arista es un par $(u,v)$ de vértices de $V$. 
 
  
 
 ## Python y Networkx 
 
- 
+### Python 
 
-    **Python** 
-
- 
-
-Python es un potente lenguaje de programación que permite representaciones simples y flexibles de redes, así como expresiones claras y concisas de algoritmos de red. Python tiene un ecosistema de paquetes vibrante y en crecimiento que NetworkX utiliza para proporcionar más funciones, como el álgebra lineal numérica y el dibujo. (@ https://networkx.github.io/documentation/stable/) 
+ Python es un potente lenguaje de programación que permite representaciones simples y flexibles de redes, así como expresiones claras y concisas de algoritmos de red. Python tiene un ecosistema de paquetes vibrante y en crecimiento que NetworkX utiliza para proporcionar más funciones, como el álgebra lineal numérica y el dibujo. (@ https://networkx.github.io/documentation/stable/) 
 
  
-
-    **NetworkX** 
+## NetworkX
 
  
 
@@ -175,30 +140,23 @@ NetworkX es un paquete de Python para la creación, manipulación y estudio de l
 
 NetworkX proporciona: 
 
-    herramientas para el estudio de la estructura y dinámica de redes sociales, biológicas y de infraestructura;  
+* Herramientas para el estudio de la estructura y dinámica de redes sociales, biológicas y de infraestructura;  
 
-    una interfaz de programación estándar e implementación de gráficos que es adecuada para muchas aplicaciones;  
+* Una interfaz de programación estándar e implementación de gráficos que es adecuada para muchas aplicaciones;  
 
-    un entorno de rápido desarrollo para proyectos colaborativos, multidisciplinarios;  
+* Un entorno de rápido desarrollo para proyectos colaborativos, multidisciplinarios;  
 
-    una interfaz para los algoritmos numéricos existentes y el código escrito en C, C ++ y FORTRAN; 
+* Una interfaz para los algoritmos numéricos existentes y el código escrito en C, C ++ y FORTRAN; 
 
-    la capacidad de trabajar con grandes conjuntos de datos no estándar.  
-
- 
-
- NetworkX permite cargar y almacenar redes en formatos de datos estándar y no estándar, generar muchos tipos de redes aleatorias y clásicas, analizar la estructura de la red, construir modelos de red, diseñar nuevos algoritmos de red, dibujar redes entre otros. (@ https://networkx.github.io/documentation/stable/). 
+* La capacidad de trabajar con grandes conjuntos de datos no estándar.  
 
  
+NetworkX permite cargar y almacenar redes en formatos de datos estándar y no estándar, generar muchos tipos de redes aleatorias y clásicas, analizar la estructura de la red, construir modelos de red, diseñar nuevos algoritmos de red, dibujar redes entre otros. (@ https://networkx.github.io/documentation/stable/). 
 
- 
 
 # ESTADO DEL ARTE 
 
- 
-
 ## Planeación de redes móviles UMTS   
-
  
 
 En [@hilarie2008], se presenta una literatura detallada de los problemas que se presentan en la planeación de la topología celular 3G, la cual está basada en el Sistema universal de telecomunicaciones móviles **UMTS** (“*Universal Mobile Telecommunications System*”); para entender las dificultades que se presentan en la planeación, es importante hacer una pequeña descripción de la arquitectura UMTS. 
@@ -243,9 +201,7 @@ La parte de los subproblemas que se necesita abordar con más detalle, son los d
 
  
 
-El problema inicial de planeación es cubrir todos los usuarios móviles en un  
-
-área determinada con el número mínimo de BSs. En la planeación de celdas se encarga de resolver los siguientes ítems: 
+El problema inicial de planeación es cubrir todos los usuarios móviles en un área determinada con el número mínimo de BSs. En la planeación de celdas se encarga de resolver los siguientes ítems: 
 
  
 
@@ -268,7 +224,7 @@ Los problemas de planeación pueden variar dependiendo en la planeación de red 
 * Maximizar el área de cobertura. 
  
 
-Sin embargo, esto puede ser contradictorio, ya que, por ejemplo, si se quiere maximizar la cobertura se necesitarán desplegar más BSs y esto por supuesto, aumentara los costos. Al principio la planeación de redes inalámbricas se realizaba teniendo en cuenta la predicción de la señal, sin embargo, en las redes UMTS, la planeación de radio no puede ser solo basado en la predicción de la señal, sino que se deben tener en cuenta la distribución de tráfico. En esta parte aparece gran cantidad de literatura del autor Amaldi, en [@amaldi2003], el autor contextualiza que en la planeación de radio en el Sistema Global para las Comunicaciones Móviles GSM (“Global System for Mobile communications”) se realizaba en dos fases, la fase de planeación de cobertura donde se define la mejor localización de las BSs teniendo en cuenta los modelos de propagación y la fase de planeación de frecuencia, que define el número de canales para cada BS teniendo en cuenta la calidad de la señal de interferencia de radio SIR (“Signal-to-Interference Ratio”). 
+Sin embargo, esto puede ser contradictorio, ya que, por ejemplo, si se quiere maximizar la cobertura se necesitarán desplegar más BSs y esto por supuesto, aumentara los costos. Al principio, la planeación de redes inalámbricas se realizaba teniendo en cuenta la predicción de la señal, sin embargo, en las redes UMTS, la planeación de radio no puede ser solo basado en la predicción de la señal, sino que se deben tener en cuenta la distribución de tráfico. En esta parte aparece gran cantidad de literatura del autor Amaldi, en [@amaldi2003], el autor contextualiza que en la planeación de radio en el Sistema Global para las Comunicaciones Móviles GSM (“Global System for Mobile communications”) se realizaba en dos fases, la fase de planeación de cobertura donde se define la mejor localización de las BSs teniendo en cuenta los modelos de propagación y la fase de planeación de frecuencia, que define el número de canales para cada BS teniendo en cuenta la calidad de la señal de interferencia de radio SIR (“Signal-to-Interference Ratio”). 
  
 
 Sin embargo, teniendo en cuenta el Acceso Múltiple por División de Código de Banda Ancha W-CDMA (“*Wideband Code Division Multiple Access*”), esto ya no se puede realizar en estas dos fases, debido a que el ancho de banda es compartido por todas las conexiones activas y no por la frecuencia asignada, así como también el área de cobertura de cada BS es afectada por la cantidad de tráfico.  
@@ -282,7 +238,7 @@ En la planeación de redes, a menudo se utiliza la optimización de varios objet
 
  
 
-Como se ha visto anteriormente, en la planeación se pueden abordar diferentes objetivos (lugar de instalación de BS, configuración, altura, potencia, etc.), sin embargo, al momento de planificar la red, atacar todos los problemas al tiempo es un problema complejo, por esto, se han venido implementando algoritmos multiobjetivo, generalmente para estos casos se han venido desarrollando algoritmos genéticos **AG**, en el trabajo de (@raisanen2005), los autores recolectan cuatro estados del arte de algoritmos genéticos multiobjetivo, donde  los ponen a prueba para planificar una red aumentando la cobertura teniendo en cuenta los costos  y los comparan teniendo en cuenta su desempeño en ciertas pruebas sintetizadas; los autores toman como referencia los algoritmos: **SPEA2**, **NSGAII**, **PGSA** y **SEAMO**. A continuación, se hará una breve descripción de cada uno.  
+Como se ha visto anteriormente, en la planeación se pueden abordar diferentes objetivos (lugar de instalación de BS, configuración, altura, potencia, etc.), sin embargo, al momento de planificar la red, atacar todos los problemas al tiempo es un problema complejo, por esto, se han venido implementando algoritmos multiobjetivo, generalmente para estos casos se han venido desarrollando algoritmos genéticos AG, en el trabajo de (@raisanen2005), los autores recolectan cuatro estados del arte de algoritmos genéticos multiobjetivo, donde  los ponen a prueba para planificar una red aumentando la cobertura teniendo en cuenta los costos  y los comparan teniendo en cuenta su desempeño en ciertas pruebas sintetizadas; los autores toman como referencia los algoritmos: **SPEA2**, **NSGAII**, **PGSA** y **SEAMO**. A continuación, se hará una breve descripción de cada uno.  
 
  
 
@@ -290,7 +246,7 @@ Como se ha visto anteriormente, en la planeación se pueden abordar diferentes o
 
  
 
-La población inicial es sometida a una función de adecuación (“Fitness Function”), donde se escoge el valor individual más apto o el más “*fit*” de la unión del archivo y la población hija. El valor de la función de adecuación está dado por la suma de dos partes: cuantas soluciones domina (*raw fitness*) y la *densidad estimada*, el cual es la proximidad de otras soluciones en el espacio objetivo. Cada generación $n$ es guardada en el archivo, en donde es de nuevo aplicado el operador a la nueva generación; Este proceso se repite hasta terminar el proceso. 
+La población inicial es sometida a una función de adecuación (“Fitness Function”), donde se escoge el valor individual más apto o el más “*fit*” de la unión del archivo y la población hija. El valor de la función de adecuación está dado por la suma de dos partes: cuantas soluciones domina (“*raw fitness*”) y la *densidad estimada*, el cual es la proximidad de otras soluciones en el espacio objetivo. Cada generación $n$ es guardada en el archivo, en donde es de nuevo aplicado el operador a la nueva generación; Este proceso se repite hasta terminar el proceso. 
 
  
 
@@ -316,27 +272,16 @@ A diferencia de los dos algoritmos anteriores, el *PESA* no tiene un tamaño de 
 
 La principal diferencia entre SEAMO y otro algoritmo, es que este es de estado estable y solo mantiene una población (de un tamaño constante $n$). La principal ventaja del algoritmo SEAMO es su simplicidad, el cual usa la disposición de todos los mecanismos de selección basado en fitness o rango. El avance de la búsqueda está definido por tres simples reglas: 
 
- 
-
 * los padres solo son remplazados por su propia descendencia. 
-
- 
 
 * Las poblaciones duplicadas son eliminadas. 
 
- 
-
 * La descendencia solo puede reemplazar a los padres si es superior: elitismo. 
-
  
 
 Los operadores genéticos se aplican a cada padre para formar un nuevo hijo, que se considera para la sustitución en la población de padres según las tres reglas. Este proceso se repite hasta la terminación. 
 
- 
-
- 
-
-El aspecto clave de este marco es un decodificador que utiliza un orden de ubicaciones de sitios candidatos para construir una celda. En este trabajo se concluyó que los algoritmos son similares en sus resultados en términos reales, sin embargo, se encuentran algunas diferencias, el NGSA-II y SPEA2, tienen resultados similares en cuanto al rendimiento, el algoritmo PESA generalmente obtiene ligeramente una baja calidad en el conjunto de soluciones, pero en cuanto a la velocidad de convergencia y distribución de soluciones tiene el mejor desempeño. En cuanto a SEAMO, se destaca por su simplicidad, su elegancia conceptual, su fácil implementación y su velocidad de ejecución, pero su simplicidad impide tener calidad en cuanto a la distribución de las soluciones obtenidas y en el bajo rendimiento en los factores medidos en el desarrollo del test. Para finalizar el trabajo, los autores determinaron que el algoritmo NSGA-II tiene el mejor rendimiento, siendo el que mejor se podría implementar en la planeación de celdas ya que obtuvo los mejores resultados de calidad en las soluciones obtenidas. 
+El aspecto clave de este marco es un decodificador que utiliza un orden de ubicaciones de sitios candidatos para construir una celda. En este trabajo se concluyó que los algoritmos son similares en sus resultados en términos reales, sin embargo, se encuentran algunas diferencias, el **NGSA-II** y **SPEA2**, tienen resultados similares en cuanto al rendimiento, el algoritmo **PESA** generalmente obtiene ligeramente una baja calidad en el conjunto de soluciones, pero en cuanto a la velocidad de convergencia y distribución de soluciones tiene el mejor desempeño. En cuanto a **SEAMO**, se destaca por su simplicidad, su elegancia conceptual, su fácil implementación y su velocidad de ejecución, pero su simplicidad impide tener calidad en cuanto a la distribución de las soluciones obtenidas y en el bajo rendimiento en los factores medidos en el desarrollo del test. Para finalizar el trabajo, los autores determinaron que el algoritmo **NSGA-II** tiene el mejor rendimiento, siendo el que mejor se podría implementar en la planeación de celdas ya que obtuvo los mejores resultados de calidad en las soluciones obtenidas. 
 
  
 
@@ -344,7 +289,7 @@ El aspecto clave de este marco es un decodificador que utiliza un orden de ubica
 
  
 
-En la planeación de celda, se han realizado trabajos con la tecnología 802.16e o WiMax; el autor (@gordejuela), presenta un marco de referencia de optimización multiobjetivo que resuelve uno de los principales problemas dentro del diseño inicial de redes de acceso móvil, el cual es encontrar el mejor sitio de instalación de BSs dentro de un conjunto de lugares posibles. 
+En la planeación de celda, se han realizado trabajos con la tecnología 802.16e o WiMax; el autor (@gordejuela2009), presenta un marco de referencia de optimización multiobjetivo que resuelve uno de los principales problemas dentro del diseño inicial de redes de acceso móvil, el cual es encontrar el mejor sitio de instalación de BSs dentro de un conjunto de lugares posibles. 
 
  
 
@@ -352,19 +297,19 @@ La forma en que le autor trabaja la planeación de la red, consiste en que prime
 
  
 
-    * Aérea de cobertura. 
+* Aérea de cobertura. 
 
-    * Interferencia. 
+* Interferencia. 
 
-    * Rendimiento. 
+* Rendimiento. 
 
-    * Rentabilidad de la operación de la red. 
+* Rentabilidad de la operación de la red. 
 
-    * Equipamiento y otros costos. 
+* Equipamiento y otros costos. 
 
  
 
-La función de costos está dividida en dos partes, una consiste en una función que tiene en cuenta los parámetros técnicos de rendimiento que debe tener la red, como lo son penalizada con diferentes parámetros de requerimientos que debe tener la red como son ancho de banda para establecer videoconferencias, Voz IP, servicios en la red, etc. Calidad de servicios QoS que deben tener los usuarios, entre otros.  La otra función de costos está contemplada por todos los parámetros de rentabilidad que debe tener la red, para que la solución sea adecuada para los proveedores de internet, en esta se tiene en cuenta la rentabilidad de la red menos los costos de funcionamiento.  
+La función de costos está dividida en dos partes, una consiste en una función que tiene en cuenta los parámetros técnicos de rendimiento que debe tener la red, como lo son penalizada con diferentes parámetros de requerimientos que debe tener la red como son ancho de banda para establecer videoconferencias, Voz IP, servicios en la red, etc. Calidad de servicios QoS que deben tener los usuarios, entre otros.  La otra función de costos está contemplada por todos los parámetros de rentabilidad que debe tener la red, para que la solución sea adecuada para los proveedores de internet, en esta se tiene en cuenta la rentabilidad de la red menos los costos de funcionamiento. 
 
  
 
@@ -379,10 +324,10 @@ En el trabajo de *Gordejuela*, se realizó la implementación de este marco de r
 ## Redes BWA en zonas Rurales 
 
  
-Con el objetivo de reducir la brecha digital, autores [@bernardi, @maseratti, @sen] han propuesto como solución la planeación y despliegue de redes de banda ancha inalámbrica en zonas rurales. 
+Con el objetivo de reducir la brecha digital, autores [@bernardi2012],[@maseratti2011],[@sen] han propuesto como solución la planeación y despliegue de redes de banda ancha inalámbrica en zonas rurales. 
 
  
-El autor *sen* se enfoca específicamente en la planeación de redes de banda ancha en áreas rurales, en su tesis [@sen] trabaja sobre una red desplegada en un distrito ubicado en la India, un país donde la mayoría de la población vive en áreas rurales (66% según el Banco Mundial) y está en el lado equivocado de la brecha digital, esto se resuelve dando conectividad a todas las aldeas y pueblos. Lograr esto expandiendo la actual red de telefónica corriente en zonas rurales es infactible teniendo en cuenta los costos elevados de la instalación de la infraestructura inicial, sin embargo, este caso no ocurre en la telefonía móvil, donde la demanda de usuarios es más densa y por ende se considera un modelo de negocio, puesto que se retribuye la inversión teniendo en cuenta la cantidad de usuarios dispuestos a pagar por este servicio. Por consiguiente, el autor propone la planeación de la topología de una red inalámbrica con el uso de la tecnología 802.11, puesto que es permite una buena solución teniendo en cuenta su gran aceptabilidad, principalmente por su bajo costo. Por ende, esta tecnología se ha presentado como una opción de economica y efectiva para cubrir largas distancias, ya que permite que zonas muy amplias puedan conectarse a un nodo de línea terrestre con conectividad a Internet de forma cableada (como fibra óptica) por medio de enlaces inalámbricos. Cada enlace inalámbrico corresponde a una antena en una torre instalada en cada pueblo, los cuales deben tener línea de vista **L.O.S.** (*line of sight*). 
+El autor *sen* se enfoca específicamente en la planeación de redes de banda ancha en áreas rurales, en su tesis [@sen] trabaja sobre una red desplegada en un distrito ubicado en la India, un país donde la mayoría de la población vive en áreas rurales (66% según el Banco Mundial) y está en el lado equivocado de la brecha digital, esto se resuelve dando conectividad a todas las aldeas y pueblos. Lograr esto expandiendo la red actual de telefónica corriente en zonas rurales es infactible teniendo en cuenta los costos elevados de la instalación de la infraestructura inicial, sin embargo, este caso no ocurre en la telefonía móvil, donde la demanda de usuarios es más densa y por ende se considera un modelo de negocio, puesto que se retribuye la inversión teniendo en cuenta la cantidad de usuarios dispuestos a pagar por este servicio. Por consiguiente, el autor propone la planeación de la topología de una red inalámbrica con el uso de la tecnología 802.11, puesto que es permite una buena solución teniendo en cuenta su gran aceptabilidad, principalmente por su bajo costo. Por ende, esta tecnología se ha presentado como una opción de economica y efectiva para cubrir largas distancias, ya que permite que zonas muy amplias puedan conectarse a un nodo de línea terrestre con conectividad a Internet de forma cableada (como fibra óptica) por medio de enlaces inalámbricos. Cada enlace inalámbrico corresponde a una antena en una torre instalada en cada pueblo, los cuales deben tener línea de vista *L.O.S.* (*line of sight*). 
  
 
 Para la formulación en la construcción de una topología que permita el rendimiento de la red, se estipulan de tres principales restricciones: 
@@ -422,8 +367,8 @@ Según *Bernardi*, en las últimas décadas se ha incrementado la conectividad d
 
 El Internet satelital se podría decir que es una alternativa de conexión, puesto que está disponible prácticamente en cualquier parte y es frecuentemente subsidiada en áreas remotas incomunicadas, sin embargo, también tiene latencia de tiempo de ida y vuelta muy altos, lo cual lo hace inadecuado para aplicaciones que consuman un ancho de banda considerable, como es el caso de una videollamada (skape). 
 
-Pero Bernardi expone el Despliegue de una red Rural de Banda Ancha (BWA) argumentando que la planeación ad-hoc no es una alternativa de diseño eficiente para este tipo de redes, sin embargo, refiere que la industria ofrece software para planeamiento de redes inalámbricas pero estos no están disponibles ni son adecuados para comunicar pequeñas comunidades y pequeños proveedores de servicio de Internet inalámbrico (WISP) ; cabe resaltar que las BWA usan un modelo de dos niveles, consistiendo en radioenlace Punto Multipunto (PMP) y Punto a Punto (PTP), el primero enlazando la Antena de la torre a los diferentes clientes y el segundo correspondiente al Backhaul.
-A través del planeamiento de red incremental Bernardi  desarrolla un software denominado IncrEase cuyo enfoque es identificar la estrategia de despliegue más económica para planear la red teniendo en cuenta que los CPE (customer Premises Equipment) son la opción más rentable para llegar a la población en zonas rurales. 
+Pero *Bernardi* expone el despliegue de una red Rural de Banda Ancha (BWA) argumentando que la planeación ad-hoc no es una alternativa de diseño eficiente para este tipo de redes, sin embargo, refiere que la industria ofrece software para planeamiento de redes inalámbricas pero estos no están disponibles ni son adecuados para comunicar pequeñas comunidades y pequeños proveedores de servicio de Internet inalámbrico (WISP) ; cabe resaltar que las BWA usan un modelo de dos niveles, consistiendo en radioenlace Punto Multipunto (PMP) y Punto a Punto (PTP), el primero enlazando la Antena de la torre a los diferentes clientes y el segundo correspondiente al Backhaul.
+A través del planeamiento de red incremental *Bernardi*  desarrolla un software denominado IncrEase cuyo enfoque es identificar la estrategia de despliegue más económica para planear la red teniendo en cuenta que los CPE (customer Premises Equipment) son la opción más rentable para llegar a la población en zonas rurales. 
 
 Los proveedores de servicio de Internet inalámbrico implementan una metodología de diseño para operar en escenarios rurales obteniendo remuneración de su inversión, este consiste en planificar su crecimiento ampliando su cobertura, tomando variables como:
 
@@ -447,7 +392,7 @@ La falta de herramientas de software para el diseño, gestión y evaluación de 
 La contribución de Bernardi es potenciar el negocio de los pequeños proveedores de Internet inalámbrico (WISP) en zonas rurales a través de un sistema de software, haciéndolo más eficiente reduciendo la brecha digital.
 
 
-A nivel local, [Rios] propone una solución de construcción de topología en redes rurales inalámbricas en la región del sumapaz-Colombia. Dentro de este contexto y al igual que sen, bernardi, maserati, expone que el principal desafío es el costo que conlleva establecer redes en zonas rurales, haciendo especial enfásis en el costo de construcción de las torres que soportan las antenas, debido a que es el costo más grande en comparación con los atribuidos a los equipos de comunicación. Presenta los siguientes referentes:
+A nivel local, [@rios2015] propone una solución de construcción de topología en redes rurales inalámbricas en la región del sumapaz-Colombia. Dentro de este contexto y al igual que sen, bernardi, maserati, expone que el principal desafío es el costo que conlleva establecer redes en zonas rurales, haciendo especial enfásis en el costo de construcción de las torres que soportan las antenas, debido a que es el costo más grande en comparación con los atribuidos a los equipos de comunicación. Presenta los siguientes referentes:
 
 ### Construcción de redes
 
