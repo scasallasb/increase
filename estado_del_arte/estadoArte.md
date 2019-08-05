@@ -129,7 +129,7 @@ Un grafo en el ámbito de las ciencias de la computación es un tipo abstracto d
 
 ### Python 
 
- Python es un potente lenguaje de programación que permite representaciones simples y flexibles de redes, así como expresiones claras y concisas de algoritmos de red. Python tiene un ecosistema de paquetes vibrante y en crecimiento que NetworkX utiliza para proporcionar más funciones, como el álgebra lineal numérica y el dibujo. (@ https://networkx.github.io/documentation/stable/) 
+ Python es un potente lenguaje de programación que permite representaciones simples y flexibles de redes, así como expresiones claras y concisas de algoritmos de red. Python tiene un ecosistema de paquetes vibrante y en crecimiento que NetworkX utiliza para proporcionar más funciones, como el álgebra lineal numérica y el dibujo. (@NetworkX2019) 
 
  
 ## NetworkX
@@ -151,7 +151,7 @@ NetworkX proporciona:
 * La capacidad de trabajar con grandes conjuntos de datos no estándar.  
 
  
-NetworkX permite cargar y almacenar redes en formatos de datos estándar y no estándar, generar muchos tipos de redes aleatorias y clásicas, analizar la estructura de la red, construir modelos de red, diseñar nuevos algoritmos de red, dibujar redes entre otros. (@ https://networkx.github.io/documentation/stable/). 
+NetworkX permite cargar y almacenar redes en formatos de datos estándar y no estándar, generar muchos tipos de redes aleatorias y clásicas, analizar la estructura de la red, construir modelos de red, diseñar nuevos algoritmos de red, dibujar redes entre otros. (@NetworkX2019). 
 
 
 # ESTADO DEL ARTE 
