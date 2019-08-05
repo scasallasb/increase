@@ -169,10 +169,7 @@ def rtyy(hj):
     nx.draw_shell(T)
     plt.show()'''
     return costo,costo1
-## Docstring
-## código fuente numpy: numpy
-## ipython
-## numpy Docstring format
+
 def datos(nmin, nmax, taz, nvec):
     data=[]
     Tda=[]

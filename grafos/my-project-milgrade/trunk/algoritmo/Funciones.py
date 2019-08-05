@@ -4,6 +4,19 @@ import scipy as sc
 import matplotlib.pyplot as plt
 import networkx as nx
 
+
+"""
+        funciones
+
+
+
+
+
+"""
+
+
+
+
 K,A,B,hmax,hmin=1,2.0,10,30,15
 inf=m.factorial(20)
 def c(h):
@@ -11,13 +24,13 @@ def c(h):
         costo=K*h
      else:
         costo=(A*h)+B
-     return costo  
+     return costo
 def c_1(ci):
      if ci > (c(hmin)):
          l=(ci-B)/A
      else:
          l=ci
-     return l 
+     return l
 def beta(h,u,n1,n2,d):
      try:
          aux=(2.0*(u[(n1,n2)]))
@@ -65,9 +78,9 @@ def nbrfun(G,COVERh,n,d):
                      break
                  except (IndexError):
                      pass
-                 u = L.index(ri[j]) 
+                 u = L.index(ri[j])
      return r, L
- 
+
 def test():
     assert(c)
     assert(c_1)

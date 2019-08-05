@@ -9,19 +9,18 @@ BIB = --filter pandoc-citeproc --bibliography=refer.bib
 
 #--variabla=lof --variable=lot 
 
+
+
 ${doc}.pdf: ${doc}.md refer.bib dependencias.pdf UMTS.pdf
 	@echo "Haciendo documento $@"
 	#@gpp -T $< | pandoc ${OPT} -f markdown -t latex  -o $@
 	pandoc ${OPT}  ${BIB} -f markdown -t latex $< -o $@
 
-${doc}.doc: ${doc}.md
-	@echo "Haciendo word $@"
-	@gpp -T $< | pandoc ${OPT} -f markdown  -o $@
-	#pandoc ${OPT} -f markdown $< -o $@
 
 
 dependencias.pdf: dependencias.svg
 	inkscape -D -A dependencias.pdf dependencias.svg
+	
 	
 UMTS.pdf: UMTS.svg
 	inkscape -D -A UMTS.pdf UMTS.svg
