@@ -80,7 +80,7 @@ A continuación, se detallan factores claves de la planeación de redes inalámb
 
  
 
-Aunque existen estructuras de algoritmos para solucionar problemáticas en la planeación incremental de redes inalámbricas [@Whitaker] proporciona información acerca de los enfoques propuestos para el diseño de redes, que muestran la evolución de modelos y técnicas para la planificación automática de servicios inalámbricos celulares, cabe resaltar que la documentación existente hace énfasis en redes móviles, sin embargo, este concepto es aplicable para el despliegue de redes inalámbricas rurales. Dicho lo anterior, whitaker facilita la descripción de diferentes clases de algoritmos que se pueden usar para realizar la planeación automática de redes inalámbricas. 
+Aunque existen estructuras de algoritmos para solucionar problemáticas en la planeación incremental de redes inalámbricas [@Whitaker] proporciona información acerca de los enfoques propuestos para el diseño de redes, que muestran la evolución de modelos y técnicas para la planificación automática de servicios inalámbricos celulares, cabe resaltar que la documentación existente hace énfasis en redes móviles, sin embargo, este concepto es aplicable para el despliegue de redes inalámbricas rurales. Dicho lo anterior, *Whitaker* facilita la descripción de diferentes clases de algoritmos que se pueden usar para realizar la planeación de redes inalámbricas. 
 
  
 
@@ -94,10 +94,11 @@ Es una estrategia de búsqueda por la cual se sigue una heurística consistente 
 Estos algoritmos imitan algunos de los procesos de evolución y selección natural al mantener una población de soluciones candidatas que están representadas por una cadena de genes (con frecuencia binarios). Con el tiempo, la población evoluciona a través de procesos que emulan procesos biológicos como la reproducción. Los miembros de la población se combinan para producir descendientes. El concepto básico es que los fuertes tienden a adaptarse y sobrevivir, mientras que los débiles tienden a desaparecer. En la planeación de redes se utiliza la optimización de varios objetivos, estos se conocen como optimización multiobjetivo, en la que existe más de una solución óptima con respecto a todos los objetivos, entre ellos lugar de instalación de una torre, configuración de una antena, altura, etc. 
 
  
+ <!-- cambiar de definición-->
 
-* **Búsqueda Tabú (TS)** 
+* **Búsqueda tabú (TS)** 
 
-La búsqueda Tabú es un algoritmo heurístico de nivel superior para resolver problemas de optimización combinatoria.  Es un procedimiento de mejora iterativo que comienza a partir de cualquier solución inicial y trata de determinar una mejor solución. TS (por sus siglas en inglés) se caracteriza por su capacidad para evitar el atrapamiento en la solución óptima local y para evitar los ciclos utiliza una memoria visible del historial de búsqueda. Normalmente, el algoritmo TS comienza sin conocer la solución correcta, dependiendo completamente de las respuestas del entorno que interactúa para llegar a la solución óptima (@ABIDO). Este algoritmo permite encontrar una ubicación de las torres en la fase de planeación para lograr un óptimo rendimiento de la red. 
+La búsqueda tabú es un algoritmo heurístico de nivel superior para resolver problemas de optimización combinatoria.  Es un procedimiento de mejora iterativo que comienza a partir de cualquier solución inicial y trata de determinar una mejor solución. TS (por sus siglas en inglés *tabu search*) se caracteriza por su capacidad para evitar el atrapamiento en la solución óptima local y para evitar los ciclos utiliza una memoria visible del historial de búsqueda. Normalmente, el algoritmo TS comienza sin conocer la solución correcta, dependiendo completamente de las respuestas del entorno que interactúa para llegar a la solución óptima (@ABIDO). Este algoritmo permite encontrar una ubicación de las torres en la fase de planeación para lograr un óptimo rendimiento de la red. 
 
  
 
@@ -125,14 +126,14 @@ Un grafo en el ámbito de las ciencias de la computación es un tipo abstracto d
 
  
 
-## Python y Networkx 
+## Herramientas para trabajar teoría de grafos 
 
 ### Python 
 
  Python es un potente lenguaje de programación que permite representaciones simples y flexibles de redes, así como expresiones claras y concisas de algoritmos de red. Python tiene un ecosistema de paquetes vibrante y en crecimiento que NetworkX utiliza para proporcionar más funciones, como el álgebra lineal numérica y el dibujo. (@ https://networkx.github.io/documentation/stable/) 
 
  
-## NetworkX
+### NetworkX
 
  
 
@@ -224,7 +225,7 @@ Los problemas de planeación pueden variar dependiendo en la planeación de red 
 * Maximizar el área de cobertura. 
  
 
-Sin embargo, esto puede ser contradictorio, ya que, por ejemplo, si se quiere maximizar la cobertura se necesitarán desplegar más BSs y esto por supuesto, aumentara los costos. Al principio, la planeación de redes inalámbricas se realizaba teniendo en cuenta la predicción de la señal, sin embargo, en las redes UMTS, la planeación de radio no puede ser solo basado en la predicción de la señal, sino que se deben tener en cuenta la distribución de tráfico. En esta parte aparece gran cantidad de literatura del autor Amaldi, en [@amaldi2003], el autor contextualiza que en la planeación de radio en el Sistema Global para las Comunicaciones Móviles GSM (“Global System for Mobile communications”) se realizaba en dos fases, la fase de planeación de cobertura donde se define la mejor localización de las BSs teniendo en cuenta los modelos de propagación y la fase de planeación de frecuencia, que define el número de canales para cada BS teniendo en cuenta la calidad de la señal de interferencia de radio SIR (“Signal-to-Interference Ratio”). 
+Sin embargo, esto puede ser contradictorio, ya que, por ejemplo, si se quiere maximizar la cobertura se necesitarán desplegar más BSs y esto por supuesto, aumentara los costos. Al principio, la planeación de redes inalámbricas se realizaba teniendo en cuenta la predicción de la señal, sin embargo, en las redes UMTS, la planeación de radio no puede ser solo basado en la predicción de la señal, sino que se deben tener en cuenta la distribución de tráfico. En esta parte aparece gran cantidad de literatura del autor Amaldi, en [@amaldi2003], el autor contextualiza que en la planeación de radio en el Sistema Global para las Comunicaciones Móviles GSM (“*Global System for Mobile communications*”) se realizaba en dos fases, la fase de planeación de cobertura donde se define la mejor localización de las BSs teniendo en cuenta los modelos de propagación y la fase de planeación de frecuencia, que define el número de canales para cada BS teniendo en cuenta la calidad de la señal de interferencia de radio SIR (“*Signal-to-Interference Ratio*”). 
  
 
 Sin embargo, teniendo en cuenta el Acceso Múltiple por División de Código de Banda Ancha W-CDMA (“*Wideband Code Division Multiple Access*”), esto ya no se puede realizar en estas dos fases, debido a que el ancho de banda es compartido por todas las conexiones activas y no por la frecuencia asignada, así como también el área de cobertura de cada BS es afectada por la cantidad de tráfico.  
@@ -327,9 +328,15 @@ En el trabajo de *Gordejuela*, se realizó la implementación de este marco de r
 Con el objetivo de reducir la brecha digital, autores [@bernardi2012],[@maseratti2011],[@sen] han propuesto como solución la planeación y despliegue de redes de banda ancha inalámbrica en zonas rurales. 
 
  
-El autor *sen* se enfoca específicamente en la planeación de redes de banda ancha en áreas rurales, en su tesis [@sen] trabaja sobre una red desplegada en un distrito ubicado en la India, un país donde la mayoría de la población vive en áreas rurales (66% según el Banco Mundial) y está en el lado equivocado de la brecha digital, esto se resuelve dando conectividad a todas las aldeas y pueblos. Lograr esto expandiendo la red actual de telefónica corriente en zonas rurales es infactible teniendo en cuenta los costos elevados de la instalación de la infraestructura inicial, sin embargo, este caso no ocurre en la telefonía móvil, donde la demanda de usuarios es más densa y por ende se considera un modelo de negocio, puesto que se retribuye la inversión teniendo en cuenta la cantidad de usuarios dispuestos a pagar por este servicio. Por consiguiente, el autor propone la planeación de la topología de una red inalámbrica con el uso de la tecnología 802.11, puesto que es permite una buena solución teniendo en cuenta su gran aceptabilidad, principalmente por su bajo costo. Por ende, esta tecnología se ha presentado como una opción de economica y efectiva para cubrir largas distancias, ya que permite que zonas muy amplias puedan conectarse a un nodo de línea terrestre con conectividad a Internet de forma cableada (como fibra óptica) por medio de enlaces inalámbricos. Cada enlace inalámbrico corresponde a una antena en una torre instalada en cada pueblo, los cuales deben tener línea de vista *L.O.S.* (*line of sight*). 
- 
+El autor *Sen* se enfoca específicamente en la planeación de redes de banda ancha en áreas rurales, en su tesis [@sen] trabaja sobre una red desplegada en un distrito ubicado en la India, un país donde la mayoría de la población vive en áreas rurales (66% según el Banco Mundial) y está en el lado equivocado de la brecha digital, esto se resuelve dando conectividad a todas las aldeas y pueblos. Lograr esto expandiendo la red actual de telefónica corriente en zonas rurales no es factible teniendo en cuenta los costos elevados de la instalación de la infraestructura inicial, sin embargo, este caso no ocurre en la telefonía móvil, donde la demanda de usuarios es más densa y por ende se considera un modelo de negocio, puesto que se retribuye la inversión teniendo en cuenta la cantidad de usuarios dispuestos a pagar por este servicio.
 
+
+El problema radica en el hecho de que las zonas rurales tienen baja densidad de usuarios y grandes distancias entre grupos de usuarios, esto conlleva a que compañías de telecomunicaciones o proveedores de Internet (ISP) vean poco atractiva la inversión en estos lugares debido al costo inicial de infraestructura y despliegue de la red y bajo retorno de su inversión. 
+
+
+Por consiguiente, el autor propone la planeación de la topología de una red inalámbrica con el uso de la tecnología 802.11, puesto que permite una buena solución teniendo en cuenta su gran aceptabilidad, principalmente por su bajo costo. Por ende, esta tecnología se ha presentado como una opción de económica y efectiva para cubrir largas distancias, ya que permite que zonas muy amplias puedan conectarse a un nodo de línea terrestre con conectividad a Internet de forma cableada (como fibra óptica) por medio de enlaces inalámbricos. Cada enlace inalámbrico corresponde a una antena en una torre instalada en cada pueblación, los cuales deben tener línea de vista *L.O.S.* (*Line Of Sight*). 
+ 
+ 
 Para la formulación en la construcción de una topología que permita el rendimiento de la red, se estipulan de tres principales restricciones: 
 
  
@@ -340,7 +347,37 @@ Para la formulación en la construcción de una topología que permita el rendim
 
 3. Restricción de interferencia: La señal recibida debe ser mayor al umbral de interferencia. 
 
+
  
+
+El problema de la planeación es resuelto teniendo en cuenta una serie de dependencias, los cuales están mostradas en la *figura 2*. A continuación se explicarán cada una de estas dependencias: 
+
+ 
+
+**El rendimiento depende de la MAC** 
+
+El rendimiento requerido se logra dependiendo del protocolo MAC que se esté implementando, en este caso, el autor propone utilizar el protocolo de capa de Enlace de Datos 2P, puesto que en comparación con los protocolos más utilizados como TDMA y CSMA/CA, este tiene una capacidad de datos más elevada. 
+
+**El rendimiento depende del tipo de antena** 
+
+El rendimiento depende del tipo de enlace, Punto a Punto (PTP) ó Punto Multipunto (PMP), puesto que si es PTP se usa todo el rendimiento permitido por la MAC, en cambio sí es PMP el rendimiento permitido por la MAC se divide entre los enlaces que están conectados, de esta manera el protocolo de enlace de todos tendrá que conmutar entre los enlaces existentes reduciendo el rendimiento del protocolo MAC. 
+
+**La potencia de trasmisión depende del tamaño del enlace**
+
+La señal trasmitida tendrá una degradación en su intensidad, dependiendo de la distancia del enlace. Cada antena tiene una ganancia especifica el cual es la relación de densidad de energía que radia en una dirección especifica.  
+
+**La MAC depende de la potencia de trasmisión**
+
+Esto es específicamente  para el protocolo MAC 2P, en el que múltiples enlaces pueden operar simultáneamente. La operación simultánea de múltiples enlaces requiere que se asegure que sla relación de potencias de la señal real y de la interferencia (SIR) sea mayor que un margen especificado por el sistema. 
+
+**La Altura de la torre depende del tamaño del enlace**  
+ 
+ La formación de un enlace Wifi entre dos nodos distanciados está basada en L.O.S.  el cual debe tener despejado el 60% de la curvatura de la zona de Fresnel. El tamaño de la zona de Fresnel dependerá de la distancia del enlace.  
+
+**Los costos de despliegue dependen de la altura de las torres** 
+
+Los costos de despliegue dependen principalmente del tamaño de la torre que se van a implementar. Los costos de la torre crecen linealmente con la altura de la torre, así que en este punto se debe considerar que se debe diseñar la topología de tal forma que la altura sea la mínima, esto ahorrara los costos principales del despliegue de una red.     
+
 
 ![Dependencias de requerimientos](dependencias.pdf){ width=70% } 
 
@@ -348,20 +385,37 @@ Para la formulación en la construcción de una topología que permita el rendim
 ### Consideraciones de diseño y enfoque de solución
 
 
-      
-* Asignación de altura (HA):
-Consiste en la altura óptima de las torres en las ubicaciones dadas una vez que se ha formado la topología, para ello se utiliza un conjunto de ecuaciones de programación lineal (LP).
+ 
 
-* Asignación de Antena (AA):
-Asignación apropiada de las antenas y sus respectivas orientaciones, se desarrolla un algoritmo heurístico de tiempo complejo polinómico.
+Una vez se ha visto como se divide el problema, el autor sugiere resolver las dependencias con los siguientes pasos, el cual van a ser explicados: 
 
-* Asignación de Potencias (PA):
-Proporcionar las potencias de transmisión en los radios del sistema usando LP.
+ 
 
-El objetivo principal de sen es el de reducir el mínimo costo de implementación, sabiendo que el rendimiento de la red depende del tipo de enrutamiento y del protocolo MAC implementado. Por su simplicidad se propone la topología de árbol ya que proporciona una fácil conectividad y para este caso no aborda la tolerancia a fallos, cabe resaltar que utiliza un enrutamiento fijo.
+* Topología de Búsqueda (TS):  
 
+ 
 
-El problema radica en el hecho de que las zonas rurales tienen baja densidad de usuarios y grandes distancias entre grupos de usuarios, esto conlleva a que compañías de telecomunicaciones o proveedores de Internet (ISP) vean poco atractiva la inversión en estos lugares debido al costo inicial de infraestructura y despliegue de la red y bajo retorno de su inversión. 
+Explorar el espacio de búsqueda para encontrar la topología de la red, se hace uso del algoritmo Branch-and-bound (Algoritmo de ramificación y límite), con ello se construye la topología de árbol, el cual va a dar una topología inicial de la red. 
+
+       
+
+* Asignación de altura (HA): 
+
+Consiste en la altura óptima de las torres en las ubicaciones dadas una vez que se ha formado la topología, para ello se utiliza un conjunto de ecuaciones de programación lineal (LP), el cual se va a obtener la altura que sea optima. 
+
+ 
+
+* Asignación de Antena (AA): 
+
+Asignación apropiada de las antenas y sus respectivas orientaciones, se desarrolla un algoritmo heurístico de tiempo complejo polinómico. 
+
+ 
+
+* Asignación de Potencias (PA): 
+
+Proporcionar las potencias de transmisión en los radios del sistema usando LP. 
+
+Una vez implementada la planeación de la red, el autor en los resultados concluye que se  ahorró 22% con respectos a una planeación sin ninguna técnica de optimización. 
 
 Según *Bernardi*, en las últimas décadas se ha incrementado la conectividad de banda ancha, siendo la ADSL (del inglés Asymmetric digital subscriber line) con más del 60% de las conexiones de banda ancha en países de la Organización para la Cooperación y el Desarrollo Económicos es un organismo de cooperación internacional (OCDE); esto se debe principalmente al éxito de la capitalización de ADSL debido al éxito de la red de telefonía. Esta tecnología se caracteriza por que la tasa de trasmisión máxima que puede alcanzar esta en función de la distancia entre el usuario y la central telefónica, es decir, entre más larga sea la distancia, la velocidad de trasmisión es más lenta, por esta razón es comúnmente más utilizada en áreas metropolitanas debido a que tiene más suscriptores y sea más efectivo retornar la inversión de despliegue de una infraestructura. Esto es la principal causa de la brecha digital que existe entre las áreas rurales y metropolitanas. 
 
@@ -382,17 +436,17 @@ Los proveedores de servicio de Internet inalámbrico implementan una metodologí
 
 - Clientes agrupados: Proporcionar acceso a la red en sectores dónde haya más densidad de la población, para así captar más usuarios. 
 
-La falta de herramientas de software para el diseño, gestión y evaluación de redes de acceso inalámbrico de banda han obstaculizado su despliegue generalizado a pesar de sus costos y ventajas operativas sobre otras alternativas de Tecnologías de acceso de banda. Bernardi desarrolla un paquete de software para llenar esta brecha, con especial énfasis en las regiones rurales y en desarrollo. Se resalta que abordó tres desafíos técnicos  en el contexto de redes de acceso inalámbrico de banda ancha:
+La falta de herramientas de software para el diseño, gestión y evaluación de redes de acceso inalámbrico de banda han obstaculizado su despliegue generalizado a pesar de sus costos y ventajas operativas sobre otras alternativas de Tecnologías de acceso de banda. *Bernardi* desarrolla un paquete de software para llenar esta brecha, con especial énfasis en las regiones rurales y en desarrollo. Se resalta que abordó tres desafíos técnicos  en el contexto de redes de acceso inalámbrico de banda ancha:
 
 - Mapeo de Banda Ancha
 - Planeación de redes 
 - Administración de redes
 
       
-La contribución de Bernardi es potenciar el negocio de los pequeños proveedores de Internet inalámbrico (WISP) en zonas rurales a través de un sistema de software, haciéndolo más eficiente reduciendo la brecha digital.
+La contribución de *Bernardi* es potenciar el negocio de los pequeños proveedores de Internet inalámbrico (WISP) en zonas rurales a través de un sistema de software, haciéndolo más eficiente reduciendo la brecha digital.
 
 
-A nivel local, [@rios2015] propone una solución de construcción de topología en redes rurales inalámbricas en la región del sumapaz-Colombia. Dentro de este contexto y al igual que sen, bernardi, maserati, expone que el principal desafío es el costo que conlleva establecer redes en zonas rurales, haciendo especial enfásis en el costo de construcción de las torres que soportan las antenas, debido a que es el costo más grande en comparación con los atribuidos a los equipos de comunicación. Presenta los siguientes referentes:
+A nivel local, [@rios2015] propone una solución de construcción de topología en redes rurales inalámbricas en la región del sumapaz-Colombia. Dentro de este contexto y al igual que Sen, Bernardi, Maserati, expone que el principal desafío es el costo que conlleva establecer redes en zonas rurales, haciendo especial enfásis en el costo de construcción de las torres que soportan las antenas, debido a que es el costo más grande en comparación con los atribuidos a los equipos de comunicación. Presenta los siguientes referentes:
 
 ### Construcción de redes
 
