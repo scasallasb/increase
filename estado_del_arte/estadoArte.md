@@ -10,8 +10,13 @@
 
 
 
+<<<<<<< HEAD
 En el año 1995 eclosionan para la población dos tecnologías totalmente disruptivas, Internet y la telefonía móvil, ellas sugieren una nueva revolución, la llamada revolución digital, que a su vez crea la sociedad de la información (S.I), dando inicio al planteamiento sobre cómo medir y modelizar la S.I, el nivel de desarrollo digital y el impacto del desarrollo digital en el ser humano. De igual manera, el acceso a Internet a través de las Tecnologías de la Información y las Comunicaciones (TIC) ha tenido un auge exponencial en los últimos años, en efecto, este avance se presenta en países desarrollados o zonas metropolitanas de países en desarrollo [@sen2007], sin embargo, existen unas comunidades con poco o ningún acceso a las TIC (@maseratti2011) y otras con acceso casi universal a telefonía fija, móvil e Internet de banda ancha, es así que resulta el concepto de Brecha Digital entendiéndose como la ausencia de una o varias dimensiones contenidas en el desarrollo digital. En relación con lo anterior, las poblaciones sin acceso a las TIC poseen un bajo nivel socioeconómico, viven en zonas de difícil acceso con condiciones climatológicas desfavorables e incluso con ineficiencia o inexistencia de redes eléctricas, al mismo tiempo, las personas que viven en áreas rurales sufren el efecto de la brecha digital incluso más fuerte que los habitantes urbanos, debido a que no pueden acceder a servicios como el aprendizaje a distancia, la salud y el comercio electrónico (@bernardi2012).
 
+=======
+En el año 1995 eclosionan para la población dos tecnologías totalmente disruptivas, Internet y la telefonía móvil, ellas sugieren una nueva revolución, la llamada revolución digital, que a su vez crea la sociedad de la información (S.I), dando inicio al planteamiento sobre cómo medir y modelizar la S.I, el nivel de desarrollo digital y el impacto del desarrollo digital en el ser humano. De igual manera, el acceso a Internet a través de las Tecnologías de la Información y las Comunicaciones (TIC) ha tenido un auge exponencial en los últimos años, en efecto, este avance se presenta en países desarrollados o zonas metropolitanas de países en desarrollo (@sen2007), sin embargo, existen unas comunidades con poco o ningún acceso a las TIC (@maseratti2011) y otras con acceso casi universal a telefonía fija, móvil e Internet de banda ancha, es así que resulta el concepto de Brecha Digital entendiéndose como la ausencia de una o varias dimensiones contenidas en el desarrollo digital. En relación con lo anterior, las poblaciones sin acceso a las TIC poseen un bajo nivel socioeconómico, viven en zonas de difícil acceso con condiciones climatológicas desfavorables e incluso con ineficiencia o inexistencia de redes eléctricas, al mismo tiempo, las personas que viven en áreas rurales sufren el efecto de la brecha digital incluso más fuerte que los habitantes urbanos, debido a que no pueden acceder a servicios como el aprendizaje a distancia, la salud y el comercio electrónico (@bernardi2012).
+ 
+>>>>>>> 9c499cf2d517086652e167520d4bb79fe80a0f72
 
 ## Redes Libres Comunitarias  
 
@@ -36,22 +41,34 @@ se construyen.
 
 discriminación, por lo que son de acceso universal.
 
+<<<<<<< HEAD
 - Neutrales: porque cualquier solución técnica disponible se puede emplear para ampliar la red, y porque la red se puede utilizar para trasmitir datos de
+=======
+cualquier tipo por cualquier participante, incluyendo también fines comerciales(@guifi.net2016). 
+>>>>>>> 9c499cf2d517086652e167520d4bb79fe80a0f72
 
 cualquier tipo por cualquier participante, incluyendo también fines comerciales(guifi.net).
 
+<<<<<<< HEAD
+=======
+Debido a que las redes comunitarias por lo general se encuentran desplegadas en áreas geográficamente separadas, se utilizan tecnologías inalámbricas como mesh y radioenlaces usando bandas libres como la de 2,4 GHz; las tecnologías inalámbricas son ampliamente utilizadas en áreas rurales, ya que, por cuestiones de acceso e infraestructura, las tecnologías cableadas no resultan ser viables para estos casos, dando como solución las redes inalámbricas comunitarias (WCN)  en donde ya se han realizado trabajos importantes como se muestra en (@flickenger2008) 
+>>>>>>> 9c499cf2d517086652e167520d4bb79fe80a0f72
 
 
 Debido a que las redes comunitarias por lo general se encuentran desplegadas en áreas geográficamente separadas, se utilizan tecnologías inalámbricas como mesh y radioenlaces usando bandas libres como la de 2,4 GHz; las tecnologías inalámbricas son ampliamente utilizadas en áreas rurales, ya que, por cuestiones de acceso e infraestructura, las tecnologías cableadas no resultan ser viables para estos casos, dando como solución las redes inalámbricas comunitarias (WCN)  en donde ya se han realizado trabajos importantes como se muestra en (@flickenger2008), cabe añadir, que este tipo de redes tienen un enfoque orientado a países en desarrollo.
 
 
 
+<<<<<<< HEAD
 ## Planeación de Redes Inalámbricas
 
 
 
 Una red inalámbrica es la interconexión de varios nodos entre sí mediante la transmisión y recepción de señales electromagnéticas sin ninguna guía, empleando como medio el aire o el espacio vacío.  La planificación de redes supone la definición de requisitos para la creación de una infraestructura que permita conectar estos sistemas a través de una red (@IBM), se debe agregar que, la planeación de redes inalámbricas es un área muy activa por la comunidad científica, sin embargo, el foco de las investigaciones son las redes de banda ancha móvil y las redes de área local inalámbrica.
 
+=======
+Una red inalámbrica es la interconexión de varios nodos entre sí mediante la transmisión y recepción de señales electromagnéticas sin ninguna guía, empleando como medio el aire o el espacio vacío.  La planificación de redes supone la definición de requisitos para la creación de una infraestructura que permita conectar estos sistemas a través de una red (@IBM2019), se debe agregar que, la planeación de redes inalámbricas es un área muy activa por la comunidad científica, sin embargo, el foco de las investigaciones son las redes de banda ancha móvil y las redes de área local inalámbrica. 
+>>>>>>> 9c499cf2d517086652e167520d4bb79fe80a0f72
 
 
 ### Factores clave de la planeación  
@@ -79,6 +96,10 @@ A continuación, se detallan factores claves de la planeación de redes inalámb
 ## Algoritmos utilizados en la planeación
 
 
+<<<<<<< HEAD
+=======
+Aunque existen estructuras de algoritmos para solucionar problemáticas en la planeación incremental de redes inalámbricas (@Whitaker) proporciona información acerca de los enfoques propuestos para el diseño de redes, que muestran la evolución de modelos y técnicas para la planificación automática de servicios inalámbricos celulares, cabe resaltar que la documentación existente hace énfasis en redes móviles, sin embargo, este concepto es aplicable para el despliegue de redes inalámbricas rurales. Dicho lo anterior, whitaker facilita la descripción de diferentes clases de algoritmos que se pueden usar para realizar la planeación automática de redes inalámbricas. 
+>>>>>>> 9c499cf2d517086652e167520d4bb79fe80a0f72
 
 Aunque existen estructuras de algoritmos para solucionar problemáticas en la planeación incremental de redes inalámbricas [@Whitaker] proporciona información acerca de los enfoques propuestos para el diseño de redes, que muestran la evolución de modelos y técnicas para la planificación automática de servicios inalámbricos celulares, cabe resaltar que la documentación existente hace énfasis en redes móviles, sin embargo, este concepto es aplicable para el despliegue de redes inalámbricas rurales. Dicho lo anterior, *Whitaker* facilita la descripción de diferentes clases de algoritmos que se pueden usar para realizar la planeación de redes inalámbricas.
 
@@ -89,10 +110,10 @@ Aunque existen estructuras de algoritmos para solucionar problemáticas en la pl
 Es una estrategia de búsqueda por la cual se sigue una heurística consistente en elegir la opción óptima en cada paso local con la esperanza de llegar a una solución general óptima. El procedimiento central del algoritmo voraz apunta a asignar las mejores ubicaciones posibles a un conjunto dado de estaciones base activas.
 
 
+
 * **Algoritmos genéticos (GA)**
 
 Estos algoritmos imitan algunos de los procesos de evolución y selección natural al mantener una población de soluciones candidatas que están representadas por una cadena de genes (con frecuencia binarios). Con el tiempo, la población evoluciona a través de procesos que emulan procesos biológicos como la reproducción. Los miembros de la población se combinan para producir descendientes. El concepto básico es que los fuertes tienden a adaptarse y sobrevivir, mientras que los débiles tienden a desaparecer. En la planeación de redes se utiliza la optimización de varios objetivos, estos se conocen como optimización multiobjetivo, en la que existe más de una solución óptima con respecto a todos los objetivos, entre ellos lugar de instalación de una torre, configuración de una antena, altura, etc.
-
 
  <!-- cambiar de definición-->
 

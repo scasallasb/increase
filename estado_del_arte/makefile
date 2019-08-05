@@ -12,7 +12,7 @@ BIB = --filter pandoc-citeproc --bibliography=refer.bib
 ${doc}.pdf: ${doc}.md refer.bib dependencias.pdf UMTS.pdf
 	@echo "Haciendo documento $@"
 	#@gpp -T $< | pandoc ${OPT} -f markdown -t latex  -o $@
-	pandoc ${OPT}  ${BIB} -f markdown+smart -t latex $< -o $@
+	pandoc ${OPT}  ${BIB} -f markdown -t latex $< -o $@
 
 ${doc}.doc: ${doc}.md
 	@echo "Haciendo word $@"
