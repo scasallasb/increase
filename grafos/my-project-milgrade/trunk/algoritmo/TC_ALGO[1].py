@@ -6,14 +6,37 @@ import networkx as nx
 
 import Funciones as fn
 import START_TC_ALGO as sta
+
+"""
+
+
+    TC_ALGO
+
+Permite recorrer el grafo en cada nodo y determinar los incrementos de altura que se
+harán en un nodo central y que permitirá establecer un enlace directo con uno o
+varios de los nodos vecinos, la cantidad de enlaces realizados con un incremento
+de altura representa el beneficio del costo de dicho incremento.
+
+
+"""
+
+
+
 K,A,B,hmax,hmin=1,2.0,10,30,15
 def TC_ALGO(G):
+    """
+
+    parametros
+
+
+
+    """
     inf=m.factorial(20)
     COVERh=nx.Graph()
     COVERh.add_nodes_from(G)
     COMPh=nx.number_connected_components(COVERh)
     for n in G.nodes():
-         G.add_node(n,hi=0)   
+         G.add_node(n,hi=0)
 
     while COMPh > 1:
          rbest=inf
@@ -32,19 +55,19 @@ def TC_ALGO(G):
                  rtmp,incrtmp, mayl=sta.START_TC_ALGO(G,COVERh,h,n,a)
                  if (rtmp < rbest):
                      nodo,rbest,incrbest, mayL=n,rtmp,incrtmp, mayl
-             
+
          for i in incrbest.keys():
              for j in range (0,len(mayL)):
                  if (incrbest[i] >= 0) and (i==mayL[j]):
                      COVERh.add_edge(nodo,i)
          for i in G.nodes():
-             G.add_node(i,hi=h[i]+incrbest[i])     
+             G.add_node(i,hi=h[i]+incrbest[i])
          COMPh=nx.number_connected_components(COVERh)
     print COVERh.edges()
     print(nx.get_node_attributes(G,'hi'))
     print '-----------------------------------------------------'
-    
-    
+
+
     return COVERh
     '''dr=plt.figure()
     dr.add_subplot(131)

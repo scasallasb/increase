@@ -7,6 +7,8 @@ import networkx as nx
 
 import Funciones as fn
 
+
+
 inf=m.factorial(20)
 def START_TC_ALGO(G,coverh, h, n, dirac):
      G.add_node(n,hinc=(dirac))
