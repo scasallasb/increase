@@ -235,7 +235,7 @@
   pages   = {10},
 }
 
-@Electronic{InternationalBusinessMachines2019,
+@Electronic{IBM2019,
   author = {IBM},
   year   = {2019},
   title  = {Redes y planificación de redes},
