@@ -49,7 +49,7 @@ Debido a que las redes comunitarias por lo general se encuentran desplegadas en 
 
 
 
-Una red inalámbrica es la interconexión de varios nodos entre sí mediante la transmisión y recepción de señales electromagnéticas sin ninguna guía, empleando como medio el aire o el espacio vacío.  La planificación de redes supone la definición de requisitos para la creación de una infraestructura que permita conectar estos sistemas a través de una red (@IBM2019), se debe agregar que, la planeación de redes inalámbricas es un área muy activa por la comunidad científica, sin embargo, el foco de las investigaciones son las redes de 
+Una red inalámbrica es la interconexión de varios nodos entre sí mediante la transmisión y recepción de señales electromagnéticas sin ninguna guía, empleando como medio el aire o el espacio vacío.  La planificación de redes supone la definición de requisitos para la creación de una infraestructura que permita conectar estos sistemas a través de una red (@IBM2019), se debe agregar que, la planeación de redes inalámbricas es un área muy activa por la comunidad científica, sin embargo, el foco de las investigaciones son las redes de banda ancha móvil y redes de área local inalámbrica. 
 
 
 ### Factores clave de la planeación  
@@ -79,7 +79,7 @@ A continuación, se detallan factores claves de la planeación de redes inalámb
 
 
 
-Aunque existen estructuras de algoritmos para solucionar problemáticas en la planeación incremental de redes inalámbricas [@Whitaker] proporciona información acerca de los enfoques propuestos para el diseño de redes, que muestran la evolución de modelos y técnicas para la planificación automática de servicios inalámbricos celulares, cabe resaltar que la documentación existente hace énfasis en redes móviles, sin embargo, este concepto es aplicable para el despliegue de redes inalámbricas rurales. Dicho lo anterior, *Whitaker* facilita la descripción de diferentes clases de algoritmos que se pueden usar para realizar la planeación de redes inalámbricas.
+Aunque existen estructuras de algoritmos para solucionar problemáticas en la planeación incremental de redes inalámbricas [@Whitaker] proporcionan información acerca de los enfoques propuestos para el diseño de redes, que muestran la evolución de modelos y técnicas para la planificación automática de servicios inalámbricos celulares, cabe resaltar que la documentación existente hace énfasis en redes móviles, sin embargo, este concepto es aplicable para el despliegue de redes inalámbricas rurales. Dicho lo anterior, *Whitaker* facilita la descripción de diferentes clases de algoritmos que se pueden usar para realizar la planeación de redes inalámbricas.
 
 
 
@@ -125,13 +125,13 @@ Un grafo en el ámbito de las ciencias de la computación es un tipo abstracto d
 
 
 
-## Herramientas para trabajar teoría de grafos
+## Herramientas de manipulación de grafos
 
 
 ### Python
 
 
- Python es un potente lenguaje de programación que permite representaciones simples y flexibles de redes, así como expresiones claras y concisas de algoritmos de red. Python tiene un ecosistema de paquetes vibrante y en crecimiento que NetworkX utiliza para proporcionar más funciones, como el álgebra lineal numérica y el dibujo. (@NetworkX2019) 
+ Python es un potente lenguaje de programación que permite representaciones simples y flexibles de redes, así como expresiones claras y concisas de algoritmos de red. Python tiene un ecosistema de paquetes vibrante y en crecimiento que NetworkX utiliza para proporcionar más funciones, como el álgebra lineal numérica y el dibujo (@NetworkX2019). 
 
 ### NetworkX
 
@@ -161,12 +161,12 @@ NetworkX permite cargar y almacenar redes en formatos de datos estándar y no es
 ## Planeación de redes móviles UMTS   
 
 
-En [@hilarie2008], se presenta una literatura detallada de los problemas que se presentan en la planeación de la topología celular 3G, la cual está basada en el Sistema universal de telecomunicaciones móviles **UMTS** (“*Universal Mobile Telecommunications System*”); para entender las dificultades que se presentan en la planeación, es importante hacer una pequeña descripción de la arquitectura UMTS.
+En (@hilarie2008), se presenta una literatura detallada de los problemas que se presentan en la planeación de la topología celular 3G, la cual está basada en el Sistema universal de telecomunicaciones móviles **UMTS** (“*Universal Mobile Telecommunications System*”); para entender las dificultades que se presentan en la planeación, es importante hacer una pequeña descripción de la arquitectura UMTS.
 
 
 Una arquitectura típica de   UMTS se muestra en la figura (1), donde se observa que una red UMTS está dividida en dos partes: la *red de acceso* y la *red de núcleo*. La primera, es también llamada red UMT de radio terrestre **UTRAN**, la cual está compuesta por muchos subsistemas de red de radio **RNS** (“*radio network subsystem*”). Cada RNS contiene un controlador de red de radio **RNC** (“*radio network controller*”) y una o más estaciones bases *BS* (“*base estation*”).
 
-![Estructura básica de una infraestructura UMTS ](UMTS.pdf)
+![Estructura básica de una infraestructura UMTS. Tomado de @hilarie2008](UMTS.pdf)
 
 Las estaciones bases (en este caso son los *nodos B*) son usados para trasmitir/recibir radiofrecuencia hacia/desde los usuarios móviles, mientras que las RNC se ocupa de los recursos y la gestión de tráfico de datos. El principal objetivo de la UTRAN (“*UMTS Terrestrial Radio Access Network*”) es hacer el enlace entre los usuarios móviles y el núcleo red.
 
@@ -295,7 +295,7 @@ En la planeación de celda, se han realizado trabajos con la tecnología 802.16e
 
 
 
-La forma en que le autor trabaja la planeación de la red, consiste en que primero se realiza una predicción de la señal; aquí se tiene en cuenta el tráfico de diferentes sitios candidatos posicionados aleatoriamente en diferentes áreas geográficas, en esta fase evidencia las diferentes densidades de tráfico entre áreas rurales y áreas urbanas. Una vez se ha definido este modelo de tráfico, para realizar las funciones de costos, que el autor realiza una función de costos en la cual tiene en cuenta el punto de equilibrio entre los diferentes factores que se presentan en el diseño de una red, los cuales son:
+La forma en que le autor trabaja la planeación de la red, consiste en que primero se realiza una predicción de la señal; aquí se tiene en cuenta el tráfico de diferentes sitios candidatos posicionados aleatoriamente en diferentes áreas geográficas, en esta fase evidencia las densidades de tráfico entre áreas rurales y áreas urbanas. Una vez se ha definido este modelo de tráfico, para realizar las funciones de costos, el autor realiza una función de costos en la cual tiene en cuenta el punto de equilibrio entre los diferentes factores que se presentan en el diseño de una red, los cuales son:
 
 
 
@@ -380,7 +380,7 @@ Esto es específicamente  para el protocolo MAC 2P, en el que múltiples enlaces
 Los costos de despliegue dependen principalmente del tamaño de la torre que se van a implementar. Los costos de la torre crecen linealmente con la altura de la torre, así que en este punto se debe considerar que se debe diseñar la topología de tal forma que la altura sea la mínima, esto ahorrara los costos principales del despliegue de una red.     
 
 
-![Dependencias de requerimientos](dependencias.pdf){ width=70% }
+![Dependencias de requerimientos](dependencias.pdf){ width=10sss0% }
 
 
 ### Consideraciones de diseño y enfoque de solución
