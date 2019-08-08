@@ -1,3 +1,12 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Aug  8 11:24:26 2019
+
+@author: Milton Rios and Leonardo Mujica
+
+"""
+
 #funciones de python
 import numpy as np
 import math as m
@@ -10,6 +19,19 @@ import START_TC_ALGO as sta
 
 
 def TC_ALGO(G):
+    """Permite recorrer el grafo en cada nodo y determinar los incrementos de altura que se
+    harán en un nodo central y que permitirá establecer un enlace directo con uno o
+    varios de los nodos vecinos, la cantidad de enlaces realizados con un incremento
+    de altura representa el beneficio del costo de dicho incremento
+
+    Parámetros
+    -------
+    G: grafo de topologia de la red
+
+    Salidas
+    -------
+    G:
+    """
 
     print ("-----------------------empezo el algorimo-----------------------------")
     inf=m.factorial(20)
@@ -28,7 +50,7 @@ def TC_ALGO(G):
     while COMPh > 1:
          #rbest se inicializa en infinito
          rbest=inf
-            
+
          for n in G.nodes():
              h=nx.get_node_attributes(G,'hi')
 
@@ -58,12 +80,12 @@ def TC_ALGO(G):
          for i in G.nodes():
              G.add_node(i,hi=h[i]+incrbest[i])
          COMPh=nx.number_connected_components(COVERh)
+    #imprimir resultado
     print COVERh.edges()
     print(nx.get_node_attributes(G,'hi'))
-    print '-----------------------listo papa, ya esta-----------------------------'
+    print '-----------------------listo -----------------------------'
 
-
-    return COVERh
+    return G
 
 if __name__ == "__main__":
 
@@ -75,10 +97,10 @@ if __name__ == "__main__":
 
     #crear un grafo
     j=nx.Graph()
-    
+
     #crear diccionarios con obstaculos
     er= {(1,2): 12,(2,3):13,(2,4):12,(3,4):16,(4,6):23,(6,7):21,(5,7):13,(5,8):2,(7,8):12,(9,8):4,(9,10):16,(11,9):2}
-    
+
     for i in er.keys():
         r=list(i)
         j.add_edge(r[0],r[1],weight=er[i])
