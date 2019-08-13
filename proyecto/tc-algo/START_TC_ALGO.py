@@ -43,7 +43,7 @@ def START_TC_ALGO(G,coverh, h, n, dirac):
     G.add_node(n,cinc=fn.c(h[n]+dirac)-fn.c(h[n]))
     nbr, L= fn.nbrfun(G,coverh,n,dirac)
     rbest, kbest=inf,0
-    
+
     for k in range(1,len(L)+1):
         sum=0
         for i in range(0,k):

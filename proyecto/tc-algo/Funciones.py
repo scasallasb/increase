@@ -5,6 +5,10 @@ Created on Thu Aug  8 11:24:26 2019
 
 @author: Milton Rios and Leonardo Mujica
 
+
+
+
+
 # ============================= Funciones ==================================
 Este script contiene las funciones necesarias para que la subrutina
 START_TC_ALGO se ejecute; en estas funciones se encuentran:
@@ -88,8 +92,11 @@ def nbrfun(G,COVERh,n,d):
 
     Parámetros
     -------
-    G: grafo de topologia de la red
-    COVERh: nodos cubiertos por la altura h
+    G : graph
+      grafo de topologia de la red
+
+    COVERh : graph
+      nodos cubiertos por la altura h
     n: nodo donde se esta ejecutando el algoritmo
     d: incremento en la altura
 
