@@ -1,0 +1,34 @@
+import numpy as np
+import sqlite3 as sq
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+import networkx as nx
+import tc_algo as tc
+
+#nmin,nmax,taz,nvec= 3,9,3,3
+#tc.datos(nmin,nmax,taz,nvec)
+
+database = sq.connect("midb.db")
+cu = database.cursor()
+try:
+    cu.execute("CREATE TABLE Tab_nombre (iter INTEGER PRIMARY KEY, tabla TEXT)")
+    database.commit()
+except sq.OperationalError:
+    pass
+cu.execute('SELECT * FROM Tab_nombre')
+resultado = dict(cu.fetchall())
+try:
+    lid=max(resultado.keys())
+    s='Ejecucion'+str(lid+1)
+except ValueError:
+    s='Ejecucion1'    
+cu.execute("INSERT INTO Tab_nombre ( tabla) VALUES ('"+s+"' )")
+cu.execute("CREATE TABLE "+s+" (Num_Nodos INTEGER, media float, DeS float)")
+nmin,nmax,taz,nvec= 3,7,3,2
+med, des=tc.datos(nmin,nmax,taz,nvec,s)
+for i in med.keys():
+    cu.execute("INSERT INTO "+s+" ( Num_Nodos, Media, DeS) VALUES ("+str(i)+", "
+        +str(med[i])+", "+str(des[i])+")")
+database.commit()
+cu.close()
+database.close()
