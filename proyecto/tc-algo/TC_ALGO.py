@@ -13,8 +13,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 def TC_ALGO(G):
-    """Retorna el grafo con el atributo hi con los mejores incrementos de altura
-
+    """ Retorna el grafo con el atributo hi con los mejores incrementos de altura
 
     Recorre el grafo en cada nodo y determinar los incrementos de altura que se
     harán en un nodo central, que permitirá establecer un enlace directo con uno o
@@ -83,7 +82,7 @@ def TC_ALGO(G):
     return G
 
 def START_TC_ALGO(G,coverh, h, n, dirac):
-    """Retorna
+    """Retorna incremento de altura nodos vecinos
 
     Encuentra el incremento de la altura en los nodos vecinos de v
     que tienen proporción más baja de costo-beneficio.
@@ -106,6 +105,7 @@ def START_TC_ALGO(G,coverh, h, n, dirac):
     dirac : int
         incremento en la altura
 
+
     Retorna
     -------
 
@@ -116,7 +116,7 @@ def START_TC_ALGO(G,coverh, h, n, dirac):
         incremento optimo
 
     L : list
-            
+
     """
     #infinito
     inf=m.factorial(20)
@@ -144,12 +144,74 @@ def START_TC_ALGO(G,coverh, h, n, dirac):
                 G. add_node(i,hinc=0)
     incr= nx.get_node_attributes(G,'hinc')
 
-    print ("esto retorna START_TC_ALGO")
-    print(type(rbest))
-    print(type(incr))
-    print(type(L))
     return rbest,incr, L
+"""
+# ============================= Funciones auxiliares ==================================
+Este script también contiene las funciones necesarias para que la subrutina
+START_TC_ALGO se ejecute; en estas funciones se encuentran:
 
+* Función de costos
+* Función para hallar B
+* Función nrb
+
+En estas funciones es importante tener en cuenta algunas constantes,
+
+
+    -valores economicos de la red
+
+    * K : float
+        valor medio de mástiles tubulares.
+    * A : float
+        valor de variación de costos por metro de las torres ventadas.
+    * B : float
+        estudios relativos del terreno.
+
+    las cuales corresponden a:
+
+    -valores de alturas en la red
+
+    * hmin : float
+        corresponde a la altura mínima, la cual es el  mínimo valor de  mástil.
+    * hmax : float
+        corresponde a la altura mayor de un nodo en la red.
+"""
+K,A,B,hmax,hmin=1,2.0,10,30,15
+
+def preparTC(Ktc,Atc,Btc,hmaxtc,hmintc):
+    """Modifica constantes por defecto
+
+    Aqui se cambian constantes por defecto con el fin de que se personalice
+    el funcionamiento del algorimo, dependiendo de las necesidades del usuario.
+
+    Parametros
+    -----------
+
+     K : float
+        valor medio de mástiles tubulares.
+
+     A : float
+        valor de variación de costos por metro de las torres ventadas.
+
+     B : float
+        estudios relativos del terreno.
+
+    hmin : float
+        corresponde a la altura mínima, la cual es el  mínimo valor de  mástil.
+
+    hmax : float
+        corresponde a la altura mayor de un nodo en la red.
+    """
+    global K
+    global A
+    global B
+    global hmax
+    global hmin
+    K= Ktc
+    A=Atc
+    B=Btc
+    hmax=hmaxtc
+    hmin=hmintc
+    pass
 
 def c(h):
     """Retorna costo de nodo
@@ -161,6 +223,7 @@ def c(h):
     -------
     h : float
         altura del nodo
+
 
     Retorna
     -------
@@ -205,6 +268,7 @@ def beta(h,u,n1,n2,d):
     d : float
         incremento de altura
 
+
     Retorna
     ----------
 
@@ -234,6 +298,7 @@ def nbrfun(G,COVERh,n,d):
 
     Parámetros
     -------
+
     G : graph
         grafo de topologia de la red
 
@@ -246,8 +311,10 @@ def nbrfun(G,COVERh,n,d):
     d : float
         incremento en la altura
 
+
     Retorna
     -------
+
     r : list
         lista de nodos con mejor elación costo beneficio
 
@@ -306,27 +373,3 @@ def nbrfun(G,COVERh,n,d):
                     pass
                 u = L.index(ri[j])
     return r, L
-
-
-if __name__ == "__main__":
-    K,A,B,hmax,hmin=1,2.0,10,30,15
-    #crear un grafo aleatorio
-    #j=nx.erdos_renyi_graph(10,1)
-
-    #crear un grafo
-    j=nx.Graph()
-
-    #crear diccionarios con obstaculos
-    er= {(1,2): 12,(2,3):13,(2,4):12,(3,4):16,(4,6):23}
-    #,(6,7):21,(5,7):13,(5,8):2,(7,8):12,(9,8):4,(9,10):16,(11,9):2}
-
-    for i in er.keys():
-        r=list(i)
-        j.add_edge(r[0],r[1],weight=er[i])
-
-    #dibujar y graficar
-    #nx.draw(j)
-    #plt.show()
-
-    #TC_ALGO
-    TC_ALGO(j)
