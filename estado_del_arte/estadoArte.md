@@ -329,21 +329,21 @@ En el trabajo de *Gordejuela*, se realizó la implementación de este marco de r
 
 Con el objetivo de reducir la brecha digital, autores [@bernardi2012],[@maseratti2011],[@sen] han propuesto como solución la planeación y despliegue de redes de banda ancha inalámbrica en zonas rurales.
 
-
-El autor *Sen* se enfoca específicamente en la planeación de redes de banda ancha en áreas rurales, en su tesis [@sen] trabaja sobre una red desplegada en un distrito ubicado en la India, un país donde la mayoría de la población vive en áreas rurales (66% según el Banco Mundial) y está en el lado equivocado de la brecha digital, esto se resuelve dando conectividad a todas las aldeas y pueblos. Lograr esto expandiendo la red actual de telefónica corriente en zonas rurales no es factible teniendo en cuenta los costos elevados de la instalación de la infraestructura inicial, sin embargo, este caso no ocurre en la telefonía móvil, donde la demanda de usuarios es más densa y por ende se considera un modelo de negocio, puesto que se retribuye la inversión teniendo en cuenta la cantidad de usuarios dispuestos a pagar por este servicio.
+### Redes BWA en la India (País rural)
+El autor *Sen* se enfoca específicamente en la planeación de redes de banda ancha en áreas rurales, en su tesis [@sen] trabaja sobre una red desplegada en un distrito ubicado en la India, un país donde la mayoría de la población vive en áreas rurales (66% según el Banco Mundial) y esta hace parte de la brecha digital, esto se resuelve dando conectividad a todas las aldeas y pueblos. Lograr esto expandiendo la red actual de telefónica corriente en zonas rurales no es factible teniendo en cuenta los costos elevados de la instalación de la infraestructura inicial, sin embargo, este caso no ocurre en la telefonía móvil, donde la demanda de usuarios es más densa y por ende se considera un modelo de negocio, puesto que se retribuye la inversión teniendo en cuenta la cantidad de usuarios dispuestos a pagar por este servicio.
 
 
 El problema radica en el hecho de que las zonas rurales tienen baja densidad de usuarios y grandes distancias entre grupos de usuarios, esto conlleva a que compañías de telecomunicaciones o proveedores de Internet (ISP) vean poco atractiva la inversión en estos lugares debido al costo inicial de infraestructura y despliegue de la red y bajo retorno de su inversión.
 
 
-Por consiguiente, el autor propone la planeación de la topología de una red inalámbrica con el uso de la tecnología 802.11, puesto que permite una buena solución teniendo en cuenta su gran aceptabilidad, principalmente por su bajo costo. Por ende, esta tecnología se ha presentado como una opción de económica y efectiva para cubrir largas distancias, ya que permite que zonas muy amplias puedan conectarse a un nodo de línea terrestre con conectividad a Internet de forma cableada (como fibra óptica) por medio de enlaces inalámbricos. Cada enlace inalámbrico corresponde a una antena en una torre instalada en cada pueblación, los cuales deben tener línea de vista *L.O.S.* (*Line Of Sight*).
+Por consiguiente, el autor propone la planeación de la topología de una red inalámbrica con el uso de la tecnología 802.11, puesto que permite una buena solución teniendo en cuenta su gran aceptabilidad, principalmente por su bajo costo. Por ende, esta tecnología se ha presentado como una opción de económica y efectiva para cubrir largas distancias, ya que permite que zonas muy amplias puedan conectarse a un nodo de línea terrestre con conectividad a Internet de forma cableada (como fibra óptica) por medio de enlaces inalámbricos. Cada enlace inalámbrico corresponde a una antena en una torre instalada en cada pueblo, los cuales deben tener línea de vista *L.O.S.* (*Line Of Sight*).
 
 
-Para la formulación en la construcción de una topología que permita el rendimiento de la red, se estipulan de tres principales restricciones:
+Para la formulación en la construcción de una topología que permita el desempeño de la red, se estipulan de tres principales restricciones:
 
 
 
-1. Aplicación (restricción de rendimiento): Capacidad de carga y descarga por cada nodo o pueblo que en el caso de la red en que se realizó el trabajo, se establecido que en cada nodo se tuviera un ancho de banda mínimo de 384 Kps .
+1. Restricción de rendimiento: Capacidad de carga y descarga por cada nodo o pueblo que en el caso de la red en que se realizó el trabajo, se establecido que en cada nodo se tuviera un ancho de banda mínimo de 384 Kps .
 
 2. Restricción de Potencia: Se refiere al límite superior de la Potencia Isotrópica Irradiado (PIRE) en cada transmisor y el límite inferior de potencia recibida en el receptor (sensibilidad del receptor).
 
@@ -356,7 +356,7 @@ El problema de la planeación es resuelto teniendo en cuenta una serie de depend
 
 
 
-**El rendimiento depende de la MAC**
+**La tasa de transferencia de datos depende de la MAC**
 
 El rendimiento requerido se logra dependiendo del protocolo MAC que se esté implementando, en este caso, el autor propone utilizar el protocolo de capa de Enlace de Datos 2P, puesto que en comparación con los protocolos más utilizados como TDMA y CSMA/CA, este tiene una capacidad de datos más elevada.
 
@@ -419,6 +419,8 @@ Proporcionar las potencias de transmisión en los radios del sistema usando LP.
 
 Una vez implementada la planeación de la red, el autor en los resultados concluye que se  ahorró 22% con respectos a una planeación sin ninguna técnica de optimización.
 
+### Redes BWA en Gran Bretaña (País del primer mundo)
+
 Según *Bernardi*, en las últimas décadas se ha incrementado la conectividad de banda ancha, siendo la ADSL (del inglés Asymmetric digital subscriber line) con más del 60% de las conexiones de banda ancha en países de la Organización para la Cooperación y el Desarrollo Económicos es un organismo de cooperación internacional (OCDE); esto se debe principalmente al éxito de la capitalización de ADSL debido al éxito de la red de telefonía. Esta tecnología se caracteriza por que la tasa de trasmisión máxima que puede alcanzar esta en función de la distancia entre el usuario y la central telefónica, es decir, entre más larga sea la distancia, la velocidad de trasmisión es más lenta, por esta razón es comúnmente más utilizada en áreas metropolitanas debido a que tiene más suscriptores y sea más efectivo retornar la inversión de despliegue de una infraestructura. Esto es la principal causa de la brecha digital que existe entre las áreas rurales y metropolitanas.
 
 El Internet satelital se podría decir que es una alternativa de conexión, puesto que está disponible prácticamente en cualquier parte y es frecuentemente subsidiada en áreas remotas incomunicadas, sin embargo, también tiene latencia de tiempo de ida y vuelta muy altos, lo cual lo hace inadecuado para aplicaciones que consuman un ancho de banda considerable, como es el caso de una videollamada (skape).
@@ -447,10 +449,11 @@ La falta de herramientas de software para el diseño, gestión y evaluación de 
 
 La contribución de *Bernardi* es potenciar el negocio de los pequeños proveedores de Internet inalámbrico (WISP) en zonas rurales a través de un sistema de software, haciéndolo más eficiente reduciendo la brecha digital.
 
+### Redes BWA en la región del Sumapaz (Colombia)
 
 A nivel local, [@rios2015] propone una solución de construcción de topología en redes rurales inalámbricas en la región del sumapaz-Colombia. Dentro de este contexto y al igual que Sen, Bernardi, Maserati, expone que el principal desafío es el costo que conlleva establecer redes en zonas rurales, haciendo especial enfásis en el costo de construcción de las torres que soportan las antenas, debido a que es el costo más grande en comparación con los atribuidos a los equipos de comunicación. Presenta los siguientes referentes:
 
-### Construcción de redes
+#### Construcción de redes
 
 Dentro de este campo determina elementos tales como:
 
@@ -459,11 +462,11 @@ Dentro de este campo determina elementos tales como:
 * Bajo poder económico
 * Costos de infraestructura y equipos
 
-### Topología
+#### Topología
 
 Establece que las redes rurales mantienen una topología fija y se realizan enlaces de larga distancia, sin embargo, al ser áreas campestres existe una mayor cantidad de obstrucciones y acorde la topografía varia la altura de los obstáculos.
 
-### Costo de las torres
+#### Costo de las torres
 
 Para lograr obtener linea de vista entre los diferentes nodos es necesario que las torres tengan una altura suficiente para superar los obstáculos oresentados en el terreno. Para la construcción de estas torres establece dos tipos de materiales:
 
