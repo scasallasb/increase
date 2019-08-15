@@ -373,3 +373,6 @@ def nbrfun(G,COVERh,n,d):
                     pass
                 u = L.index(ri[j])
     return r, L
+
+def test ():
+    assert (START_TC_ALGO)

@@ -1,16 +1,15 @@
 #funciones python
 import networkx as nx
 #funciones propias
-import Funciones as fn
+import pytest 
 import TC_ALGO as tc
-import START_TC_ALGO as sta
+
 """
 def testEconomy():
     assert()
-
-def comparacionNaiveHeursitic():
-    assert()
 """
+def comparacionNaiveHeursitic():
+    assert(tc.c(9)==8)
 def funciona():
     #crear un grafo
     j=nx.Graph()
@@ -21,9 +20,9 @@ def funciona():
     for i in er.keys():
         r=list(i)
         j.add_edge(r[0],r[1],weight=er[i])
-    assert(tc.TC_ALGO(j))
+    assert(tc.TC_ALGO(j)==j)
 
 
 if __name__== "__main__":
+    comparacionNaiveHeursitic()
     funciona()
-    

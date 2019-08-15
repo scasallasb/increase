@@ -1,0 +1,93 @@
+import networkx as nx
+import numpy as np
+import scipy as sc
+import matplotlib.pyplot as plt
+import tc_algo  as tc
+import bd2py as bd
+import  Hgt as h
+f=8
+COSTO=[0.25,0.55,1,60,20]
+cC,cT, coverh,T = tc.algo(f,COSTO, met=True)
+print cC, cT
+"""pos= bd.georefxc()
+cab={u'SILVANIA':[-74.388056,4.403333] 
+    ,u'TIBACUY':[-74.4525, 4.347222]
+    ,u'PASCA' :[-74.300833, 4.3075]
+    ,u'ARBELAEZ':[-74.415556,4.272222]
+    ,u'PANDI': [-74.487778,4.191111] 
+    ,u'SAN BERNARDO':[-74.422222,4.178889] 
+    ,u'VENECIA': [-74.4775,4.088611] 
+    ,u'CABRERA':	[-74.485833,3.978056]
+    ,u'GRANADA':	[-74.351389,4.518611]
+    ,u'FUSAGASUGA':[-74.364444,4.337222]}
+G2= nx.Graph()
+G= nx.Graph()
+G2.add_nodes_from(cab.keys())
+nx.set_node_attributes(G2,'pos',cab)
+def edge_gen(n):
+    res=[]
+    for i in range (0,len(n)):
+        for j in range(i+1,len(n)):
+            res.append((n[i],n[j]))
+    return res
+
+#nx.set_node_attributes(G,'color',col)
+#nx.set_node_attributes(G,'tam',tam)
+#G.add_edges_from(edge_gen(G.nodes()))
+#el=G.edges()
+sG={}
+attr={}
+for i in pos.keys():
+    sG[i]= nx.Graph()
+for i in pos.keys():
+    G.add_nodes_from(pos[i].keys())
+    nx.set_node_attributes(G,'pos',pos[i])
+    sG[i].add_nodes_from(pos[i].keys())
+    nx.set_node_attributes(sG[i],'pos',pos[i])
+    aux=edge_gen(pos[i].keys())
+    G.add_edges_from(aux)
+    attr[i]=(aux)
+
+lon,la= bd.la_lon()
+po=nx.get_node_attributes(G,'pos')
+coo=[np.mean(la.values()), np.mean(lon.values())]
+#s=h.vercu(coo,po)
+au, DiM = h.manipular_mapas(coo,90)
+we=[]
+for i in G.edges():
+    r=list(i)
+    per= h.perfil(au,[po[i[0]],po[i[1]]],DiM)
+    aux=np.round(np.max(per[3]))  
+    we.append((i,aux))   
+we=dict(we)
+nx.set_edge_attributes(G,'weight',we)
+#h.show_map(au,DiM,G,Pos=po,Pos1=cab,G1=G2)
+COSTO=[0.25,0.55,1,60,20]
+Gs=nx.Graph()
+Gs.add_nodes_from(G.nodes())
+cos={}
+for i in sG.keys():
+    A= nx.Graph()
+    co=[cab[i][1],cab[i][0]]
+    print i, co
+    for j in attr[i]:       
+        r=list(j)
+        sG[i].add_edge(r[0],r[1],weight=G[r[0]][r[1]]['weight'])
+    po1=nx.get_node_attributes(sG[i],'pos')
+    cC,cT, coverh,T = tc.algo(sG[i],COSTO)
+    s=h.vercu(co,po1)
+    print s
+    au1, DiM1= h.manipular_mapas(co,s)
+    A.add_nodes_from(coverh.nodes())
+    A.add_edges_from(coverh.edges()) 
+    Gs.add_edges_from(coverh.edges())
+    h.show_map(au1,DiM1,sG[i],Pos=po1,Pos1=cab,G1=G2,nodels=[i])
+    h.show_map(au1,DiM1,A,Pos=po1,Pos1=cab,G1=G2,nodels=[i])
+    cos[i]=[cC,cT]
+    print cC, cT
+    print '-'*80
+print nx.number_of_edges(G),nx.number_of_nodes(G)
+print nx.number_of_edges(Gs),nx.number_of_nodes(Gs)    
+h.show_map(au,DiM,Gs,Pos=po,Pos1=cab,G1=G2)
+print cos
+print '*'*120"""

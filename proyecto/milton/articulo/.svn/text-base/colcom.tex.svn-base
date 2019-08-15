@@ -1,0 +1,713 @@
+% IEEE Paper Template for US-LETTER Page Size (V1)
+% Sample Conference Paper using IEEE LaTeX style file for US-LETTER pagesize.
+% Copyright (C) 2006-2008 Causal Productions Pty Ltd.
+% Permission is granted to distribute and revise this file provided that
+% this header remains intact.
+%
+% REVISION HISTORY
+% 20080211 changed some space characters in the title-author block
+%
+\documentclass[10pt,conference,letterpaper]{IEEEtran}
+\usepackage{times,amsmath,epsfig}
+\usepackage{graphicx}
+\usepackage{afterpage}
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{tikzpagenodes}
+
+%
+\title{The solution for the construction topology problem for rural wireless
+  networks}
+%
+
+\author{\IEEEauthorblockN{Milton J. Ríos Rivera}
+\IEEEauthorblockA{Ingeniería Electrónica\\Universidad de Cundinamarca\\
+Email: mjrios{@}mail.unicundi.edu.co}
+\and
+\IEEEauthorblockN{Leonardo Rodríguez Mújica}
+\IEEEauthorblockA{Ingeniería Electrónica\\
+Universidad de Cundinamarca\\
+Email: lrodriguez{@}mail.unicundi.edu.co}
+}
+
+
+%
+\begin{document}
+\maketitle
+%
+
+\begin{tikzpicture}[remember picture,overlay]
+   \node[align=center] at ([yshift=1em]current page text
+       area.north) {IEEE COLCOM 2015};
+   \node[align=center] at
+         ([yshift=-1em]current page text area.south)
+        { 978-1-4799-8834-1/15/{1.00 ©2015 IEEE } };
+\end{tikzpicture}%
+
+
+\begin{abstract}
+%\boldmath
+ There are special challenges about the construction of rural
+ communications network, mainly by the cost of establishing them. This is
+ due to the conditions of rural population, which is generally low paying
+ capacities, and present a high dispersion, due to the low population
+ density, hence it requires special considerations about coverage,
+ particularly by the cost to establish a communication network.
+ 
+ An important parameter cost rural networks is to build towers that support
+ the antennas at a height that allows to set a link, this cost is highest
+ than the costs attributed to communications equipment, therefore you have
+ special attention.
+ 
+ In this paper are explained the conditions about the height of the
+ communications antennas towers and feasibility to the use of tubular steel
+ masts and guyed towers to define the problem about the minimum cost
+ towers.
+
+ Panigrahi-Duttat-Naiswal-Naidu-Rastogi cost optimization algorithm
+ which aims to solve the problem of network topology in rural areas,
+ establishing the best communication tower height that allows to have an
+ optimal cost-benefit ratio. Then numerical simulation of the proposed
+ algorithm have been made an algorithm simple heuristics, in order to
+ compare it with a simple heuristics algorithm and to do evident a better
+ performance to reducing costs matters.
+ \end{abstract}
+
+\section{Introducción}
+
+Este artículo se realiza con el fin de presentar una alternativa económica
+de diseño de la infraestructura de red requerida en el desarrollo de redes
+rurales, como objetivo del plan de diseño físico de red para el proyecto de
+investigación denominado ``Realización del estudio de factibilidad,
+socialización y capacitación, para implementación de infraestructuras de
+voz IP y comunicaciones convergentes en la región del Sumapaz''
+\cite{voip2014}, del
+grupo de investigación GIGATT de la Universidad de Cundinamarca.
+
+La región del Sumapaz consta de 10 municipios que son Arbeláez, Cabrera,
+Fusagasugá, Granada, Pandi, Pasca, San Bernardo, Silvania, Tibacuy y
+Venecia. La población rural es el 41\% del total regional, cerca de 84.549
+habitantes según estimaciones para el 2011 \cite{uribe2002}. Las adversas condiciones
+económicas y de acceso a las tecnologías de la información, hacen que este
+proyecto busque evaluar  la viabilidad y conseguir alternativas asequibles
+de diseño e implementación de redes, en este aspecto este trabajo pretende
+reducir los principales costos involucrados en la implementación física
+de redes de comunicaciones rurales. 
+
+%Un aspecto importante en la
+%construcción de redes rurales es el costo de la infraestructura, debido a la
+%baja densidad de población y al bajo poder económico que caracteriza a
+%dicha población. Los costos más grandes en el desarrollo de la red están
+%dados por la infraestructura y los equipos.
+
+Si se tiene en cuenta que la topología de una red rural es fija; esto significa
+que cada nodo de la red tiene una posición permanente; y que los enlaces
+requieren distancias relativamente grandes, esto último hace que la cantidad  y
+altura de las obstrucciones sea considerable, por lo tanto para constituir
+un enlace de larga distancia (mantener línea de vista entre las antenas), se
+requiera una altura determinada para las torres que las soportan, de tal
+forma que estén sobre los obstáculos (arboles, construcciones y
+terreno) \cite{Panigrahi2008}.
+
+El costo de las torres, es proporcional a su altura y está relacionado con
+material de construcción, por ejemplo para un enlace de entre 7-8 Km
+(distancias típicas) se necesitarían torres de entre 30 m y 45 m con costos
+de entre 25 y 38 millones de pesos colombianos. 
+Este costo es de varios órdenes de 
+magnitud  mayor que el de los equipos de comunicaciones, de
+manera que el principal problema de construcción de redes rurales radica en
+lograr una topología con el menor costo total de las torres que soportan
+las antenas
+\cite{Dutta2007}.
+
+Para tratar de manera formal el problema se realiza una descripción de la
+topología por medio del uso de grafos. Es mediante esta estructura de datos
+que se elabora el procesamiento computacional del problema y de la solución
+que aquí se trata (sección~\ref{sec:problema}). Se establecen las
+ características de variación de costo con referencia a la altura de las 
+torres de comunicación
+y la ecuación de costos contextualizada a la región 
+(sección~\ref{sec:ecuacion}). 
+
+Luego de ello, se describe (sección~\ref{sec:descripcion}) y desarrolla
+ el algoritmo (sección~\ref{sec:desarrollo}) que permite establecer tanto la
+topología de red óptima en cuanto a costos, como las alturas que permiten
+que una ecuación de costos de las alturas de las torres sea mínima. A
+partir de la información recopilada \cite{Panigrahi2008}, se puede 
+determinar las
+condiciones necesarias para obtener el algoritmo que permita una
+aproximación bastante buena en cuanto al problema de planificación de
+costos de estructuras de soporte (torres) de antenas de comunicación.
+Por último
+se realiza la aplicación del algoritmo a la región del
+ Sumapaz (sección~\ref{sec:aplicacion}).
+
+\section{ Problema de construcción  de la topología}
+\label{sec:problema}
+
+En una comunicación inalámbrica a distancias relativamente grandes que use
+las bandas libres de 2.4 o 5 GHz se necesita que exista línea de vista
+entre el transmisor y el receptor, para ello se deben instalar las antenas en
+torres que permitan sobrepasar obstáculos como árboles, construcciones y la
+topografía. Construir tales torres resulta muy costoso. La altura necesaria
+depende de la distancia del enlace y las obstrucciones, y el costo de la
+torre se incrementa en proporción con la altura. 
+
+%En la Tabla 1 se muestra
+%una lista de los costos de construir torres para varias alturas y
+%materiales.
+
+
+El costo de construir las torres supera por mucho el valor de los equipos
+IEEE 802.11 (WiFi) de bajo costo. El principal requerimiento de la
+construcción de redes rurales es el mantener su costo lo más bajo posible.
+%Dado que el precio de las torres de soporte de las antenas domina otros
+%costos de infraestructura el problema principal se convierte en mantenerlos
+%mínimos en la construcción de las torres de soporte para las antenas en
+%cada nodo.
+
+\subsection{Requerimientos del problema}
+\label{sec:requerimientos}
+Ahora, se presentarán los principales aspectos en la solución de este
+problema:
+
+\begin{itemize}
+
+\item Requerimientos de conectividad: es importante asegurar que la
+    topología planteada permita la conexión de la totalidad de la
+    red.\cite{Panigrahi2008} 
+
+\item Altura máxima de las torres  para el cual los costos son prohibitivos.
+    Esto representa la altura máxima posible para una torre.  \cite{Dutta2007}.
+
+\item Naturaleza de la función de costos: se manejan dos tipos distintos de
+    torres. Para alturas menores a 20 m se suelen usar los mástiles
+    económicos.  Para alturas mayores, es necesario utilizar torres de
+    acero más elaboradas, y por ende más caras, el costo de estas
+    estructuras varía de manera casi lineal con la altura.
+    \cite{Panigrahi2008}. Tal como se muestra en la
+    Figura~\ref{fig:altura}.
+
+\item Condiciones sobre las alturas de las torres para establecer un enlace
+    directo: hay que garantizar que la potencia transmitida sea la
+    suficiente para superar las pérdidas por espacio libre en el vano del
+     enlace mediante la fórmula de Friis
+    \cite{rappaport1996wireless}.
+
+\begin{equation}
+    P_r(d) = \frac{P_t G_t G_r \lambda^2}{(4\pi)^2 d^2 L}
+\end{equation}
+
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imagenes/torres.pdf}
+    \caption{Comportamiento de los costos de las torres de comunicación
+    como función de la altura }
+    \label{fig:altura}
+\end{figure}    
+
+
+\item Mantener la línea de vista despejada de toda obstrucción, de
+manera que al establecer el enlace, definido por una línea recta que une
+las dos antenas, éste no se vea afectado por ningún obstáculo. 
+
+Para establecer la línea de vista en RF se hace necesario liberar de
+obstrucciones cerca del  60\% de $r_1$, conocido como el radio de la
+primera zona de Fresnel y está dado por la Ecuación~\ref{eq:fresnel}. En la
+Figura~\ref{fig:fresnel} el punto $O$ (donde existe
+la mayor obstrucción) debe estar a una altura mayor de $h_O +
+0.6r_1$.\cite{Panigrahi2008} 
+
+
+           
+\begin{equation}
+    \label{eq:fresnel}
+    r_n = \sqrt{\frac{n\lambda d_1 d_2}{d_1 + d_2}}
+\end{equation}
+
+
+
+
+\end{itemize}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imagenes/fresnel.pdf}
+    \caption{Cálculo de la altura de las torres en el fin de los puntos de
+    un enlace}
+    \label{fig:fresnel}
+\end{figure}    
+
+ 
+\subsection{Complejidad de Calculo}
+\label{sec:complejidad}
+
+
+Para tratar el problema de manera formal, se describe la topología de la
+red por medio de un grafo. El cual está compuesto por un arreglo de
+vértices o nodos $V$ y un arreglo de enlaces $E$,  de manera que $G=(V,E)$.  La cantidad de
+nodos $n$  será pues $n=|V|$. Una  función de alturas $h$ asignará una altura de torre a
+cada nodo en $G$  (considerando solo alturas con valores enteros). Luego se
+establece un subgrafo $COVER(h)$ que comprende los nodos cubiertos por la función de
+alturas $h$. Para que un enlace $(u,v)$ sea relacionado por la función de
+alturas $h$, las
+alturas de las torres $(h(u), h(v))$ en cada nodo deben ser suficientes para
+establecer un enlace (según los requerimientos explicados en la
+sección~\ref{sec:requerimientos}).
+
+Una función de costos $c$ determinará el valor de la altura de la torres en
+determinado nodo. Así, el costo total de la función de alturas estará dado
+por $\sum_{u \in V} c(h(v))$. El problema se fundamenta en  encontrar una función de altura que
+represente el menor costo total posible, para cada subgrafo conectado y
+expandido $COVER(h)$.
+
+El establecer las aristas adecuadas para conseguir el subgrafo $COVER(h)$ resulta
+computacionalmente costoso, por causa de que se debe buscar sobre todos los
+posibles grafos expandidos y conectados, y sobre cada posible altura de la
+torre en cada nodo. Los autores de \cite{Panigrahi2008} determinan que el algoritmo óptimo
+es un NP-hard \cite{dasgupta2006algorithms}, con una reducción del conjunto de vértices conectados no
+mejor que un factor logarítmico $O(\log n)$, sin embargo, demuestran que por medio de
+una aproximación se consigue un comportamiento de reducción constante a
+través de un algoritmo voraz llamado TC-ALGO ({\it greedy algorithms}
+\cite{dasgupta2006algorithms}).
+
+\section{Ecuación de Costos}
+\label{sec:ecuacion}
+
+La función de costos $c$  relaciona la  variación de costos con la altura
+tanto de mástiles tubulares y torres de acero ventadas. 
+Los mástiles son estructuras simples que resultan económicas, pueden ser
+elaboradas con diferentes materiales y muchas veces montadas sobre
+estructuras o edificaciones existentes. Las torres ventadas son torres de
+acero mucho más elaboradas que los mástiles, son estructuras que pueden
+sostener una carga de fuerzas mayor, pero aun así, son con relación a otros
+tipos de torre, más económicas.
+
+Se puede considerar, entonces que la ecuación de costos es una función por
+partes la cual para alturas menores a $h_{min}$ considera los valores
+correspondientes a los mástiles económicos, para alturas mayores se evalúan
+los costos de las torres ventadas. Por tal motivo la siguiente función
+resulta apropiada:
+
+
+\begin{equation}
+   c(h)=\left\{
+    \begin{array}{ll}
+         K    & si \,\,   0  \leq h \leq h_{min}\\
+         Ah+B & si \,\, h_{min} < h \leq h_{max}
+     \end{array}
+   \right .
+\end{equation}
+
+Donde $K$, $A$ y $B$, representan constantes $Ah_{min} + B \gg K$ y
+\cite{Panigrahi2008}.
+
+
+
+Ahora se plantea  lograr que en todos los enlaces cada par de  nodos
+$(u,v)$ tengan las alturas específicas que permitan mantener un enlace de
+comunicación directa entre los mismos. Lo que quiere decir, que para una
+función de alturas $h$, un enlace se determina cubierto si cumple que las
+alturas de las torres en los nodos está dada por $h+a$, donde $a$ es el
+incremento de altura que permite el enlace. Para esto último, se determina
+la función de obstrucciones entre los puntos  $(u,v) O_{uv}$, la cual
+representa la  topografía (teniendo en cuenta la liberación de la zona de
+Fresnel) a lo largo de la distancia entre los $u$ y $v$ .\cite{Dutta2007} 
+
+Para un
+conjunto  de enlaces $E'(E'\subset E)$ que están cubiertos por la función
+$h+a$, entonces la función de costos a minimizar dependerá de la relación:
+
+
+\begin{equation}
+    \label{eq:costos}
+    \sum_{v \in V} c(h(v))
+\end{equation}
+
+
+La ecuación \ref{eq:costos} representa el costo de construir todas las torres necesarias
+para la red. 
+
+\subsection{Ecuación de costos: aplicada a la región}
+
+ En la región, según cotizaciones hechas a diversas empresas fabricantes de
+ torres en la ciudad Bogotá,  se pudo establecer que el valor medio de la
+ construcción de mástiles tubulares es aproximadamente de \$250000, por lo
+ tanto este valor determina  $K$ para la función de costos $c(h)$.
+
+  En tanto que el valor de variación de costos por metro de las torres
+  ventadas se encuentra en promedio en \$550000, estableciendo así la
+  pendiente de la función costos para alturas mayores a $h_{min}$  (20 m),  el valor
+  de  $B$ resulta más complejo, ya que depende de los costos relativos a
+  estudios de terreno, cimentación  y diseño estructural. A Pesar de esto
+  se puede determinar la función de costos de la siguiente manera:
+
+  \begin{equation}
+      c(h)=\left\{
+      \begin{array}{ll}
+            250000 & si \,\,0 < \leq h \leq 20m\\
+            550000h+B & si \,\, 20 < h \leq 60 m
+       \end{array}
+       \right .
+\end{equation}
+
+
+  \section{Descripción del algoritmo} 
+\label{sec:descripcion}
+
+  La descripción del algoritmo corresponde al planteamiento descrito en
+  \cite{Dutta2007}, donde se involucra el problema de construcción de la
+  topología (TC).  Un grafo no dirigido determina la estructura de red,
+  donde $V$ es el conjunto de nodos, $E$ el conjunto de aristas o enlace. Un
+  subgrafo denominado $COVER(h)$ corresponde al conjunto de aristas que son
+  establecidas por la función de altura $h$.
+
+  Cada valor en $h$ corresponde a un valor en la función de costos $c$,  la
+  cual  está determinada por $\sum c(h(u))$. El éxito del algoritmo reside
+  en encontrar una función de alturas  en la cual el costo total sea
+  mínimo.  El algoritmo es denominado TC-ALGO como se muestra en la
+  Figura~\ref{fig:tcalgo}.  Utiliza la subrutina START-TC-ALGO
+  (Figura~\ref{fig:startcalgo}). Al comienzo de TC-ALGO la función de
+  alturas $h$ es inicializada en 0, $COVER(h)$ en un conjunto vacío y
+  $COMP(h)$ es igual a $n$,  donde $COMP(h)$ es la cantidad de componentes
+  en $COVER(h)$. El algoritmo finalizará cuando $COMP(h)=1$, o el  subgrafo
+  esté en su totalidad conectado.
+
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imagenes/tc_algo.pdf}
+    \caption{Algoritmo TC-ALGO}
+    \label{fig:tcalgo}
+\end{figure}    
+
+ 
+
+  El algoritmo se presenta con dos rutinas, la primera llamada TC-ALGO
+  permite recorrer el grafo en cada nodo y determinar los incrementos de
+  altura que se harán en un nodo central y que permitirá establecer un
+  enlace directo con uno o varios de los nodos vecinos, la cantidad de
+  enlaces realizados con un incremento de altura representa el beneficio
+  del costo de dicho incremento. Cada incremento de altura se realiza por
+  fases. Para determinar los incrementos de altura se establecen dos
+  condiciones:
+
+  \begin{enumerate}
+      \item  "Los incrementos son locales. Algún incremento de altura
+          $incr$ hecho en una fase es tal que, existe un nodo
+          $v$ de manera que $incr$ solamente incrementa las
+          alturas en $v$ y sus vecinos. El nodo $v$ es llamado nodo central de
+          $incr$. Esta restricción sobre el incremento de
+          altura ayuda a localizar la búsqueda de los mejores incrementos
+          de altura".
+
+      \item "Solamente las aristas incidentes sobre el nodo central agregan
+          beneficio. Sea $h$ la función de altura en el inicio de una fase.
+          Cualquier incremento de altura $incr$, se dice que con el nodo
+          central $v$ algunas nuevas aristas están cubiertas, se establece
+          $E'$. Sea $Ev'$ un subconjunto de $Ev$ que contiene solo las aristas
+          que inciden en $v$. Entonces el beneficio de $incr$ en esta fase es
+          la diferencia entre el número de componentes de $COVER(h)$ y
+          $COVER(h) \cup Ev'$.  Esta definición de benéfico ayuda a simplificar
+          el análisis de la garantía de aproximación"
+  \end{enumerate}
+
+Se busca en cada incremento determinar cuál presenta una menor relación de
+costo beneficio. Para esto TC-ALGO busca el mejor candidato a nodo central
+$v$ y también se verifica el mejor incremento para dicho nodo en una
+función de alturas denominada $\mathcal{H}$ la cual contiene la altura de nodo
+central $h(v)$, la altura máxima $h_{max}$ , y los incrementos de altura
+correspondientes a los incrementos de costo determinados de forma
+exponencial ($2^i = {1,2,4,8. . }$).  
+
+Pero, a pesar de que se busca sobre cada candidato de nodo central $v$ y
+sus posibles incrementos de altura, todavía se tiene que buscar en los
+incrementos posibles de altura de los vecinos de $v$. Por lo tanto, queda
+con un subproblema, que se le da el nombre de STAR-TC: dado la actual
+función de la altura $h$, un nodo $v$ central y su incremento en altura
+$\delta$, encontrar un incremento de la altura en los vecinos de $v$ que
+tiene la proporción más baja de costo-beneficio.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{imagenes/star_tc_algo.pdf}
+    \caption{Algoritmo STAR-TC-ALGO}
+    \label{fig:startcalgo}
+\end{figure}    
+
+
+
+
+%Se observa en primer lugar que el aumento de la altura en los nodos que
+%están en el mismo componente que $v$ no reduce el número de componentes. Por
+%lo tanto, se restringen los incrementos de altura sólo a aquellos vecinos
+%de $v$ que se encuentran en un componente diferente de $v$ en $COVER(h)$. Se llama a este
+%conjunto de nodos $nbr$. Ahora, para cada nodo $u$ en $nbr$ se busca el mínimo
+%incremento de altura $h^+(u)$, en  tal que el enlace $(u,v)$ esté cubierto (Esto se puede
+%hacer mediante una búsqueda binaria\footnote{Hace referencia a la búsqueda
+%de los valores de altura que permiten completar un enlace entre el nodo
+%central $v$ y cualquier otro nodo $u$ en $nbr$ de forma
+%individual.} 
+%sobre los incrementos posibles de
+%altura en $u$).  Se debe tener en cuenta que como la función de costo es
+%monótona, el incremento en altura $h^+(u)$ también da el incremento de costo más
+%bajo $c^+(u)$ en $u$ para cubrir la arista $(u,v)$. Ahora, se enumeran
+%todos los nodos en $nbr$  en
+%orden creciente de sus valores $c^+$. Se llama a esta lista $L$. A continuación se
+%observa que, una vez que un enlace de $v$ a un nodo en algún otro  componente
+%está cubierto, se reduce el número de componentes en $COVER(h)$. Entonces se debe
+%elegir el mejor candidato en $L$ . Por lo tanto, para los nodos en el mismo
+%componente, se mantiene el nodo con costo incremental más bajo ($c^+$) en
+%$L$, y se
+%eliminan los demás nodos de $L$.
+
+
+%Cada incremento aumenta la altura sólo en $v$ y los nodos de menor costo en el
+%conjunto $L$. Más precisamente, el incremento en altura $i-esima$ aumenta
+%la altura del nodo $v$
+%por $\delta$, las alturas de los primeros
+% $k$ nodos en $L$ por sus respectivos $h^+(u)$ y todos los demás
+% nodos por 0. Se debe tener en cuenta que el beneficio de un incremento tal
+% es exactamente $k$. Luego, entre todos estos
+% incrementos de altura, retorna el que tiene la proporción más baja de
+% costo-beneficio.\cite{Panigrahi2008}
+
+ \section{Desarrollo de la aplicación}
+\label{sec:desarrollo}
+
+ \subsection{Creación de la topología inicial}
+Para la creación de la topología inicial se cuenta con una Red privada
+virtual (VPN) que uniría
+por medio de fibra óptica (ya establecida en la
+actualidad por operadores  de telecomunicaciones de tipo
+privado) a las 10 cabeceras municipales en la región,
+y de allí se ubicarían 10 redes inalámbricas que permitirán el acceso a las
+escuelas rurales.
+Así cada escuela hará parte de una subred establecida por un punto de
+acceso en cada cabecera municipal y cuantas escuelas
+rurales se puedan conectar por municipio.
+Para tener un conocimiento preliminar de dicha topología que está
+determinada por la ubicación geográfica de cada escuela
+y por las características del terreno, se hace uso de información que se
+encuentra disponibles en mapas geográficos realizados
+mediante el uso de satélites, estos mapas son parte del proyecto SRTM de la
+NASA.
+Al adquirir el mapa de la región se procede a ubicar por medio de sus
+coordenadas geográficas cada escuela y cabecera
+municipal en la red. Posteriormente se evalúa el perfil del terreno
+presente entre cada par de nodos que conforman un enlace.
+
+\subsection{Características del diseño de la topología}
+
+La creación de la topología de red inalámbrica en casos donde se tiene un
+número de nodos $n$ elevado ($n > 5$) resulta
+complejo realizar los cálculos adecuados que permitan obtener valores de
+altura óptimos en las estructuras de soporte de
+las antenas. Estas alturas son determinantes para establecer un enlace
+directo entre un par de nodos $(u, v)$, y de ahí partir
+para conseguir que toda la red esté completamente conectada, para ello la
+altura de un nodo cualquiera $u$ no solo ha de
+satisfacer un enlace directo con un nodo $v$, sino que también para cualquier
+otro nodo $w$ de la red, esto hace que la cantidad
+de enlaces aumente y logra conseguir la condición de conectividad buscada.
+Debido a lo anterior es importante realizar una búsqueda no solo de altura
+sino de los enlaces óptimos que requiere la
+topología. El número de enlaces $e$, entonces, aumentaría la complejidad del
+diseño físico de la red, siendo $e = {a \choose b}$ para una
+red totalmente conectada (si $5 \leq n \leq 20, 10 \leq e \leq 190$).
+
+
+\subsection{Obtención del perfil del terreno}
+\label{sec:obtencion}
+
+Entre dos nodos físicos en una red $(u, v)$, existe a lo largo de la
+distancia que los separa una cantidad de obstrucciones dada,
+debido a la topografía regional y a la vegetación. El perfil del terreno
+corresponde a la disposición geométrica construida
+por todas las obstrucciones presentes en el trayecto del enlace.
+Al tener las posiciones geográficas de cada nodo en la red, y al establecer
+los enlaces en un diseño de topología de red inicial,
+es posible, obtener un perfil de obstrucciones relativo a cada enlace. Por
+medio de manipulación de mapas satelitales de
+elevación del terreno, se posicionan en el mapa determinado según sus
+coordenadas los nodos $(u, v)$ y luego mediante
+interpolación se seleccionan los valores que corresponden a las posiciones
+geográficas que se encuentran sobre la línea recta
+que relaciona los dos nodos.
+
+\subsection{Grafo inicial}
+\label{sec:inicial}
+
+Para asegurar  la conectividad, el grafo de entrada 
+$G_i (V_i , E_i)$ se establece completamente conectado, es decir,
+cada nodo tiene comunicación directa con cualquier otro nodo en el grafo, y
+el costo de este enlace provienen de su altura,
+la cual es determinada por las obstrucciones en el trayecto del enlace.
+
+La región del Sumapaz al estar ubicada en la cordillera oriental, alcanza
+alturas que oscilan entre los 700 m
+y 2500 m esto imposibilita que el grafo que representa la topología de red
+real, este completamente conectado con respecto
+a los condicionamientos físicos para el establecimiento de los enlaces.
+Por lo anterior antes de que el grafo sea tratado por el algoritmo TC-ALGO,
+es necesario descartar los enlaces que no
+cumplen el valor de altura máxima $h_{max}$ , esto se realiza de forma básica
+eliminando los enlaces que no cumplen con la
+siguiente condición:
+
+\begin{equation}
+    max(h_o (u, v)) \leq h_{max}
+\end{equation}
+
+
+Donde $h_o (u, v)$ es la función de obstrucciones en el trayecto del enlace
+la cual describe el perfil del terreno entre los nodos
+$u$ y $v$.
+Esta selección es importante para el correcto funcionamiento del algoritmo
+TC-ALGO, dado que lo que se quiere obtener es
+que los valores de altura, así como los costos relacionados sean coherentes
+con los límites de altura definidos. Dado que si
+existen valores mayores a $h_{max}$, que es el margen de altura buscado, el
+costo resultaría prohibitivo.
+
+
+Un costo prohibitivo puede generar que el algoritmo no encuentre como
+conectar un determinado nodo $u$, en el enlace $(u, v)$
+el cual su altura $h_{omax} (u, v)$ es prohibitiva, con el componente
+$COVER(h)$,
+ocasionando que $COMP(h)$ nunca sea igual a
+1, condición que hace que el algoritmo nunca termine.
+
+El proceso de eliminación puede generar que uno o varios nodos no estén
+conectados, estos deben ser eliminados del grafo
+inicial $G_i$ (Figura~\ref{fig:grinicial}), debido a que no van a ser accesibles por ningún otro nodo,
+generando el problema de conectividad descrito
+anteriormente.
+Entonces el grafo inicial $G_i (V_i , E_i )$, es un subgrafo conectado del
+grafo de entrada $G(V, E)$ donde $E_i \subseteq E$ y $V_i \subseteq V$, y para
+cada enlace $(u, v)$ en $E_i$ existe una altura máxima de obstrucción
+$h_{omax} (u, v)$ que cumple la condición anterior, además,
+todo nodo $v$ en $V_i$ tiene  un conjunto de nodos vecinos  $nbr \neq
+\emptyset $.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imagenes/grafo-inicial.png}
+    \caption{Mapa con las posiciones geográficas y el diseño inicial de la
+    topología del grafo de entrada}
+    \label{fig:grinicial}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{imagenes/topologia-tcalgo.png}
+    \caption{Mapa de la topología resultante de la aplicación del algoritmo
+    TC-ALGO}
+    \label{fig:topfinal}
+\end{figure}
+\begin{table}[h]
+    \caption{Resultados de los grafos de entrada $G$ e inicial $G_i$}
+    \begin{tabular}{c}
+        \includegraphics[width=0.5\textwidth]{imagenes/grafo-inicial.pdf}\\
+    \end{tabular}
+    \label{tab:grafoinicial}
+\end{table}
+
+Dicho grafo de entrada $G$ constituye la topología de red planteada
+inicialmente, con valores de obstrucción propios del
+relieve del contexto de la red, en este caso de la región del Sumapaz. La
+densidad del grafo $G$ es de uno, es decir que el grafo
+está completamente conectado. La densidad del grafo representa la relación
+que existe entre el número de nodos y el número
+de enlaces, cuya representación matemática es:
+
+\begin{equation}
+    d=\frac{ 2e}{ n(n-1)}
+\end{equation}
+
+Donde $e$ es el número de aristas y $n$ es el número de nodos del grafo, esta
+relación corresponde a un grafo no dirigido.
+
+\subsection{Aplicación del algoritmo de optimización TC-ALGO}
+\label{sec:aplicacion}
+
+
+Al grafo de entrada $G$ el cual está completamente conectado se le realiza
+una selección verificando que las alturas de los enlaces no superen
+$h_{max}$ según lo expuesto anteriormente esto da como resultado el grafo
+inicial $G_i$ Las características de los grafos se evidencian en el
+Cuadro~\ref{tab:grafoinicial}.
+
+Al ejecutar el algoritmo para la topología de red inicial, se consigue un
+nuevo grafo  con una densidad \cite{harju2011lecture} menor que el 
+grafo inicial $G_i$, además se calcula el costo de establecer  la 
+topología­a de red a partir de 10 grafos de densidad promedio de 36.5\%
+en total constituye un grafo total de la red con una densidad de 
+4\% y con un costo benéfico de 0,95  (Cuadro~\ref{tab:restcalgo}).  
+\begin{table}[h]
+    \caption{Resultados de la aplicación del algoritmo TC-ALGO
+                 en la región del Sumapaz}
+    \begin{tabular}{c}
+    \includegraphics[width=0.49\textwidth]{imagenes/resul-tcalgo2.pdf}\\
+    \end{tabular}
+    \label{tab:restcalgo}
+ \end{table}
+
+\section{Conclusiones}
+
+
+Como se puede observar la topología inicial disminuye la cantidad de nodos
+en un 25.45\%, impidiendo que todos los nodos
+planteados en un comienzo estén conectados a la red, aunque la red estará conformada por
+un subgrafo de  $G$ con menor
+cantidad de nodos (74.55\%) y los enlaces con mejor costo beneficio
+encontrados por TC-ALGO.
+
+
+Se realizó el diseño de  la topología de red en la región del
+Sumapaz, demostrando que aunque la topografía de la región es muy
+quebrada se obtuvieron valores bajos de costo y altura. Para TC-ALGO se
+obtuvo un costo de 288 
+millones de pesos, con un valor de costo beneficio bueno de 0.96
+\footnote{Significa que cada enlace cuesta 0.96 millones de pesos
+colombianos},mientras que la densidad tiene un valor  cercano al 4\%,
+lo que quiere decir que se
+unen el 4\% de los enlaces posibles con relación a un grafo totalmente
+conectado, conectando a   cada uno de los nodos en los 10 municipios y
+cabeceras, esto es beneficioso debido que entre menos enlaces se pretendan
+menor será el costo total. Sin embargo, al tener un valor grande de densidad
+se obtiene una relación costo beneficio menor.
+
+\section{Trabajo futuro} 
+
+Al limitar la  altura de las antenas existe el problema de que al
+eliminar enlaces en el grafo inicial $G_i$ se desconectan nodos que no
+serán evaluados por el algoritmo TC-ALGO lo que impide que la topología se
+pueda construir bajo las
+características de conexión establecidas y es apropiado para el correcto funcionamiento
+del algoritmo TC-ALGO (eliminando alturas con costos prohibitivos).
+En un trabajo posterior se pretende encontrar puntos en el terreno que
+permitan conectar los nodos que en un principio resultaron inalcanzables
+bajo las consideraciones de este trabajo.
+El algoritmo REP-ALGO se desarrolló para cumplir con lo expuesto en el
+párrafo anterior que adiciona nodos a la red para conectar los que
+deberían ser eliminados por la restricción de altura. Determinar la 
+eficiencia de dicho algoritmo constituirá­a la continuación de este trabajo.
+
+%Dicho algoritmo
+%permitió elevar la relación de conexión del 74.45\% al 97\% del total
+% de los nodos.
+
+%\begin{figure}[h]
+%    \centering
+%    \includegraphics[width=0.45\textwidth]{imagenes/Tabla_algo_rep.pdf}
+%    \caption{Algoritmo de repetidoras REP-ALGO}
+%    \label{fig:rep_algo}
+%\end{figure}
+
+\bibliographystyle{IEEEtran}
+
+\bibliography{bibliografia}
+
+\newpage
+
+\end{document}
