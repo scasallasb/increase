@@ -69,5 +69,4 @@ def datos(nmin, nmax, taz, nvec, sis):
     plt.ylabel(u'Media R_simple')
     plt.grid()
     plt.savefig(sis+".png")
-    plt.show()
     return med,des

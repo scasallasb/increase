@@ -13,7 +13,7 @@ def TC_ALGO(G):
     COVERh.add_nodes_from(G)
     COMPh=nx.number_connected_components(COVERh)
     for n in G.nodes():
-         G.add_node(n,hi=0)
+         G.add_node(n,hi=0)   
 
     while COMPh > 1:
          rbest=inf
@@ -32,19 +32,17 @@ def TC_ALGO(G):
                  rtmp,incrtmp, mayl=sta.START_TC_ALGO(G,COVERh,h,n,a)
                  if (rtmp < rbest):
                      nodo,rbest,incrbest, mayL=n,rtmp,incrtmp, mayl
-
+             
          for i in incrbest.keys():
              for j in range (0,len(mayL)):
                  if (incrbest[i] >= 0) and (i==mayL[j]):
                      COVERh.add_edge(nodo,i)
          for i in G.nodes():
-             G.add_node(i,hi=h[i]+incrbest[i])
+             G.add_node(i,hi=h[i]+incrbest[i])     
          COMPh=nx.number_connected_components(COVERh)
     print COVERh.edges()
     print(nx.get_node_attributes(G,'hi'))
     print '-----------------------------------------------------'
-
-
     return COVERh
     '''dr=plt.figure()
     dr.add_subplot(131)
@@ -55,14 +53,4 @@ def TC_ALGO(G):
     dr.add_subplot(133)
     nx.draw_shell(T)
     plt.show()'''
-
-
-
-def test():
-    assert(TC_ALGO)
-
-if __name__ == '__main__':
-
-
-    j=  nx.erdos_renyi_graph(100, 1)
-    TC_ALGO(j)
+    

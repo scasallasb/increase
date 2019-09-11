@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import networkx as nx
 import tc_algo as tc
-def graph_db(save=False, show=False):
+    def graph_db(save=False, show=False):
     database = sq.connect("midb.db")
     cu = database.cursor()
 
@@ -34,7 +34,7 @@ def graph_db(save=False, show=False):
     plt.xlabel(u'Numero de Nodos $n$')
     plt.ylabel(r'Media $R_{simple}$')
     plt.grid()
-    if save==True:
+    if save=True:
         plt.savefig(sis+".png")
-    if show==True:
+    if show=True:
         plt.show()

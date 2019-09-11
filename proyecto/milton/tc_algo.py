@@ -11,19 +11,19 @@ def algo(G1, COST0,met=False,**kwds):
     if met == True:
         G=nx.Graph()
         j=nx.erdos_renyi_graph(G1,1)
-        for i in j.edges():       
+        for i in j.edges():
             r=list(i)
             e=np.random.random_integers(0,150)
             G.add_edge(r[0],r[1],weight=e)
-        print 'edges, nodes','=',nx.number_of_edges(G),nx.number_of_nodes(G)
-    else: 
+        print ('edges, nodes','=',nx.number_of_edges(G),nx.number_of_nodes(G))
+    else:
         G=G1;
-    print 'ENTRAN_GRA(e,n)=',len(G.edges()),len(G.nodes())
+    print ('ENTRAN_GRA(e,n)=',len(G.edges()),len(G.nodes()))
     InG,G,no_in=Grafo_inicial(G,hmax)
-    print 'no_in =',no_in
+    print ('no_in =',no_in)
     """nx.draw(InG)
     plt.show()
-    
+
     no_in = [1,8]
     for i in no_in:
         try:
@@ -34,11 +34,11 @@ def algo(G1, COST0,met=False,**kwds):
 
     COVERh=nx.Graph()
     COVERh.add_nodes_from(G)
-    COMPh=nx.number_connecetd_components(COVERh)
-    
+    COMPh=nx.number_connected_components(COVERh)
+
     inf=m.factorial(10)
-    u=nx.get_edge_attributes(G,'weight') 
-    print 'edges, nodes','=',nx.number_of_edges(G),nx.number_of_nodes(G)
+    u=nx.get_edge_attributes(G,'weight')
+    print ('edges, nodes','=',nx.number_of_edges(G),nx.number_of_nodes(G))
     def c(h):
          if h <= 5:
             costo=K*h*0.1
@@ -48,16 +48,16 @@ def algo(G1, COST0,met=False,**kwds):
             costo=(A*h)+B
          else:
             costo=inf
-         return costo  
-    def c_1(ci):   
+         return costo
+    def c_1(ci):
          if ci > (c(hmin)):
              l=np.ceil((ci-B)/A)
          elif ci>(c(5)) and ci <=(c(hmin)):
              l=hmin
          else:
              l=ci/(K*0.1)
-         return l  
-    
+         return l
+
     def beta(n1,n2,d):
          try:
              aux=(2.0*(u[(n1,n2)]))
@@ -69,15 +69,17 @@ def algo(G1, COST0,met=False,**kwds):
          else:
              B=0
          return B
-    
+
     def nbrfun(n,d):
          p=[]
          r=set()
          for i in range(0,nx.number_connected_components(COVERh)):
-             p.append(nx.connected_component_subgraphs(COVERh)[i])
+             subgraph=(list(nx.connected_component_subgraphs(COVERh)))
+             p.append(subgraph[i])
              for o in p[i].nodes():
                  if o==n:
                      r=set(G.neighbors(n)) - set(p[i].neighbors(n))
+
          r=list(r)
          L=[]
          l=[]
@@ -87,11 +89,14 @@ def algo(G1, COST0,met=False,**kwds):
              G.add_node(r[i],cinc=(c(beTa + h[r[i]])- c(h[r[i]])))
              l.append((r[i],(c(beTa+ h[r[i]])-c(h[r[i]]))))
          l=dict(l)
+
          va=l.values()
-         vk=l.keys()
+         vk=list(l.keys())
          Li=[]
+         va = list(va)
          while len(va)>0:
              mi=np.min(va)
+             #retirar valor minimo
              d=va.index(mi)
              L.append(vk[d])
              vk.remove(vk[d])
@@ -107,7 +112,7 @@ def algo(G1, COST0,met=False,**kwds):
                          break
                      except (IndexError):
                          pass
-                     u = L.index(ri[j]) 
+                     u = L.index(ri[j])
          return r, L
 
     def START_TC_ALGO( h, n, dirac):
@@ -133,9 +138,9 @@ def algo(G1, COST0,met=False,**kwds):
          return rbest,incr, L
 
     for n in G.nodes():
-         G.add_node(n,hi=0) 
+         G.add_node(n,hi=0)
     for n in InG.nodes():
-         InG.add_node(n,hi=0)  
+         InG.add_node(n,hi=0)
 
     while COMPh > 1:
          rbest=inf
@@ -160,7 +165,7 @@ def algo(G1, COST0,met=False,**kwds):
                  if (incrbest[i] >= 0) and (i==mayL[j]):
                      COVERh.add_edge(nodo,i)
          for i in G.nodes():
-             G.add_node(i,hi=h[i]+incrbest[i])     
+             G.add_node(i,hi=h[i]+incrbest[i])
          COMPh=nx.number_connected_components(COVERh)
     costo =0
     for n in G.nodes():
@@ -185,13 +190,13 @@ def algo(G1, COST0,met=False,**kwds):
     uw =nx.get_edge_attributes(COVERh,'weigth')
     nw =nx.get_node_attributes(G,'hi')
     u1 =nx.get_edge_attributes(T,'weight')
-    nx.set_node_attributes(InGr,'hi',nw)
-    print 'COVERh','=',nx.number_of_edges(COVERh),nx.number_of_nodes(COVERh)
-    print 'T','=',nx.number_of_edges(T),nx.number_of_nodes(T)
-    print 'COVERh','=',(nx.get_node_attributes(G,'hi'))
-    print 'T','=',(nx.get_node_attributes(T,'hi'))
-    print 'COVERh ed=',COVERh.edges()
-    print 'T ed=',T.edges()
+    nx.set_node_attributes(InGr,nw,'hi')
+    print ('COVERh','=',nx.number_of_edges(COVERh),nx.number_of_nodes(COVERh))
+    print ('T','=',nx.number_of_edges(T),nx.number_of_nodes(T))
+    print ('COVERh','=',(nx.get_node_attributes(G,'hi')))
+    print ('T','=',(nx.get_node_attributes(T,'hi')))
+    print ('COVERh ed=',COVERh.edges())
+    print ('T ed=',T.edges())
     return costo,costo1, InG,InGr, T
 
 def Grafo_inicial(G, hmax):
@@ -199,28 +204,32 @@ def Grafo_inicial(G, hmax):
     InG=nx.Graph()
     no_in=[]
     InG.add_nodes_from(G.nodes())
-    u=nx.get_edge_attributes(G,'weight') 
+    u=nx.get_edge_attributes(G,'weight')
     for i in G.edges():
         if u[i]<hmax:
             InG.add_edge(i[0],i[1],weight=u[i])
-            InG1.add_edge(i[0],i[1],weight=u[i])            
+            InG1.add_edge(i[0],i[1],weight=u[i])
     for i in G.nodes():
         if nx.degree(InG,i)==0:
             no_in.append(i)
     y= nx.number_connected_components(InG1)
-    print 'Components=',y
+    print('Components=',y)
     s1,s=0,0
     if (y)>1:
-        aux=nx.connected_component_subgraphs(InG1)
-        for gr in range(y):            
-            s1=len(aux[gr].nodes())
+        aux=list(nx.connected_component_subgraphs(InG1))
+
+        for gr in range(y):
+
+            gr1=aux[gr]
+            aux3= list(gr1.nodes())
+            s1=len(aux3)
             if s<s1:
                 s=s1
                 aux1=gr
             else:
                 for n in aux[gr].nodes():
                     if n not in no_in:
-                        no_in.append(n) 
+                        no_in.append(n)
         InG1=aux[aux1]
     return InG,InG1,no_in
 """

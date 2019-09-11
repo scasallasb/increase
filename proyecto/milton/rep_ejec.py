@@ -34,9 +34,10 @@ def ext_map(cocen=None,Arco=None, met=False, Fil=None, s=None, **kwds):
     return au, DiM
 
 def edge_gen(n):
+    n=list(n)
     res=[]
     for i in range (0,len(n)):
-        for j in range(i+1,len(n)):
+        for j in range(i+1,len(n)-1):
             res.append((n[i],n[j]))
             
     return res
@@ -58,7 +59,7 @@ def ins_rep(DeCo, map, DiM, tam=None, No=None):
 def map_inter(map, DiM, No='pre', r=True, G=None, p1=None, p2=None):
     if G is not None:
          po=nx.get_node_attributes(G,'pos')
-         print po
+         print (po)
          nx.draw_networkx_nodes(G,po,node_size=80,node_color='g'
                          ,nodelist=p2)
          nx.draw_networkx_nodes(G,po,node_size=250,node_color='r',width=2.0
@@ -138,11 +139,12 @@ def dibujar_grafo_unido(G=None, cab=None,Rep=None
                         ,map=None, DiM=None,nols=None,
                         no_lab=None,title=None, rt=False,s=None,**kwds):
     po=0
+    key=list(cab.keys())
     if cab is None:
         pass
     else:
         if len(cab)==1:
-            pos= bd.georefxc(cab.keys()[0])
+            pos= bd.georefxc(key[0])
         else:
             pos= bd.georefxc()
     if G is None:
@@ -187,7 +189,7 @@ def grafo_unido(Cab=None,Rep=None,we=False,co=True,**kwds):
     Gax=nx.Graph() 
     if Cab is not None:
         G.add_nodes_from(Cab.keys())
-        nx.set_node_attributes(G,'pos',Cab)
+        nx.set_node_attributes(G,Cab,'pos')
         aux=edge_gen(G.nodes())
         G.add_edges_from(aux) 
         for i in Cab.keys():
@@ -197,21 +199,21 @@ def grafo_unido(Cab=None,Rep=None,we=False,co=True,**kwds):
                 pre=pos_rep(re)
                 Gax.add_nodes_from(pre.keys())
                 G.add_nodes_from(pre.keys())
-                nx.set_node_attributes(G,'pos',pre)
+                nx.set_node_attributes(G,pre,'pos')
             pos= bd.georefxc(Fil=[i])
             for t in pos[i].keys():
                 PO.append(t)
             Gax.add_nodes_from(pos[i].keys())
-            nx.set_node_attributes(Gax,'pos',pos[i])
+            nx.set_node_attributes(Gax,pos[i],'pos')
             G.add_nodes_from(pos[i].keys())
-            nx.set_node_attributes(G,'pos',pos[i])
+            nx.set_node_attributes(G,pos[i],'pos')
             ed=edge_gen(Gax.nodes())
             Gax.add_edges_from(ed)            
             G.add_edges_from(Gax.edges())
     if we==True:
         w={}
         w=w_eg(G)
-        nx.set_edge_attributes(G,'weight',w)
+        nx.set_edge_attributes(G,w,'weight')
     return G, PO
 def pos_rep(Rep, Repcon=None):
     prep={}
@@ -233,7 +235,7 @@ def ejec_rep(Cab,G=None):
         map=[]
         pos= bd.georefxc(Fil=[i])
         G1, pos1=grafo_unido({i:Cab[i]})
-        print i
+        print (i)
         #pos ={'7':{'rep199': [-74.497104, 4.610978], 'rep200': [-74.555972, 4.578489]
          #       ,'rep19': [-74.4903, 4.5924],'rep2': (-74.508625, 4.603122)}}
         Arcoo=pos.values()[0]
@@ -248,6 +250,6 @@ def ejec_rep(Cab,G=None):
         except KeyError:
             rep[i]={}
             rep[i]=Corep
-        print Corep
-        print '-'*120
+        print (Corep)
+        print ('-'*120)
     

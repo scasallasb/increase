@@ -21,11 +21,11 @@ def usar_algo(Cab, rep1=False,max=False,num_rep=None
     for i in Cab.keys():
         cab={i:Cab[i]}
         sG[i]= nx.Graph()
-        print i
+        print (i)
         if rep1 == True:
             rep=dr.dict_rep([i], max=max
                             ,num_rep=num_rep, icu=icu)
-            print 'Repetidor =',rep
+            print('Repetidor =',rep)
             lsrep=Re.pos_rep(rep)
             lsrep=Re.pos_rep(lsrep)
             for k in lsrep:
@@ -47,7 +47,7 @@ def usar_algo(Cab, rep1=False,max=False,num_rep=None
         ps= bd.georefxc(Fil=[i],label=True)
         sp=dict((n,n) for n in u1.keys())
 
-        print nx.get_edge_attributes(sG[i],'weight')
+        print (nx.get_edge_attributes(sG[i],'weight'))
 
         map,DiM=Re.dibujar_grafo_unido(G=sG[i], cab=cab, nols=pos1
                     ,rt=True, title=i, Rep=lsrep,no_lab=sp)
@@ -69,31 +69,32 @@ def usar_algo(Cab, rep1=False,max=False,num_rep=None
         h.show_map(map,DiM,coverh,Pos=u1,nodels=[i]
             ,G1nodels=pos1,no_lab=sp,Repls=lsrep
             ,title='cover'+i+'NL', rt=True)
+        plt.show()
         u=nx.get_node_attributes(sG[i],'pos')
         GT.add_nodes_from(sG[i].nodes())
-        nx.set_node_attributes(GT,'pos',u)
+        nx.set_node_attributes(GT,u,'pos')
         GT.add_edges_from(sG[i].edges())
         GC.add_nodes_from(coverh.nodes())
         GC.add_edges_from(coverh.edges())
-        nx.set_node_attributes(GC,'pos',u)
+        nx.set_node_attributes(GC,u,'pos')
         Gi.add_nodes_from(InG.nodes())
         Gi.add_edges_from(InG.edges())
-        nx.set_node_attributes(Gi,'pos',u)
-        print 'cC=',cC,'cT=', cT
-        print '*'*200
+        nx.set_node_attributes(Gi,u,'pos')
+        print ('cC=',cC,'cT=', cT)
+        print ('*'*200)
 
-    map,DiM=Re.dibujar_grafo_unido(G=GT, cab=Cab, nols=Po1
-                    ,rt=True, title='Sumapaz', Rep=lsRe)
-    map,DiM=Re.dibujar_grafo_unido(G=GT, cab=Cab, nols=Po1
-                    ,rt=True, title='Sumapazl', Rep=lsRe, no_lab=Ps)
-    map,DiM=Re.dibujar_grafo_unido(G=GC, cab=Cab, nols=Po1
-                    ,rt=True, title='Sumapazco', Rep=lsRe)
-    map,DiM=Re.dibujar_grafo_unido(G=GC, cab=Cab, nols=Po1
-                    ,rt=True, title='Sumapazcol', Rep=lsRe, no_lab=Ps)
-    map,DiM=Re.dibujar_grafo_unido(G=Gi, cab=Cab, nols=Po1
-                    ,rt=True, title='Sumapazi', Rep=lsRe)
-    map,DiM=Re.dibujar_grafo_unido(G=Gi, cab=Cab, nols=Po1
-                    ,rt=True, title='Sumapazil', Rep=lsRe, no_lab=Ps)
+    map,DiM=Re.dibujar_grafo_unido(G=GT, cab=Cab, nols=Po1)
+                    #,rt=True, title='Sumapaz', Rep=lsRe)
+    map,DiM=Re.dibujar_grafo_unido(G=GT, cab=Cab, nols=Po1)
+                    #,rt=True, title='Sumapazl', Rep=lsRe, no_lab=Ps)
+    map,DiM=Re.dibujar_grafo_unido(G=GC, cab=Cab, nols=Po1)
+                    #,rt=True, title='Sumapazco', Rep=lsRe)
+    map,DiM=Re.dibujar_grafo_unido(G=GC, cab=Cab, nols=Po1)
+                    #,rt=True, title='Sumapazcol', Rep=lsRe, no_lab=Ps)
+    map,DiM=Re.dibujar_grafo_unido(G=Gi, cab=Cab, nols=Po1)
+                    #,rt=True, title='Sumapazi', Rep=lsRe)
+    map,DiM=Re.dibujar_grafo_unido(G=Gi, cab=Cab, nols=Po1)
+                    #,rt=True, title='Sumapazil', Rep=lsRe, no_lab=Ps)
 
 def main():
 
@@ -108,7 +109,7 @@ def main():
             ,u'GRANADA':[-74.351389,4.518611]
             ,u'FUSAGASUGA':[-74.364444,4.337222]}
 
-    cab={u'CABRERA':[-74.485833,3.978056]}
+    #cab={u'CABRERA':[-74.485833,3.978056]}
 
     """mapa_repetidora
     Re.ejec_rep(cab)
@@ -123,10 +124,10 @@ def main():
     # """
 
     """ dibujar un solo municipio
+
     G=nx.Graph()
     G, pos1=Re.grafo_unido(cab)
     Re.dibujar_grafo_unido(G=G, cab=cab, nols=pos1)
     # """
 
 main()
-

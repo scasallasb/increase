@@ -31,6 +31,3 @@ def START_TC_ALGO(G,coverh, h, n, dirac):
                  G. add_node(i,hinc=0)
      incr= nx.get_node_attributes(G,'hinc')
      return rbest,incr, L
-
-def test():
-     assert (START_TC_ALGO)

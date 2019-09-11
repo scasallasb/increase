@@ -1,4 +1,4 @@
-import urllib2
+import urllib.request as urllib2
 import urllib
 import zipfile
 from pylab import *
@@ -480,8 +480,8 @@ def draw_networkx_labels1(G, pos,
     text_items={}  # there is no text collection so we'll fake one
     for n, label in labels.items():
         (x,y)=pos[n]
-        if not cb.is_string_like(label):
-            label=str(label) # this will cause "1" and 1 to be labeled the same
+        #if not cb.is_string_like(label):
+            #label=str(label) # this will cause "1" and 1 to be labeled the same
         t=ax.text(x, y,
                   label,
                   size=font_size,

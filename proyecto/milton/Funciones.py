@@ -67,9 +67,3 @@ def nbrfun(G,COVERh,n,d):
                      pass
                  u = L.index(ri[j]) 
      return r, L
- 
-def test():
-    assert(c)
-    assert(c_1)
-    assert(nbrfun)
-    assert(beta)

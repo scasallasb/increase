@@ -75,9 +75,9 @@ def TC_ALGO(G):
              G.add_node(i,hi=h[i]+incrbest[i])
          COMPh=nx.number_connected_components(COVERh)
     #imprimir resultado
-    print COVERh.edges()
+    print (COVERh.edges())
     print(nx.get_node_attributes(G,'hi'))
-    print '-------------------------   listo   -----------------------------'
+    print ('-------------------------   listo   -----------------------------')
 
     return G
 
@@ -335,6 +335,7 @@ def nbrfun(G,COVERh,n,d):
         for o in p[i].nodes():
                 if o==n:
                     r=set(G.neighbors(n)) - set(p[i].neighbors(n))
+
     r=list(r)
     L=[]
     l=[]
@@ -350,8 +351,9 @@ def nbrfun(G,COVERh,n,d):
     l=dict(l)
     #ordena los valores de mayor a menor costo
     va= l.values()
-    va.sort()
-
+    #va.sort()
+    
+    va = list(sorted(va))
 
     for i in range(0,len(va)):
         for j in range(0,len(va)):

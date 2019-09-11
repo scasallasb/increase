@@ -90,7 +90,7 @@ def no_redun():
     ax2={}
     for i in s1.keys():
         ax1={}
-        print i
+        print (i)
         for j in s1[i].keys():
             ax={}
             for k in s1[i][j].values():
@@ -102,7 +102,7 @@ def no_redun():
             except KeyError:
                 ax1[j]={}
                 ax1[j]=ax
-        print ax1
+        print (ax1)
         
         try:
             ax2[i]=ax1
