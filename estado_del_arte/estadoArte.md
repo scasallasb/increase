@@ -300,7 +300,7 @@ La forma en que le autor trabaja la planeación de la red, consiste en que prime
 
 
 
-* Aérea de cobertura.
+* Área de cobertura.
 
 * Interferencia.
 
@@ -326,8 +326,19 @@ En el trabajo de *Gordejuela*, se realizó la implementación de este marco de r
 
 ## Redes BWA en zonas Rurales
 
+El desarrollo de las telecomunicaciones de banda ancha en zonas rurales se enfrenta a numerosos desafíos dentro del ecosistema de las telecomunicaciones de banda ancha, entre ellos se encuentran:
+* Los gobiernos: Perspectiva política, jurídica y reglamentaria
 
-Con el objetivo de reducir la brecha digital, autores [@bernardi2012],[@maseratti2011],[@sen] han propuesto como solución la planeación y despliegue de redes de banda ancha inalámbrica en zonas rurales.
+* Los reguladores: Políticas para el despliegue de infraestructura en zonas distantes
+
+* Los proveedores de servicios de telecomunicaciones: La inversión en telecomunicaciones rurales debe garantizar un negocio sostenible y viable
+
+* Los fabricantes de equipos de cliente (CPE): Costo de los equipos 
+
+* Los consumidores: Costo elevado de los servicios, dificultad de acceso y disponibilidad, menor nivel de alfabetización tecnológica lo que imposibilita usar los servicios disponibles.
+
+Con el objetivo de reducir la brecha digital, autores [@bernardi2012],[@maseratti2011],[@sen] han propuesto como solución la planeación y despliegue de redes de banda ancha inalámbrica en zonas rurales; considerando las condiciones locales, como la ubicación geográfica, el bienestar económico de la comunidad, el tipo de entorno rural o urbano y el relieve del terreno, puede identificarse un conjunto de posibles soluciones para prestar accesos de banda ancha, y que van, entre otros, desde sistemas de cable a sistemas inalámbricos fijos, sistemas satelitales o de enlaces de microondas, sistemas xDSL y tecnologías móviles
+
 
 ### Redes BWA en la India (País rural)
 El autor *Sen* se enfoca específicamente en la planeación de redes de banda ancha en áreas rurales, en su tesis [@sen] trabaja sobre una red desplegada en un distrito ubicado en la India, un país donde la mayoría de la población vive en áreas rurales (66% según el Banco Mundial) y esta hace parte de la brecha digital, esto se resuelve dando conectividad a todas las aldeas y pueblos. Lograr esto expandiendo la red actual de telefónica corriente en zonas rurales no es factible teniendo en cuenta los costos elevados de la instalación de la infraestructura inicial, sin embargo, este caso no ocurre en la telefonía móvil, donde la demanda de usuarios es más densa y por ende se considera un modelo de negocio, puesto que se retribuye la inversión teniendo en cuenta la cantidad de usuarios dispuestos a pagar por este servicio.
@@ -360,7 +371,7 @@ El problema de la planeación es resuelto teniendo en cuenta una serie de depend
 
 El rendimiento requerido se logra dependiendo del protocolo MAC que se esté implementando, en este caso, el autor propone utilizar el protocolo de capa de Enlace de Datos 2P, puesto que en comparación con los protocolos más utilizados como TDMA y CSMA/CA, este tiene una capacidad de datos más elevada.
 
-**El rendimiento depende del tipo de antena**
+**La velocidad de transmisión depende del diseño físico de la red**
 
 El rendimiento depende del tipo de enlace, Punto a Punto (PTP) ó Punto Multipunto (PMP), puesto que si es PTP se usa todo el rendimiento permitido por la MAC, en cambio sí es PMP el rendimiento permitido por la MAC se divide entre los enlaces que están conectados, de esta manera el protocolo de enlace de todos tendrá que conmutar entre los enlaces existentes reduciendo el rendimiento del protocolo MAC.
 
@@ -370,7 +381,7 @@ La señal trasmitida tendrá una degradación en su intensidad, dependiendo de l
 
 **La MAC depende de la potencia de trasmisión**
 
-Esto es específicamente  para el protocolo MAC 2P, en el que múltiples enlaces pueden operar simultáneamente. La operación simultánea de múltiples enlaces requiere que se asegure que sla relación de potencias de la señal real y de la interferencia (SIR) sea mayor que un margen especificado por el sistema.
+Esto es específicamente  para el protocolo MAC 2P, en el que múltiples enlaces pueden operar simultáneamente. La operación simultánea de múltiples enlaces requiere que se asegure que la relación de potencias de la señal real y de la interferencia (SIR) sea mayor que un margen especificado por el sistema.
 
 **La Altura de la torre depende del tamaño del enlace**  
 
@@ -378,7 +389,7 @@ Esto es específicamente  para el protocolo MAC 2P, en el que múltiples enlaces
 
 **Los costos de despliegue dependen de la altura de las torres**
 
-Los costos de despliegue dependen principalmente del tamaño de la torre que se van a implementar. Los costos de la torre crecen linealmente con la altura de la torre, así que en este punto se debe considerar que se debe diseñar la topología de tal forma que la altura sea la mínima, esto ahorrara los costos principales del despliegue de una red.     
+Los costos de despliegue dependen principalmente del tamaño de la torre que se van a implementar. Los costos de la torre crecen linealmente con la altura de la torre, así que en este punto se debe considerar que se debe diseñar la topología de tal forma que la altura sea la mínima, esto ahorrará los costos principales del despliegue de una red.     
 
 
 ![Dependencias de requerimientos](dependencias.pdf){ width=10sss0% }
