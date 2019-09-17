@@ -327,6 +327,7 @@ En el trabajo de *Gordejuela*, se realizó la implementación de este marco de r
 ## Redes BWA en zonas Rurales
 
 El desarrollo de las telecomunicaciones de banda ancha en zonas rurales se enfrenta a numerosos desafíos dentro del ecosistema de las telecomunicaciones de banda ancha, entre ellos se encuentran:
+
 * Los gobiernos: Perspectiva política, jurídica y reglamentaria
 
 * Los reguladores: Políticas para el despliegue de infraestructura en zonas distantes
@@ -337,22 +338,35 @@ El desarrollo de las telecomunicaciones de banda ancha en zonas rurales se enfre
 
 * Los consumidores: Costo elevado de los servicios, dificultad de acceso y disponibilidad, menor nivel de alfabetización tecnológica lo que imposibilita usar los servicios disponibles.
 
-Con el objetivo de reducir la brecha digital, autores [@bernardi2012],[@maseratti2011],[@sen] han propuesto como solución la planeación y despliegue de redes de banda ancha inalámbrica en zonas rurales; considerando las condiciones locales, como la ubicación geográfica, el bienestar económico de la comunidad, el tipo de entorno rural o urbano y el relieve del terreno, puede identificarse un conjunto de posibles soluciones para prestar accesos de banda ancha, y que van, entre otros, desde sistemas de cable a sistemas inalámbricos fijos, sistemas satelitales o de enlaces de microondas, sistemas xDSL y tecnologías móviles
+Con el objetivo de reducir la brecha digital, autores [@bernardi2012],[@maseratti2011],[@sen] han propuesto como solución la planeación y despliegue de redes de banda ancha inalámbrica en zonas rurales; considerando las condiciones locales, como la ubicación geográfica, el bienestar económico de la comunidad, el tipo de entorno rural o urbano y el relieve del terreno, puede identificarse un conjunto de posibles soluciones para prestar accesos de banda ancha, y que van, entre otros, desde sistemas de cable a sistemas inalámbricos fijos, sistemas satelitales o de enlaces de microondas, sistemas ADSL y tecnologías móviles
 
 
 ### Redes BWA en la India (País rural)
-El autor *Sen* se enfoca específicamente en la planeación de redes de banda ancha en áreas rurales, en su tesis [@sen] trabaja sobre una red desplegada en un distrito ubicado en la India, un país donde la mayoría de la población vive en áreas rurales (66% según el Banco Mundial) y esta hace parte de la brecha digital, esto se resuelve dando conectividad a todas las aldeas y pueblos. Lograr esto expandiendo la red actual de telefónica corriente en zonas rurales no es factible teniendo en cuenta los costos elevados de la instalación de la infraestructura inicial, sin embargo, este caso no ocurre en la telefonía móvil, donde la demanda de usuarios es más densa y por ende se considera un modelo de negocio, puesto que se retribuye la inversión teniendo en cuenta la cantidad de usuarios dispuestos a pagar por este servicio.
 
+* Ubicación de la red:
+
+El autor *Sen* se enfoca específicamente en la planeación de redes de banda ancha en áreas rurales, en su tesis [@sen] trabaja sobre una red desplegada en el distrito de Andhra del Oeste de Godavari Pradesh ubicado en la India.
+
+* Población a quién va dirigido: 
+
+La India es un país donde la mayoría de la población vive en áreas rurales (66% según el Banco Mundial) y esta hace parte de la brecha digital, esto se resuelve dando conectividad a todas las aldeas y pueblos. Lograr esto expandiendo la red actual de telefónia fija en zonas rurales no es factible teniendo en cuenta los costos elevados de la instalación de la infraestructura inicial, sin embargo, este caso no ocurre en la telefonía móvil, donde la demanda de usuarios es más densa y por ende se considera un modelo de negocio, puesto que se retribuye la inversión teniendo en cuenta la cantidad de usuarios dispuestos a pagar por este servicio.
+
+* Problemática:
 
 El problema radica en el hecho de que las zonas rurales tienen baja densidad de usuarios y grandes distancias entre grupos de usuarios, esto conlleva a que compañías de telecomunicaciones o proveedores de Internet (ISP) vean poco atractiva la inversión en estos lugares debido al costo inicial de infraestructura y despliegue de la red y bajo retorno de su inversión.
 
+* Causas: 
+
+ - Costo elevado de la expansión de la red telefónica fija
+ - No es un modelo de negocio debido al bajo retorno de la inversión
+ - Baja densidad de usuarios
+ - Costo de infraestructura
+
+* Solución: 
 
 Por consiguiente, el autor propone la planeación de la topología de una red inalámbrica con el uso de la tecnología 802.11, puesto que permite una buena solución teniendo en cuenta su gran aceptabilidad, principalmente por su bajo costo. Por ende, esta tecnología se ha presentado como una opción de económica y efectiva para cubrir largas distancias, ya que permite que zonas muy amplias puedan conectarse a un nodo de línea terrestre con conectividad a Internet de forma cableada (como fibra óptica) por medio de enlaces inalámbricos. Cada enlace inalámbrico corresponde a una antena en una torre instalada en cada pueblo, los cuales deben tener línea de vista *L.O.S.* (*Line Of Sight*).
 
-
 Para la formulación en la construcción de una topología que permita el desempeño de la red, se estipulan de tres principales restricciones:
-
-
 
 1. Restricción de rendimiento: Capacidad de carga y descarga por cada nodo o pueblo que en el caso de la red en que se realizó el trabajo, se establecido que en cada nodo se tuviera un ancho de banda mínimo de 384 Kps .
 
@@ -360,12 +374,7 @@ Para la formulación en la construcción de una topología que permita el desemp
 
 3. Restricción de interferencia: La señal recibida debe ser mayor al umbral de interferencia.
 
-
-
-
 El problema de la planeación es resuelto teniendo en cuenta una serie de dependencias, los cuales están mostradas en la *figura 2*. A continuación se explicarán cada una de estas dependencias:
-
-
 
 **La tasa de transferencia de datos depende de la MAC**
 
@@ -398,18 +407,12 @@ Los costos de despliegue dependen principalmente del tamaño de la torre que se 
 ### Consideraciones de diseño y enfoque de solución
 
 
-
-
 Una vez se ha visto como se divide el problema, el autor sugiere resolver las dependencias con los siguientes pasos, el cual van a ser explicados:
-
-
 
 * Topología de Búsqueda (TS):  
 
 
-
 Explorar el espacio de búsqueda para encontrar la topología de la red, se hace uso del algoritmo Branch-and-bound (Algoritmo de ramificación y límite), con ello se construye la topología de árbol, el cual va a dar una topología inicial de la red.
-
 
 
 * Asignación de altura (HA):
@@ -417,26 +420,51 @@ Explorar el espacio de búsqueda para encontrar la topología de la red, se hace
 Consiste en la altura óptima de las torres en las ubicaciones dadas una vez que se ha formado la topología, para ello se utiliza un conjunto de ecuaciones de programación lineal (LP), el cual se va a obtener la altura que sea optima.
 
 
-
 * Asignación de Antena (AA):
 
 Asignación apropiada de las antenas y sus respectivas orientaciones, se desarrolla un algoritmo heurístico de tiempo complejo polinómico.
-
 
 
 * Asignación de Potencias (PA):
 
 Proporcionar las potencias de transmisión en los radios del sistema usando LP.
 
-Una vez implementada la planeación de la red, el autor en los resultados concluye que se  ahorró 22% con respectos a una planeación sin ninguna técnica de optimización.
 
+* Aporte final:
+
+Como aporte Sen entrega un algoritmo de planeación de redes en zonas rurales y, una vez implementado, el autor en los resultados concluye que se  ahorró 22% con respectos a una planeación sin ninguna técnica de optimización.
+
+ 
 ### Redes BWA en Gran Bretaña (País del primer mundo)
+
+* Ubicación de la red: 
+
+Bernardi diseñó e implemento **Tegola** un banco de pruebas que proporciona internet a algunas comunidades remotas de Gran Bretaña, esta red ha funcionado desde el año 2008 y ha comunicado a 20 comunidades en toda Escocia.
+
+* Población a quién va dirigido: 
+
+Gran Bretaña es un país desarrollado, comunmente llamado "país del primer mundo" ya que su población en su mayoría vive en zonas urbanas, sin embargo, el proyecto se enfoca en comunicar zonas rurales o apartadas que no cuentan con acceso a internet de banda ancha (16,9% del total de la población).
+
+* Problemática:
+
+La falta de herramientas de software para el diseño, gestión y evaluación de redes de acceso inalámbrico de banda ancha han obstaculizado su implementación generalizada a pesar de sus costos y ventajas operativas sobre otras tecnologías de Acceso de banda ancha.
+
+* Causas:
+
+ - Costo de despliegue de ADSL
+ - Bajo retorno de la inversión 
+ - Los usuarios viven lejos unos de otros
+ - Costo de los equipos 
+ - No se puede accedes a software para comunicar pequeñas comunidades y pequeños WISP
 
 Según *Bernardi*, en las últimas décadas se ha incrementado la conectividad de banda ancha, siendo la ADSL (del inglés Asymmetric digital subscriber line) con más del 60% de las conexiones de banda ancha en países de la Organización para la Cooperación y el Desarrollo Económicos es un organismo de cooperación internacional (OCDE); esto se debe principalmente al éxito de la capitalización de ADSL debido al éxito de la red de telefonía. Esta tecnología se caracteriza por que la tasa de trasmisión máxima que puede alcanzar esta en función de la distancia entre el usuario y la central telefónica, es decir, entre más larga sea la distancia, la velocidad de trasmisión es más lenta, por esta razón es comúnmente más utilizada en áreas metropolitanas debido a que tiene más suscriptores y sea más efectivo retornar la inversión de despliegue de una infraestructura. Esto es la principal causa de la brecha digital que existe entre las áreas rurales y metropolitanas.
 
+Pero *Bernardi* expone el despliegue de una red Rural de Banda Ancha (BWA) argumentando que la planeación ad-hoc no es una alternativa de diseño eficiente para este tipo de redes, sin embargo, refiere que la industria ofrece software para planeamiento de redes inalámbricas pero estos no están disponibles ni son adecuados para comunicar pequeñas comunidades y pequeños proveedores de servicio de Internet inalámbrico (WISP) ; cabe resaltar que las BWA usan un modelo de dos niveles, consistiendo en radioenlace Punto Multipunto (PMP) y Punto a Punto (PTP), el primero enlazando la Antena de la torre a los diferentes clientes y el segundo correspondiente al Backhaul.
+
+* Solución :
+
 El Internet satelital se podría decir que es una alternativa de conexión, puesto que está disponible prácticamente en cualquier parte y es frecuentemente subsidiada en áreas remotas incomunicadas, sin embargo, también tiene latencia de tiempo de ida y vuelta muy altos, lo cual lo hace inadecuado para aplicaciones que consuman un ancho de banda considerable, como es el caso de una videollamada (skape).
 
-Pero *Bernardi* expone el despliegue de una red Rural de Banda Ancha (BWA) argumentando que la planeación ad-hoc no es una alternativa de diseño eficiente para este tipo de redes, sin embargo, refiere que la industria ofrece software para planeamiento de redes inalámbricas pero estos no están disponibles ni son adecuados para comunicar pequeñas comunidades y pequeños proveedores de servicio de Internet inalámbrico (WISP) ; cabe resaltar que las BWA usan un modelo de dos niveles, consistiendo en radioenlace Punto Multipunto (PMP) y Punto a Punto (PTP), el primero enlazando la Antena de la torre a los diferentes clientes y el segundo correspondiente al Backhaul.
 A través del planeamiento de red incremental *Bernardi*  desarrolla un software denominado IncrEase cuyo enfoque es identificar la estrategia de despliegue más económica para planear la red teniendo en cuenta que los CPE (customer Premises Equipment) son la opción más rentable para llegar a la población en zonas rurales.
 
 Los proveedores de servicio de Internet inalámbrico implementan una metodología de diseño para operar en escenarios rurales obteniendo remuneración de su inversión, este consiste en planificar su crecimiento ampliando su cobertura, tomando variables como:
@@ -451,27 +479,65 @@ Los proveedores de servicio de Internet inalámbrico implementan una metodologí
 
 - Clientes agrupados: Proporcionar acceso a la red en sectores dónde haya más densidad de la población, para así captar más usuarios.
 
-La falta de herramientas de software para el diseño, gestión y evaluación de redes de acceso inalámbrico de banda han obstaculizado su despliegue generalizado a pesar de sus costos y ventajas operativas sobre otras alternativas de Tecnologías de acceso de banda. *Bernardi* desarrolla un paquete de software para llenar esta brecha, con especial énfasis en las regiones rurales y en desarrollo. Se resalta que abordó tres desafíos técnicos  en el contexto de redes de acceso inalámbrico de banda ancha:
+ *Bernardi* desarrolla un paquete de software con especial énfasis en las regiones rurales y en desarrollo. Se resalta que abordó tres desafíos técnicos  en el contexto de redes de acceso inalámbrico de banda ancha:
 
 - Mapeo de Banda Ancha
 - Planeación de redes
 - Administración de redes
 
+* Aporte
 
-La contribución de *Bernardi* es potenciar el negocio de los pequeños proveedores de Internet inalámbrico (WISP) en zonas rurales a través de un sistema de software, haciéndolo más eficiente reduciendo la brecha digital.
+La contribución de *Bernardi* es potenciar el negocio de los pequeños proveedores de Internet inalámbrico (WISP) en zonas rurales a través de un sistema de software, haciéndolo más eficiente reduciendo la brecha digital, a través de la herramienta IncrEase.
+
+Se desarrolla un software de código abierto IncrEase implementado como una aplicación de escritorio multiplataforma en Java. IncrEase esta basado en un GIS de software libre de la NASA World Wind Java y en una base de datos gráfica Neo4J. 
+
+Para la implementación de IncrEase se toman tres fuentes: 
+
+- Demanda de la cobertura: Posibles usuarios de zonas rurales que no tienen acceso al servicio
+- Usuarios que fallaron en la etapa de instalación: Cobertura insuficiente 
+- Reporte mesas de ayuda:  Localización de los usuarios existentes
+
+Además se obtienen otros datos de factores influyentes como la disponibilidad DSL, la cobertura de red 3G y datos demográficos. IncrEase  a través de datos en forma de arreglo bidimensional cubre regiones de interés y con ello obtiene mapas de calor (áreas de mayor beneficio por la actualización de la red). En estos mapas a mayor calor menor es la cobertura, una posible solución es la instalación de una torre a partir de una lista de torres disponibles en esa área. 
+
+* **Modo de operación herramienta IncrEase**
+
+Flujo de información de la herramienta 
+
+![Ejemplo de flujo de informacion en la herramienta `IncrEase`](figure4_1.png)
+
+- IncrEase Targeted: En este modo de operación el operador selecciona una región específica de cobertura, como parte de expansión de la red
+      
+- Búsqueda Estratégica: Dónde la herramienta guía al operador para decidir el orden de despliegue de sitios de transmisión en el horizonte de corto o largo plazo basado en la rentabilidad esperada
+
+
+
+
+
 
 ### Redes BWA en la región del Sumapaz (Colombia)
 
-A nivel local, [@rios2015] propone una solución de construcción de topología en redes rurales inalámbricas en la región del sumapaz-Colombia. Dentro de este contexto y al igual que Sen, Bernardi, Maserati, expone que el principal desafío es el costo que conlleva establecer redes en zonas rurales, haciendo especial enfásis en el costo de construcción de las torres que soportan las antenas, debido a que es el costo más grande en comparación con los atribuidos a los equipos de comunicación. Presenta los siguientes referentes:
+* ubicación de la red:
 
-#### Construcción de redes
+A nivel local, [@rios2015] propone una solución de construcción de topología en redes rurales dentro de la realización Del Estudio De Factibilidad, Socialización Y Capacitación, Para Implementación De Infraestructuras De Voz Ip Y Comunicaciones Convergentes En La Región Del Sumapaz ”, del grupo de investigación GIGATT de la universidad de Cundinamarca. 
 
-Dentro de este campo determina elementos tales como:
+* Población a quién va dirigido
 
-* Costos de las torres
-* Baja densidad de la población
-* Bajo poder económico
-* Costos de infraestructura y equipos
+La región del Sumapaz consta de 10 municipios con un 41% de población rural del total de la población referente al año 2011, el énfasis del proyecto se plantea en la interconexión de estas zonas apartadas. 
+
+* Problemática 
+
+Las adversas condiciones económicas y de acceso a las tecnologías de la informa­ción, hacen que este proyecto busque evaluar la viabilidad y conseguir alternativas asequibles de diseño e  implementación de redes, en este aspecto este trabajo pretende reducir los principales costos involucrados en la implementación física de redes de comunicaciones rurales
+
+* Causas
+
+- Costos de las torres
+- Baja densidad de la población
+- Bajo poder económico
+- Costos de infraestructura y equipos
+
+* Solución 
+
+Dentro de este contexto y al igual que Sen, Bernardi, Maserati, expone que el principal desafío es el costo que conlleva establecer redes en zonas rurales, haciendo especial enfásis en el costo de construcción de las torres que soportan las antenas, debido a que es el costo más grande en comparación con los atribuidos a los equipos de comunicación. Presenta los siguientes referentes:
 
 #### Topología
 
@@ -479,12 +545,16 @@ Establece que las redes rurales mantienen una topología fija y se realizan enla
 
 #### Costo de las torres
 
-Para lograr obtener linea de vista entre los diferentes nodos es necesario que las torres tengan una altura suficiente para superar los obstáculos oresentados en el terreno. Para la construcción de estas torres establece dos tipos de materiales:
+Para lograr obtener linea de vista entre los diferentes nodos es necesario que las torres tengan una altura suficiente para superar los obstáculos presentados en el terreno. Para la construcción de estas torres establece dos tipos de materiales:
 
 * Mástiles
 * Torres de acero ventadas
 
-De lo anterior determina que el coste de la torres es directamente proporcional a su altura.
+El costo de las torres, es proporcional a  su altura y  esta re­lacionado con material de construcci6n, por ejemplo para un enlace de entre 7-8 Km (distancias tfpicas) se necesitarfan torres de entre 30 m  y 45 m con costos de entre 25 y 38 millones de pesos colombianos. Este costo es de varios ordenes de magnitud mayor que el de los equipos de comunicaciones, de manera que el principal problema de construcción de redes rurales radica en lograr una topología con el menor costo total de las torres que soportan las antenas.
+
+* Aporte 
+
+Como aporte, Rios proporciona un algoritmo que permite establecer tanto la topología de red óptima en cuanto a costos, como las alturas que permiten que una ecuación de costos de las alturas de las torres sea minima. 
 
 
 # Bibliografía
