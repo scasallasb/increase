@@ -509,11 +509,6 @@ Flujo de información de la herramienta
       
 - Búsqueda Estratégica: Dónde la herramienta guía al operador para decidir el orden de despliegue de sitios de transmisión en el horizonte de corto o largo plazo basado en la rentabilidad esperada
 
-
-
-
-
-
 ### Redes BWA en la región del Sumapaz (Colombia)
 
 * ubicación de la red:

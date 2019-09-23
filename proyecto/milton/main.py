@@ -34,7 +34,7 @@ def usar_algo(Cab, rep1=False,max=False,num_rep=None
             lsrep=None
             rep=None
             lsRe=None
-        sG[i], pos1=Re.grafo_unido(cab,we=True,Rep=rep)
+        sG[i], pos1=Re.grafo_unido(Cab,we=True,Rep=rep)
         for k in pos1:
             Po1.append(k)
         pos= bd.georefxc(Fil=[i])
@@ -99,6 +99,8 @@ def usar_algo(Cab, rep1=False,max=False,num_rep=None
 def main():
 
     cab={u'SILVANIA':[-74.388056,4.403333]
+        }
+    """
             ,u'TIBACUY':[-74.4525, 4.347222]
             ,u'ARBELAEZ':[-74.415556,4.272222]
             ,u'PANDI':[-74.487778,4.191111]
@@ -108,7 +110,7 @@ def main():
             ,u'CABRERA':[-74.485833,3.978056]
             ,u'GRANADA':[-74.351389,4.518611]
             ,u'FUSAGASUGA':[-74.364444,4.337222]}
-
+    """
     #cab={u'CABRERA':[-74.485833,3.978056]}
 
     """mapa_repetidora
@@ -120,7 +122,7 @@ def main():
     # """
 
     #"""tcalgo
-    usar_algo(cab,rep1=False)
+    usar_algo(cab, rep1=False)
     # """
 
     """ dibujar un solo municipio
