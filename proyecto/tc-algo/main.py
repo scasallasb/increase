@@ -1,4 +1,5 @@
 import TC_ALGO as tc
+import tc_algoMil as tcm
 import networkx as nx
 if __name__ == "__main__":
     K,A,B,hmax,hmin=1,2.0,10,30,15
@@ -21,3 +22,7 @@ if __name__ == "__main__":
 
     #TC_ALGO
     tc.TC_ALGO(j)
+    COSTO=[0.75,0.65,1,30,20]
+    cC,cT, InG,coverh,T = tc.algo(j,COSTO)
+    
+    

@@ -34,14 +34,19 @@ def usar_algo(Cab, rep1=False,max=False,num_rep=None
             lsrep=None
             rep=None
             lsRe=None
+
         sG[i], pos1=Re.grafo_unido(cab,we=True,Rep=rep)
+
+
         for k in pos1:
             Po1.append(k)
+        """
         pos= bd.georefxc(Fil=[i])
         pos=pos[i]
         pos[i]=cab[i]
         if no_lab is not None:
             no_lab=pos
+        """
 
         u1=nx.get_node_attributes(sG[i],'pos')
         ps= bd.georefxc(Fil=[i],label=True)
@@ -56,20 +61,9 @@ def usar_algo(Cab, rep1=False,max=False,num_rep=None
             Sp[k]=sp[k]
         for k in ps.keys():
             Ps[k]=ps[k]
+
         cC,cT, InG,coverh,T = tc.algo(sG[i],COSTO)
-        h.show_map(map,DiM,InG,Pos=u1,nodels=[i],Repls=lsrep
-            ,G1nodels=pos1,no_lab=ps, p=True
-            ,title='InG'+i, rt=True)
-        h.show_map(map,DiM,InG,Pos=u1,nodels=[i],Repls=lsrep
-            ,G1nodels=pos1,no_lab=sp, p=True
-            ,title='InG'+i+'NL', rt=True)
-        h.show_map(map,DiM,coverh,Pos=u1,nodels=[i]
-            ,G1nodels=pos1,no_lab=ps, p=True,Repls=lsrep
-            ,title='cover'+i, rt=True)
-        h.show_map(map,DiM,coverh,Pos=u1,nodels=[i]
-            ,G1nodels=pos1,no_lab=sp,Repls=lsrep
-            ,title='cover'+i+'NL', rt=True)
-        plt.show()
+
         u=nx.get_node_attributes(sG[i],'pos')
         GT.add_nodes_from(sG[i].nodes())
         nx.set_node_attributes(GT,u,'pos')
@@ -84,22 +78,15 @@ def usar_algo(Cab, rep1=False,max=False,num_rep=None
         print ('*'*200)
 
     map,DiM=Re.dibujar_grafo_unido(G=GT, cab=Cab, nols=Po1)
-                    #,rt=True, title='Sumapaz', Rep=lsRe)
-    map,DiM=Re.dibujar_grafo_unido(G=GT, cab=Cab, nols=Po1)
-                    #,rt=True, title='Sumapazl', Rep=lsRe, no_lab=Ps)
     map,DiM=Re.dibujar_grafo_unido(G=GC, cab=Cab, nols=Po1)
-                    #,rt=True, title='Sumapazco', Rep=lsRe)
-    map,DiM=Re.dibujar_grafo_unido(G=GC, cab=Cab, nols=Po1)
-                    #,rt=True, title='Sumapazcol', Rep=lsRe, no_lab=Ps)
     map,DiM=Re.dibujar_grafo_unido(G=Gi, cab=Cab, nols=Po1)
-                    #,rt=True, title='Sumapazi', Rep=lsRe)
-    map,DiM=Re.dibujar_grafo_unido(G=Gi, cab=Cab, nols=Po1)
-                    #,rt=True, title='Sumapazil', Rep=lsRe, no_lab=Ps)
 
 def main():
 
     cab={u'SILVANIA':[-74.388056,4.403333]
             ,u'TIBACUY':[-74.4525, 4.347222]
+            }
+    """
             ,u'ARBELAEZ':[-74.415556,4.272222]
             ,u'PANDI':[-74.487778,4.191111]
             ,u'PASCA' :[-74.300833, 4.3075]
@@ -108,7 +95,7 @@ def main():
             ,u'CABRERA':[-74.485833,3.978056]
             ,u'GRANADA':[-74.351389,4.518611]
             ,u'FUSAGASUGA':[-74.364444,4.337222]}
-
+    """
     #cab={u'CABRERA':[-74.485833,3.978056]}
 
     """mapa_repetidora
