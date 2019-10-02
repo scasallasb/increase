@@ -34,10 +34,14 @@ def usar_algo(Cab, rep1=False,max=False,num_rep=None
             lsrep=None
             rep=None
             lsRe=None
+<<<<<<< HEAD
 
         sG[i], pos1=Re.grafo_unido(cab,we=True,Rep=rep)
 
 
+=======
+        sG[i], pos1=Re.grafo_unido(Cab,we=True,Rep=rep)
+>>>>>>> 224a8e3f9fadf7b92c04f69dd554c914de1071b2
         for k in pos1:
             Po1.append(k)
         """
@@ -84,6 +88,8 @@ def usar_algo(Cab, rep1=False,max=False,num_rep=None
 def main():
 
     cab={u'SILVANIA':[-74.388056,4.403333]
+        }
+    """
             ,u'TIBACUY':[-74.4525, 4.347222]
             }
     """
@@ -107,7 +113,7 @@ def main():
     # """
 
     #"""tcalgo
-    usar_algo(cab,rep1=False)
+    usar_algo(cab, rep1=False)
     # """
 
     """ dibujar un solo municipio
