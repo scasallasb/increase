@@ -1,3 +1,5 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*
 import networkx as nx
 import numpy as np
 import scipy as sc
@@ -8,6 +10,25 @@ import  Hgt as h
 import repetidor as rp
 
 def la_lon(Fil=None, Arco=None):
+
+    """
+    Retorna valor promedio de coordenadas
+
+    retorna el valor promedio de coordenadas, para posteriormente ajustar el
+    mapa a una medida legible.
+
+    parametros
+    ----------
+
+    Arco : dic
+           diccionario con atributos posición de torres
+
+    retorna
+    --------
+
+    coo : coo
+          lista con el promedo de las posiciones con media de lonfitud en atitud y longitud
+    """
     if Fil is None:
         if Arco:
             la=[]
@@ -19,9 +40,86 @@ def la_lon(Fil=None, Arco=None):
     else:
         lon,la=la_lon(Fil=Fil,Arco=Arco)
         coo=[np.mean(la.values()), np.mean(lon.values())]
+
     return coo
 
+
+
+def grafo_unido(Cab=None,Rep=None,we=False,co=True,**kwds):
+    G= nx.Graph()
+    PO=[]
+    Gax=nx.Graph()
+    if Cab is not None:
+        G.add_nodes_from(Cab.keys())
+        nx.set_node_attributes(G,Cab,'pos')
+        aux=edge_gen(G.nodes())
+        G.add_edges_from(aux)
+
+        for i in Cab.keys():
+            if Rep is not None:
+                re=Rep[i]
+                pre=pos_rep(re)
+                Gax.add_nodes_from(pre.keys())
+                G.add_nodes_from(pre.keys())
+                nx.set_node_attributes(G,pre,'pos')
+            pos= bd.georefxc(Fil=[i])
+            for t in pos[i].keys():
+                PO.append(t)
+            Gax.add_nodes_from(pos[i].keys())
+            nx.set_node_attributes(Gax,pos[i],'pos')
+            # se agrega atributos con pocisión
+            G.add_nodes_from(pos[i].keys())
+            nx.set_node_attributes(G,pos[i],'pos')
+            ed=edge_gen(Gax.nodes())
+            Gax.add_edges_from(ed)
+            G.add_edges_from(Gax.edges())
+    if we==True:
+        w={}
+
+        w=w_eg(G)
+        nx.set_edge_attributes(G,w,'weight')
+    return G, PO
+
+
+def w_eg(G):
+    """
+    Ret
+
+    parámetros
+    ----------
+
+    G   :   graph
+        grafo general con los atributos de pocisión
+
+    salida
+    ---------
+    we  :   dic
+            diccionario con los atributos weight de los enlaces.
+
+    """
+
+    po=nx.get_node_attributes(G,'pos')
+
+    au, DiM =ext_map(Arco=po, met=True)
+
+    we=[]
+    for i in G.edges():
+        r=list(i)
+        per,o= h.perfil(au,[po[i[0]],po[i[1]]],DiM)
+        aux=np.round(np.max(per[3]))
+        we.append((i,aux))
+    we=dict(we)
+    return we
 def ext_map(cocen=None,Arco=None, met=False, Fil=None, s=None, **kwds):
+    """
+    parámetros
+    ----------
+    Arco :  dic
+            diccionario con todas las posiciones geograficas de nodos en el grafo.
+
+
+
+    """
     if met==True:
         coo=la_lon(Fil=Fil,Arco=Arco)
         if s is None:
@@ -30,16 +128,18 @@ def ext_map(cocen=None,Arco=None, met=False, Fil=None, s=None, **kwds):
         coo=[cocen[1],cocen[0]]
         if s is None:
             s=10
+    print ("esto es un tipo  s  {}", type(s))
     au, DiM = h.manipular_mapas(coo,s)
     return au, DiM
 
 def edge_gen(n):
+
     n=list(n)
     res=[]
     for i in range (0,len(n)):
         for j in range(i+1,len(n)-1):
             res.append((n[i],n[j]))
-            
+
     return res
 
 def ins_rep(DeCo, map, DiM, tam=None, No=None):
@@ -86,7 +186,7 @@ def conone(map, j):
             aux1=aux
             co=[k[0],k[1]]
     return co
-    
+
 def Conv_Rep(Rep, DiM, map):
     PxRep={}
     CoRep={}
@@ -120,7 +220,7 @@ def Inter_search(MaIr,DiM, map, map1):
                 try:
                     Rep[iter].append(aux0)
                 except KeyError:
-                    Rep[iter]=[]                    
+                    Rep[iter]=[]
                     Rep[iter].append(aux0)
                 for k in range(j+1,len(aux)):
                     co=color(iter+1)
@@ -148,6 +248,7 @@ def dibujar_grafo_unido(G=None, cab=None,Rep=None
         else:
             pos= bd.georefxc()
     if G is None:
+
         G= nx.Graph()
         G.add_nodes_from(cab.keys())
         nx.set_node_attributes(G,'pos',cab)
@@ -172,50 +273,18 @@ def dibujar_grafo_unido(G=None, cab=None,Rep=None
                     ,G1nodels=nols,no_lab=no_lab, p=True
                     ,title=title, rt=rt)
     return map, DiM
-def w_eg(G):
-    po=nx.get_node_attributes(G,'pos')
-    au, DiM =ext_map(Arco=po, met=True)
-    we=[]
-    for i in G.edges():
-        r=list(i)
-        per,o= h.perfil(au,[po[i[0]],po[i[1]]],DiM)
-        aux=np.round(np.max(per[3]))  
-        we.append((i,aux))   
-    we=dict(we)
-    return we
-def grafo_unido(Cab=None,Rep=None,we=False,co=True,**kwds):
-    G= nx.Graph()    
-    PO=[]
-    Gax=nx.Graph() 
-    if Cab is not None:
-        G.add_nodes_from(Cab.keys())
-        nx.set_node_attributes(G,Cab,'pos')
-        aux=edge_gen(G.nodes())
-        G.add_edges_from(aux) 
-        for i in Cab.keys():
-            Gax=nx.Graph()
-            if Rep is not None:
-                re=Rep[i]
-                pre=pos_rep(re)
-                Gax.add_nodes_from(pre.keys())
-                G.add_nodes_from(pre.keys())
-                nx.set_node_attributes(G,pre,'pos')
-            pos= bd.georefxc(Fil=[i])
-            for t in pos[i].keys():
-                PO.append(t)
-            Gax.add_nodes_from(pos[i].keys())
-            nx.set_node_attributes(Gax,pos[i],'pos')
-            G.add_nodes_from(pos[i].keys())
-            nx.set_node_attributes(G,pos[i],'pos')
-            ed=edge_gen(Gax.nodes())
-            Gax.add_edges_from(ed)            
-            G.add_edges_from(Gax.edges())
-    if we==True:
-        w={}
-        w=w_eg(G)
-        nx.set_edge_attributes(G,w,'weight')
-    return G, PO
+
+
+
 def pos_rep(Rep, Repcon=None):
+
+    """
+
+    retorna
+    ------
+
+    diccionario prep con nombre de pocicion y los repetidores
+    """
     prep={}
     if Repcon is None:
         for i in Rep:
@@ -228,7 +297,7 @@ def pos_rep(Rep, Repcon=None):
     return prep
 
 def ejec_rep(Cab,G=None):
-    
+
     for i in Cab.keys():
         rep={}
         G1=nx.Graph()
@@ -245,11 +314,10 @@ def ejec_rep(Cab,G=None):
         #map1[97,131]=120
         G=nx.Graph()
         map_inter(map1,DiM, No=i, r=False,G=G1, p1=[i],p2=pos1)
-        try: 
+        try:
             rep[i]=Corep
         except KeyError:
             rep[i]={}
             rep[i]=Corep
         print (Corep)
         print ('-'*120)
-    

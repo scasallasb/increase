@@ -333,7 +333,7 @@ def manipular_mapas(PG, AnKM):
     for i in co1.keys():
         aux1=0
         for j in co1[i].keys():
-            descargar_mapas(co1[i][j])
+
             aux=matriz_mapas(co1[i][j])
             try:
                 aux1=np.concatenate((aux,aux1), axis=0)
@@ -349,11 +349,14 @@ def manipular_mapas(PG, AnKM):
             p[i]=int((np.ceil(np.abs(Pu[i+2]/1200))*1200)+PoIm[i])
         else:
             p[i]=int(np.abs(PoIm[i]))
+
     #aux2[p[1]-20:p[1]+20,p[0]-20:p[0]+20]=-.8
     au=aux2[p[1]-Nps:p[1]+Nps,p[0]-Nps:p[0]+Nps]
     DiM=[PG[1]-(Nps/1200.0),PG[1]+(Nps/1200.0),PG[0]-(Nps/1200.0),PG[0]+(Nps/1200.0)]
     #show_map(au.T,DiM,1,pos)
     return au.T, DiM
+
+
 def vercu(PG, Pos):
     TKm=5
     PoIm=[]
@@ -495,6 +498,3 @@ def draw_networkx_labels1(G, pos,
                   )
         text_items[n]=t
     return text_items
-
-
-
