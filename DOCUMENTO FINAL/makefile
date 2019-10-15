@@ -3,7 +3,7 @@ doc=estadoArte
 
 ## --bibliography=bibliografia.bib 
 
-OPT= --variable=papersize:letter --variable=geometry:"margin=3cm " --variable=fontsize:12pt --variable=fontfamily=utopia --variable=documentclass=article  --number-sections --toc
+OPT= --variable=papersize:letter --variable=geometry:"margin=3cm " --variable=fontsize:12pt --variable=fontfamily=utopia --variable=documentclass=article  --number-sections --toc --top-level-division=[part]
 
 BIB = --filter pandoc-citeproc --bibliography=refer.bib 
 
