@@ -641,7 +641,180 @@ El costo de las torres, es proporcional a  su altura y  esta re­lacionado con m
 Como aporte, Rios proporciona un algoritmo que permite establecer tanto la topología de red óptima en cuanto a costos, como las alturas que permiten que una ecuación de costos de las alturas de las torres sea minima.
 
 # Capítulo 3. Diseño metodológico
+
+Para el desarrollo del algoritmo que permite la creación de una herramienta de planeación incremental de redes inalámbricas rurales, se plantea el modelo cascada que  en el desarrollo de software es un proceso en el que todas las fases se realizan de forma secuencial,  siguiendo un flujo de ejecución de arriba hacia abajo como una cascada. Esto permite hacer un fácil seguimiento del desarrollo del proyecto, realizando una distribución de tareas y delimitando sus fases.
+
+![Estructura metodología cascada](metodologia.pdf){ width=10sss0% }
+
 ## Metodología
+
+### Generar el estado del arte de los algoritmos utilizados en la planeación de redes inalámbricas que permitan identificar y determinar los requerimientos del algoritmo que sugieran la mejor estrategia de expansión de una red 
+
+
+Esta fase hace parte del primer ítem de la metodología en cascada (análisis de requerimientos) en la que se indagará las herramientas de planeación de redes inalámbricas existentes con el propósito de recopilar  información para analizar y seleccionar la que más se adapte a la planeación de redes inalámbricas de banda ancha en zonas rurales, en esta primera etapa se realizan las siguientes actividades:
+
+
+#### **Recolectar información de planeación incremental de redes inalámbricas**
+
+
+Este recurso se utiliza para registrar información relacionada con la planeación de redes inalámbricas, se usó la técnica de recopilación documental consultando libros, artículos de investigación en su mayoría de la revista de Ingenieros Eléctricos y Electrónicos (IEEE), tesis, informes y demás documentos que contribuyeran a proporcionar datos enfocados en la temática central del proyecto. Lo que permitió obtener un bajo costo considerando la gran cantidad de información que se obtuvo, la bibliografía consultada es de característica técnica lo que permitió lograr una dimensión histórica, social y tecnológica a través del tiempo.
+
+
+#### **Analizar la información recopilada de redes inalámbricas enfocada a zonas rurales**
+
+Una vez se ha captado la información de planeación de redes se procede a realizar su respectivo análisis, tabulando todos los documentos encontrados, detallando:
+
+|        |        |
+| ------ | ------ |
+| Tipo de documento | |
+| Título | |
+| Año | |
+| URl | |
+|Temática central | |
+|Estado del arte y marco conceptual reseñado| |
+| Metodología | |
+| Resultados | |
+Table: Ficha bibliográfica para seleccionar los archivos de estudio.
+
+De este análisis de fuentes se encuentra que quince (15) son artículos de investigación, cinco (5) son tesis y dos (2) son libros. De los cuales se delimitan los temas a contextualizar, obteniendo los siguientes:
+
+   - Brecha Digital
+   - Redes Libres Comunitarias
+   - Planeación de Redes Inalámbricas
+   - Algoritmos utilizados en la planeación
+   - Representación de la topología
+   - Herramientas de manipulación de grafos
+   - Planeación de redes móviles UMTS
+   - Redes BWA en zonas rurales 
+
+Con ello se pudo establecer que los primeros seis puntos harían parte del marco teórico y los dos siguientes pertenecerían al estado del arte, esto como resultado de que el enfoque de esta investigación está relacionado con la planeación de redes móviles y BWA en zonas rurales. 
+
+
+#### **Determinar la información que cumpla con los requerimientos necesarios para diseñar el algoritmo**
+
+Acorde al análisis ejecutado en la actividad anterior se encontró que los autores Bernardi, Sen y Milton proporcionan la información necesaria para diseñar el algoritmo.  Dentro de los requerimientos proporcionados se tienen:
+
+- Topología de la red actual
+- Número de torres disponibles
+- Cobertura de la red, hace alusión al alcance geográfico
+- Altura de las torres 
+- Zona de fresnel 
+- Costo de despliegue de la red 
+- Costo de la infraestructura y de los equipos 
+- Algunos datos demográficos y económicos de la población
+
+
+#### **Documentar el estado del arte** 
+
+Con toda la información analizada y los parámetros claros se documenta el estado del arte realizando una comparación entre los tres autores destacados mencionados con anterioridad. De ellos se establece
+
+- Sen plantea su algoritmo en planear la red inalámbrica en zonas rurales de la India, se sabe que su contexto en netamente social y rural
+  
+- Bernardi desarrollo su software basado en Tegola, una red existente en Escocia, ampliando su cobertura a zonas rurales considerando el nivel lucrativo de la red enfocado en pequeños proveedores de internet
+  
+- Milton por su parte, propone el algoritmo en la región del Sumapaz- Cundinamarca (Colombia) enfocando su idea en la interconexión de escuelas rurales añadiendo el costo de la construcción de la topología de la red.
+       
+En contexto, el estado del arte se puede estudiar en el capítulo 2 de este Libro.
+
+
+
+### Diseñar un algoritmo que permita identificar la mejor estrategia de expansión de la red inalámbrica en zonas rurales
+
+Partiendo del análisis e información recolectada se determinan los parámetros necesarios para continuar con la etapa de diseño del algoritmo para planear el crecimiento de una red inalámbrica en zonas rurales.
+
+#### Definir los datos de entrada y salida del algoritmo
+
+Conforme a la investigación documental realizada se determina que los tres autores en mención tienen similitudes en sus algoritmos, sin embargo, se comparan los tres algoritmos verificando sus datos de entrada y salida, entonces se tiene que:
+
+* **Algoritmo planteado por Sen**
+
+| Datos de entrada |
+|--------------------------------------------------------------------------------------|
+| Enumeración de todos los árboles y para cada árbol (coordenadas de la ubicación de las villas) |
+| Asignación de las antenas |
+| Asignación de los valores de potencia de las antenas |
+| Asignación de las alturas de las torres en todos los nodos |
+Table: Datos de entrada del algoritmo planteado por Sen. 
+
+
+
+| Datos de Salida |
+|------------------------------------------------------------------------------ |
+| Topología de la red |
+| Costo del árbol generado  en comparación con otro anteriormente generado, de lo dos se guarda el de menor costo |
+Table: Datos de salida del algoritmo propuesto por Sen.
+
+* **Algoritmo diseñado por Bernardi**
+
+| Datos de entrada |   |
+| -------------------------------------- |
+| Demanda de cobertura |
+| Instalaciones fallidas |
+| Ubicación y desempeño de los usuarios actuales |
+| Solicitud de soporte |
+| Torres disponibles |
+| Topología de red actual |
+| Área de selección |
+Table: Parámetros de entrada del algoritmo de Bernardi.
+
+| Datos de salida |
+| ----------------|
+| Estrategia incremental de despliegue sugerido  |
+| Ruta sugerida para cubrir el área seleccionada |
+Table: Datos de Salida del algoritmo de bernardi.
+
+Cabe resaltar que este paquete de software proporciona dos modos de operación que se han mencionado con anterioridad:
+
+* Búsqueda estrategica: Cuya salida es la primer fila de la tabla anterior
+* Targeted Increase: donde se sugiere una ruta al área seleccionada 
+
+
+
+* **Algoritmo implementado por Rios** 
+
+Esta aplicación esta basada en Panigrahi, dónde resulta la solución en dos algoritmos, el primero TC-ALGO(G,c) y el segundo START-TC-ALGO(G,c).
+
+
+
+| Datos de entrada TC-Algo(G,c) | Datos de Salida TC-ALGO(G,c) |
+|------------------------------ | ---------------------------- |
+| Grafo G(V,E) | Función de alturas h |
+| Función de costos |  |
+Table: Parametros de entrada y salida del primer algoritmo de la aplicación, TC-ALGO (G,c)
+
+
+
+| Datos de entrada START-TC-ALGO (G,c) | Datos de salida START-TC-ALGO (G,c) |
+| ------------------------------------ | ----------------------------------- |
+| Grafo G(V,E) | relación costo beneficio $r'$ best |
+| Función de alturas h | incremento de altura incr |
+| Nodo n |   |
+| Incremento altura $$ variación $$ en v |   |
+Table: Datos de entrada y salida del segundo algoritmo START-TC-ALGO (G,c). 
+
+
+Ahora, con los tipos de datos de entrada y salida de los algoritmos estudiados, se propone los parámetros de entrada al algoritmo que se va a diseñar. Es decir que este algoritmo será un hibrido de la combinación de estos algoritmos:
+
+
+
+
+####  Proponer el conjunto de operaciones secuenciales para la realización del Algoritmo
+
+
+ACA DEBEN ESTAR LOS DIAGRAMAS DE FLUJO 
+
+
+
+#### Determinar los requerimientos necesarios para ejecutar el algoritmo
+
+#### Codificación del algoritmo
+
+
+### Evaluar el algoritmo mediante una simulación numérica, comparándolo con Heurística simple
+
+
+### Aplicar el algoritmo propuesto en la Red Libre de Bosachoque analizando la topología adecuada para futuras expansiones de la red en las Instituciones Educativas Rurales de la región del Sumapaz-Cundinamarca considerando la relación costo-beneficio
+
 
 # Capitulo 4. Análisis de resultados y discusión 
 

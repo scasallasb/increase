@@ -1,9 +1,11 @@
 # colocar el prefijo de los nombres
 doc=estadoArte
 
+
+
 ## --bibliography=bibliografia.bib 
 
-OPT= --variable=papersize:letter --variable=geometry:"margin=3cm " --variable=fontsize:12pt --variable=fontfamily=utopia --variable=documentclass=article  --number-sections --toc --top-level-division=[part]
+OPT= --variable=papersize:letter --variable=geometry:"margin=3cm " --variable=fontsize:12pt --variable=fontfamily=utopia --variable=documentclass=article --number-sections --toc 
 
 BIB = --filter pandoc-citeproc --bibliography=refer.bib 
 
@@ -25,6 +27,8 @@ dependencias.pdf: dependencias.svg
 UMTS.pdf: UMTS.svg
 	inkscape -D -A UMTS.pdf UMTS.svg
 
+metodología.pdf: metodologia.svg
+	inkscape -D -A metodologia.pdf dependencias.svg
 
 
 clean:
