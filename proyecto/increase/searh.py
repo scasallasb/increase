@@ -1,4 +1,4 @@
-import networkx as nx 
+import networkx as nx
 import math as m
 import matplotlib.pyplot as plt
 
@@ -17,9 +17,9 @@ def nextGeneration(N , pasado= None ):
                                     listNeih.append(i)
       return listNeih
 
-def heuristica(node1, node2):      
-      return(G.node[node2]['diferencia']+ distancia(node1,node2))  
-      
+def heuristica(node1, node2):
+      return(G.node[node2]['diferencia']+ distancia(node1,node2))
+
 def distancia(node1, node2):
     return ( m.sqrt((G.node[node1]['valor'][0] - G.node[node2]['valor'][0])**2   + (G.node[node1]['valor'][1] - G.node[node2]['valor'][1])**2 )  )
 
@@ -49,15 +49,15 @@ valor={
       ,'b':[14, 5]
       ,'c':[16, 8]
       ,'d':[10,9]
-      ,'e':[6, 8]    
+      ,'e':[6, 8]
       ,'f':[3 ,6]
-      ,'g':[7,4] 
+      ,'g':[7,4]
       ,'h':[11,1.5]
       ,'i':[22,2.5]
       ,'j':[25,6.5]
       ,'k':[24,9]
       ,'l':[20,9]
-      ,'m':[20,5.5]         
+      ,'m':[20,5.5]
                }
 nx.set_node_attributes(G,valor,'valor')
 N = ['a' , 'b', 'c', 'd']
@@ -65,7 +65,7 @@ T_N=['e','f','g','h','i','j','k','l','m']
 
 diferencia={
       'root':0
-      ,'e':10    
+      ,'e':10
       ,'f':15
       ,'g':30
       ,'h':20
@@ -73,39 +73,37 @@ diferencia={
       ,'j':5
       ,'k':8
       ,'l':6
-      ,'m':25         
+      ,'m':25
                }
 nx.set_node_attributes(G,diferencia,'diferencia')
 
 
-plt.subplot(211)
-nx.draw_networkx(G , valor, nodelist = N,      node_color = 'r')
-nx.draw_networkx(G , valor, nodelist = T_N,    node_color = 'g')
+
 
 path= []
 for i in  N:
     for j in T_N:
-            answer=nx.astar_path(G,i,j,heuristica)         
+            answer=nx.astar_path(G,i,j,heuristica)
             cont = 0
             for k in range(1,len(answer)):
-                  if  answer[k] in  N : 
-                        cont += 1                         
+                  if  answer[k] in  N :
+                        cont += 1
             if cont ==   0:
                   path.append(answer)
 
 bestList = []
-#escoger la rutas que den mejor beneficio 
+#escoger la rutas que den mejor beneficio
 for j in T_N:
       aux  = 99999
       cont = 0
-      for i in path:       
+      for i in path:
             if i[len(i)-1] == j :
-                  for k in range (1,len(i)):      
+                  for k in range (1,len(i)):
                         cont += G.node[i[k]]['diferencia']
                   if cont < aux:
-                        aux= cont 
-                        best =  i  
-                  cont =0   
+                        aux= cont
+                        best =  i
+                  cont =0
       bestList.append(best)
       best= 0
 
@@ -118,14 +116,17 @@ for i  in bestList:
             lista.append(tupla)
 
 
-#agregar nodo raiz 
+#agregar nodo raiz
 G.add_node('root', valor = [0, 0])
 for i in N:
       tupla=('root', i)
+      G.add_edge('root', i)
       lista.append(tupla)
-      
+
 #agregar atributo c
 c = 0.005
+
+
 #convertir lista a nodos
 H= nx.Graph(lista)
 
@@ -149,13 +150,19 @@ while bandera==0:
       GenR=nextGen
       print ("esta generacion {}".format(nextGen))
       for j in nextGen:
-            NPV[j]= G.node[j]['diferencia'] /(1 + c)**cont 
+            NPV[j]= G.node[j]['diferencia'] /(1 + c)**cont
       if nextGen == []:
             bandera=1
 print (NPV)
 nx.set_node_attributes(G,NPV,'NPV')
-# etiquetar nodos 
 
+
+
+pathsD=[]
+    for i in diferen:
+    if i != 'root':
+        path = nx.dijkstra_path(G, 'root', i )
+        print (path)
 
 
 nextG = nextGeneration(N)
@@ -172,7 +179,11 @@ nextG3=nextGeneration(nextG2, pasado= nextG1)
 print (nextG3)
 
 
+#graficas
+plt.subplot(211)
+nx.draw_networkx(G , valor, nodelist = N,      node_color = 'r')
+nx.draw_networkx(G , valor, nodelist = T_N,    node_color = 'g')
+nx.draw_networkx(G , valor, nodelist = ['root'],    node_color = 'b')
 plt.subplot(212)
 nx.draw_networkx(H , valor)
 plt.show()
-

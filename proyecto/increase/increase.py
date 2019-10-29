@@ -4,7 +4,7 @@ import math
 from heapq import heappush, heappop
 from itertools import count
 
-# librerias propias 
+# librerias propias
 import mapas as m
 
 def astar_path(G, source, target, heuristic=None, weight='weight', listNodeTarget= None):
@@ -109,8 +109,8 @@ def astar_path(G, source, target, heuristic=None, weight='weight', listNodeTarge
             if neighbor in explored:
                 continue
             ncost = dist
-            
-            #ncost = distNodeTarget(curnode, listNodeTarget)*dist 
+
+            #ncost = distNodeTarget(curnode, listNodeTarget)*dist
             if neighbor in enqueued:
                 qcost, h = enqueued[neighbor]
                 # if qcost < ncost, a longer path to neighbor remains
@@ -124,7 +124,7 @@ def astar_path(G, source, target, heuristic=None, weight='weight', listNodeTarge
                 h = (distNodeTarget(curnode, listNodeTarget)*heuristic(neighbor, target))/maximaDist
                 #print (h)
                 costo.append(h)
-                
+
             enqueued[neighbor] = ncost, h
             push(queue, (ncost + h, next(c), neighbor, ncost, curnode))
 
@@ -133,8 +133,8 @@ def astar_path(G, source, target, heuristic=None, weight='weight', listNodeTarge
     return costo
 
 
-def heuristica(node1, node2):  
-    return(G.node[node1]['costo'] - G.node[node1]['calor'])  
+def heuristica(node1, node2):
+    return(G.node[node1]['costo'] - G.node[node1]['calor'])
     pass
 
 def maximaDistancia(G):
@@ -144,7 +144,7 @@ def maximaDistancia(G):
     lista=[]
 
     maxDistancia = 0
-    
+
     for i in pos.keys():
         for j in pos.keys():
 
@@ -158,19 +158,19 @@ def maximaDistancia(G):
             lisF.append(lat2)
             lisF.append(lon2)
 
-            
+
             lista.append(lisI)
             lista.append(lisF)
-            
+
             distancia = m.cal_dis(lista)
             if distancia > maxDistancia:
-                maxDistancia = distancia 
+                maxDistancia = distancia
             #print ("la distancia entre {} y {} es {}".format(i , j , distancia ))
             lisI=[]
             lisF=[]
             lista=[]
     #print ("la maxima distancia es {}".format(maxDistancia) )
-    return maxDistancia     
+    return maxDistancia
 
 def distancia(node1, node2 ) :
     pos = nx.get_node_attributes(G,'pos')
@@ -189,24 +189,24 @@ def distancia(node1, node2 ) :
 
     lista.append(lisI)
     lista.append(lisF)
-    
+
     distancia = m.cal_dis(lista)
     return distancia
 
 def distNodeTarget(node1, listTarget):
-    aux = 999 
+    aux = 999
     for i in listTarget:
         dis = distancia(node1, i )
         if dis < aux:
-            aux = dis  
-    return aux 
+            aux = dis
+    return aux
 
 
-        
-    
+
+
 
 if __name__ == '__main__':
-        
+
     G= nx.Graph()
     cab={u'SILVANIA':[-74.388056,4.403333]
                 ,u'TIBACUY':[-74.4525, 4.347222]
@@ -221,7 +221,7 @@ if __name__ == '__main__':
 
 
 
-    
+
 
     key=list(cab.keys())
     G.add_nodes_from(cab.keys())
@@ -270,60 +270,60 @@ if __name__ == '__main__':
     costo =nx.get_node_attributes(G, 'costo')
     existe=nx.get_node_attributes(G, 'existe')
 
-        G.add_edge('VENECIA','PANDI' )
-        G.add_edge('ARBELAEZ','SAN BERNARDO' )
-        G.add_edge('FUSAGASUGA','ARBELAEZ')
-        G.add_edge('SILVANIA','TIBACUY' )
-        G.add_edge('PANDI','TIBACUY' )
-        G.add_edge('CABRERA','VENECIA')
-        G.add_edge('CABRERA','SAN BERNARDO')
-        G.add_edge('VENECIA','PANDI')
-        G.add_edge('PANDI','ARBELAEZ')
-        #G.add_edge('PASCA','ARBELAEZ')
-        G.add_edge('GRANADA','PASCA')
-        G.add_edge('PASCA','GRANADA')
-        G.add_edge('FUSAGASUGA','PASCA')
-        G.add_edge('GRANADA','SILVANIA')
- 
+    G.add_edge('VENECIA','PANDI' )
+    G.add_edge('ARBELAEZ','SAN BERNARDO' )
+    G.add_edge('FUSAGASUGA','ARBELAEZ')
+    G.add_edge('SILVANIA','TIBACUY' )
+    G.add_edge('PANDI','TIBACUY' )
+    G.add_edge('CABRERA','VENECIA')
+    G.add_edge('CABRERA','SAN BERNARDO')
+    G.add_edge('VENECIA','PANDI')
+    G.add_edge('PANDI','ARBELAEZ')
+    #G.add_edge('PASCA','ARBELAEZ')
+    G.add_edge('GRANADA','PASCA')
+    G.add_edge('PASCA','GRANADA')
+    G.add_edge('FUSAGASUGA','PASCA')
+    G.add_edge('GRANADA','SILVANIA')
+
     diferencia = {
 
-       u'SILVANIA': G.node['SILVANIA']['costo']        - G.node['SILVANIA']['calor'], 
+       u'SILVANIA': G.node['SILVANIA']['costo']        - G.node['SILVANIA']['calor'],
        u'TIBACUY': G.node['TIBACUY']['costo']         - G.node['TIBACUY']['calor'] ,
        u'ARBELAEZ': G.node['ARBELAEZ' ]['costo']       - G.node['ARBELAEZ' ]['calor'] ,
         u'PANDI': G.node['PANDI' ]['costo']          - G.node['PANDI' ]['calor']  ,
         u'PASCA' :G.node['PASCA'  ]['costo']         - G.node['PASCA'  ]['calor'] ,
-        u'SAN BERNARDO': G.node['SAN BERNARDO']['costo']    - G.node['SAN BERNARDO']['calor'], 
+        u'SAN BERNARDO': G.node['SAN BERNARDO']['costo']    - G.node['SAN BERNARDO']['calor'],
         u'VENECIA':G.node['VENECIA'  ]['costo']       - G.node['VENECIA' ]['calor'] ,
         u'CABRERA':G.node['CABRERA'  ]['costo']       - G.node['CABRERA'  ]['calor'],
         u'GRANADA':G.node['GRANADA'  ]['costo']       - G.node['GRANADA'  ]['calor'],
-        u'FUSAGASUGA':G.node['FUSAGASUGA' ]['costo']     - G.node['FUSAGASUGA' ]['calor'] 
+        u'FUSAGASUGA':G.node['FUSAGASUGA' ]['costo']     - G.node['FUSAGASUGA' ]['calor']
 
     }
-    #dibujar grafo con diferencia 
+    #dibujar grafo con diferencia
     Pos_diferencia ={
-            str(G.node['SILVANIA']['costo']        - G.node['SILVANIA']['calor']):[-74.388056,4.403333], 
+            str(G.node['SILVANIA']['costo']        - G.node['SILVANIA']['calor']):[-74.388056,4.403333],
             str(G.node['TIBACUY']['costo']         - G.node['TIBACUY']['calor']) : [-74.4525, 4.347222] ,
             str(G.node['ARBELAEZ' ]['costo']       - G.node['ARBELAEZ' ]['calor']):[-74.415556,4.272222] ,
             str(G.node['PANDI' ]['costo']          - G.node['PANDI' ]['calor'])   : [-74.487778,4.191111],
             str(G.node['PASCA'  ]['costo']         - G.node['PASCA'  ]['calor']) : [-74.300833, 4.3075],
-            str(G.node['SAN BERNARDO']['costo']    - G.node['SAN BERNARDO']['calor']):[-74.422222,4.178889], 
+            str(G.node['SAN BERNARDO']['costo']    - G.node['SAN BERNARDO']['calor']):[-74.422222,4.178889],
             str(G.node['VENECIA'  ]['costo']       - G.node['VENECIA' ]['calor'])    : [-74.4775,4.088611],
             str(G.node['CABRERA'  ]['costo']       - G.node['CABRERA'  ]['calor']) : [-74.485833,3.978056],
             str(G.node['GRANADA'  ]['costo']       - G.node['GRANADA'  ]['calor']) : [-74.351389,4.518611],
-            str(G.node['FUSAGASUGA' ]['costo']     - G.node['FUSAGASUGA' ]['calor']) : [-74.364444,4.337222] 
+            str(G.node['FUSAGASUGA' ]['costo']     - G.node['FUSAGASUGA' ]['calor']) : [-74.364444,4.337222]
             }
 
-    
+
     nx.draw_networkx(G,cab )
 
     maximaDistancia(G)
 
     values = []
     for i  in costo.keys():
-        values.append(costo[i] - calor[i]) 
+        values.append(costo[i] - calor[i])
         print (" {} :  {}".format(i,(costo[i] - calor[i])))
-    
-    listSource=['CABRERA','PANDI', 'VENECIA']  
+
+    listSource=['CABRERA','PANDI', 'VENECIA']
     listTarget=['PASCA', 'GRANADA']
     for i  in listSource:
         for j in listTarget:
