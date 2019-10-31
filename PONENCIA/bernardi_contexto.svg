@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="420mm"
+   height="297mm"
+   viewBox="0 0 420 297"
+   version="1.1"
+   id="SVGRoot"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="bernardi_contexto.svg">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="779.72369"
+     inkscape:cy="697.24799"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="713"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <defs
+     id="defs4639">
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker5767"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path5765"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker5601"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path5599"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path2134"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker3584"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3582"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path2137"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker3584-3"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3582-4"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker3386"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path3384" />
+    </marker>
+  </defs>
+  <metadata
+     id="metadata4642">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Capa 1">
+    <g
+       id="g6309"
+       transform="translate(0.33906984,6.843862)">
+      <ellipse
+         ry="26.702627"
+         rx="75.08358"
+         cy="148.5"
+         cx="210"
+         id="path2009"
+         style="opacity:0.85;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.34836495;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <flowRoot
+         transform="matrix(0.51244156,0,0,0.50224677,-205.3508,-123.21483)"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.33333206px;line-height:1.25;font-family:liiberation;-inkscape-font-specification:liiberation;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         id="flowRoot2011"
+         xml:space="preserve"><flowRegion
+           id="flowRegion2013"><rect
+             y="502.51965"
+             x="714.28571"
+             height="94.285713"
+             width="345.71429"
+             id="rect2015" /></flowRegion><flowPara
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:27.06331062px;font-family:sans-serif;-inkscape-font-specification:sans-serif"
+           id="flowPara2017">Bernardi,2012</flowPara></flowRoot>      <rect
+         ry="1.1610309"
+         rx="3.585716"
+         y="23.810837"
+         x="2.3723826"
+         height="51.463684"
+         width="205.44319"
+         id="rect2025"
+         style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.60435414;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <rect
+         ry="1.130245"
+         rx="3.5860965"
+         y="209.41304"
+         x="212.47949"
+         height="50.099064"
+         width="205.46498"
+         id="rect2025-5-9"
+         style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.58302462;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         transform="scale(0.92969325,1.0756236)"
+         id="text2087"
+         y="33.661728"
+         x="114.53426"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.11900616px;line-height:1.25;font-family:liiberation;-inkscape-font-specification:liiberation;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.24598135"
+         xml:space="preserve"><tspan
+           id="tspan2089"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.73219109px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.24598135"
+           y="33.661728"
+           x="116.24261"
+           sodipodi:role="line">Banda ancha permite </tspan><tspan
+           id="tspan5414"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.73219109px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.24598135"
+           y="50.060486"
+           x="114.53426"
+           sodipodi:role="line">innovación, impulsando la economía,</tspan><tspan
+           id="tspan5416"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.73219109px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.24598135"
+           y="66.459244"
+           x="114.53426"
+           sodipodi:role="line">inlusión social. Zonas rurales sin acceso</tspan></text>
+      <text
+         transform="scale(0.90624218,1.1034578)"
+         id="text2093"
+         y="199.52194"
+         x="245.74573"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.78808403px;line-height:1.25;font-family:liiberation;-inkscape-font-specification:liiberation;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.23977657"
+         xml:space="preserve"><tspan
+           id="tspan5422"
+           style="font-size:10.2304678px;text-align:start;text-anchor:start;stroke-width:0.23977657"
+           y="199.52194"
+           x="245.74573"
+           sodipodi:role="line">Redes BWA con tecnología IEEE 802.11</tspan><tspan
+           id="tspan5424"
+           style="font-size:10.2304678px;text-align:start;text-anchor:start;stroke-width:0.23977657"
+           y="215.50705"
+           x="245.74573"
+           sodipodi:role="line">-Redes mesh</tspan><tspan
+           id="tspan5426"
+           style="font-size:10.2304678px;text-align:start;text-anchor:start;stroke-width:0.23977657"
+           y="231.49216"
+           x="245.74573"
+           sodipodi:role="line">-Antenas direccionales de alta ganancia</tspan></text>
+      <rect
+         ry="1.1302431"
+         rx="3.5860963"
+         y="209.04684"
+         x="1.9491634"
+         height="50.098976"
+         width="205.46498"
+         id="rect2025-5-9-0"
+         style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.58302319;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         id="text2120"
+         y="229.71141"
+         x="104.40605"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:1.25;font-family:liiberation;-inkscape-font-specification:liiberation;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           id="tspan2122"
+           style="font-size:11.28888893px;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+           y="229.71141"
+           x="104.40605"
+           sodipodi:role="line">Planeación de redes a Través</tspan><tspan
+           id="tspan5477"
+           style="font-size:11.28888893px;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+           y="247.3503"
+           x="104.40605"
+           sodipodi:role="line">del software IncrEase</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         inkscape:connector-type="polyline"
+         id="path2126"
+         d="m 239.02296,173.6938 42.84817,34.11172"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.02025414;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker3386)" />
+      <path
+         inkscape:connector-curvature="0"
+         inkscape:connector-type="polyline"
+         id="path2132"
+         d="m 184.32534,173.47741 -47.89531,34.07726"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.03835702;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend)" />
+      <rect
+         ry="1.1302432"
+         rx="3.586096"
+         y="24.075958"
+         x="212.96605"
+         height="50.098976"
+         width="205.46498"
+         id="rect2025-5-9-0-2"
+         style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.58302307;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         transform="scale(1.025879,0.97477382)"
+         id="text2120-7"
+         y="39.839058"
+         x="307.69699"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.91065502px;line-height:1.25;font-family:liiberation;-inkscape-font-specification:liiberation;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.22332476"
+         xml:space="preserve"><tspan
+           id="tspan2122-2"
+           style="font-size:11.02435684px;text-align:center;text-anchor:middle;stroke-width:0.22332476"
+           y="39.839058"
+           x="307.69699"
+           sodipodi:role="line">ISP utilizan una metodología</tspan><tspan
+           id="tspan5471"
+           style="font-size:11.02435684px;text-align:center;text-anchor:middle;stroke-width:0.22332476"
+           y="54.727375"
+           x="307.69699"
+           sodipodi:role="line">de diseño para operar en</tspan><tspan
+           id="tspan5473"
+           style="font-size:11.02435684px;text-align:center;text-anchor:middle;stroke-width:0.22332476"
+           y="69.615692"
+           x="307.69699"
+           sodipodi:role="line">escenarios rurales</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         inkscape:connector-type="polyline"
+         id="path5505"
+         d="M 183.64165,123.57761 134.03395,76.835581"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.03445864;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker3584)" />
+      <path
+         inkscape:connector-curvature="0"
+         inkscape:connector-type="polyline"
+         id="path5509"
+         d="M 235.72137,123.57658 298.42042,75.989891"
+         style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1.01530349;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker5767)" />
+    </g>
+  </g>
+</svg>

@@ -266,4 +266,29 @@
   url    = {https://networkx.github.io/documentation/stable/#},
 }
 
+@TechReport{PNUD2018,
+  author      = {{Programa de las Naciones unidas para el Desarrollo} (PNUD)},
+  title       = {Índices e indicadores de desarrollo humano},
+  institution = {Organización de las Naciones Unidas},
+  year        = {2018},
+  url         = {http://hdr.undp.org/sites/default/files/2018_human_development_statistical_update_es.pdf },
+}
+
+@TechReport{Casas2014,
+  author      = {César Casas and Jorge Leyva and Leonardo Rodríguez and Óscar Feria and Milton Ríos and Rodríguez, Andrés},
+  title       = {{Realización del estudio de factibilidad, socialización y capacitación. para implementación de infraestructuras de voz Ip y comunicaciones convergentes en la región del Sumapaz}},
+  institution = {Universidad de Cundinamarca},
+  year        = {2014},
+}
+
+@PhdThesis{Nava2016,
+  author = {Beatriz Ordóñez Nava and Abraham Mora Cuevas},
+  title  = {{DISEÑO DE UNA INTERFAZ GRÁFICA PARA EL MODELADO DE REDES INALÁMBRICAS DE BANDA ANCHA}},
+  school = {Universidad Nacional Autónoma de México},
+  year   = {2016},
+  month  = jun,
+  url    = {http://profesores.fi-b.unam.mx/victor/LTesis_Beatriz_Abraham.pdf
+},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
