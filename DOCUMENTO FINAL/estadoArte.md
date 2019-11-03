@@ -415,7 +415,7 @@ En el trabajo de *Gordejuela*, se realizó la implementación de este marco de r
 
 ### Redes BWA en zonas Rurales
 
-El desarrollo de las telecomunicaciones de banda ancha en zonas rurales se enfrenta a numerosos desafíos dentro del ecosistema de las telecomunicaciones de banda ancha, entre ellos se encuentran:
+Prestar servicios de banda ancha en zonas rurales requiere de sistemas de planeación dado que el acceso a estas zonas apartadas requiere inversión en infraestructura para desplegar la topología física de la red. Además, el desarrollo de las telecomunicaciones de banda ancha en zonas rurales se enfrenta a numerosos desafíos dentro del ecosistema de las telecomunicaciones de banda ancha, entre ellos se encuentran:
 
 * Los gobiernos: Perspectiva política, jurídica y reglamentaria
 
@@ -427,7 +427,10 @@ El desarrollo de las telecomunicaciones de banda ancha en zonas rurales se enfre
 
 * Los consumidores: Costo elevado de los servicios, dificultad de acceso y disponibilidad, menor nivel de alfabetización tecnológica lo que imposibilita usar los servicios disponibles.
 
-Con el objetivo de reducir la brecha digital, autores [@bernardi2012],[@maseratti2011],[@sen] han propuesto como solución la planeación y despliegue de redes de banda ancha inalámbrica en zonas rurales; considerando las condiciones locales, como la ubicación geográfica, el bienestar económico de la comunidad, el tipo de entorno rural o urbano y el relieve del terreno, puede identificarse un conjunto de posibles soluciones para prestar accesos de banda ancha, y que van, entre otros, desde sistemas de cable a sistemas inalámbricos fijos, sistemas satelitales o de enlaces de microondas, sistemas ADSL y tecnologías móviles
+En la planeación de redes inalámbricas en áreas rurales, destacan los autores (Sen, Bernardi, Rios), cada uno de ellos propone una planeación de redes teniendo en cuenta su país de origen y priorizando las necesidades, requisitos y restricciones que se tienen en cada uno de ellos. En este artículo 
+
+Con el objetivo de reducir la brecha digital, autores [@bernardi2012],[@maseratti2011],[@sen] han propuesto como solución la planeación y despliegue de redes de banda ancha inalámbrica en zonas rurales; considerando las condiciones locales, como la ubicación geográfica, el bienestar económico de la comunidad, el tipo de entorno rural o urbano y el relieve del terreno, puede identificarse un conjunto de posibles soluciones para prestar accesos de banda ancha, y que van, entre otros, desde sistemas de cable a sistemas inalámbricos fijos, sistemas satelitales o de enlaces de microondas, sistemas ADSL y tecnologías móviles. A su vez, se destacan algunos trabajos de planeación de redes BWA, los cuales se desarrollan en países con marcadas diferencias de índices de desarrollo humano y el porcentaje de población que vive en áreas rurales; se habla entonces de Reino Unido, un país desarrollado donde el 17% de la población vive en área rurales y la India, un país en vía de desarrollo, donde el 66% de la población vive en áreas rurales. 
+
 
 
 #### Redes BWA en la India (País rural)
@@ -606,7 +609,7 @@ A nivel local, [@rios2015] propone una solución de construcción de topología 
 
 * Población a quién va dirigido
 
-La región del Sumapaz consta de 10 municipios con un 41% de población rural del total de la población referente al año 2011, el énfasis del proyecto se plantea en la interconexión de estas zonas apartadas. 
+La región del Sumapaz es una de las quince provincias del Departamento de Cundinamarca (Colombia), en ella se encuentra el páramo del Sumapaz, el páramo más grande del mundo. Consta de 10 municipios con un 41% de población rural del total de la población referente al año 2011, el énfasis del proyecto se plantea en la interconexión de estas zonas apartadas.
 
 * Problemática 
 
@@ -620,6 +623,24 @@ Las adversas condiciones económicas y de acceso a las tecnologías de la inform
 - Costos de infraestructura y equipos
 
 * Solución 
+
+En el informe técnico “ Realización del estudio de factibilidad, Socialización y Capacitación, para Implementación de Infraestructuras de Voz Ip y Comisiones Convergentes en la Región del Sumapaz” se plantea la posibilidad de  brindar acceso eficiente por medio de voz y video llamadas a las zonas rurales de la región del Sumapaz, ofreciendo cobertura a todas las localidades incluyendo las más vulnerables con una calidad en el servicio coherente con el tipo de aplicación y con tarifas acordes a la población, y paralelamente llevando a ellos servicios de comunicaciones convergentes, haciendo de este un proyecto autosostenible que coadyuve a la reducción de la brecha digital y permita el aprovechamiento de los beneficios del programa de Mintic Vive Digital. 
+
+Hay que mencionar además que Ríos participó de forma activa en este  proyecto en el que la construcción de redes de comunicación rural presenta particulares desafíos sobre todo en el costo que conlleva establecerlas. Además refiere que un parámetro importante en el costo de redes rurales es la construcción de torres que soporten las antenas a la altura que permite establecer un buen enlace, debido a que este costo domina otros costos de infraestructura como el atribuido a los equipos de comunicación de el estandar IEEE 802.11 (WiFi), entonces el problema principal se convierte en mantener costos mínimos en la construcción de las torres de soporte para las antenas en cada nodo. 
+
+Ríos establece algunos factores principales en la planeación de la construcción de la topología y son: 
+
+* Requerimientos de conectividad:
+Primero, es importante asegurar que la topología planteada permita la conexión de la totalidad de la red
+* Limitaciones físicas:
+Existen dos limitaciones físicas para la altura de las torres. Por ejemplo, existe una altura demasiada alta que representa un umbral para el cual los costos son prohibitivos y una altura mínima que limita el uso de torres tubulares
+
+* Naturaleza de la función de costos:
+Para alturas menores a 20m se suelen usar los mástiles económicos. Para alturas mayores, es necesario utilizar torres de acero más elaboradas, y por ende más caras, el costo de estas estructuras varía de manera casi lineal con la altura.
+      
+* Condiciones sobre las alturas de las torres para establecer un enlace directo:
+Para ello se debe garantizar que la potencia de transmisión sea suficiente para superar las pérdidas por espacio libre en toda la distancia del enlace. También, se busca mantener la línea de vista despejada de toda obstrucción. 
+
 
 Dentro de este contexto y al igual que Sen, Bernardi, Maserati, expone que el principal desafío es el costo que conlleva establecer redes en zonas rurales, haciendo especial enfásis en el costo de construcción de las torres que soportan las antenas, debido a que es el costo más grande en comparación con los atribuidos a los equipos de comunicación. Presenta los siguientes referentes:
 
@@ -638,31 +659,26 @@ El costo de las torres, es proporcional a  su altura y  esta re­lacionado con m
 
 * Aporte 
 
-Como aporte, Rios proporciona un algoritmo que permite establecer tanto la topología de red óptima en cuanto a costos, como las alturas que permiten que una ecuación de costos de las alturas de las torres sea minima.
+Para resolver el problema de la planeación  el autor desarrolla un algoritmo basado en (Panigrahi), dónde la solución resulta de dos algoritmos TC-ALGO(G,c) y START-TC-ALGO(G,c), el primero determina el valor de altura óptimo que permite obtener el mejor enlace dentro de un grupo de enlaces vecinos a un nodo principal y el segundo permite recorrer el grafo y ubicar el menor enlace o conjunto de enlaces que representan el menor costo beneficio
 
 # Capítulo 3. Diseño metodológico
 
-Para el desarrollo del algoritmo que permite la creación de una herramienta de planeación incremental de redes inalámbricas rurales, se plantea el modelo cascada que  en el desarrollo de software es un proceso en el que todas las fases se realizan de forma secuencial,  siguiendo un flujo de ejecución de arriba hacia abajo como una cascada. Esto permite hacer un fácil seguimiento del desarrollo del proyecto, realizando una distribución de tareas y delimitando sus fases.
 
-![Estructura metodología cascada](metodologia.pdf){ width=10sss0% }
-
-## Metodología
-
-### Generar el estado del arte de los algoritmos utilizados en la planeación de redes inalámbricas que permitan identificar y determinar los requerimientos del algoritmo que sugieran la mejor estrategia de expansión de una red 
+## Generar el estado del arte de los algoritmos utilizados en la planeación de redes inalámbricas que permitan identificar y determinar los requerimientos del algoritmo que sugieran la mejor estrategia de expansión de una red 
 
 
-Esta fase hace parte del primer ítem de la metodología en cascada (análisis de requerimientos) en la que se indagará las herramientas de planeación de redes inalámbricas existentes con el propósito de recopilar  información para analizar y seleccionar la que más se adapte a la planeación de redes inalámbricas de banda ancha en zonas rurales, en esta primera etapa se realizan las siguientes actividades:
+En esta fase se indaga sobre las herramientas de planeación de redes inalámbricas existentes con el propósito de recopilar  información para analizar y seleccionar la que más se adapte a la planeación de redes inalámbricas de banda ancha en zonas rurales, en esta primera etapa se realizan las siguientes actividades:
 
 
-#### **Recolectar información de planeación incremental de redes inalámbricas**
+### **Recolectar información de planeación incremental de redes inalámbricas**
 
 
 Este recurso se utiliza para registrar información relacionada con la planeación de redes inalámbricas, se usó la técnica de recopilación documental consultando libros, artículos de investigación en su mayoría de la revista de Ingenieros Eléctricos y Electrónicos (IEEE), tesis, informes y demás documentos que contribuyeran a proporcionar datos enfocados en la temática central del proyecto. Lo que permitió obtener un bajo costo considerando la gran cantidad de información que se obtuvo, la bibliografía consultada es de característica técnica lo que permitió lograr una dimensión histórica, social y tecnológica a través del tiempo.
 
 
-#### **Analizar la información recopilada de redes inalámbricas enfocada a zonas rurales**
+### **Analizar la información recopilada de redes inalámbricas enfocada a zonas rurales**
 
-Una vez se ha captado la información de planeación de redes se procede a realizar su respectivo análisis, tabulando todos los documentos encontrados, detallando:
+Una vez se ha captado la información de planeación de redes se procede a realizar su respectivo análisis, tabulando todos los documentos encontrados,haciendo un rastreo y clasificación de los documentos, detallando:
 
 |        |        |
 | ------ | ------ |
@@ -690,7 +706,7 @@ De este análisis de fuentes se encuentra que quince (15) son artículos de inve
 Con ello se pudo establecer que los primeros seis puntos harían parte del marco teórico y los dos siguientes pertenecerían al estado del arte, esto como resultado de que el enfoque de esta investigación está relacionado con la planeación de redes móviles y BWA en zonas rurales. 
 
 
-#### **Determinar la información que cumpla con los requerimientos necesarios para diseñar el algoritmo**
+### **Determinar la información que cumpla con los requerimientos necesarios para diseñar el algoritmo**
 
 Acorde al análisis ejecutado en la actividad anterior se encontró que los autores Bernardi, Sen y Milton proporcionan la información necesaria para diseñar el algoritmo.  Dentro de los requerimientos proporcionados se tienen:
 
@@ -704,7 +720,7 @@ Acorde al análisis ejecutado en la actividad anterior se encontró que los auto
 - Algunos datos demográficos y económicos de la población
 
 
-#### **Documentar el estado del arte** 
+### **Documentar el estado del arte** 
 
 Con toda la información analizada y los parámetros claros se documenta el estado del arte realizando una comparación entre los tres autores destacados mencionados con anterioridad. De ellos se establece
 
@@ -718,13 +734,18 @@ En contexto, el estado del arte se puede estudiar en el capítulo 2 de este Libr
 
 
 
-### Diseñar un algoritmo que permita identificar la mejor estrategia de expansión de la red inalámbrica en zonas rurales
+## Diseñar un algoritmo que permita identificar la mejor estrategia de expansión de la red inalámbrica en zonas rurales
 
 Partiendo del análisis e información recolectada se determinan los parámetros necesarios para continuar con la etapa de diseño del algoritmo para planear el crecimiento de una red inalámbrica en zonas rurales.
 
-#### Definir los datos de entrada y salida del algoritmo
+Para el desarrollo del algoritmo que permite la creación de una herramienta de planeación incremental de redes inalámbricas rurales, se plantea el modelo cascada que  en el desarrollo de software es un proceso en el que todas las fases se realizan de forma secuencial,  siguiendo un flujo de ejecución de arriba hacia abajo como una cascada. Esto permite hacer un fácil seguimiento del desarrollo del proyecto, realizando una distribución de tareas y delimitando sus fases.
 
-Conforme a la investigación documental realizada se determina que los tres autores en mención tienen similitudes en sus algoritmos, sin embargo, se comparan los tres algoritmos verificando sus datos de entrada y salida, entonces se tiene que:
+![Estructura metodología cascada](metodologia.pdf){ width=10sss0% }
+
+
+### Definir los datos de entrada y salida del algoritmo
+
+Este ítem hace enfasis en la primera etapa de la metodología, (análisis de requerimientos), a partir de ella y conforme a la investigación documental realizada se determina que los tres autores en mención tienen similitudes en sus algoritmos, sin embargo, se comparan los tres algoritmos verificando sus datos de entrada y salida,  entonces se tiene que:
 
 * **Algoritmo planteado por Sen**
 
@@ -793,27 +814,124 @@ Table: Parametros de entrada y salida del primer algoritmo de la aplicación, TC
 Table: Datos de entrada y salida del segundo algoritmo START-TC-ALGO (G,c). 
 
 
-Ahora, con los tipos de datos de entrada y salida de los algoritmos estudiados, se propone los parámetros de entrada al algoritmo que se va a diseñar. Es decir que este algoritmo será un hibrido de la combinación de estos algoritmos:
+Ahora, con los tipos de datos de entrada y salida de los algoritmos estudiados, se determinan los parámetros de entrada y salida del algoritmo que se va a diseñar. Es decir que el algoritmo se va a proponer surge de la combinación de los algoritmos vistos con anterioridad.
+
+*  **Algoritmo propuesto (Datos de entrada y salida)**
+
+| Datos de entrada |
+| ----------------- |
+|Grafo (Conexión de la totalidad de la red)
+|Asignación de antenas|
+|Función de costos|
+|TC-ALGO|
+|START-TC-ALGO|
+|Limitar el alcance geográfico|
+|Red Backhaul disponible|
+|Solicitudes de Cobertura|
+|Clientes agrupados|
+Table: Parámetros de entrada algoritmo propuesto
+
+|Datos de salida|
+|----------------|
+|Mejor topología de expansión de la red con el menor costo|
+Table:Salida del algoritmo
 
 
 
 
-####  Proponer el conjunto de operaciones secuenciales para la realización del Algoritmo
+###  Proponer el conjunto de operaciones secuenciales para la realización del Algoritmo
 
 
-ACA DEBEN ESTAR LOS DIAGRAMAS DE FLUJO 
+Esta es la segunda fase de la metodología (Diseño), en esta se muestra el proceso a ejecutarse para realizar el algoritmo.
+
+A partir de los tres algoritmos estudiados se plantea una nueva propuesta para el planeamiento de redes inalámbricas en zonas rurales.Para esto, se toman las características más relevantes de cada uno de ellos y se combinan con el fin de generar un nuevo algoritmo que permita conectividad a internet en zonas apartadas a un bajo costo. 
+
+Proponer un nuevo algoritmo mezclando las mejores características de Sen, Bernardi y Rios plantea el proceso en cuatro pasos diferentes:
+
+1. Declarar los datos de entrada
+2. Generar los mapas de calor 
+3. IncrEase
+4. Salida: Obtener una respuesta de planeación de redes inalámbricas rurales económica
+
+En la siguiente figura se establece el diagrama sistémico del modo de operación de la herramienta propuesta.
 
 
+![Diagrama sistémico](Diagrama_sistemico.pdf){ width=10sss0% }
 
-#### Determinar los requerimientos necesarios para ejecutar el algoritmo
+**Descripción del proceso de operación del algoritmo propuesto** 
 
-#### Codificación del algoritmo
+1. **Declarar los dato de entrada:**
+
+- Grafo, conexión de toda la red: se ingresa un grafo con una topología propuesta dónde todos los nodos se encuentren conectados entre sí.
+
+- Algoritmo TC-AlGO: determina el valor de altura óptimo que permite obtener el mejor enlace dentro de un grupo de enlaces vecinos a un nodo principal; este algoritmo contiene a START-TC-ALGO (algoritmo que permite recorrer el grafo y ubicar el menor enlace o conjunto de enlaces que representan el menor costo beneficio), también, contiene la función de costos C(n)
+
+- Limitar el alcance geográfico: Se delimita la región en dónde se desea expandir la red existente
+
+- Solicitudes de cobertura: sectores o usuarios que desean adquirir el servicio de conectividad
+
+2. **Generar mapas de calor**
+
+Se generan tres mapas de calor diferentes
+
+* Mapa de calor en el que se delimite el alcance geográfico que va tener la red a expandir
+* Mapa de calor de las solicitudes de cobertura: sugiere los lugares en los que se encuentra mayor cantidad de usuarios que solicitan el servicio
+* Mapa de calor de la ubicación y desempeño de los usuarios actuales: Permite saber la ubicación de los usuarios que hacen parte de la red actual y el nivel de funcionamiento de estos nodos
 
 
-### Evaluar el algoritmo mediante una simulación numérica, comparándolo con Heurística simple
+Una vez se han obtenido los mapas de calor se hace la unión de los tres a fin de determinar que lugares se deben cubrir con mayor prioridad, teniendo en cuenta la relación costo-beneficio, es decir, que permita el acceso a internet a la mayor cantidad de personas posible pero a un bajo costo. 
+
+Al mapa de calor que surge de la unión realizada con anterioridad se le anexa el grafo con la altura mínima de las torres y la mejor ruta que se debe curbrir, además de asignar las antenas para cada torre.
 
 
-### Aplicar el algoritmo propuesto en la Red Libre de Bosachoque analizando la topología adecuada para futuras expansiones de la red en las Instituciones Educativas Rurales de la región del Sumapaz-Cundinamarca considerando la relación costo-beneficio
+3. **IncrEase**
+
+En este paso se combinan los resultados obtenidos en el paso anterior y esos datos ingresan a IncrEase. Esta herramienta proporciona dos modos de operación
+
+* Busqueda estratégica
+* IncrEase targeted
+
+
+4. **Salida: obtener una respuesta de planeación de redes inalámbricas rurales económica** 
+
+Los dos modos de operación de IncrEase generan dos salidas:
+
+* Busqueda estratégica: estrategia de despliegue incremental sugerida
+* IncrEase targeted: ruta sugerida para cubrir el área seleccionada
+
+
+### Determinar los requerimientos necesarios para ejecutar el algoritmo
+
+El estándar IEEE 830-1998 para el SRS(en inglés) o ERS (Especificación de requerimientos de software) es un conjunto de recomendaciones para la especificación de los requerimiento o requisitos de software, basado en este estándar se determina: 
+
+* **Requerimientos funcionales**
+
+|Identificador del requerimiento| In1                                 |
+| ----------------------------- |-------------------------------------|
+| Nombre del requerimiento      |Requerimiento de cobertura|
+| Características               | Calidad de la cobertura de la red existente|
+| Descripción del requerimiento | Es un parámetro de entrada al algoritmo para saber la eficiencia del funcionamiento de la red|
+|Requerimiento NO funcional     |   |
+|Prioridad del requerimiento    | Alta |
+Table:
+
+|Identificador del requerimiento| In2                                 |
+| ----------------------------- |-------------------------------------|
+| Nombre del requerimiento      |Ubicación de los usuarios|
+| Características               |Identificación de la ubicación geográfica de los usuarios|
+| Descripción del requerimiento |Detallar la localización geográfica de los usuarios para analizar la topografía del terreno |
+|Requerimiento NO funcional     |   |
+|Prioridad del requerimiento    | Alta |
+Table:
+
+ 
+### Codificación del algoritmo
+
+
+## Evaluar el algoritmo mediante una simulación numérica, comparándolo con Heurística simple
+
+
+## Aplicar el algoritmo propuesto en la Red Libre de Bosachoque analizando la topología adecuada para futuras expansiones de la red en las Instituciones Educativas Rurales de la región del Sumapaz-Cundinamarca considerando la relación costo-beneficio
 
 
 # Capitulo 4. Análisis de resultados y discusión 
