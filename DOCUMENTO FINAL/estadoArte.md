@@ -79,7 +79,7 @@ En el ámbito local, en Bogotá se han desplegado diferentes redes inalámbricas
 
 ### Descripción de la red de Bosachoque Libre
 
-La Red Bosachoque Libre es un macroproyecto misional de investigación de la Universidad de Cundinamarca de Facultad de Ingeniería (redes libres como alternativa de innovación social e inclusión digital en la vereda Bosachoque del municipio de Fusagasugá), con el fin de proveer servicio de Internet a la vereda Bosachoque utilizando conexiones inalámbricas, dado que, por ser una zona rural, una conexión cableada sería costosa y difícil. Esta red, se implementó con el fin de generar a la comunidad una herramienta que permita la conectividad, fomentando el desarrollo y crecimiento de esta, utilizando las tecnologías, protocolos y herramientas típicas de una red inalámbrica en países en desarrollo. El proceso de cómo se planeó esta red se encuentra documentado en (Mahecha, 2017).
+La Red Bosachoque Libre es un macroproyecto misional de investigación de la Universidad de Cundinamarca de Facultad de Ingeniería (redes libres como alternativa de innovación social e inclusión digital en la vereda Bosachoque del municipio de Fusagasugá), con el fin de proveer servicio de Internet a la vereda Bosachoque utilizando conexiones inalámbricas, dado que, por ser una zona rural, una conexión cableada sería costosa y difícil. Esta red, se implementó con el fin de generar a la comunidad una herramienta que permita la conectividad, fomentando el desarrollo y crecimiento de esta, utilizando las tecnologías, protocolos y herramientas típicas de una red inalámbrica en países en desarrollo. El proceso de cómo se planeó esta red se encuentra documentado en [@achury2018].
 
 La red de Bosachoque fue planeada e implementada como una red BWA (acceso inalámbrico de banda ancha “Broad Band Wireless Access”) de dos niveles, nivel de back-haul donde de manera inalámbrica se adquiere el servicio de internet y nivel de acceso donde se conectan los usuarios finales.
 El nivel back-haul hace referencia a los sitios de transmisión que están interconectados usando enlaces inalámbricos punto a punto de larga distancia (PTP), mientras que el nivel de acceso proporciona conectividad al equipo del cliente (CPE) a través de un enlace punto multipunto (PMP).
@@ -919,7 +919,7 @@ A continuación de describe las ventajas que tienen los algoritmos de *Panagrahi
 
   
 
-En [@rios2015] se propone el diseño de una topología de infraestructura de red inalámbrica en la Región del Sumapaz implementando los algoritmos planteados en [@ panagrahi2008], en este trabajo se implementan estos algoritmos para proponer una topología que conecten unos puntos propuestos, en donde puede ir conectada una torre de antena con la mínima altura de nodos, creando una topología de mínimo costo.  
+En [@rios2015] se propone el diseño de una topología de infraestructura de red inalámbrica en la Región del Sumapaz implementando los algoritmos planteados en [@panagrahi2008], en este trabajo se implementan estos algoritmos para proponer una topología que conecten unos puntos propuestos, en donde puede ir conectada una torre de antena con la mínima altura de nodos, creando una topología de mínimo costo.  
 
 
 
