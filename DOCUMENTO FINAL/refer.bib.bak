@@ -174,7 +174,7 @@
   title     = {impact of broadband on the economy},
   publisher = {Regulatory \& market environment},
   year      = {2012},
-  author    = {Unión Internacional de Telecomunicaciones UIT},
+  author    = {Unión Internacional de Telecomunicaciones (UIT)},
 }
 
 @Article{onu2013,
@@ -267,9 +267,9 @@
 }
 
 @TechReport{PNUD2018,
-  author      = {{Programa de las Naciones unidas para el Desarrollo PNUD}},
+  author      = {{Programa de las Naciones unidas para el Desarrollo} (PNUD)},
   title       = {Índices e indicadores de desarrollo humano},
-  institution = {Organización de las Naciones Unidas ONU},
+  institution = {Organización de las Naciones Unidas},
   year        = {2018},
   url         = {http://hdr.undp.org/sites/default/files/2018_human_development_statistical_update_es.pdf },
 }
@@ -289,16 +289,6 @@
   month  = jun,
   url    = {http://profesores.fi-b.unam.mx/victor/LTesis_Beatriz_Abraham.pdf
 },
-}
-
-@Article{panagrahi2008,
-  author  = {Debmalya Panigrahi, Partha Dutta, S. Jaiswal, K. V. M. Naidu and Rajeev Rastogi},
-  title   = {Minimum Cost Topology Construction for Rural Wireless Mesh Networks},
-  journal = {IEEE INFOCOM 2008 - The 27th Conference on Computer Communications},
-  year    = {2008},
-  pages   = {9},
-  month   = apr,
-  issn    = {978-1-4244-2025-4},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
