@@ -924,7 +924,85 @@ Table:
 |Prioridad del requerimiento    | Alta |
 Table:
 
+|Identificador del requerimiento| In3                                 |
+| ----------------------------- |-------------------------------------|
+| Nombre del requerimiento      |Torres disponibles|
+| Características               |Obtener acceso a la ubicación de las torres |
+| Descripción del requerimiento |La ubicación espacial de las torres en el área de implementación de la topología de la red, permite saber que torres o conjuntos de ellas se pueden utilizar y así disminuir los costos de instalación |
+|Requerimiento NO funcional     |   |
+|Prioridad del requerimiento    | Alta |
+Table:
+
+|Identificador del requerimiento| In4                                 |
+| ----------------------------- |-------------------------------------|
+| Nombre del requerimiento      |Topología de la red|
+| Características               |Obtener topología de la red existente y su ampliación
+|
+| Descripción del requerimiento |Diseñar a partir de la topología de la red existente una nueva topología con el propósito de aumentar su cobertura y permitir que más usuarios accedad a ella.|
+|Requerimiento NO funcional     |   |
+|Prioridad del requerimiento    | Alta |
+Table:
+
+|Identificador del requerimiento| In5                                 |
+| ----------------------------- |-------------------------------------|
+| Nombre del requerimiento      |Área de selección|
+| Características               |Determinar la zona rural en dónde se realizará la expansión de la red|
+| Descripción del requerimiento |Al seleccionar la ubicación geográfica dónde se aplicará el algoritmo se analizarán las condiciones del terreno para la ubicación de las torres|
+|Requerimiento NO funcional     |   |
+|Prioridad del requerimiento    | Alta |
+Table:
+
+|Identificador del requerimiento| In6                                 |
+| ----------------------------- |-------------------------------------|
+| Nombre del requerimiento      |Ingreso de los datos|
+| Características               |Datos de entrada del algoritmo|
+| Descripción del requerimiento |Permite que los diseñadores del algoritmo ingresen las difernetes variables o datos para el funconamiento del programa.|
+|Requerimiento NO funcional     |   |
+|Prioridad del requerimiento    | Alta |
+Table:
  
+
+|Identificador del requerimiento| In7                                 |
+| ----------------------------- |-------------------------------------|
+| Nombre del requerimiento      |Operaciones matemáticas|
+| Características               |Procesos matemáticos para obtener una respuesta óptima|
+| Descripción del requerimiento |PLas operaciones matemáticas permiten al algoritmo brindar una respuesta óptima sobre la ubicación de las torres en el lugar donde se expandirá la red, esto conlleva a realizar calculos para que su implementación sea de menor costo|
+|Requerimiento NO funcional     |   |
+|Prioridad del requerimiento    | Alta |
+Table:
+
+
+* **Requerimientos NO funcionales**
+
+|Identificador del requerimiento| INT01                                 |
+| ----------------------------- |-------------------------------------|
+| Nombre del requerimiento      |Rápidez del algoritmo |
+| Características               |Desempeño en la ejecución del algoritmo.|
+| Descripción del requerimiento |Evaluar el desempeño en velocidad de respuesta del algoritmo a los datos de entrada ingresados por el diseñador|
+|Requerimiento NO funcional     |   |
+|Prioridad del requerimiento    | Alta |
+Table:
+
+|Identificador del requerimiento| INT02                                 |
+| ----------------------------- |-------------------------------------|
+| Nombre del requerimiento      |Requerimientos de procesamiento |
+| Características               | Capacidad de la memoria del pc para procesar el algoritmo|
+| Descripción del requerimiento |Determinar cuanto espacio y memoria necesita el equipo para procesar y ejecutar el algoritmo|
+|Requerimiento NO funcional     |   |
+|Prioridad del requerimiento    | Alta |
+Table:
+
+|Identificador del requerimiento| INT03                                 |
+| ----------------------------- |-------------------------------------|
+| Nombre del requerimiento      |Lenguaje de programación|
+| Características               |Python|
+| Descripción del requerimiento |El algoritmo se desarrollará en el lenguaje de programación Python|
+|Requerimiento NO funcional     |   |
+|Prioridad del requerimiento    | Alta |
+Table:
+
+
+
 ### Codificación del algoritmo
 
 
@@ -932,6 +1010,42 @@ Table:
 
 
 ## Aplicar el algoritmo propuesto en la Red Libre de Bosachoque analizando la topología adecuada para futuras expansiones de la red en las Instituciones Educativas Rurales de la región del Sumapaz-Cundinamarca considerando la relación costo-beneficio
+
+
+Al aplicar el algoritmo propuesto en la red libre de Bosachoque se obtiene:
+
+- Grafo con la Topología en la que la red se conecta totalmente:
+- Algoritmo TC-ALGO
+
+- Limitar el alcance geográfico:
+
+En este punto se escogen dos zonas, siendo la primera la vereda Bosachoque (red actual) y la segunda la región del Sumapaz (Futura expansión de la red).  Cabe añadir, que la vereda Bosachoque se encuentra ubicada en el municipio de Fusagasugá y este a su vez hace parte de la región del Sumapaz. 
+
+![Ubicación](Bosachoque_sumapaz.pdf){ width=10sss0% }
+
+En la figura anterior se puede evidenciar con color amarillo la vereda Bosachoque, lugar en el que se encuentra la red Libre y en color gris la región del Sumapaz, zona en dónde se desea expandir la red.
+
+- Solicitudes de cobertura:
+
+Las solicitudes de cobertura se analizaron en las dos regiones, la red actual y la futura expansión de la red. 
+
+Red Libre de Bosachoque:
+ 
+![Mapa de calor, solicitud de cobertura Bosachoque](mc_b_solicitudes.pdf){ width=10sss0% }
+
+
+En la figura n se puede encontrar el mapa de calor de las solicitudes de cobertura en la vereda Bosachoque, entendiendo que el color rojo es una solicitud más alta de cobertura y el color verde una solicitud baja. Para realizar este mapa se tomó el dato de la concentración de viviendas alrededor del punto dado. 
+
+
+Región del Sumapaz: 
+
+Se desea expandir la red libre de Bosachoque a la región del Sumapaz, para ello se plantea la interconexión de todas las Instituciones Educativas Rurales de la región. A partir de este hecho, se obtienen las coordenadas de cada Institución y la cantidad de estudiantes por cada sede, (la información es proporcionada por la base de datos del Ministerio de Educación Nacional), con estos datos se realiza el mapa de calor.
+
+![Ubicación de las Instituciones Educativas Rurales en el Sumapaz](Ubicacion_IE_Rurales.pdf){ width=10sss0% }
+
+En la figura n, se aprecia la ubicación de las escuelas rurales de la región del Sumapaz (punto de color verde).
+
+![Mapa de calor solicitudes en la región del Sumapaz](calor_s.pdf){ width=10sss0% }
 
 
 # Capitulo 4. Análisis de resultados y discusión 

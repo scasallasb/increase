@@ -551,5 +551,7 @@ El costo de las torres, es proporcional a  su altura y  esta re­lacionado con m
 
 Como aporte, Rios proporciona un algoritmo que permite establecer tanto la topología de red óptima en cuanto a costos, como las alturas que permiten que una ecuación de costos de las alturas de las torres sea minima. 
 
+![Mapa de calor](mc_b_solicitudes.pdf)
+
 
 # Bibliografía
