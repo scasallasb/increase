@@ -224,7 +224,6 @@ def c(h):
     h : float
         altura del nodo
 
-
     Retorna
     -------
     costo : float
@@ -352,7 +351,7 @@ def nbrfun(G,COVERh,n,d):
     #ordena los valores de mayor a menor costo
     va= l.values()
     #va.sort()
-    
+
     va = list(sorted(va))
 
     for i in range(0,len(va)):
