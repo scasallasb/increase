@@ -79,7 +79,7 @@ En el ámbito local, en Bogotá se han desplegado diferentes redes inalámbricas
 
 ### Descripción de la red de Bosachoque Libre
 
-La Red Bosachoque Libre es un macroproyecto misional de investigación de la Universidad de Cundinamarca de Facultad de Ingeniería (redes libres como alternativa de innovación social e inclusión digital en la vereda Bosachoque del municipio de Fusagasugá), con el fin de proveer servicio de Internet a la vereda Bosachoque utilizando conexiones inalámbricas, dado que, por ser una zona rural, una conexión cableada sería costosa y difícil. Esta red, se implementó con el fin de generar a la comunidad una herramienta que permita la conectividad, fomentando el desarrollo y crecimiento de esta, utilizando las tecnologías, protocolos y herramientas típicas de una red inalámbrica en países en desarrollo. El proceso de cómo se planeó esta red se encuentra documentado en (Mahecha, 2017).
+La Red Bosachoque Libre es un macroproyecto misional de investigación de la Universidad de Cundinamarca de Facultad de Ingeniería (redes libres como alternativa de innovación social e inclusión digital en la vereda Bosachoque del municipio de Fusagasugá), con el fin de proveer servicio de Internet a la vereda Bosachoque utilizando conexiones inalámbricas, dado que, por ser una zona rural, una conexión cableada sería costosa y difícil. Esta red, se implementó con el fin de generar a la comunidad una herramienta que permita la conectividad, fomentando el desarrollo y crecimiento de esta, utilizando las tecnologías, protocolos y herramientas típicas de una red inalámbrica en países en desarrollo. El proceso de cómo se planeó esta red se encuentra documentado en [@achury2018].
 
 La red de Bosachoque fue planeada e implementada como una red BWA (acceso inalámbrico de banda ancha “Broad Band Wireless Access”) de dos niveles, nivel de back-haul donde de manera inalámbrica se adquiere el servicio de internet y nivel de acceso donde se conectan los usuarios finales.
 El nivel back-haul hace referencia a los sitios de transmisión que están interconectados usando enlaces inalámbricos punto a punto de larga distancia (PTP), mientras que el nivel de acceso proporciona conectividad al equipo del cliente (CPE) a través de un enlace punto multipunto (PMP).
@@ -882,7 +882,149 @@ Table:Salida del algoritmo
 
 #### Determinar los requerimientos necesarios para ejecutar el algoritmo
 
+<<<<<<< HEAD
 Esta actividad al igual que la anterior, continúa dentro de la primera fase de la metodología en cascada. A partir de ello, se tiene que el estándar IEEE 830-1998 para el SRS(en inglés) o ERS (Especificación de requerimientos de software) es un conjunto de recomendaciones para la especificación de los requerimiento o requisitos de software, basado en este estándar se determina: 
+=======
+
+###  Proponer el conjunto de operaciones secuenciales para la realización del Algoritmo
+
+Asignación de tipo de antena  
+
+En el trabajo [@sen], se resuelve el problema de evitar la interferencia al máximo, mientras se minimiza el conjunto de antenas a utilizar. 
+
+ Para realizar los enlaces, es necesario saber qué tipo de antena se va a utilizar, aquí el parámetro que se va a tener en cuenta principalmente es la apertura de ancho de haz o el HPBW (*Half Power Beam Width*) que  definirá la cantidad de nodos que pueda cubrir una antena, ya que si por ejemplo se va a realizar un enlace P-T-P, se puede realizar con una antena direccional de un ancho de haz de 8° puesto que el enlace cubrirá un solo punto, mientras que si se realiza un enlace M-T-P, se debe tener en cuenta una antena sectorial con un ancho de haz de 30° o 22° que pueda cubrir más puntos.   
+
+Ahora, teniendo en cuenta esto se describirá la Heurística propuesta por *Sen*.    
+
+  
+
+**Heuristica de planeación de antena**  
+
+  
+
+El autor *Sen* propone una heurística que vamos a implementar la cual está dada en un tiempo complejo de Ø(n2), donde n es el número de nodos hijos. Esta heurística se enfoca en disminuir el número de interferencia entre un conjunto de enlaces.  
+
+  
+
+Heurística   
+
+  
+
+1 - Reorganizar el conjunto de nodos hijos de tal manera que el máximo ángulo de separación sean los nodos que están más alejados.  
+
+  
+
+2 – Recursivamente en cada nodo se realiza lo siguiente:  
+
+     
+
+Determinar el conjunto de antenas o antena que cubre la totalidad de los nodos hijos.  
+
+  
+
+Dividir el ángulo de máxima separación, en subconjunto de ángulos que tiene la torre para que cubra todos los nodos y determinar el costo de cada uno de estos subconjuntos.  
+
+  
+
+3 – Fin de la recursividad: cuando exista un conjunto de antenas que cubran todos los nodos con el menor costo.  
+
+  
+
+Asignación de altura   
+
+  
+
+Los autores [@sen2007],  [panagrahi2008] y [@rios2015], proponen que la altura de la torre constituye uno de los costos más importantes dentro de la construcción de una infraestructura de red inalámbrica en áreas rurales.  
+
+  
+
+*Sen* propone una heurística que sigue una secuencia de pasos explicados anteriormente y entre estos resuelve el problema de encontrar una solución de alturas optimas utilizando programación lineal (PL), sin embargo, en  [@panagrahi2008] se  propone un algoritmo para asignar la altura donde cita a [@sen2007], puesto que sigue el mismo enfoque de reducir el coste de infraestructura de red en zonas rurales, sin embargo, el autor *Panigrahi* proponen los algoritmos TC-ALGO  Y  START-TC-ALGO que mejora la heurística que propone *Sen*.   
+
+  
+
+A continuación de describe las ventajas que tienen los algoritmos de *Panagrahi* sobre la heurística propuesta por *Sen*:  
+
+  
+
+* En la heurística no es posible conocer el límite de posibilidades, mientras en los algoritmos se tiene un límite de respuesta en el peor de los casos.  
+
+  
+
+* En la heurística se propone solo un obstáculo en la mitad del enlace entre dos nodos, sin embargo, los algoritmos pueden encargarse de encontrar la respuesta optima de la altura de las torres teniendo en cuenta todos los obstáculos entre el enlace de dos nodos.  
+
+  
+
+* En la heurística se trabaja una función de costo lineal por cada torre, mientras que los algoritmos usan una función de costos más general.  
+
+  
+
+En [@rios2015] se propone el diseño de una topología de infraestructura de red inalámbrica en la Región del Sumapaz implementando los algoritmos planteados en [@panagrahi2008], en este trabajo se implementan estos algoritmos para proponer una topología que conecten unos puntos propuestos, en donde puede ir conectada una torre de antena con la mínima altura de nodos, creando una topología de mínimo costo.  
+
+
+
+
+Esta es la segunda fase de la metodología (Diseño), en esta se muestra el proceso a ejecutarse para realizar el algoritmo.
+
+A partir de los tres algoritmos estudiados se plantea una nueva propuesta para el planeamiento de redes inalámbricas en zonas rurales.Para esto, se toman las características más relevantes de cada uno de ellos y se combinan con el fin de generar un nuevo algoritmo que permita conectividad a internet en zonas apartadas a un bajo costo. 
+
+Proponer un nuevo algoritmo mezclando las mejores características de Sen, Bernardi y Rios plantea el proceso en cuatro pasos diferentes:
+
+1. Declarar los datos de entrada
+2. Generar los mapas de calor 
+3. IncrEase
+4. Salida: Obtener una respuesta de planeación de redes inalámbricas rurales económica
+
+En la siguiente figura se establece el diagrama sistémico del modo de operación de la herramienta propuesta.
+
+
+![Diagrama sistémico](Diagrama_sistemico.pdf){ width=10sss0% }
+
+**Descripción del proceso de operación del algoritmo propuesto** 
+
+1. **Declarar los dato de entrada:**
+
+- Grafo, conexión de toda la red: se ingresa un grafo con una topología propuesta dónde todos los nodos se encuentren conectados entre sí.
+
+- Algoritmo TC-AlGO: determina el valor de altura óptimo que permite obtener el mejor enlace dentro de un grupo de enlaces vecinos a un nodo principal; este algoritmo contiene a START-TC-ALGO (algoritmo que permite recorrer el grafo y ubicar el menor enlace o conjunto de enlaces que representan el menor costo beneficio), también, contiene la función de costos C(n)
+
+- Limitar el alcance geográfico: Se delimita la región en dónde se desea expandir la red existente
+
+- Solicitudes de cobertura: sectores o usuarios que desean adquirir el servicio de conectividad
+
+2. **Generar mapas de calor**
+
+Se generan tres mapas de calor diferentes
+
+* Mapa de calor en el que se delimite el alcance geográfico que va tener la red a expandir
+* Mapa de calor de las solicitudes de cobertura: sugiere los lugares en los que se encuentra mayor cantidad de usuarios que solicitan el servicio
+* Mapa de calor de la ubicación y desempeño de los usuarios actuales: Permite saber la ubicación de los usuarios que hacen parte de la red actual y el nivel de funcionamiento de estos nodos
+
+
+Una vez se han obtenido los mapas de calor se hace la unión de los tres a fin de determinar que lugares se deben cubrir con mayor prioridad, teniendo en cuenta la relación costo-beneficio, es decir, que permita el acceso a internet a la mayor cantidad de personas posible pero a un bajo costo. 
+
+Al mapa de calor que surge de la unión realizada con anterioridad se le anexa el grafo con la altura mínima de las torres y la mejor ruta que se debe curbrir, además de asignar las antenas para cada torre.
+
+
+3. **IncrEase**
+
+En este paso se combinan los resultados obtenidos en el paso anterior y esos datos ingresan a IncrEase. Esta herramienta proporciona dos modos de operación
+
+* Busqueda estratégica
+* IncrEase targeted
+
+
+4. **Salida: obtener una respuesta de planeación de redes inalámbricas rurales económica** 
+
+Los dos modos de operación de IncrEase generan dos salidas:
+
+* Busqueda estratégica: estrategia de despliegue incremental sugerida
+* IncrEase targeted: ruta sugerida para cubrir el área seleccionada
+
+
+### Determinar los requerimientos necesarios para ejecutar el algoritmo
+
+El estándar IEEE 830-1998 para el SRS(en inglés) o ERS (Especificación de requerimientos de software) es un conjunto de recomendaciones para la especificación de los requerimiento o requisitos de software, basado en este estándar se determina: 
+>>>>>>> 3811cb700dce2fbfdcad8de23f701c791ebeb6dc
 
 * **Requerimientos funcionales**
 
