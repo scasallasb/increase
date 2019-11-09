@@ -1,0 +1,303 @@
+% Encoding: UTF-8
+
+@Article{hilarie2008,
+  author  = {Marc St-Hilaire},
+  title   = {Topological planning and design of UMTS mobile networks: a survey},
+  journal = {WIRELESS COMMUNICATIONS AND MOBILE COMPUTING},
+  year    = {2008},
+  volume  = {9},
+  pages   = {11},
+  month   = Julio,
+}
+
+@Article{amaldi2003,
+  author  = {Amaldi, E., Capone, A. y Malucelli, F.},
+  title   = {Planning UMTS base station location: optimization models with power control and algorithms},
+  journal = {IEEE Transactions on Wireless Communications},
+  year    = {2003},
+  volume  = {2},
+  pages   = {939 - 952},
+  month   = Septiembre,
+  issn    = {1536-1276},
+}
+
+@Article{amaldi2001,
+  author  = {Amaldi, E., Capone, A. y Malucelli, F.},
+  title   = {Optimizing base station siting in UMTS networks},
+  journal = {IEEE Vehicular Technology Conference (VTC),},
+  year    = {2001},
+  volume  = {4},
+  pages   = {2828–2832},
+  month   = Agosto,
+  issn    = {1090-3038},
+}
+
+@Article{harmatos2002,
+  author  = {Harmatos, J.},
+  title   = {Planning of UMTS core networks},
+  journal = {IEEE Int. Sym- posium on Personal, Indoor and Mobile Radio Communications,},
+  year    = {2002},
+  volume  = {2},
+  pages   = {740–744},
+  month   = Septiembre,
+  issn    = {0-7803-7589-0},
+}
+
+@Article{raisanen2005,
+  author  = {Raisanen, L. y Whitaker, R. M.},
+  title   = {Comparison and evaluation of multiple objective genetic algorithms for the antenna placement problem},
+  journal = {Mobile Networks and Applications},
+  year    = {2005},
+  volume  = {10},
+  pages   = {79-88},
+  month   = Febrero,
+}
+
+@Article{sen2007,
+  author  = {Sayandeep Sen y Bhaskaran Raman},
+  title   = {Long distance wireless mesh network planning: problem formulation and solution.},
+  journal = {ACM Int. conference on World Wide Web (WWW)},
+  year    = {2007},
+  pages   = {893–902},
+  month   = Mayo,
+}
+
+@Book{flickenger2008,
+  title     = {REDES INALMBRICAS EN LOS PAISES EN DESARROLLO : Una guia practica para planificar y construir infraestructuras de telecomunicaciones de bajo costo},
+  publisher = {Hacker Friendly LLC},
+  year      = {2013},
+  author    = {Flickenger,Rob (Ed.)},
+  volume    = {4},
+  isbn      = {978-1492390855},
+  keywords  = {Redes locales sin hilos Wifi redes de computadores redes de computadores-- instalación Instalacion inalambrica de telecomunicación},
+  url       = {http://wndw.net/},
+}
+
+@Article{amaldi2008,
+  author  = {Amaldi, E., Capone, A., & Malucelli, F.},
+  title   = {Radio planning and coverage optimization of 3G cellular networks},
+  journal = {Springer Science},
+  year    = {2008},
+  pages   = {14:435-447},
+  month   = Enero,
+}
+
+@Article{bu2005,
+  author  = {Tian Bu; Mun Choon Chan y R. Ramjee},
+  title   = {Designing wireless radio access networks for third generation cellular networks},
+  journal = {Proceedings IEEE 24th Annual Joint Conference of the IEEE Computer and Communications Societies.},
+  year    = {2005},
+  month   = Marzo,
+  issn    = {0-7803-8968-9},
+}
+
+@Article{rios2015,
+  author  = {Ríos Rivera, Milton y Rodríguez Mújica, Leonardo},
+  title   = {Solución al problema de construcción de la topología en redes rurales inalámbricas},
+  journal = {IEEE Colombian Conference on Communication and Computing (IEEE COLCOM 2015)},
+  year    = {2015},
+  volume  = {I},
+  pages   = {1-9},
+  month   = Julio,
+  issn    = {978-1-4799-8834-1},
+}
+
+@Article{achury2018,
+  author  = {Brian Alberto Achury Mejia},
+  title   = {Análisis de los Parametros de Calidad del Servicio (QOS) Proporcionados por una Plataforma de Comunicaciones Convergetes Basada en Linux, a través de Radioenlaces Inalámbricos para la Vereda Bosachoque, en el Municipio de Fusagasugá (Cundinamarca)},
+  journal = {Universidad de Cundinamarca},
+  year    = {2018},
+}
+
+@Article{florez2018,
+  author  = {Florez, Santiago},
+  title   = {Diseño e Implememtación de un Sistema de Gestión para la Red Inalámbrica Comunitaria Bosachoque Libre.},
+  journal = {Universidad de Cundinamarca},
+  year    = {2018},
+}
+
+@Article{mahecha2018,
+  author  = {Jonathan Mahecha Franco},
+  title   = {Planeación , Implementación y Pruebas de la infraestructura de Acceso a Internet de la Red libre Comunitaria de la Vereda Bosachoque del Municipio de Fusagasugá.},
+  journal = {Universidad de Cundinamarca},
+  year    = {2018},
+}
+
+@Article{tobon2018,
+  author  = {Brayan Alberto Tobon Perdomo},
+  title   = {INFRAESTRUCTURA DE RED FISICA, EN LA VEREDA BOSACHOQUE DEL MUNICIPIO DE FUSAGASUGÁ.},
+  journal = {Universidad de Cundinamarca},
+  year    = {2018},
+}
+
+@Article{bosio2007,
+  author  = {Sandro Bosio ; Antonio Capone y Matteo Cesana},
+  title   = {Radio Planning of Wireless Local Area Networks. IEEE/ACM Transactions on Networking},
+  journal = {IEEE/ACM Transactions on Networking},
+  year    = {2007},
+  volume  = {15},
+  pages   = {6:1414–1427},
+  issn    = {1063-6692},
+}
+
+@Article{ishmael2008,
+  author  = {Johnathan Ishmael ; Sara Bury ; Dimitrios Pezaros y Nicholas Race},
+  title   = {Deploying Rural Community Wireless Mesh Networks},
+  journal = {IEEE Internet Computing},
+  year    = {2008},
+  volume  = {12},
+  pages   = {8:22-29},
+  month   = Julio,
+  issn    = {1089-7801},
+}
+
+@Article{pedraza2012,
+  author  = {Luis F. Pedraza ; Carlos A. Gómez y Octavio Salcedo P.},
+  title   = {Implementación de red inalámbrica comunitaria para Ciudad Bolívar},
+  journal = {Visión Electrónica},
+  year    = {2012},
+  volume  = {2},
+  pages   = {11:46-47},
+  month   = Diciembre,
+}
+
+@Article{gordillo2013,
+  author  = {Gordillo, Wilson},
+  title   = {Redes Libres- Enlaces digitales con sentido social.},
+  journal = {ENGI. Revista electrónica de la Facultad de Ingeniería, Universidad de Cundinamarca},
+  year    = {2013},
+  volume  = {2},
+  pages   = {2: 11-13},
+}
+
+@Book{uit2012,
+  title     = {impact of broadband on the economy},
+  publisher = {Regulatory \& market environment},
+  year      = {2012},
+  author    = {Unión Internacional de Telecomunicaciones UIT},
+}
+
+@Article{onu2013,
+  author  = {Organización Naciones Unidas : Consejo Económico y Social},
+  title   = {El acceso de banda ancha a Internet como medio de lograr una sociedad digital inclusiva},
+  journal = {Comisión de Ciencia y Tecnología para el Desarrollo 16° período de sesiones},
+  year    = {2013},
+}
+
+@PhdThesis{bernardi2012,
+  author = {Bernardi, Giacomo},
+  title  = {Deployment and Operational Aspects of Rural Broadband Wireless Access Networks},
+  school = {University of Edinburgh},
+  year   = {2012},
+}
+
+@Article{cepal2017,
+  author  = {Edwin Fernando Rojas y Laura Poveda, de la División de Desarrollo Productivo y Empresarial de la Comisión Económica para América Latina y el Caribe (CEPAL).},
+  title   = {Estado de la banda ancha en América Latina y el Caribe},
+  journal = {Publicación de las Naciones Unidas},
+  year    = {2017},
+}
+
+@Article{crt2016,
+  author  = {Comisión de Regulación de Telecomunicaciones},
+  title   = {Definición de Banda Ancha para Colombia},
+  journal = {Regulación de Infraestructura},
+  year    = {2016},
+}
+
+@Book{maseratti2011,
+  title     = {Tecnologias de la Información y las Telecomunicaciones para zonas rurales},
+  publisher = {MASERATTI: Mejora de la atención sanitaria en entornos rurales mediante aplicaciones de telemedicina sobre tecnologías inalámbricas},
+  year      = {2011},
+  editor    = {Rendon Gallon, Álvaro and Patricia Jeanneth Ludeña González,  and Andres Martinez Fernandez},
+}
+
+@MastersThesis{sen,
+  author = {Sayandeep Sen},
+  title  = {Topology Planning for Long Distance Wireless Mesh Networks},
+  school = {Indian Institute of Technology,},
+  year   = {2006},
+}
+
+@Article{gordejuela2009,
+  author  = {Gordejuela-Sanchez, F. and Juttner, A. y Zhang, J.},
+  title   = {A multiobjective optimization framework for IEEE 802.16e network design and performance analysis.},
+  journal = {Proc. of IEEE Journal on Selected Areas in Communications},
+  year    = {2009},
+}
+
+@Article{Whitaker,
+  author  = {Whitaker, R. y Hurley, S.},
+  title   = {Evolution of planning for wireless communication systems.},
+  journal = {Proc. of Annual Hawaii Int. Conference on System Sciences},
+  year    = {2003},
+  pages   = {10},
+}
+
+@Electronic{IBM2019,
+  author = {IBM},
+  year   = {2019},
+  title  = {Redes y planificación de redes},
+  url    = {https://www.ibm.com/support/knowledgecenter/es/SSFKSJ_7.5.0/com.ibm.mq.pla.doc/q004730_.htm},
+}
+
+@Electronic{guifi.net2016,
+  author = {guifi.net},
+  month  = {12},
+  year   = {2016},
+  title  = {Guifi.net- El proyecto tecnológico},
+  url    = {https://guifi.net/es/proyecto-tecnologico},
+}
+
+@Article{Abido2002,
+  author  = {M.A Abido},
+  title   = {Optimal Power Flow Using Tabu Search Algorithm},
+  journal = {Electric Power Components and Systems},
+  year    = {2002},
+  pages   = {469-483},
+}
+
+@Electronic{NetworkX2019,
+  author = {NetworkX},
+  month  = {04},
+  year   = {2019},
+  title  = {Overview of NetworkX},
+  url    = {https://networkx.github.io/documentation/stable/#},
+}
+
+@TechReport{PNUD2018,
+  author      = {{Programa de las Naciones unidas para el Desarrollo PNUD}},
+  title       = {Índices e indicadores de desarrollo humano},
+  institution = {Organización de las Naciones Unidas ONU},
+  year        = {2018},
+  url         = {http://hdr.undp.org/sites/default/files/2018_human_development_statistical_update_es.pdf },
+}
+
+@TechReport{Casas2014,
+  author      = {César Casas and Jorge Leyva and Leonardo Rodríguez and Óscar Feria and Milton Ríos y Rodríguez, Andrés},
+  title       = {{Realización del estudio de factibilidad, socialización y capacitación. para implementación de infraestructuras de voz Ip y comunicaciones convergentes en la región del Sumapaz}},
+  institution = {Universidad de Cundinamarca},
+  year        = {2014},
+}
+
+@PhdThesis{Nava2016,
+  author = {Beatriz Ordóñez Nava y Abraham Mora Cuevas},
+  title  = {DISEÑO DE UNA INTERFAZ GRÁFICA PARA EL MODELADO DE REDES INALÁMBRICAS DE BANDA ANCHA},
+  school = {Universidad Nacional Autónoma de México},
+  year   = {2016},
+  month  = jun,
+  url    = {http://profesores.fi-b.unam.mx/victor/LTesis_Beatriz_Abraham.pdf
+},
+}
+
+@Article{panagrahi2008,
+  author  = {Debmalya Panigrahi, Partha Dutta, S. Jaiswal, K. V. M. Naidu y Rajeev Rastogi},
+  title   = {Minimum Cost Topology Construction for Rural Wireless Mesh Networks},
+  journal = {IEEE INFOCOM 2008 - The 27th Conference on Computer Communications},
+  year    = {2008},
+  pages   = {9},
+  month   = apr,
+  issn    = {978-1-4244-2025-4},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}

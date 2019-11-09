@@ -2,10 +2,10 @@
 doc=estadoArte
 
 
-# --variable=lang=es
+#
 ## --bibliography=bibliografia.bib 
 
-OPT= --variable=papersize:letter --variable=geometry:"margin={4cm,3cm,2cm,3cm} " --variable=fontsize:12pt --variable=fontfamily=mathptmx --variable=documentclass=article --number-sections --toc 
+OPT= --variable=papersize:letter --variable=geometry:"margin={4cm,3cm,2cm,3cm} " --variable=fontsize:12pt --variable=fontfamily=mathptmx --variable=documentclass=article --number-sections --toc  --variable=lang=es --pdf-engine=lualatex
 
 BIB = --filter pandoc-citeproc --bibliography=refer.bib 
 
@@ -16,9 +16,9 @@ BIB = --filter pandoc-citeproc --bibliography=refer.bib
 ${doc}.pdf: ${doc}.md refer.bib dependencias.pdf UMTS.pdf
 	@echo "Haciendo documento $@"
 	#@gpp -T $< | pandoc ${OPT} -f markdown -t latex  -o $@
-	pandoc ${OPT}  ${BIB} -f markdown -t latex $< -o $@
-
-
+	#iconv -t ${doc}.md | pandoc | iconv -f utf-8
+	pandoc ${OPT}  ${BIB}  -f  markdown --template=default.latex  -t  latex $< -o $@
+	
 
 dependencias.pdf: dependencias.svg
 	inkscape -D -A dependencias.pdf dependencias.svg

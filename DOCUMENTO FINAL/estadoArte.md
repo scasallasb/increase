@@ -71,7 +71,7 @@ Aunque la era digital es un fenómeno mundial existente en países más desarrol
 Una alternativa para disminuir la brecha digital, son las redes Libres comunitarias (RLC), entendidas no solo como redes de computadores sino como redes comunitarias implementadas en poblaciones vulnerables donde el acceso a la información es una posibilidad y no una realidad [@gordillo2013].
 
 Debido a que las redes comunitarias por lo general se encuentran desplegadas en áreas geográficamente separadas, se utilizan tecnologías inalámbricas como mesh y radioenlaces usando bandas libres como la de 2,4 GHz; Las tecnologías inalámbricas son ampliamente utilizadas en áreas rurales, ya que, por cuestiones de acceso e infraestructura, las tecnologías cableadas no resultan ser viables para estos casos, dando como solución las redes inalámbricas comunitarias (WCN) [@flickenger2008] . Además, en este tipo de redes, se emplean materiales que pueden ser adquiridos por la comunidad, y donde este autor muestra una guía detallada para realizar conexiones inalámbricas, que permitan conectar con un ancho de banda significativo lugares remotos y de difícil acceso, además de tener un enfoque orientado a países en desarrollo. En varias partes del mundo se pueden encontrar diferentes redes comunitarias, un ejemplo bastante significativo y de gran éxito es la red guifi.net, que comenzó en 2004 en la comarca de Osona (Catalunya), este es un proyecto tecnológico, social y económico, impulsado desde la ciudadanía que tiene por objetivo la creación de una red de telecomunicaciones abierta, libre y neutral, basada en un modelo de procomún
-[@guifi.net2016]. Guifi.net tiene a la fecha de diciembre de 2016, 32.500 nodos activos y se calcula que más de 50.000 personas reciben servicio de Internet gracias a esta red. Sin embargo, el éxito de esta red no radica especialmente en la gran cobertura que ofrece y de cómo ha sido el impacto en los países en que se ha desarrollado, sino que según (Roger,2015), ha permitido mostrar la importancia de mantener la infraestructura de la red como bien colectivo ya que el principio subyacente detrás de guifi.net es la firme convicción de que la mejor manera de mantener una red es estableciéndola como un recurso colectivo común (CPR).
+[@guifi.net2016]. Guifi.net tiene a la fecha de diciembre de 2016, 32.500 nodos activos y se calcula que más de 50.000 personas reciben servicio de Internet gracias a esta red. Sin embargo, el éxito de esta red no radica especialmente en la gran cobertura que ofrece y de cómo ha sido el impacto en los países en que se ha desarrollado, sino que según (Roger 2015), ha permitido mostrar la importancia de mantener la infraestructura de la red como bien colectivo ya que el principio subyacente detrás de guifi.net es la firme convicción de que la mejor manera de mantener una red es estableciéndola como un recurso colectivo común (CPR).
 
 A pesar que gran parte de los nodo están conectados con tecnología WiFi en Guifi.net, también utiliza tecnología cableada y de fibra óptica, debido a que se desarrolló en gran parte en zonas urbanas, sin embargo como ya hemos mencionado, la WCN ha tenido gran participación en zonas rurales, en este enfoque se destaca una red inalámbrica mesh (WMN), desplegada por la universidad de Lancaster en Wray (Inglaterra), proporcionando servicio de Internet a una villa en un área aproximada de dos kilómetros por un periodo de tres años [@ishmael2008].  Esto a pesar de haber tenido algunas limitaciones y complicaciones, muestra cómo se tuvo que reeducar a la gente para que se pueda hacer uso de la red de la mejor manera, dando como resultado la disponibilidad de banda ancha y mejorando la calidad de los servicios que se prestan.
 
@@ -90,7 +90,7 @@ Para el diseño, se especificó un DNS, este se tomó a partir del DNS asignado 
 
 El dimensionamiento del número de usuarios se estableció según el POT (plan deordenamiento territorial) 2014, cuyos datos reposan de manera oficial en la alcaldía de Fusagasugá, donde se consta que en esta población rural se encuentran un número aproximado de 4000 personas, por ende, el direccionamiento está diseñado para suplir de servicio de Internet a la comunidad a un total de 4000 Host. 
 
-En este nivel se utiliza un enrutador y una antena Access Point ubicada en la Universidad de Cundinamarca específicamente en el bloque F, donde por medio de un enlace punto a punto (PTP) y utilizando dos antenas RocketM5 AC a una frecuencia de trabajo entre 5.2 GHz 5.8 GHz , se direcciona a un punto ubicado en la vereda san José del chocho del municipio de Silvania-Cundinamarca; Aquí se encuentra el nivel de acceso , donde un enlace multipunto con topología anillo se encarga de la distribución de la señal por medio de una antena sectorial Rocket Prism AC, a todas las subredes que se encuentra dentro de la vereda Bosachoque (Tobón).
+En este nivel se utiliza un enrutador y una antena Access Point ubicada en la Universidad de Cundinamarca específicamente en el bloque F, donde por medio de un enlace punto a punto (PTP) y utilizando dos antenas RocketM5 AC a una frecuencia de trabajo entre 5.2 GHz 5.8 GHz , se direcciona a un punto ubicado en la vereda san José del chocho del municipio de Silvania-Cundinamarca; Aquí se encuentra el nivel de acceso , donde un enlace multipunto con topología anillo se encarga de la distribución de la señal por medio de una antena sectorial Rocket Prism AC, a todas las subredes que se encuentra dentro de la vereda Bosachoque [@achury2018].
 
 ## Marco Teórico  
 
@@ -98,7 +98,7 @@ En este nivel se utiliza un enrutador y una antena Access Point ubicada en la Un
 ### Brecha Digital
 
 
-En el año 1995 eclosionan para la población dos tecnologías totalmente disruptivas, Internet y la telefonía móvil, ellas sugieren una nueva revolución, la llamada revolución digital, que a su vez crea la sociedad de la información (S.I), dando inicio al planteamiento sobre cómo medir y modelizar la S.I, el nivel de desarrollo digital y el impacto del desarrollo digital en el ser humano. De igual manera, el acceso a Internet a través de las Tecnologías de la Información y las Comunicaciones (TIC) ha tenido un auge exponencial en los últimos años, en efecto, este avance se presenta en países desarrollados o zonas metropolitanas de países en desarrollo (@sen2007), sin embargo, existen unas comunidades con poco o ningún acceso a las TIC [@maseratti2011] y otras con acceso casi universal a telefonía fija, móvil e Internet de banda ancha, es así que resulta el concepto de **brecha digital** entendiéndose como la ausencia de una o varias dimensiones contenidas en el desarrollo digital. En relación con lo anterior, las poblaciones sin acceso a las TIC poseen un bajo nivel socioeconómico, viven en zonas de difícil acceso con condiciones climatológicas desfavorables e incluso con ineficiencia o inexistencia de redes eléctricas, al mismo tiempo, las personas que viven en áreas rurales sufren el efecto de la brecha digital incluso más fuerte que los habitantes urbanos, debido a que no pueden acceder a servicios como el aprendizaje a distancia, la salud y el comercio electrónico (@bernardi2012).
+En el año 1995 eclosionan para la población dos tecnologías totalmente disruptivas, Internet y la telefonía móvil, ellas sugieren una nueva revolución, la llamada revolución digital, que a su vez crea la sociedad de la información (S.I), dando inicio al planteamiento sobre cómo medir y modelizar la S.I, el nivel de desarrollo digital y el impacto del desarrollo digital en el ser humano. De igual manera, el acceso a Internet a través de las Tecnologías de la Información y las Comunicaciones (TIC) ha tenido un auge exponencial en los últimos años, en efecto, este avance se presenta en países desarrollados o zonas metropolitanas de países en desarrollo [@sen2007], sin embargo, existen unas comunidades con poco o ningún acceso a las TIC [@maseratti2011] y otras con acceso casi universal a telefonía fija, móvil e Internet de banda ancha, es así que resulta el concepto de **brecha digital** entendiéndose como la ausencia de una o varias dimensiones contenidas en el desarrollo digital. En relación con lo anterior, las poblaciones sin acceso a las TIC poseen un bajo nivel socioeconómico, viven en zonas de difícil acceso con condiciones climatológicas desfavorables e incluso con ineficiencia o inexistencia de redes eléctricas, al mismo tiempo, las personas que viven en áreas rurales sufren el efecto de la brecha digital incluso más fuerte que los habitantes urbanos, debido a que no pueden acceder a servicios como el aprendizaje a distancia, la salud y el comercio electrónico [@bernardi2012].
  
  ![Brecha Digital](imagen_brdigital.pdf){width=10sss0%}
 
@@ -109,7 +109,7 @@ En el año 1995 eclosionan para la población dos tecnologías totalmente disrup
 
 
 
-Una alternativa para disminuir la brecha digital, son las Redes Libres Comunitarias (RLC), entendidas no solo como redes de computadores sino como redes comunitarias implementadas en poblaciones vulnerables donde el acceso a la información es una posibilidad y no una realidad (@gordillo2013).
+Una alternativa para disminuir la brecha digital, son las Redes Libres Comunitarias (RLC), entendidas no solo como redes de computadores sino como redes comunitarias implementadas en poblaciones vulnerables donde el acceso a la información es una posibilidad y no una realidad [@gordillo2013].
 
 Una red libre comunitaria, es una red troncal, dividida en subconjuntos de redes construidas y gestionadas de manera colectiva por la comunidad, la cual se involucra en la red de forma activa y participativa.
 
@@ -122,7 +122,7 @@ Una red libre comunitaria, es una red troncal, dividida en subconjuntos de redes
        
 - Libertad para incorporar servicios y contenidos a la red con las condiciones que se quiera. 
       
-- Libertad de Incorporarse a la red y ayudar a extender estas libertades y condiciones. (@guifi.net2016)  
+- Libertad de Incorporarse a la red y ayudar a extender estas libertades y condiciones [@guifi.net2016].  
 
 #### Características de RLC  
 
@@ -138,7 +138,7 @@ discriminación, por lo que son de acceso universal.
 - Neutrales: porque cualquier solución técnica disponible se puede emplear para ampliar la red, y porque la red se puede utilizar para trasmitir datos de cualquier tipo por cualquier participante, incluyendo también fines comerciales(@guifi.net2016). 
 
 
-Debido a que las redes comunitarias por lo general se encuentran desplegadas en áreas geográficamente separadas, se utilizan tecnologías inalámbricas como mesh y radioenlaces usando bandas libres como la de 2,4 GHz; las tecnologías inalámbricas son ampliamente utilizadas en áreas rurales, ya que, por cuestiones de acceso e infraestructura, las tecnologías cableadas no resultan ser viables para estos casos, dando como solución las redes inalámbricas comunitarias (WCN)  en donde ya se han realizado trabajos importantes como se muestra en (@flickenger2008).
+Debido a que las redes comunitarias por lo general se encuentran desplegadas en áreas geográficamente separadas, se utilizan tecnologías inalámbricas como mesh y radioenlaces usando bandas libres como la de 2,4 GHz; las tecnologías inalámbricas son ampliamente utilizadas en áreas rurales, ya que, por cuestiones de acceso e infraestructura, las tecnologías cableadas no resultan ser viables para estos casos, dando como solución las redes inalámbricas comunitarias (WCN)  en donde ya se han realizado trabajos importantes como se muestra en [@flickenger2008].
 
 
 
@@ -147,7 +147,7 @@ Debido a que las redes comunitarias por lo general se encuentran desplegadas en 
 
 
 
-Una red inalámbrica es la interconexión de varios nodos entre sí mediante la transmisión y recepción de señales electromagnéticas sin ninguna guía, empleando como medio el aire o el espacio vacío.  La planificación de redes supone la definición de requisitos para la creación de una infraestructura que permita conectar estos sistemas a través de una red (@IBM2019), se debe agregar que, la planeación de redes inalámbricas es un área muy activa por la comunidad científica, sin embargo, el foco de las investigaciones son las redes de banda ancha móvil y redes de área local inalámbrica. 
+Una red inalámbrica es la interconexión de varios nodos entre sí mediante la transmisión y recepción de señales electromagnéticas sin ninguna guía, empleando como medio el aire o el espacio vacío.  La planificación de redes supone la definición de requisitos para la creación de una infraestructura que permita conectar estos sistemas a través de una red [@IBM2019], se debe agregar que, la planeación de redes inalámbricas es un área muy activa por la comunidad científica, sin embargo, el foco de las investigaciones son las redes de banda ancha móvil y redes de área local inalámbrica. 
 
 
 #### Factores clave de la planeación  
@@ -205,7 +205,7 @@ La búsqueda tabú es un algoritmo heurístico de nivel superior para resolver p
 
 Topología se refiere a la configuración de la red, es decir, a su forma de conectividad física en la que los dispositivos intercambian datos entre sí.
 
-Para diseñar la infraestructura de la topología de la red requerida, es necesario describir la topología por medio del uso de grafos ya que es a través de esta estructura de datos que se elabora el procesamiento computacional del problema (@rios2015)
+Para diseñar la infraestructura de la topología de la red requerida, es necesario describir la topología por medio del uso de grafos ya que es a través de esta estructura de datos que se elabora el procesamiento computacional del problema [@rios2015]
 
 
 
@@ -250,7 +250,7 @@ NetworkX proporciona:
 
 
  
-NetworkX permite cargar y almacenar redes en formatos de datos estándar y no estándar, generar muchos tipos de redes aleatorias y clásicas, analizar la estructura de la red, construir modelos de red, diseñar nuevos algoritmos de red, dibujar redes entre otros. (@NetworkX2019). 
+NetworkX permite cargar y almacenar redes en formatos de datos estándar y no estándar, generar muchos tipos de redes aleatorias y clásicas, analizar la estructura de la red, construir modelos de red, diseñar nuevos algoritmos de red, dibujar redes entre otros. [@NetworkX2019]. 
 
 
 
@@ -259,7 +259,7 @@ NetworkX permite cargar y almacenar redes en formatos de datos estándar y no es
 ### Planeación de redes móviles UMTS   
 
 
-En (@hilarie2008), se presenta una literatura detallada de los problemas que se presentan en la planeación de la topología celular 3G, la cual está basada en el Sistema universal de telecomunicaciones móviles **UMTS** (“*Universal Mobile Telecommunications System*”); para entender las dificultades que se presentan en la planeación, es importante hacer una pequeña descripción de la arquitectura UMTS.
+En [@hilarie2008], se presenta una literatura detallada de los problemas que se presentan en la planeación de la topología celular 3G, la cual está basada en el Sistema universal de telecomunicaciones móviles **UMTS** (“*Universal Mobile Telecommunications System*”); para entender las dificultades que se presentan en la planeación, es importante hacer una pequeña descripción de la arquitectura UMTS.
 
 
 Una arquitectura típica de   UMTS se muestra en la figura (1), donde se observa que una red UMTS está dividida en dos partes: la *red de acceso* y la *red de núcleo*. La primera, es también llamada red UMT de radio terrestre **UTRAN**, la cual está compuesta por muchos subsistemas de red de radio **RNS** (“*radio network subsystem*”). Cada RNS contiene un controlador de red de radio **RNC** (“*radio network controller*”) y una o más estaciones bases *BS* (“*base estation*”).
@@ -340,7 +340,7 @@ En la planeación de redes, a menudo se utiliza la optimización de varios objet
 
 
 
-Como se ha visto anteriormente, en la planeación se pueden abordar diferentes objetivos (lugar de instalación de BS, configuración, altura, potencia, etc.), sin embargo, al momento de planificar la red, atacar todos los problemas al tiempo es un problema complejo, por esto, se han venido implementando algoritmos multiobjetivo, generalmente para estos casos se han venido desarrollando algoritmos genéticos AG, en el trabajo de (@raisanen2005), los autores recolectan cuatro estados del arte de algoritmos genéticos multiobjetivo, donde  los ponen a prueba para planificar una red aumentando la cobertura teniendo en cuenta los costos  y los comparan teniendo en cuenta su desempeño en ciertas pruebas sintetizadas; los autores toman como referencia los algoritmos: **SPEA2**, **NSGAII**, **PGSA** y **SEAMO**. A continuación, se hará una breve descripción de cada uno.  
+Como se ha visto anteriormente, en la planeación se pueden abordar diferentes objetivos (lugar de instalación de BS, configuración, altura, potencia, etc.), sin embargo, al momento de planificar la red, atacar todos los problemas al tiempo es un problema complejo, por esto, se han venido implementando algoritmos multiobjetivo, generalmente para estos casos se han venido desarrollando algoritmos genéticos AG, en el trabajo de [@raisanen2005], los autores recolectan cuatro estados del arte de algoritmos genéticos multiobjetivo, donde  los ponen a prueba para planificar una red aumentando la cobertura teniendo en cuenta los costos  y los comparan teniendo en cuenta su desempeño en ciertas pruebas sintetizadas; los autores toman como referencia los algoritmos: **SPEA2**, **NSGAII**, **PGSA** y **SEAMO**. A continuación, se hará una breve descripción de cada uno.  
 
 
 
@@ -440,7 +440,7 @@ Prestar servicios de banda ancha en zonas rurales requiere de sistemas de planea
 
 En la planeación de redes inalámbricas en áreas rurales, destacan los autores (Sen, Bernardi, Rios), cada uno de ellos propone una planeación de redes teniendo en cuenta su país de origen y priorizando las necesidades, requisitos y restricciones que se tienen en cada uno de ellos.
 
-Con el objetivo de reducir la brecha digital, autores [@bernardi2012],[@maseratti2011],[@sen] han propuesto como solución la planeación y despliegue de redes de banda ancha inalámbrica en zonas rurales; considerando las condiciones locales, como la ubicación geográfica, el bienestar económico de la comunidad, el tipo de entorno rural o urbano y el relieve del terreno, puede identificarse un conjunto de posibles soluciones para prestar accesos de banda ancha, y que van, entre otros, desde sistemas de cable a sistemas inalámbricos fijos, sistemas satelitales o de enlaces de microondas, sistemas ADSL y tecnologías móviles. A su vez, se destacan algunos trabajos de planeación de redes BWA, los cuales se desarrollan en países con marcadas diferencias de índices de desarrollo humano y el porcentaje de población que vive en áreas rurales; se habla entonces de Reino Unido, un país desarrollado donde el 17% de la población vive en área rurales y la India, un país en vía de desarrollo, donde el 66% de la población vive en áreas rurales. 
+Con el objetivo de reducir la brecha digital, autores [@bernardi2012],[@maseratti2011],[@sen2007] han propuesto como solución la planeación y despliegue de redes de banda ancha inalámbrica en zonas rurales; considerando las condiciones locales, como la ubicación geográfica, el bienestar económico de la comunidad, el tipo de entorno rural o urbano y el relieve del terreno, puede identificarse un conjunto de posibles soluciones para prestar accesos de banda ancha, y que van, entre otros, desde sistemas de cable a sistemas inalámbricos fijos, sistemas satelitales o de enlaces de microondas, sistemas ADSL y tecnologías móviles. A su vez, se destacan algunos trabajos de planeación de redes BWA, los cuales se desarrollan en países con marcadas diferencias de índices de desarrollo humano y el porcentaje de población que vive en áreas rurales; se habla entonces de Reino Unido, un país desarrollado donde el 17% de la población vive en área rurales y la India, un país en vía de desarrollo, donde el 66% de la población vive en áreas rurales. 
 
 
 
@@ -448,7 +448,7 @@ Con el objetivo de reducir la brecha digital, autores [@bernardi2012],[@maseratt
 
 **Ubicación de la red**:
 
-El autor *Sen* se enfoca específicamente en la planeación de redes de banda ancha en áreas rurales, en su tesis [@sen] trabaja sobre una red desplegada en el distrito de Andhra del Oeste de Godavari Pradesh ubicado en la India.
+El autor *Sen* se enfoca específicamente en la planeación de redes de banda ancha en áreas rurales, en su tesis [@sen2007] trabaja sobre una red desplegada en el distrito de Andhra del Oeste de Godavari Pradesh ubicado en la India.
 
 **Población a quién va dirigido:** 
 
@@ -538,7 +538,7 @@ Proporcionar las potencias de transmisión en los radios del sistema usando LP.
 
 **Aporte final:**
 
-Como aporte Sen entrega un algoritmo de planeación de redes en zonas rurales y, una vez implementado, el autor en los resultados concluye que se  ahorró 22% con respectos a una planeación sin ninguna técnica de optimización.
+Como aporte *Sen* entrega un algoritmo de planeación de redes en zonas rurales y, una vez implementado, el autor en los resultados concluye que se  ahorró 22% con respectos a una planeación sin ninguna técnica de optimización.
 
  
 #### Redes BWA en Escocia
@@ -656,7 +656,7 @@ Para alturas menores a 20m se suelen usar los mástiles económicos. Para altura
 Para ello se debe garantizar que la potencia de transmisión sea suficiente para superar las pérdidas por espacio libre en toda la distancia del enlace. También, se busca mantener la línea de vista despejada de toda obstrucción. 
 
 
-Dentro de este contexto y al igual que Sen, Bernardi, Maserati, expone que el principal desafío es el costo que conlleva establecer redes en zonas rurales, haciendo especial enfásis en el costo de construcción de las torres que soportan las antenas, debido a que es el costo más grande en comparación con los atribuidos a los equipos de comunicación. Presenta los siguientes referentes:
+Dentro de este contexto y al igual que *Sen*, *Bernardi*, *Maserati*, expone que el principal desafío es el costo que conlleva establecer redes en zonas rurales, haciendo especial enfásis en el costo de construcción de las torres que soportan las antenas, debido a que es el costo más grande en comparación con los atribuidos a los equipos de comunicación. Presenta los siguientes referentes:
 
 ##### Topología
 
@@ -669,11 +669,11 @@ Para lograr obtener linea de vista entre los diferentes nodos es necesario que l
 * Mástiles
 * Torres de acero ventadas
 
-El costo de las torres, es proporcional a  su altura y  esta re­lacionado con material de construcci6n, por ejemplo para un enlace de entre 7-8 Km (distancias tfpicas) se necesitarfan torres de entre 30 m  y 45 m con costos de entre 25 y 38 millones de pesos colombianos. Este costo es de varios ordenes de magnitud mayor que el de los equipos de comunicaciones, de manera que el principal problema de construcción de redes rurales radica en lograr una topología con el menor costo total de las torres que soportan las antenas.
+El costo de las torres, es proporcional a  su altura y  esta re­lacionado con material de construcción, por ejemplo para un enlace de entre 7-8 Km (distancias típicas) se necesitarfan torres de entre 30 m  y 45 m con costos de entre 25 y 38 millones de pesos colombianos. Este costo es de varios ordenes de magnitud mayor que el de los equipos de comunicaciones, de manera que el principal problema de construcción de redes rurales radica en lograr una topología con el menor costo total de las torres que soportan las antenas.
 
 **Aporte:** 
 
-Para resolver el problema de la planeación  el autor desarrolla un algoritmo basado en (Panigrahi), dónde la solución resulta de dos algoritmos TC-ALGO(G,c) y START-TC-ALGO(G,c), el primero determina el valor de altura óptimo que permite obtener el mejor enlace dentro de un grupo de enlaces vecinos a un nodo principal y el segundo permite recorrer el grafo y ubicar el menor enlace o conjunto de enlaces que representan el menor costo beneficio
+Para resolver el problema de la planeación  el autor desarrolla un algoritmo basado en [@panagrahi2008], dónde la solución resulta de dos algoritmos TC-ALGO(G,c) y START-TC-ALGO(G,c), el primero determina el valor de altura óptimo que permite obtener el mejor enlace dentro de un grupo de enlaces vecinos a un nodo principal y el segundo permite recorrer el grafo y ubicar el menor enlace o conjunto de enlaces que representan el menor costo beneficio
 
 # Capítulo 3. Diseño metodológico
 
@@ -738,11 +738,11 @@ Acorde al análisis ejecutado en la actividad anterior se encontró que los auto
 
 Con toda la información analizada y los parámetros claros se documenta el estado del arte realizando una comparación entre los tres autores destacados mencionados con anterioridad. De ellos se establece
 
-- Sen plantea su algoritmo en planear la red inalámbrica en zonas rurales de la India, se sabe que su contexto es social y rural
+- *Sen* plantea su algoritmo en planear la red inalámbrica en zonas rurales de la India, se sabe que su contexto es social y rural
   
-- Bernardi desarrollo su software basado en Tegola, una red existente en Escocia, ampliando su cobertura a zonas rurales considerando el nivel lucrativo de la red enfocado en pequeños proveedores de internet
+- *Bernardi* desarrollo su software basado en Tegola, una red existente en Escocia, ampliando su cobertura a zonas rurales considerando el nivel lucrativo de la red enfocado en pequeños proveedores de internet
   
-- Milton por su parte, aplica el algoritmo de (Panigrahi) en la región del Sumapaz- Cundinamarca (Colombia) enfocando su idea en la interconexión de escuelas rurales añadiendo el costo de la construcción de la topología de la red.
+- *Rios* por su parte, aplica el algoritmo de (Panigrahi) en la región del Sumapaz- Cundinamarca (Colombia) enfocando su idea en la interconexión de escuelas rurales añadiendo el costo de la construcción de la topología de la red.
        
 En contexto, el estado del arte se puede estudiar en el capítulo 2 de este Libro.
 
@@ -764,11 +764,11 @@ Para el desarrollo del algoritmo que permite la creación de una herramienta de 
 
 Resolver la brecha digital que existe entre las áreas urbanas y las áreas rurales requiere aumentar la conectividad a Internet, para asegurar la conexión en áreas rurales es necesario realizar una planeación de redes inalámbricas que permita diseñar una infraestructura con un mínimo costo al momento de desplegar la red. 
 
-Los autores [@Sen],  [panagrahi2008] y [@rios2015], proponen que la altura de la torre constituye uno de los costos más importantes dentro de la construcción de una infraestructura de red inalámbrica en áreas rurales, por esta razón se va a trabajar la asignación de la altura mínima en las torres de instalación. 
+Los autores [@sen2007],  [panagrahi2008] y [@rios2015], proponen que la altura de la torre constituye uno de los costos más importantes dentro de la construcción de una infraestructura de red inalámbrica en áreas rurales, por esta razón se va a trabajar la asignación de la altura mínima en las torres de instalación. 
 
 Asignación de altura de torres 
 
-*Sen* propone una heurística que sigue una secuencia de pasos explicados anteriormente y entre estos resuelve el problema de encontrar una solución de alturas optimas utilizando programación lineal (PL), sin embargo, en  [@panagrahi2008] se  propone un algoritmo para asignar la altura donde cita a [@Sen ], puesto que sigue el mismo enfoque de reducir el coste de infraestructura de red en zonas rurales, sin embargo, el autor *Panigrahi* proponen los algoritmos TC-ALGO  Y  START-TC-ALGO que mejora la heurística que propone *Sen*.   
+*Sen* propone una heurística que sigue una secuencia de pasos explicados anteriormente y entre estos resuelve el problema de encontrar una solución de alturas optimas utilizando programación lineal (PL), sin embargo, en  [@panagrahi2008] se  propone un algoritmo para asignar la altura donde cita a [@sen2007], puesto que sigue el mismo enfoque de reducir el coste de infraestructura de red en zonas rurales, sin embargo, el autor *Panigrahi* proponen los algoritmos TC-ALGO  Y  START-TC-ALGO que mejora la heurística que propone *Sen*.   
 
 A continuación de describe las ventajas que tienen los algoritmos de *Panagrahi* sobre la heurística propuesta por *Sen*:  
 
@@ -778,7 +778,7 @@ A continuación de describe las ventajas que tienen los algoritmos de *Panagrahi
 
 * En la heurística se trabaja una función de costo lineal por cada torre, mientras que los algoritmos usan una función de costos más general.  
 
-En [@rios2015] se propone el diseño de una topología de infraestructura de red inalámbrica en la Región del Sumapaz implementando los algoritmos planteados en [@ panagrahi2008], en este trabajo se implementan estos algoritmos para proponer una topología que conecten unos puntos propuestos, en donde puede ir conectada una torre de antena con la mínima altura de nodos, creando una topología de mínimo costo. 
+En [@rios2015] se propone el diseño de una topología de infraestructura de red inalámbrica en la Región del Sumapaz implementando los algoritmos planteados en [@panagrahi2008], en este trabajo se implementan estos algoritmos para proponer una topología que conecten unos puntos propuestos, en donde puede ir conectada una torre de antena con la mínima altura de nodos, creando una topología de mínimo costo. 
 
 Una vez desplegada la red con el mínimo costo es necesario guiar a los ISP en la expansión de la red, de tal manera que puedan retornar la inversión del costo de despliegue, en [@bernardi2012], propone una herramienta que facilita la planeación incremental de la red en zonas rurales, utilizando dos modos de operación, targeted IncrEase y Búsqueda estratégica, el primero permite identificar las zonas que deben ser cubiertas por la red con una prioridad más alta y el segundo permite saber en qué lugares es más factible la inversión. Por lo anterior, y acorde al contexto local de este proyecto, existen proveedores de internet que operan en la región y necesitan una herramienta que les permita saber dónde invertir y aumentar la conexión en zonas rurales, por ello se toma los dos modos de operación propuestos por Bernardi.
 
@@ -789,7 +789,7 @@ Una vez determinado los algoritmos que resuelven los requerimientos, se detallan
 
 En esta sección se especifican las variables de entrada y salida de los algoritmos, entonces se tiene que:
 
-* **Algoritmo planteado por Sen**
+* **Algoritmo planteado por *Sen* **
 
 | Datos de entrada |
 |------------------------------------------------------------------------------ |
@@ -797,7 +797,7 @@ En esta sección se especifican las variables de entrada y salida de los algorit
 | Asignación de las antenas |
 | Asignación de los valores de potencia de las antenas |
 | Asignación de las alturas de las torres en todos los nodos |
-Table: Datos de entrada del algoritmo planteado por Sen. 
+Table: Datos de entrada del algoritmo planteado por *Sen*. 
 
 
 
@@ -831,7 +831,7 @@ Cabe resaltar que este paquete de software proporciona dos modos de operación q
 * Búsqueda estrategica: Cuya salida es la primer fila de la tabla anterior
 * Targeted Increase: donde se sugiere una ruta al área seleccionada 
 
-
+s
 
 * **Algoritmo implementado por Rios** 
 
@@ -1078,7 +1078,7 @@ Para pathfinding sobre el grafo $G$, IncrEase usa el algoritmo $A *$ (A-star). A
 Nuestra implementación tiene dos pequeños cambios con el algoritmo original $A *$. Primero, toma como entrada un conjunto de nodos de inicio 
 (torres más cercanas a la celda más caliente en la región seleccionada) y un conjunto de nodos de objetivo en lugar de un solo inicio / final de nodos, ya que la ruta de retorno puede comenzar desde cualquiera de las ubicaciones candidatas y terminar en cualquiera de las torres existentes. Segundo, en el gráfo $G$, los costos son asociados con los vértices (es decir, torres) en lugar de bordes, por los que consideramos el costo de un borde ($i$, $j$) para que sea el nodo de salida $i$ (Skiena, 1998).
 
-$A*$ requiere una función heurística que sea el límite mínimo inferior del posible costo de la ruta (Por ejemplo, para viajar entre dos ciudades, es la distancia por línea recta), así que en nuestro caso necesitamos diseñar una estimación de la mejor $C(t)-h(t)$ que se pueda lograr para el resto del camino desde una torre dada hasta la torre central. Nosotros adoptamos (l/d) *Cmin tal como heurística, donde l es la distancia en línea recta entre la torre actual que se está analizando y cualquiera de las torres centrales, d es la máxima distancia permitida para enlazar punto a punto (ambos en km) y Cmin el mínimo $C(t)-h(t)$ de todas las torres.
+$A*$ requiere una función heurística que sea el límite mínimo inferior del posible costo de la ruta (Por ejemplo, para viajar entre dos ciudades, es la distancia por línea recta), así que en nuestro caso necesitamos diseñar una estimación de la mejor $C(t)-h(t)$ que se pueda lograr para el resto del camino desde una torre dada hasta la torre central. Nosotros adoptamos $(l/d)$ *Cmin tal como heurística, donde l es la distancia en línea recta entre la torre actual que se está analizando y cualquiera de las torres centrales, d es la máxima distancia permitida para enlazar punto a punto (ambos en km) y Cmin el mínimo $C(t)-h(t)$ de todas las torres.
 Finalmente, nosotros introducimos dos modificaciones a la función de costos presentada antes. Como $A*$ requiere costos de bordes no-negativos, sumamos un valor  positivo grande constante arbitrario a todos los $C(t)-h(t)$ valores. Por último, para permitir al usuario equilibrar la importancia de ahorrar dinero y ampliar la cobertura permitimos dos coeficientes variables $Co$ y $ho$ y definimos el costo como $Co*C(t)-ho*h(t)$. 
 
 El resultado de la búsqueda de la mejor ruta se presenta como una ruta en el mapa junto con una indicación de texto de las torres que se desplegarán y su orden, como se muestra en la Figura 4.2 (d-f).
@@ -1087,7 +1087,7 @@ El resultado de la búsqueda de la mejor ruta se presenta como una ruta en el ma
 
 * Busqueda estratégica
 
-Mientras que `IncrEase targeted` es un modo semi automático que requiere que el
+Mientras que `IncrEase Targeted` es un modo semi automático que requiere que el
 operador selecciones una región, el modo operacional de *búsqueda estratégica*
 identifica y sugiere la mejor estrategia de expansión de la red. Asumimos que
 la topología de la red evoluciona sobre intervalos discretos de tiempo
@@ -1125,7 +1125,7 @@ Ahora, teniendo en cuenta esto se describirá la Heurística propuesta por *Sen*
 
 * Heuristica de planeación de antena
 
-El autor *Sen* propone una heurística que vamos a implementar la cual está dada en un tiempo complejo de Ø(n2), donde n es el número de nodos hijos. Esta heurística se enfoca en disminuir el número de interferencia entre un conjunto de enlaces.  
+El autor *Sen* propone una heurística que vamos a implementar la cual está dada en un tiempo complejo de $Ø(n2)$, donde n es el número de nodos hijos. Esta heurística se enfoca en disminuir el número de interferencia entre un conjunto de enlaces.  
 
 * Heurística   
 
@@ -1142,7 +1142,7 @@ Dividir el ángulo de máxima separación, en subconjunto de ángulos que tiene 
   
 **Asignación de altura de las torres**  
 
-Los autores [@sen2007],  [panagrahi2008] y [@rios2015], proponen que la altura de la torre constituye uno de los costos más importantes dentro de la construcción de una infraestructura de red inalámbrica en áreas rurales.  
+Los autores [@sen2007],  [@panagrahi2008] y [@rios2015], proponen que la altura de la torre constituye uno de los costos más importantes dentro de la construcción de una infraestructura de red inalámbrica en áreas rurales.  
 
 *Sen* propone una heurística que sigue una secuencia de pasos explicados anteriormente y entre estos resuelve el problema de encontrar una solución de alturas optimas utilizando programación lineal (PL), sin embargo, en  [@panagrahi2008] se  propone un algoritmo para asignar la altura donde cita a [@sen2007], puesto que sigue el mismo enfoque de reducir el coste de infraestructura de red en zonas rurales, sin embargo, el autor *Panigrahi* proponen los algoritmos TC-ALGO  Y  START-TC-ALGO que mejora la heurística que propone *Sen*.   
 
@@ -1154,7 +1154,7 @@ A continuación de describe las ventajas que tienen los algoritmos de *Panagrahi
 
 * En la heurística se trabaja una función de costo lineal por cada torre, mientras que los algoritmos usan una función de costos más general.  
 
-En [@rios2015] se propone el diseño de una topología de infraestructura de red inalámbrica en la Región del Sumapaz implementando los algoritmos planteados en [@ panagrahi2008], en este trabajo se implementan estos algoritmos para proponer una topología que conecten unos puntos propuestos, en donde puede ir conectada una torre de antena con la mínima altura de nodos, creando una topología de mínimo costo.  
+En [@rios2015] se propone el diseño de una topología de infraestructura de red inalámbrica en la Región del Sumapaz implementando los algoritmos planteados en [@panagrahi2008], en este trabajo se implementan estos algoritmos para proponer una topología que conecten unos puntos propuestos, en donde puede ir conectada una torre de antena con la mínima altura de nodos, creando una topología de mínimo costo.  
 
 
 4. **Salida** 
@@ -1174,6 +1174,13 @@ AQUÍ VA TODA LA CODIFICACIÓN DEL ALGORITMO
 ### verificación 
 
 ### Pruebas
+ 
+Para comprobar que el algoritmo genera una topología con el menor valor de costo/beneficio, se realizaron pruebas utilizando simulaciones numéricas donde se implementa el algoritmo propuesto por Bernardi y se comparó con una heurística simple. 
+
+Para implementar el algoritmo se creó un grafo $G$, con un número aleatorio de nodos $n$ y vértices $v$, luego, a cada nodo n se le asigna un valor aleatorio de posición $pos$, calor $M$, costo $C$ y altura h de torres para cada uno de los nodos $n$. Posteriormente, se ejecuta la función TargetedIncrease con parámetros de entrada $G$, un nodo con el menor valor de calor $H_min(n)$ que representará un nodo origen que funcionará como *backhaul relaing* y un nodo destino con el mayor valor de $H_max(n)$ que supondrá las zonas que se requieren más cobertura. Luego, se implementa la función TC_ALGO para generar un grafo $Ghmin con unsa topología que permite conectar todos los nodos con una altura mínima h dando como resultado una planeación de menor costo de instalación de infraestructura física. 
+
+ Esto se comparará con una heurística que consiste en generar un árbol de mínimo de expansión con unas restricciones de tamaño de enlace, luego, al igual que anteriormente se ejecuta el algoritmo TC_ALGO para reducir el valor de costo. Los resultados en ambos casos es un resultado de costo menos beneficio (calor). Esto se realiza en iteraciones y se ilustra en la siguiente imagen.
+
 
 
 ## Aplicar el algoritmo propuesto en la Red Libre de Bosachoque analizando la topología adecuada para futuras expansiones de la red en las Instituciones Educativas Rurales de la región del Sumapaz-Cundinamarca considerando la relación costo-beneficio
