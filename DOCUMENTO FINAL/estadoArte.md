@@ -111,10 +111,18 @@ En el año 1995 eclosionan para la población dos tecnologías totalmente disrup
 
 Una alternativa para disminuir la brecha digital, son las Redes Libres Comunitarias (RLC), entendidas no solo como redes de computadores sino como redes comunitarias implementadas en poblaciones vulnerables donde el acceso a la información es una posibilidad y no una realidad (@gordillo2013).
 
-
-
 Una red libre comunitaria, es una red troncal, dividida en subconjuntos de redes construidas y gestionadas de manera colectiva por la comunidad, la cual se involucra en la red de forma activa y participativa.
 
+
+#### Principios generales
+
+- Libertad de utilizar la red para cualquier propósito mientras no se perjudique el funcionamiento de la propia red, la libertad de otros usuarios, y se respete las condiciones de los contenidos y servicios que circulan libremente.  
+
+- Libertad de conocer como es la red, sus componentes y su funcionamiento, también se puede difundir su espíritu y funcionamiento libremente.
+       
+- Libertad para incorporar servicios y contenidos a la red con las condiciones que se quiera. 
+      
+- Libertad de Incorporarse a la red y ayudar a extender estas libertades y condiciones. (@guifi.net2016)  
 
 #### Características de RLC  
 
@@ -131,9 +139,6 @@ discriminación, por lo que son de acceso universal.
 
 
 Debido a que las redes comunitarias por lo general se encuentran desplegadas en áreas geográficamente separadas, se utilizan tecnologías inalámbricas como mesh y radioenlaces usando bandas libres como la de 2,4 GHz; las tecnologías inalámbricas son ampliamente utilizadas en áreas rurales, ya que, por cuestiones de acceso e infraestructura, las tecnologías cableadas no resultan ser viables para estos casos, dando como solución las redes inalámbricas comunitarias (WCN)  en donde ya se han realizado trabajos importantes como se muestra en (@flickenger2008).
-
-
-
 
 
 
@@ -433,13 +438,13 @@ Prestar servicios de banda ancha en zonas rurales requiere de sistemas de planea
 
 * Los consumidores: Costo elevado de los servicios, dificultad de acceso y disponibilidad, menor nivel de alfabetización tecnológica lo que imposibilita usar los servicios disponibles.
 
-En la planeación de redes inalámbricas en áreas rurales, destacan los autores (Sen, Bernardi, Rios), cada uno de ellos propone una planeación de redes teniendo en cuenta su país de origen y priorizando las necesidades, requisitos y restricciones que se tienen en cada uno de ellos. En este artículo 
+En la planeación de redes inalámbricas en áreas rurales, destacan los autores (Sen, Bernardi, Rios), cada uno de ellos propone una planeación de redes teniendo en cuenta su país de origen y priorizando las necesidades, requisitos y restricciones que se tienen en cada uno de ellos.
 
 Con el objetivo de reducir la brecha digital, autores [@bernardi2012],[@maseratti2011],[@sen] han propuesto como solución la planeación y despliegue de redes de banda ancha inalámbrica en zonas rurales; considerando las condiciones locales, como la ubicación geográfica, el bienestar económico de la comunidad, el tipo de entorno rural o urbano y el relieve del terreno, puede identificarse un conjunto de posibles soluciones para prestar accesos de banda ancha, y que van, entre otros, desde sistemas de cable a sistemas inalámbricos fijos, sistemas satelitales o de enlaces de microondas, sistemas ADSL y tecnologías móviles. A su vez, se destacan algunos trabajos de planeación de redes BWA, los cuales se desarrollan en países con marcadas diferencias de índices de desarrollo humano y el porcentaje de población que vive en áreas rurales; se habla entonces de Reino Unido, un país desarrollado donde el 17% de la población vive en área rurales y la India, un país en vía de desarrollo, donde el 66% de la población vive en áreas rurales. 
 
 
 
-#### Redes BWA en la India (País rural)
+#### Redes BWA en la India
 
 **Ubicación de la red**:
 
@@ -505,6 +510,9 @@ Los costos de despliegue dependen principalmente del tamaño de la torre que se 
 ##### Consideraciones de diseño y enfoque de solución
 
 
+![Secuencia de pasos solución del problema de planeación en la india](sen.pdf){ width=10sss0% }
+
+
 Una vez se ha visto como se divide el problema, el autor sugiere resolver las dependencias con los siguientes pasos, el cual van a ser explicados:
 
 * **Topología de Búsqueda (TS)**:  
@@ -533,11 +541,11 @@ Proporcionar las potencias de transmisión en los radios del sistema usando LP.
 Como aporte Sen entrega un algoritmo de planeación de redes en zonas rurales y, una vez implementado, el autor en los resultados concluye que se  ahorró 22% con respectos a una planeación sin ninguna técnica de optimización.
 
  
-#### Redes BWA en Gran Bretaña (País del primer mundo)
+#### Redes BWA en Escocia
 
 **Ubicación de la red:** 
 
-Bernardi diseñó e implemento **Tegola** un banco de pruebas que proporciona internet a algunas comunidades remotas de Gran Bretaña, esta red ha funcionado desde el año 2008 y ha comunicado a 20 comunidades en toda Escocia.
+Bernardi diseñó e implementó **Tegola** un banco de pruebas que proporciona internet a algunas comunidades remotas de Gran Bretaña, esta red ha funcionado desde el año 2008 y ha comunicado a 20 comunidades en toda Escocia. Esta red está situada en el  noroeste de Escocia comunicando comunidades rurales (principalmente costeras) en  las penínsulas de Glenelg y Knoydart en el continente británico hasta la península de Sleat en la isla de Skye.
 
 **Población a quién va dirigido:** 
 
@@ -687,7 +695,7 @@ Este recurso se utiliza para registrar información relacionada con la planeaci�
 Una vez se ha captado la información de planeación de redes se procede a realizar su respectivo análisis, tabulando todos los documentos encontrados,haciendo un rastreo y clasificación de los documentos, detallando:
 
 |        |        |
-| ------ | ------ |
+| ---------------------------- | ------ |
 | Tipo de documento | |
 | Título | |
 | Año | |
@@ -730,11 +738,11 @@ Acorde al análisis ejecutado en la actividad anterior se encontró que los auto
 
 Con toda la información analizada y los parámetros claros se documenta el estado del arte realizando una comparación entre los tres autores destacados mencionados con anterioridad. De ellos se establece
 
-- Sen plantea su algoritmo en planear la red inalámbrica en zonas rurales de la India, se sabe que su contexto en netamente social y rural
+- Sen plantea su algoritmo en planear la red inalámbrica en zonas rurales de la India, se sabe que su contexto es social y rural
   
 - Bernardi desarrollo su software basado en Tegola, una red existente en Escocia, ampliando su cobertura a zonas rurales considerando el nivel lucrativo de la red enfocado en pequeños proveedores de internet
   
-- Milton por su parte, propone el algoritmo en la región del Sumapaz- Cundinamarca (Colombia) enfocando su idea en la interconexión de escuelas rurales añadiendo el costo de la construcción de la topología de la red.
+- Milton por su parte, aplica el algoritmo de (Panigrahi) en la región del Sumapaz- Cundinamarca (Colombia) enfocando su idea en la interconexión de escuelas rurales añadiendo el costo de la construcción de la topología de la red.
        
 En contexto, el estado del arte se puede estudiar en el capítulo 2 de este Libro.
 
@@ -749,17 +757,43 @@ Para el desarrollo del algoritmo que permite la creación de una herramienta de 
 ![Estructura metodología cascada](metodologia.pdf){ width=10sss0% }
 
 
+### Análisis de requerimientos
+
+ <!-- Que necesitamos, explicación del por qué se toman las características de cada autor-->
 
 
-### Definir los datos de entrada y salida del algoritmo
+Resolver la brecha digital que existe entre las áreas urbanas y las áreas rurales requiere aumentar la conectividad a Internet, para asegurar la conexión en áreas rurales es necesario realizar una planeación de redes inalámbricas que permita diseñar una infraestructura con un mínimo costo al momento de desplegar la red. 
 
-Este ítem hace enfasis en la primera etapa de la metodología, (análisis de requerimientos), a partir de ella y conforme a la investigación documental realizada se determina que los tres autores en mención tienen similitudes en sus algoritmos, sin embargo, se comparan los tres algoritmos verificando sus datos de entrada y salida,  entonces se tiene que:
+Los autores [@Sen],  [panagrahi2008] y [@rios2015], proponen que la altura de la torre constituye uno de los costos más importantes dentro de la construcción de una infraestructura de red inalámbrica en áreas rurales, por esta razón se va a trabajar la asignación de la altura mínima en las torres de instalación. 
+
+Asignación de altura de torres 
+
+*Sen* propone una heurística que sigue una secuencia de pasos explicados anteriormente y entre estos resuelve el problema de encontrar una solución de alturas optimas utilizando programación lineal (PL), sin embargo, en  [@panagrahi2008] se  propone un algoritmo para asignar la altura donde cita a [@Sen ], puesto que sigue el mismo enfoque de reducir el coste de infraestructura de red en zonas rurales, sin embargo, el autor *Panigrahi* proponen los algoritmos TC-ALGO  Y  START-TC-ALGO que mejora la heurística que propone *Sen*.   
+
+A continuación de describe las ventajas que tienen los algoritmos de *Panagrahi* sobre la heurística propuesta por *Sen*:  
+
+* En la heurística no es posible conocer el límite de posibilidades, mientras en los algoritmos se tiene un límite de respuesta en el peor de los casos.  
+
+* En la heurística se propone solo un obstáculo en la mitad del enlace entre dos nodos, sin embargo, los algoritmos pueden encargarse de encontrar la respuesta optima de la altura de las torres teniendo en cuenta todos los obstáculos entre el enlace de dos nodos.   
+
+* En la heurística se trabaja una función de costo lineal por cada torre, mientras que los algoritmos usan una función de costos más general.  
+
+En [@rios2015] se propone el diseño de una topología de infraestructura de red inalámbrica en la Región del Sumapaz implementando los algoritmos planteados en [@ panagrahi2008], en este trabajo se implementan estos algoritmos para proponer una topología que conecten unos puntos propuestos, en donde puede ir conectada una torre de antena con la mínima altura de nodos, creando una topología de mínimo costo. 
+
+Una vez desplegada la red con el mínimo costo es necesario guiar a los ISP en la expansión de la red, de tal manera que puedan retornar la inversión del costo de despliegue, en [@bernardi2012], propone una herramienta que facilita la planeación incremental de la red en zonas rurales, utilizando dos modos de operación, targeted IncrEase y Búsqueda estratégica, el primero permite identificar las zonas que deben ser cubiertas por la red con una prioridad más alta y el segundo permite saber en qué lugares es más factible la inversión. Por lo anterior, y acorde al contexto local de este proyecto, existen proveedores de internet que operan en la región y necesitan una herramienta que les permita saber dónde invertir y aumentar la conexión en zonas rurales, por ello se toma los dos modos de operación propuestos por Bernardi.
+
+
+Una vez determinado los algoritmos que resuelven los requerimientos, se detallan los parámetros de entrada y salida de cada uno de los algoritmos propuestos por los autores.
+
+#### Definir los datos de entrada y salida del algoritmo
+
+En esta sección se especifican las variables de entrada y salida de los algoritmos, entonces se tiene que:
 
 * **Algoritmo planteado por Sen**
 
 | Datos de entrada |
-|--------------------------------------------------------------------------------------|
-| Enumeración de todos los árboles y para cada árbol (coordenadas de la ubicación de las villas) |
+|------------------------------------------------------------------------------ |
+|Enumeración de todos los árboles y para cada árbol (coordenadas de la ubicación de las villas)|
 | Asignación de las antenas |
 | Asignación de los valores de potencia de las antenas |
 | Asignación de las alturas de las torres en todos los nodos |
@@ -787,7 +821,7 @@ Table: Datos de salida del algoritmo propuesto por Sen.
 Table: Parámetros de entrada del algoritmo de Bernardi.
 
 | Datos de salida |
-| ----------------|
+| -------------------------------------- |
 | Estrategia incremental de despliegue sugerido  |
 | Ruta sugerida para cubrir el área seleccionada |
 Table: Datos de Salida del algoritmo de bernardi.
@@ -806,7 +840,7 @@ Esta aplicación esta basada en *Panigrahi*, dónde resulta la solución en dos 
 
 
 | Datos de entrada TC-Algo(G,c) | Datos de Salida TC-ALGO(G,c) |
-|------------------------------ | ---------------------------- |
+| ------------------------------------ |  ------------------------------------- |
 | Grafo G(V,E) | Función de alturas h |
 | Función de costos |  |
 Table: Parametros de entrada y salida del primer algoritmo de la aplicación, TC-ALGO (G,c)
@@ -814,7 +848,7 @@ Table: Parametros de entrada y salida del primer algoritmo de la aplicación, TC
 
 
 | Datos de entrada START-TC-ALGO (G,c) | Datos de salida START-TC-ALGO (G,c) |
-| ------------------------------------ | ----------------------------------- |
+| -------------------------------------  | -------------------------------------  |
 | Grafo G(V,E) | relación costo beneficio $r'$ best |
 | Función de alturas h | incremento de altura incr |
 | Nodo n |   |
@@ -822,13 +856,13 @@ Table: Parametros de entrada y salida del primer algoritmo de la aplicación, TC
 Table: Datos de entrada y salida del segundo algoritmo START-TC-ALGO (G,c). 
 
 
-Ahora, con los tipos de datos de entrada y salida de los algoritmos estudiados, se determinan los parámetros de entrada y salida del algoritmo que se va a diseñar. Es decir que el algoritmo se va a proponer surge de la combinación de los algoritmos vistos con anterioridad.
+Ahora, con los tipos de datos de entrada y salida de los algoritmos estudiados, se determinan los parámetros de entrada y salida del algoritmo que se va a diseñar. Es decir, que el algoritmo que se va a proponer surge de la implementación secuencial de los algoritmos vistos con anterioridad, seleccionando las variables que contribuyen a resolver el problema a nivel local.
 
 *  **Algoritmo propuesto (Datos de entrada y salida)**
 
 | Datos de entrada |
-| ----------------- |
-|Grafo (Conexión de la totalidad de la red)
+| -------------------------------------- |
+|Grafo topología de la red |
 |Asignación de antenas|
 |Función de costos|
 |TC-ALGO|
@@ -839,165 +873,32 @@ Ahora, con los tipos de datos de entrada y salida de los algoritmos estudiados, 
 |Clientes agrupados|
 Table: Parámetros de entrada algoritmo propuesto
 
+
 |Datos de salida|
-|----------------|
+| -------------------------------------- |
 |Mejor topología de expansión de la red con el menor costo|
 Table:Salida del algoritmo
-
-
-
-
-###  Proponer el conjunto de operaciones secuenciales para la realización del Algoritmo
-
-Asignación de tipo de antena  
-
-En el trabajo [@sen], se resuelve el problema de evitar la interferencia al máximo, mientras se minimiza el conjunto de antenas a utilizar. 
-
- Para realizar los enlaces, es necesario saber qué tipo de antena se va a utilizar, aquí el parámetro que se va a tener en cuenta principalmente es la apertura de ancho de haz o el HPBW (*Half Power Beam Width*) que  definirá la cantidad de nodos que pueda cubrir una antena, ya que si por ejemplo se va a realizar un enlace P-T-P, se puede realizar con una antena direccional de un ancho de haz de 8° puesto que el enlace cubrirá un solo punto, mientras que si se realiza un enlace M-T-P, se debe tener en cuenta una antena sectorial con un ancho de haz de 30° o 22° que pueda cubrir más puntos.   
-
-Ahora, teniendo en cuenta esto se describirá la Heurística propuesta por *Sen*.    
-
-  
-
-**Heuristica de planeación de antena**  
-
-  
-
-El autor *Sen* propone una heurística que vamos a implementar la cual está dada en un tiempo complejo de Ø(n2), donde n es el número de nodos hijos. Esta heurística se enfoca en disminuir el número de interferencia entre un conjunto de enlaces.  
-
-  
-
-Heurística   
-
-  
-
-1 - Reorganizar el conjunto de nodos hijos de tal manera que el máximo ángulo de separación sean los nodos que están más alejados.  
-
-  
-
-2 – Recursivamente en cada nodo se realiza lo siguiente:  
-
-     
-
-Determinar el conjunto de antenas o antena que cubre la totalidad de los nodos hijos.  
-
-  
-
-Dividir el ángulo de máxima separación, en subconjunto de ángulos que tiene la torre para que cubra todos los nodos y determinar el costo de cada uno de estos subconjuntos.  
-
-  
-
-3 – Fin de la recursividad: cuando exista un conjunto de antenas que cubran todos los nodos con el menor costo.  
-
-  
-
-Asignación de altura   
-
-  
-
-Los autores [@sen2007],  [panagrahi2008] y [@rios2015], proponen que la altura de la torre constituye uno de los costos más importantes dentro de la construcción de una infraestructura de red inalámbrica en áreas rurales.  
-
-  
-
-*Sen* propone una heurística que sigue una secuencia de pasos explicados anteriormente y entre estos resuelve el problema de encontrar una solución de alturas optimas utilizando programación lineal (PL), sin embargo, en  [@panagrahi2008] se  propone un algoritmo para asignar la altura donde cita a [@sen2007], puesto que sigue el mismo enfoque de reducir el coste de infraestructura de red en zonas rurales, sin embargo, el autor *Panigrahi* proponen los algoritmos TC-ALGO  Y  START-TC-ALGO que mejora la heurística que propone *Sen*.   
-
-  
-
-A continuación de describe las ventajas que tienen los algoritmos de *Panagrahi* sobre la heurística propuesta por *Sen*:  
-
-  
-
-* En la heurística no es posible conocer el límite de posibilidades, mientras en los algoritmos se tiene un límite de respuesta en el peor de los casos.  
-
-  
-
-* En la heurística se propone solo un obstáculo en la mitad del enlace entre dos nodos, sin embargo, los algoritmos pueden encargarse de encontrar la respuesta optima de la altura de las torres teniendo en cuenta todos los obstáculos entre el enlace de dos nodos.  
-
-  
-
-* En la heurística se trabaja una función de costo lineal por cada torre, mientras que los algoritmos usan una función de costos más general.  
-
-  
-
-En [@rios2015] se propone el diseño de una topología de infraestructura de red inalámbrica en la Región del Sumapaz implementando los algoritmos planteados en [@panagrahi2008], en este trabajo se implementan estos algoritmos para proponer una topología que conecten unos puntos propuestos, en donde puede ir conectada una torre de antena con la mínima altura de nodos, creando una topología de mínimo costo.  
-
-
-
-
-Esta es la segunda fase de la metodología (Diseño), en esta se muestra el proceso a ejecutarse para realizar el algoritmo.
-
-A partir de los tres algoritmos estudiados se plantea una nueva propuesta para el planeamiento de redes inalámbricas en zonas rurales.Para esto, se toman las características más relevantes de cada uno de ellos y se combinan con el fin de generar un nuevo algoritmo que permita conectividad a internet en zonas apartadas a un bajo costo. 
-
-Proponer un nuevo algoritmo mezclando las mejores características de Sen, Bernardi y Rios plantea el proceso en cuatro pasos diferentes:
-
-1. Declarar los datos de entrada
-2. Generar los mapas de calor 
-3. IncrEase
-4. Salida: Obtener una respuesta de planeación de redes inalámbricas rurales económica
-
-En la siguiente figura se establece el diagrama sistémico del modo de operación de la herramienta propuesta.
-
-
-![Diagrama sistémico](Diagrama_sistemico.pdf){ width=10sss0% }
-
-**Descripción del proceso de operación del algoritmo propuesto** 
-
-1. **Declarar los dato de entrada:**
-
-- Grafo, conexión de toda la red: se ingresa un grafo con una topología propuesta dónde todos los nodos se encuentren conectados entre sí.
-
-- Algoritmo TC-AlGO: determina el valor de altura óptimo que permite obtener el mejor enlace dentro de un grupo de enlaces vecinos a un nodo principal; este algoritmo contiene a START-TC-ALGO (algoritmo que permite recorrer el grafo y ubicar el menor enlace o conjunto de enlaces que representan el menor costo beneficio), también, contiene la función de costos C(n)
-
-- Limitar el alcance geográfico: Se delimita la región en dónde se desea expandir la red existente
-
-- Solicitudes de cobertura: sectores o usuarios que desean adquirir el servicio de conectividad
-
-2. **Generar mapas de calor**
-
-Se generan tres mapas de calor diferentes
-
-* Mapa de calor en el que se delimite el alcance geográfico que va tener la red a expandir
-* Mapa de calor de las solicitudes de cobertura: sugiere los lugares en los que se encuentra mayor cantidad de usuarios que solicitan el servicio
-* Mapa de calor de la ubicación y desempeño de los usuarios actuales: Permite saber la ubicación de los usuarios que hacen parte de la red actual y el nivel de funcionamiento de estos nodos
-
-
-Una vez se han obtenido los mapas de calor se hace la unión de los tres a fin de determinar que lugares se deben cubrir con mayor prioridad, teniendo en cuenta la relación costo-beneficio, es decir, que permita el acceso a internet a la mayor cantidad de personas posible pero a un bajo costo. 
-
-Al mapa de calor que surge de la unión realizada con anterioridad se le anexa el grafo con la altura mínima de las torres y la mejor ruta que se debe curbrir, además de asignar las antenas para cada torre.
-
-
-3. **IncrEase**
-
-En este paso se combinan los resultados obtenidos en el paso anterior y esos datos ingresan a IncrEase. Esta herramienta proporciona dos modos de operación
-
-* Busqueda estratégica
-* IncrEase targeted
-
-
-4. **Salida: obtener una respuesta de planeación de redes inalámbricas rurales económica** 
-
-Los dos modos de operación de IncrEase generan dos salidas:
-
-* Busqueda estratégica: estrategia de despliegue incremental sugerida
-* IncrEase targeted: ruta sugerida para cubrir el área seleccionada
 
 
 ### Determinar los requerimientos necesarios para ejecutar el algoritmo
 
 El estándar IEEE 830-1998 para el SRS(en inglés) o ERS (Especificación de requerimientos de software) es un conjunto de recomendaciones para la especificación de los requerimiento o requisitos de software, basado en este estándar se determina: 
 
+
 * **Requerimientos funcionales**
 
-|Identificador del requerimiento| In1                                 |
+
+|Identificador del requerimiento| Entrada 1                           |
 | ----------------------------- |-------------------------------------|
-| Nombre del requerimiento      |Requerimiento de cobertura|
-| Características               | Calidad de la cobertura de la red existente|
-| Descripción del requerimiento | Es un parámetro de entrada al algoritmo para saber la eficiencia del funcionamiento de la red|
+| Nombre del requerimiento      | Cobertura |
+| Características               |Ubicación de la red existente|
+| Descripción del requerimiento | Límite geográfico de la red actual|
 |Requerimiento NO funcional     |   |
 |Prioridad del requerimiento    | Alta |
 Table:
 
-|Identificador del requerimiento| In2                                 |
+
+|Identificador del requerimiento| Entrada 2                                 |
 | ----------------------------- |-------------------------------------|
 | Nombre del requerimiento      |Ubicación de los usuarios|
 | Características               |Identificación de la ubicación geográfica de los usuarios|
@@ -1006,7 +907,7 @@ Table:
 |Prioridad del requerimiento    | Alta |
 Table:
 
-|Identificador del requerimiento| In3                                 |
+|Identificador del requerimiento| Entrada 3                                 |
 | ----------------------------- |-------------------------------------|
 | Nombre del requerimiento      |Torres disponibles|
 | Características               |Obtener acceso a la ubicación de las torres |
@@ -1015,7 +916,7 @@ Table:
 |Prioridad del requerimiento    | Alta |
 Table:
 
-|Identificador del requerimiento| In4                                 |
+|Identificador del requerimiento| Entrada 4                                 |
 | ----------------------------- |-------------------------------------|
 | Nombre del requerimiento      |Topología de la red|
 | Características               |Obtener topología de la red existente y su ampliación
@@ -1025,7 +926,7 @@ Table:
 |Prioridad del requerimiento    | Alta |
 Table:
 
-|Identificador del requerimiento| In5                                 |
+|Identificador del requerimiento| Entrada 5                                 |
 | ----------------------------- |-------------------------------------|
 | Nombre del requerimiento      |Área de selección|
 | Características               |Determinar la zona rural en dónde se realizará la expansión de la red|
@@ -1034,7 +935,7 @@ Table:
 |Prioridad del requerimiento    | Alta |
 Table:
 
-|Identificador del requerimiento| In6                                 |
+|Identificador del requerimiento| Entrada 6                                 |
 | ----------------------------- |-------------------------------------|
 | Nombre del requerimiento      |Ingreso de los datos|
 | Características               |Datos de entrada del algoritmo|
@@ -1044,7 +945,7 @@ Table:
 Table:
  
 
-|Identificador del requerimiento| In7                                 |
+|Identificador del requerimiento| Entrada 7                                 |
 | ----------------------------- |-------------------------------------|
 | Nombre del requerimiento      |Operaciones matemáticas|
 | Características               |Procesos matemáticos para obtener una respuesta óptima|
@@ -1084,11 +985,195 @@ Table:
 Table:
 
 
+### Diseño
 
-### Codificación del algoritmo
+####  Proponer el conjunto de operaciones secuenciales para la realización del Algoritmo
+
+ <!-- que hace cada elemento del sistema-->
+
+A partir de los tres algoritmos estudiados se plantea una nueva propuesta para el planeamiento de redes inalámbricas en zonas rurales.Para esto, se toman algunas características que contribuyen a dar solución al problema local (expandir la red Libre de Bosachoque a la región del Sumapaz), esto con el fin de generar un nuevo algoritmo que permita dar conectividad a internet en zonas apartadas a un bajo costo. 
+
+Para proponer un nuevo algoritmo se establece:
+
+1. Parámetros de entrada
+2. Planeación incremental
+3. Planeación del costo mínimo 
+4. Salida: Obtener una respuesta de planeación de redes inalámbricas rurales económica
+
+En la siguiente figura se establece el diagrama sistémico del modo de operación de la herramienta propuesta.
+
+
+![Diagrama sistémico](Diagrama_sistemico.pdf){ width=10sss0% }
+
+
+**Descripción del proceso de operación del algoritmo propuesto** 
+
+1. **Parámetros de entrada**
+
+
+- Grafo, conexión de toda la red: se ingresa un grafo con una topología propuesta dónde todos los nodos se encuentren conectados entre sí.
+
+- Limitar el alcance geográfico: Se delimita la región en dónde se desea expandir la red existente.
+
+- Solicitudes de cobertura: sectores o usuarios que desean adquirir el servicio de conectividad a Internet.
+
+
+2. **Planeación incremental de la red**
+
+**Mapas de calor**
+
+Los mapas de calor son una herramienta visual que permite al usuario identificar zonas en dónde se necesita con mayor prioridad brindar conectividad a Internet. Entonces, a mayor concentración de color más alta es la prioridad.
+
+Para realizar estos mapas se utiliza la herramienta QGIS, que es un cliente GIS de código abierto fácil de usar, donde se puede visualizar, administrar, editar, analizar datos y componer mapas imprimibles. Además, incluye una poderosa funcionalidad analítica a través de la integración con GRASS, SAGA, Orfeo Toolbox , GDAL/OGR y muchos otros proveedores de algoritmos. 
+
+Se consideran dos fuentes de información, de cada fuente se genera un mapa de calor diferente.
+
+
+* Mapa de calor de las solicitudes de cobertura: sugiere los lugares en los que se encuentra mayor cantidad de usuarios que solicitan el servicio.
+
+* Mapa de calor de la ubicación y desempeño de los usuarios actuales: Permite saber la ubicación de los usuarios que hacen parte de la red actual y el nivel de funcionamiento de estos nodos.
+
+
+Una vez se han obtenido los mapas de calor se hace la unión de los tres a fin de determinar que lugares se deben cubrir con mayor prioridad, teniendo en cuenta la relación costo-beneficio, es decir, que permita el acceso a internet a la mayor cantidad de personas pero a un bajo costo. 
+
+**IncrEase**
+
+Para el caso regional de la Provincia del Sumapaz, se considera la planeación incremental de la red propuesta en [@bernardi2012]. 
+
+En la figura n, se presenta el flujo de información de la herramienta IncrEase.Enla que un conjunto de archivos XML contienen información estadística de la red que es leída y analizada. Bernardi considera tres tres fuentes de información. La primera es la *demanda de cobertura:* La lista de solicitudes de cobertura recibidas (puede ser por ejemplo en la página del proveedor WISP), para posibles usuarios que están viviendo en áreas sin servicio.
+
+El segundo es el conjunto de detalles sobre aquellos usuarios nuevos que *fallaron en la etapa de instalación* debido a una cobertura insuficiente. Finalmente, importa un registro de llamadas de reportes a mesas de ayuda a WISP y localización de los usuarios existentes. Algunos datos extras pueden ser importados capturando otros factores influyentes (disponibilidad de DSL, cobertura 3G, datos demográficos etc.). 
+IncrEase elabora cada fuente de datos para formar un arreglo bidimensional cubriendo la región geográfica de interés, con cada valor de celda representando cuántos “ítems” (usuarios actuales) que hacen parte de la región de la celda. Los valores de celda son entonces normalizados como una fracción de la celda que tiene más ítems.
+
+IncrEase presenta visualmente tres arreglos 2D en los mapas como mapas de calor, y los combina como un promedio ponderado donde las ponderaciones están configuradas de acuerdo a cada métrica a la importancia relativa del operador.
+
+Estos mapas de calor combinados suministran una vista de las áreas que podrían beneficiarse más por la actualización de la red. En este caso el calor (celdas con altos valores en el arreglo 2D) es un indicador de cobertura inalámbrica inadecuada que puede ser quitada por una nueva torre de transmisión o un nuevo sector directivo. Los mapas de calor son almacenados en memoria y pueden acercarse, mostrarse u ocultarse seleccionando los elementos gráficos apropiados.
+IncrEase puede importar una lista adicional de torres disponibles para ser instaladas. Este inventario podría incluir torres que ya existan disponibles (por ejemplo para arrendar de otro operador), o posibles lugares donde se puedan construir nuevas torres. Una descripción XML de la topología del lugar, incluyendo la ubicación y la altura de cada torre y la configuración y el número de antenas del sector también se pueden importar a IncrEase. Tal información es usada para generar una capa de “cobertura de red” con una granularidad configurable, el cálculo de línea de vista de cada torre existente y considerando
+el azimut e inclinación de los sectores existentes y un parámetro de máxima distancia que especifica el rango admisible para enlaces inalámbricos en el nivel de acceso.
+
+
+Esta herramienta proporciona dos modos de operación
+
+
+
+Notaciones:
+
+* $T$: Es el conjunto de todas las torres (instaladas y viables)
+
+* $N$: Es el subconjunto de $T$ de sólo torres que están actualmente utilizadas
+* en la topología de red
+
+* $H(t)$: Es la cantidad total de calor para la torre $t \in T$ . definidas como
+* la suma de los valores cubiertos de la celda de calor por la torre.
+
+* $C(t)$: es el costo de instalación de la torre $T$
+
+
+
+* IncrEase targeted
+
+Los mapas de calor son una ayuda visual para el operador de red, ya que puede ver las áreas que más se pueden beneficiar, debido a una mejora en la cobertura del modo de operación `IncrEase` suministra el nivel más liviano de automatización disponible en `IncrEase`, dejando “el humano en el bucle” preguntándole al operador que visualmente seleccione en el mapa la visión geográfica donde la cobertura se debería mejorar.`IncrEase` entonces automáticamente identifica cuál es la celda más caliente en la región, definida como la que tiene mayor valor en la capa de calor combinada. La Aplicación determina el conjunto de torres más cercanas por ejemplo (20 en la configuración por omisión) del conjunto $T-N$ que están en línea de vista de la celda caliente para formar el conjunto de lugares candidatos que cubrirán el hotspot, considerando varias fuentes de torres, permite la selección de entre un gran número de posibles rutas de retorno, en comparación con enfocarse solo en la torre más cercana al punto de acceso (hotspot).
+El software encuentra la mejor manera de conectar cada una de esas torres a la topología de red existente (i.e., el conjunto N) atravesando enlaces en el grafo $G$. La “mejor” solución es la ruta que proporciona el valor más bajo para la diferencia $c(t) - h(t)$ para cada torre t atravesada. En este cálculo, evitamos cuidadosamente contabilizar varias veces el “calor” asociado con una celda que puede estar en línea de vista con diferentes torres, ya que sesgaría los resultados. Así que consideramos el valor de estas celdas solo una vez.
+Para pathfinding sobre el grafo $G$, IncrEase usa el algoritmo $A *$ (A-star). A utiliza la mejor búsqueda en primer lugar, basada en una función heurística de distancia más costo, encuentra la ruta de menor costo desde un nodo inicial a un nodo objetivo. 
+Nuestra implementación tiene dos pequeños cambios con el algoritmo original $A *$. Primero, toma como entrada un conjunto de nodos de inicio 
+(torres más cercanas a la celda más caliente en la región seleccionada) y un conjunto de nodos de objetivo en lugar de un solo inicio / final de nodos, ya que la ruta de retorno puede comenzar desde cualquiera de las ubicaciones candidatas y terminar en cualquiera de las torres existentes. Segundo, en el gráfo $G$, los costos son asociados con los vértices (es decir, torres) en lugar de bordes, por los que consideramos el costo de un borde ($i$, $j$) para que sea el nodo de salida $i$ (Skiena, 1998).
+
+$A*$ requiere una función heurística que sea el límite mínimo inferior del posible costo de la ruta (Por ejemplo, para viajar entre dos ciudades, es la distancia por línea recta), así que en nuestro caso necesitamos diseñar una estimación de la mejor $C(t)-h(t)$ que se pueda lograr para el resto del camino desde una torre dada hasta la torre central. Nosotros adoptamos (l/d) *Cmin tal como heurística, donde l es la distancia en línea recta entre la torre actual que se está analizando y cualquiera de las torres centrales, d es la máxima distancia permitida para enlazar punto a punto (ambos en km) y Cmin el mínimo $C(t)-h(t)$ de todas las torres.
+Finalmente, nosotros introducimos dos modificaciones a la función de costos presentada antes. Como $A*$ requiere costos de bordes no-negativos, sumamos un valor  positivo grande constante arbitrario a todos los $C(t)-h(t)$ valores. Por último, para permitir al usuario equilibrar la importancia de ahorrar dinero y ampliar la cobertura permitimos dos coeficientes variables $Co$ y $ho$ y definimos el costo como $Co*C(t)-ho*h(t)$. 
+
+El resultado de la búsqueda de la mejor ruta se presenta como una ruta en el mapa junto con una indicación de texto de las torres que se desplegarán y su orden, como se muestra en la Figura 4.2 (d-f).
+
+
+
+* Busqueda estratégica
+
+Mientras que `IncrEase targeted` es un modo semi automático que requiere que el
+operador selecciones una región, el modo operacional de *búsqueda estratégica*
+identifica y sugiere la mejor estrategia de expansión de la red. Asumimos que
+la topología de la red evoluciona sobre intervalos discretos de tiempo
+arbitrarios (meses, semanas) y el capital de inversión sobre un intervalo
+discreto de tiempo del WISP está limitado por un parámetro discreto que
+determina cuántos movimientos (instalaciones de torres) se pueden realizar en
+cada intervalo de tiempo. El ánimo de la búsqueda estratégica es entonces
+sugerir la mejor acción que el WISP pudiera tomar durante el siguiente
+intervalo de tiempo. Una limitación práctica obia es el denominado *efecto
+horizonte*: como en muchos juegos de inteligencia artificial, el número de
+posibles estados es tan grande que sólo es posible buscar en una pequeña
+porción de todo el potencial de movimientos en el horizonte de tiempo. El
+algoritmo de búsqueda necesita ser capaz de reducir el número de posibles
+estrategias para analizar, mientras limita el riesgo de excluir unas buenas
+regiones.
+
+
+De estos modos de operación se obtiene una ruta de mayor cobertura (Búsqueda estratégica) y un árbol con una lista de nodos viables para conectarse (IncrEase targeted). Estas respuestas ingresan individualmente a la etapa de planeación de mínimo costo de infraestructura, es decir ingresan al algoritmo TC-Algo y alli se le asignará la antena.
+
+
+3. **Planeación mínimo costo de infraestructura**
+
+**Algoritmo TC-AlGO**
+
+Determina el valor de altura óptimo que permite obtener el mejor enlace dentro de un grupo de enlaces vecinos a un nodo principal; este algoritmo contiene a START-TC-ALGO (algoritmo que permite recorrer el grafo y ubicar el menor enlace o conjunto de enlaces que representan el menor costo beneficio), también, contiene la función de costos C(n).
+
+
+**Asignación del tipo de antena**  
+
+En el trabajo [@sen2007], se resuelve el problema de evitar la interferencia al máximo, mientras se minimiza el conjunto de antenas a utilizar. 
+
+ Para realizar los enlaces, es necesario saber qué tipo de antena se va a utilizar, aquí el parámetro que se va a tener en cuenta principalmente es la apertura de ancho de haz o el HPBW (*Half Power Beam Width*) que  definirá la cantidad de nodos que pueda cubrir una antena, ya que si por ejemplo se va a realizar un enlace P-T-P, se puede realizar con una antena direccional de un ancho de haz de 8° puesto que el enlace cubrirá un solo punto, mientras que si se realiza un enlace M-T-P, se debe tener en cuenta una antena sectorial con un ancho de haz de 30° o 22° que pueda cubrir más puntos.   
+
+Ahora, teniendo en cuenta esto se describirá la Heurística propuesta por *Sen*.    
+
+* Heuristica de planeación de antena
+
+El autor *Sen* propone una heurística que vamos a implementar la cual está dada en un tiempo complejo de Ø(n2), donde n es el número de nodos hijos. Esta heurística se enfoca en disminuir el número de interferencia entre un conjunto de enlaces.  
+
+* Heurística   
+
+1 - Reorganizar el conjunto de nodos hijos de tal manera que el máximo ángulo de separación sean los nodos que están más alejados.  
+
+2 – Recursivamente en cada nodo se realiza lo siguiente:  
+
+Determinar el conjunto de antenas o antena que cubre la totalidad de los nodos hijos.  
+
+Dividir el ángulo de máxima separación, en subconjunto de ángulos que tiene la torre para que cubra todos los nodos y determinar el costo de cada uno de estos subconjuntos.  
+
+3 – Fin de la recursividad: cuando exista un conjunto de antenas que cubran todos los nodos con el menor costo.  
+
+  
+**Asignación de altura de las torres**  
+
+Los autores [@sen2007],  [panagrahi2008] y [@rios2015], proponen que la altura de la torre constituye uno de los costos más importantes dentro de la construcción de una infraestructura de red inalámbrica en áreas rurales.  
+
+*Sen* propone una heurística que sigue una secuencia de pasos explicados anteriormente y entre estos resuelve el problema de encontrar una solución de alturas optimas utilizando programación lineal (PL), sin embargo, en  [@panagrahi2008] se  propone un algoritmo para asignar la altura donde cita a [@sen2007], puesto que sigue el mismo enfoque de reducir el coste de infraestructura de red en zonas rurales, sin embargo, el autor *Panigrahi* proponen los algoritmos TC-ALGO  Y  START-TC-ALGO que mejora la heurística que propone *Sen*.   
+
+A continuación de describe las ventajas que tienen los algoritmos de *Panagrahi* sobre la heurística propuesta por *Sen*:  
+
+* En la heurística no es posible conocer el límite de posibilidades, mientras en los algoritmos se tiene un límite de respuesta en el peor de los casos.  
+
+* En la heurística se propone solo un obstáculo en la mitad del enlace entre dos nodos, sin embargo, los algoritmos pueden encargarse de encontrar la respuesta optima de la altura de las torres teniendo en cuenta todos los obstáculos entre el enlace de dos nodos. 
+
+* En la heurística se trabaja una función de costo lineal por cada torre, mientras que los algoritmos usan una función de costos más general.  
+
+En [@rios2015] se propone el diseño de una topología de infraestructura de red inalámbrica en la Región del Sumapaz implementando los algoritmos planteados en [@ panagrahi2008], en este trabajo se implementan estos algoritmos para proponer una topología que conecten unos puntos propuestos, en donde puede ir conectada una torre de antena con la mínima altura de nodos, creando una topología de mínimo costo.  
+
+
+4. **Salida** 
+
+Los datos de salida se obtienen una vez realizado la planeación incremental de la red y la planeación del mínimo costo de infraestructura. De acuerdo con la figura n,  a partir de el resultado generado entre Búsqueda estratégica y Algoritmo TC-Algo se obtiene un grafo con la topología de la red y la altura mínima que deben tener las torres para que haya comunicación, además de considerar la relación costo beneficio, es decir, que se pueda llevar acceso a Internet a más población pero con un costo mínimo de despliegue.Por otro lado, el resultado entre IncrEase targeted y el Algoritmo TC-Algo es una lista de nodos viables que se pueden conectar al árbol R con la altura mínima que deben tener las torres a fin de que tengan conexión. 
+
+
+#### Codificación del algoritmo
+
+
+AQUÍ VA TODA LA CODIFICACIÓN DEL ALGORITMO 
+
 
 
 ## Evaluar el algoritmo mediante una simulación numérica, comparándolo con Heurística simple
+
+### verificación 
+
+### Pruebas
 
 
 ## Aplicar el algoritmo propuesto en la Red Libre de Bosachoque analizando la topología adecuada para futuras expansiones de la red en las Instituciones Educativas Rurales de la región del Sumapaz-Cundinamarca considerando la relación costo-beneficio
@@ -1096,27 +1181,30 @@ Table:
 
 Al aplicar el algoritmo propuesto en la red libre de Bosachoque se obtiene:
 
-- Grafo con la Topología en la que la red se conecta totalmente:
-- Algoritmo TC-ALGO
+- Grafo: Topología de la red en la que todos los nodos se encuentran conectados
 
 - Limitar el alcance geográfico:
 
-En este punto se escogen dos zonas, siendo la primera la vereda Bosachoque (red actual) y la segunda la región del Sumapaz (Futura expansión de la red).  Cabe añadir, que la vereda Bosachoque se encuentra ubicada en el municipio de Fusagasugá y este a su vez hace parte de la región del Sumapaz. 
+En este punto se escogen dos zonas, siendo la primera la vereda Bosachoque (red actual) y la segunda la región del Sumapaz (Futura expansión de la red).  Cabe añadir, que la vereda Bosachoque se encuentra ubicada en el municipio de Fusagasugá y hace parte del corregimiento occidental del municipio junto con las veredas El Resguardo, Cucharal, Novillero y Viena. A su vez, Fusagasugasugá hace parte de los diez municipios que conforman la provincia del Sumapaz en el Departamento de Cundinamarca.
 
 ![Ubicación](Bosachoque_sumapaz.pdf){ width=10sss0% }
 
-En la figura anterior se puede evidenciar con color amarillo la vereda Bosachoque, lugar en el que se encuentra la red Libre y en color gris la región del Sumapaz, zona en dónde se desea expandir la red.
+
+En la Figura \ref{mylabel} se puede evidenciar con color amarillo la vereda Bosachoque, lugar en el que se encuentra la red Libre de Bosachoque y en color gris la región del Sumapaz, zona en dónde se desea expandir la red.
 
 - Solicitudes de cobertura:
 
 Las solicitudes de cobertura se analizaron en las dos regiones, la red actual y la futura expansión de la red. 
 
 Red Libre de Bosachoque:
+
+De acuerdo con (Tobón) la red se implementó en la parte alta de la vereda Bosachoque (Parte alta de la vía 40 express) instalando diez puntos conectados a la torre de la vereda San José del Chocho en el municipio de Silvania (Cundinamarca). Sin embargo, los habitantes de la parte baja de la vereda no tenían acceso a la red, por lo tanto, las personas solicitaron se les provea conectividad a Internet, acorde con esto, se estableció en que coordenadas era posible instalar las antenas y a partir de ahí verificar la población afectada.
+
  
-![Mapa de calor, solicitud de cobertura Bosachoque](mc_b_solicitudes.pdf){ width=10sss0% }
+![Mapa de calor, solicitud de cobertura Bosachoque \label{mylabel}](mc_b_solicitudes.pdf){ width=100% }
 
 
-En la figura n se puede encontrar el mapa de calor de las solicitudes de cobertura en la vereda Bosachoque, entendiendo que el color rojo es una solicitud más alta de cobertura y el color verde una solicitud baja. Para realizar este mapa se tomó el dato de la concentración de viviendas alrededor del punto dado. 
+En la figura \ref{mylabel} se puede encontrar el mapa de calor de las solicitudes de cobertura en la vereda Bosachoque, entendiendo que el color rojo es una solicitud más alta de cobertura y el color verde una solicitud baja. Para realizar este mapa se tomó el dato de la concentración de viviendas que podian acceder al servicio. 
 
 
 Región del Sumapaz: 
@@ -1125,10 +1213,24 @@ Se desea expandir la red libre de Bosachoque a la región del Sumapaz, para ello
 
 ![Ubicación de las Instituciones Educativas Rurales en el Sumapaz](Ubicacion_IE_Rurales.pdf){ width=10sss0% }
 
-En la figura n, se aprecia la ubicación de las escuelas rurales de la región del Sumapaz (punto de color verde).
+En la figura n, se aprecia la ubicación de las escuelas rurales de la región del Sumapaz (punto de color verde). Cabe resaltar que las I.E Rurales están ubicadas en zonas apartadas o de dificil acceso, lo anterior se aprecia mejor en la figura n. 
+
+![Relieve de la región del Sumapaz](relieve_sumapaz_escuela.pdf){ width=10sss0% }
+
+
+
 
 ![Mapa de calor solicitudes en la región del Sumapaz](calor_s.pdf){ width=10sss0% }
 
+En la figura n, se puede visualizar el mapa de calor de las solicitudes de servicio en la provincia del Sumapaz, entonces, a mayor cantidad de estudiantes en la sede mayor será la cobertura, por ende, el color amarillo simboliza una mayor concentración de estudiantes.
+
+- Ubicación y desempeño de los usuarios actuales:
+
+Partiendo que la red actual se encuentra ubicada en la vereda Bosachoque, es allí dónde se genera el mapa de calor y así se determina el desempeño que han tenido los nodos instalados.
+
+![Mapa de calor desempeño y ubicación de los usuarios actuales](Desempeno_usuarios_actuales_bosachoque.pdf){ width=10sss0% }
+
+De acuerdo con la figura n, el color amarillo indica los nodos con mejor desempeño, el color azul brinda la perspectiva de un desempeño medio y el color morado indica un desempeño bajo o sin desempeño. Por ende, la antena ubicada en la "Com. Profe Angela" indica un desempeño alto, al igual que "Don Manuel" y "Don Mario", sin embargo, los nodos ubicados en "Don Guillermo y Señora Lucero" indican un desempeño alto, esto dado la cercania de las dos antenas. 
 
 # Capitulo 4. Análisis de resultados y discusión 
 
