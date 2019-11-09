@@ -1165,6 +1165,10 @@ Los datos de salida se obtienen una vez realizado la planeación incremental de 
 #### Codificación del algoritmo
 
 
+AQUÍ VA TODA LA CODIFICACIÓN DEL ALGORITMO 
+
+
+
 ## Evaluar el algoritmo mediante una simulación numérica, comparándolo con Heurística simple
 
 ### verificación 
