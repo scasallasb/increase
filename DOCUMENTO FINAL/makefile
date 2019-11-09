@@ -2,10 +2,10 @@
 doc=estadoArte
 
 
-
+# --variable=lang=es
 ## --bibliography=bibliografia.bib 
 
-OPT= --variable=papersize:letter --variable=geometry:"margin={4cm,3cm,2cm,3cm} " --variable=fontsize:12pt --variable=fontfamily=mathptmx --variable=documentclass=article --number-sections --toc --variable=lang=es
+OPT= --variable=papersize:letter --variable=geometry:"margin={4cm,3cm,2cm,3cm} " --variable=fontsize:12pt --variable=fontfamily=mathptmx --variable=documentclass=article --number-sections --toc 
 
 BIB = --filter pandoc-citeproc --bibliography=refer.bib 
 
