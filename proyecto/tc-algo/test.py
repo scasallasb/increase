@@ -1,7 +1,7 @@
 #funciones python
 import networkx as nx
 #funciones propias
-import pytest 
+import pytest
 import TC_ALGO as tc
 
 """

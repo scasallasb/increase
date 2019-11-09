@@ -8,7 +8,7 @@ import struct
 
 #funciones propias 
 import tc_algo as tc 
-#import tc_algoMil as tcm
+import tc_algoMil as tcm
 
 
 def dibujar_grafo_unido(G=None, cab=None,Rep=None

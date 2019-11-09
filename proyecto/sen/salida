@@ -1,0 +1,298 @@
+i 1
+NAngulos [38, 123, 181]
+posibilidad 1
+contador de angulos 181
+[130, 70, 180, 40, 183]
+[600, 701, 1000, 200, 1000]
+posibilidades 1
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 183
+angulo 181
+costo  1000
+posibilidades 10
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 40
+angulo 181
+costo  200
+posibilidades 11
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 223
+angulo 181
+costo  1200
+posibilidades 100
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 180
+angulo 181
+costo  1000
+posibilidades 101
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 363
+angulo 181
+costo  2000
+posibilidades 110
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 220
+angulo 181
+costo  1200
+posibilidades 111
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 403
+angulo 181
+costo  2200
+posibilidades 1000
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 70
+angulo 181
+costo  701
+posibilidades 1001
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 253
+angulo 181
+costo  1701
+posibilidades 1010
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 110
+angulo 181
+costo  901
+posibilidades 1011
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 293
+angulo 181
+costo  1901
+posibilidades 1100
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 250
+angulo 181
+costo  1701
+posibilidades 1101
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 433
+angulo 181
+costo  2701
+posibilidades 1110
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 290
+angulo 181
+costo  1901
+posibilidades 1111
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 473
+angulo 181
+costo  2901
+posibilidades 10000
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 130
+angulo 181
+costo  600
+posibilidades 10001
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 313
+angulo 181
+costo  1600
+posibilidades 10010
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 170
+angulo 181
+costo  800
+posibilidades 10011
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 353
+angulo 181
+costo  1800
+posibilidades 10100
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 310
+angulo 181
+costo  1600
+posibilidades 10101
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 493
+angulo 181
+costo  2600
+posibilidades 10110
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 350
+angulo 181
+costo  1800
+posibilidades 10111
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 533
+angulo 181
+costo  2800
+posibilidades 11000
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 200
+angulo 181
+costo  1301
+1000
+[130, 70, 180, 40, 183]
+[600, 701, 1000, 200, 1000]
+posibilidades 1
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 183
+angulo 181
+costo  1000
+posibilidades 10
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 40
+angulo 181
+costo  200
+posibilidades 11
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 223
+angulo 181
+costo  1200
+posibilidades 100
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 180
+angulo 181
+costo  1000
+posibilidades 101
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 363
+angulo 181
+costo  2000
+posibilidades 110
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 220
+angulo 181
+costo  1200
+posibilidades 111
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 403
+angulo 181
+costo  2200
+posibilidades 1000
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 70
+angulo 181
+costo  701
+posibilidades 1001
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 253
+angulo 181
+costo  1701
+posibilidades 1010
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 110
+angulo 181
+costo  901
+posibilidades 1011
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 293
+angulo 181
+costo  1901
+posibilidades 1100
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 250
+angulo 181
+costo  1701
+posibilidades 1101
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 433
+angulo 181
+costo  2701
+posibilidades 1110
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 290
+angulo 181
+costo  1901
+posibilidades 1111
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 473
+angulo 181
+costo  2901
+posibilidades 10000
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 130
+angulo 181
+costo  600
+posibilidades 10001
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 313
+angulo 181
+costo  1600
+posibilidades 10010
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 170
+angulo 181
+costo  800
+posibilidades 10011
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 353
+angulo 181
+costo  1800
+posibilidades 10100
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 310
+angulo 181
+costo  1600
+posibilidades 10101
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 493
+angulo 181
+costo  2600
+posibilidades 10110
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 350
+angulo 181
+costo  1800
+posibilidades 10111
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 533
+angulo 181
+costo  2800
+posibilidades 11000
+listRadios [130, 70, 180, 40, 183]
+listCostos [600, 701, 1000, 200, 1000]
+contador 200
+angulo 181
+costo  1301
+1000

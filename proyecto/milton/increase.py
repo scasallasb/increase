@@ -6,6 +6,11 @@ from itertools import count
 
 # librerias propias
 import mapas as m
+import main 
+import tc_algo  as tc
+
+import TC_ALGO as cas
+import rep_ejec as Re
 
 
 def targetIncrease(G,listSource,listTarget):
@@ -552,7 +557,8 @@ def _dijkstra(G, source, get_weight, pred=None, paths=None, cutoff=None,
 if __name__ == '__main__':
 
     G= nx.Graph()
-    cab={u"root": [-74.4878 ,4.535],
+    cab={
+        #u"root": [-74.4878 ,4.535],
         u'SILVANIA':[-74.487778,4.403333]
                 ,u'TIBACUY':[-74.4525, 4.347222]
                 ,u'ARBELAEZ':[-74.415556,4.272222]
@@ -581,6 +587,8 @@ if __name__ == '__main__':
                 ,u'FUSAGASUGA':10}
 
     nx.set_node_attributes(G,calor,'calor')
+ 
+ 
     costo={u'SILVANIA':10
                 ,u'TIBACUY':11
                 ,u'ARBELAEZ':10
@@ -593,23 +601,8 @@ if __name__ == '__main__':
                 ,u'FUSAGASUGA':10}
 
     nx.set_node_attributes(G,costo,'costo')
-    """
-    existe ={u'SILVANIA':True
-                ,u'TIBACUY':False
-                ,u'ARBELAEZ': True
-                ,u'PANDI':False
-                ,u'PASCA' :True
-                ,u'SAN BERNARDO':False
-                ,u'VENECIA':True
-                ,u'CABRERA':False
-                ,u'GRANADA':True
-                ,u'FUSAGASUGA':False }
-
-    nx.set_node_attributes(G,existe,'existe')
-    """
-    calor =nx.get_node_attributes(G, 'calor')
-    costo =nx.get_node_attributes(G, 'costo')
-    #existe=nx.get_node_attributes(G, 'existe')
+    
+ 
 
     G.add_edge('VENECIA','PANDI' )
     G.add_edge('ARBELAEZ','SAN BERNARDO' )
@@ -638,7 +631,6 @@ if __name__ == '__main__':
         u'CABRERA':G.node['CABRERA'  ]['costo']       - G.node['CABRERA'  ]['calor'],
         u'GRANADA':G.node['GRANADA'  ]['costo']       - G.node['GRANADA'  ]['calor'],
         u'FUSAGASUGA':G.node['FUSAGASUGA' ]['costo']     - G.node['FUSAGASUGA' ]['calor']
-
     }
     nx.set_node_attributes(G,diferencia,'diferencia')
 
@@ -650,6 +642,43 @@ if __name__ == '__main__':
    
     answer= targetIncrease(G,listSource,listTarget)
     print(answer)
+    #hacer grafo con camino 
+    P= nx.Graph()
+    #agregar nodos
+    for i in answer:
+        P.add_node(i)
+    #agregar edges
+    for i  in  range(len(P)-1):
+        P.add_edge(answer[i], answer[i+1])
+
+    #agregar posicion a P
+    pos={}
+    for i in answer:
+        pos[i]=cab[i]
+    nx.set_node_attributes(P,pos,'pos')
+    
+    print (pos)
+
+    n=answer
+    res=[]
+    for i in range (0,len(n)-1):
+            res.append((n[i],n[i+1] ))
+
+    edges={}
+    for i in res:
+        edges[i]= i 
+
+    
+    nx.set_edge_attributes(P,res,'pos')
+    
+    print(res)
+
+
+    u=nx.get_edge_attributes(P,'pos')
+    print ("atributos u {}".format(u))
+
+    #G.add_nodes_from(pos.keys())
+    #nx.set_node_attributes(P,pos,'pos')
 
     ## searchIncrease
     N = ['FUSAGASUGA' ]
@@ -657,11 +686,29 @@ if __name__ == '__main__':
 
     c= 0.05
     R, lista= searchIncrease(G, N, T_N,c)
-    
 
+    #main.usar_algo(P, cab, rep1=False)
+    COSTO=[0.75,0.65,1,30,20]
+
+    w=m.w_eg(P)
+
+    nx.set_edge_attributes(P,w,'weight')
+    
+    #G, pos1=Re.grafo_unido(cab,we=True)
+    #cC,cT, InG,coverh,T = tc.algo(P,COSTO)
+    
+    #print ('cC=',cC,'cT=', cT)
+    #print ('*'*200)
+
+    t=cas.TC_ALGO(P)
+    T=nx.get_node_attributes(t,'hi')
+    conth = 0
+    for i in T.keys():
+        conth +=T[i]
+    print ("resultado de suma de alturas con tc_algo  = {} ".format(conth))
     plt.subplot(211)
-    nx.draw_networkx(G, cab)
+    #nx.draw_networkx(G, cab)
    
     plt.subplot(212)
-    nx.draw_networkx(R,cab)
+    nx.draw_networkx(P,pos)
     plt.show()

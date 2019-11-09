@@ -27,7 +27,7 @@ def la_lon(Fil=None, Arco=None):
     --------
 
     coo : coo
-          lista con el promedo de las posiciones con media de lonfitud en atitud y longitud
+          lista con el promedio de las posiciones con media de distancia  en latitud y longitud
     """
     if Fil is None:
         if Arco:
@@ -41,6 +41,13 @@ def la_lon(Fil=None, Arco=None):
         lon,la=la_lon(Fil=Fil,Arco=Arco)
         coo=[np.mean(la.values()), np.mean(lon.values())]
 
+    la=[]
+    lon=[]
+    for i in Arco.values():
+        la.append(i[1])
+        lon.append(i[0])
+    coo=[np.mean(la),np.mean(lon)]
+    print (Arco)
     return coo
 
 
@@ -99,7 +106,6 @@ def w_eg(G):
     """
 
     po=nx.get_node_attributes(G,'pos')
-
     au, DiM =ext_map(Arco=po, met=True)
 
     we=[]
@@ -117,18 +123,15 @@ def ext_map(cocen=None,Arco=None, met=False, Fil=None, s=None, **kwds):
     Arco :  dic
             diccionario con todas las posiciones geograficas de nodos en el grafo.
 
-
-
     """
     if met==True:
-        coo=la_lon(Fil=Fil,Arco=Arco)
+        coo=la_lon(Fil = None ,Arco=Arco)
         if s is None:
             s=h.vercu(coo,Arco)
     else:
         coo=[cocen[1],cocen[0]]
         if s is None:
             s=10
-    print ("esto es un tipo  s  {}", type(s))
     au, DiM = h.manipular_mapas(coo,s)
     return au, DiM
 

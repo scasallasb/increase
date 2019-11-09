@@ -1,4 +1,5 @@
 import networkx as nx
+from matplotlib import pyplot as plt
 
 import math as m
 
@@ -43,13 +44,34 @@ def angulo(node1,node2,node3):
 
 
 def calcularCosto(mask , listCostos):
+    """ a partir de una mascara de bits y una lista de costos
+        retorna el valor de la suma de conjunto de nodos
+
+    """
     costo =0
     for i  in  range(len(mask)):
-        costo+= int(mask[i])* listCostos[i]
+        costo+= int(mask[i])* listCostos[i + len(listCostos)-len(mask)]
     return costo
 
 
 def funcionMenorCosto(angulo, radios, costos):
+    """Retorna el valor del costo minimo de un conjunto de antenas que cubren un angulo
+
+    parametros
+    ----------
+        angulo  :   float
+                    valor de angulo en grados
+
+        radios  :   dict
+                    diccionario con llave antenas y valores de radios de cobertura
+
+        costos  :   dict
+                    diccionario con llave antenas y valores de costo
+    retorna
+    ---------
+        menor   :   float
+                    minimo valor de cobertura
+    """
     #listar atributos angulos
     listRadios= []
     for i in radios.keys():
@@ -59,68 +81,57 @@ def funcionMenorCosto(angulo, radios, costos):
     listCostos= []
     for i in costos.keys():
         listCostos.append(costos[i])
-    
-    comp = 9999
+
+    comp = m.inf
     menor = None
     print (listRadios)
+    print (listCostos)
 
     #se identifican que conjunto de radios satisfacen el angulo
     for i in range (1, int(len(listRadios)*len(listRadios))):
         posibilidades= binarizar(i)
         cont = 0
-        
-        for j in range(1,len(posibilidades)):
-            posibilidad= int(posibilidades[j])*listRadios[len(posibilidades)-j]
-            print (posibilidad)
-            print (posibilidades)
-            #print (listRadios)
+
+        print ("posibilidades {}".format(posibilidades))
+        print ("listRadios {}".format(listRadios))
+        print ("listCostos {}".format(listCostos))
+        for j in range(len(posibilidades)):
+            posibilidad= int(posibilidades[j])*listRadios[len(listRadios)-len(posibilidades)+j]
             cont+=posibilidad
-            #print("contador {}".format(cont))
-        #calcular radio que tiene minimo costo
-       
-        """
-        if cont >= angulo:
-            print ("angulo {}".format(angulo))
-            print("contador {}".format(cont))
-        """
-        """
+
+        print("contador {}".format(cont))
+        print ("angulo {}".format(angulo))
+        print ("costo  {}".format(calcularCosto(posibilidades, listCostos)))
+
         if cont >= angulo:
             if calcularCosto(posibilidades, listCostos) <= comp :
                 comp = calcularCosto(posibilidades, listCostos)
                 menor = comp
-                print ("menor {}".format(menor))
+    print  (menor)
     return (menor)
 
-        """
+def funcion(alfa ,NAngulos , radios, costos):
+    if len(NAngulos)== 1:
+        alfa =funcionMenorCosto(NAngulos[0], radios, costos )
+    #contador de angulos
+    for i  in range (1 , int (len(NAngulos)*len(NAngulos))-1):
+        print ("i {}".format(i))
+        print ("NAngulos {}".format(NAngulos))
+        posibilidad = binarizar(i)
 
-      
-def funcionSetAngulos(Angulo, costoAngulo, radios,costos):
-    #listar atributos 
-    listRadios= []
-    for i in radios.keys():
-        listRadios.append(radios[i])
-    listCostos= []
-    for i in costos.keys():
-        listCostos.append(costos[i])
-    
+        print ("posibilidad {}".format(posibilidad))
+        cont= 0
+        for j in range (len(posibilidad)):
+            cont+=int(posibilidad[j])*NAngulos[len(NAngulos)-len(posibilidad)+j]
+        print ("contador de angulos {}".format(cont))
+        if  cont >= alfa:
+            if funcionMenorCosto(cont, radios, costos ) < funcionMenorCosto(alfa, radios, costos):
+                alfa = cont
+        return alfa
 
-    for i in range (1, int(len(listRadios)*len(listRadios))):
-        posibilidades= binarizar(i)
-        cont = 0
-        for j in range(1,len(posibilidades)):
-            posibilidad= int(posibilidades[j])*listRadios[ len(posibilidades)- j]
-            cont+=posibilidad
-        print (cont)
-        # angulos que tiene angulo mayor al maxCober
-        if cont >= Angulo :
-            min = funcionMenorCosto(cont, radios, costos)
-            print (min)
-            if min <= costoAngulo:
-                costoAngulo= min
-            
-    return costoAngulo
-    
-   
+
+    #if funcionMenorCosto(40, radios, costos)
+
 
 def heuristica_antena(G, nodeRefer):
     #ubicar angulos teniendo en cuenta coordenadas
@@ -132,10 +143,13 @@ def heuristica_antena(G, nodeRefer):
         for k in Neigh.keys():
             if not j == k :
                 if not angulo(i,j,k) in lisAng:
+                    lisAng=sorted(lisAng)
                     lisAng.append(angulo(i,j,k))
                     lisAng.append(360 - angulo(i,j,k))
+
+    print ("lista de angulos {}".format(lisAng))
+    radiosSuma=[]
     #determinar que angulo tiene mas separacion y cubre todos los nodos
-    lisAng=sorted(lisAng)
     bandera = 0
     while (bandera == 0):
         cont = 0
@@ -144,19 +158,27 @@ def heuristica_antena(G, nodeRefer):
             if int(cont) == int(max(lisAng)):
                 Angulo = max(lisAng)
                 bandera= 1
-
         lisAng.remove(max(lisAng))
-   
-    #angulo maximo que cubre todos los angulos
-    costoAngulo= funcionMenorCosto(Angulo, radios, costos)
-    print (" costo Angulo {}".format(Angulo))
+    NeighAngulos=[]
+    for i in range (0,len(lisAng)**2):
+        posibilidades = binarizar(i)
+        cont =0
+        for j in range (len(posibilidades)):
+            posibilidad= int(posibilidades[j])*lisAng[ (len(lisAng)-len(posibilidades)) + j]
+            cont += posibilidad
+            NeighAngulos.append(posibilidad)
+        if int(cont) == int(Angulo):
+            break
+        else:
+            NeighAngulos=[]
 
-    #a partir de aqui se define si hay un conjunto de nodos que pueda tener un costo menor al angulo que tiene mayor cobertura
-    #setAngulos=funcionSetAngulos(Angulo, costoAngulo, radios,costos)
-   
-    #conjunto de nodos que cubra ese angulo
-    #print (setAngulos)
-
+    if 0 in NeighAngulos:
+        NeighAngulos.remove(0)
+    NeighAngulos.append(Angulo)
+    print ("angulos vecinos {}".format(NeighAngulos))
+    print ("angulo {}".format(Angulo))
+    funcion(Angulo,NeighAngulos , radios, costos)
+    #print ("alfa {}".format(alfa))
 
 
 #grafo
@@ -198,23 +220,24 @@ G.add_edge('GRANADA','SILVANIA')
 
 #arreglo de radios
 radios= {
-"antena1": 60,
+"antena1": 130,
 "antena2": 70,
 "antena3": 180,
-"antena4": 20,
+"antena4": 60,
 "antena5": 183,
 }
 
 #arreglo de costos
 costos={
 "antena1": 600,
-"antena2": 700,
-"antena3": 300,
+"antena2": 701,
+"antena3": 1000,
 "antena4": 200,
 "antena5": 1000
 }
 
-heuristica_antena(G, "ARBELAEZ")
-funcionMenorCosto(180, radios, costos)
+heuristica_antena(G, "CABRERA")
 
-
+nx.draw(G, pos=cab)
+plt.show()
+#funcion(181,[38, 123 , 181] , radios, costos)

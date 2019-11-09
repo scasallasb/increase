@@ -205,7 +205,6 @@ def Grafo_inicial(G, hmax):
     no_in=[]
     InG.add_nodes_from(G.nodes())
     u=nx.get_edge_attributes(G,'weight')
-    
     for i in G.edges():
         if u[i]<hmax:
             InG.add_edge(i[0],i[1],weight=u[i])
