@@ -730,7 +730,7 @@ if __name__ == '__main__':
     T_N=['SILVANIA','ARBELAEZ','TIBACUY','PANDI','PASCA','GRANADA','CABRERA']
 
     c= 0.05
-    R, lista= searchIncrease(G, N, T_N,c)
+    R, dic ,lista= searchIncrease(G, N, T_N,c)
     
 
     plt.subplot(211)

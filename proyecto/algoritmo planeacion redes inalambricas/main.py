@@ -20,7 +20,7 @@ G= nx.Graph()
 cab={
     u"root": [-74.4878 ,4.535],
     u'SILVANIA':[-74.487778,4.403333]
-            ,u'TIBACUY':[-74.4525, 4.347222]
+            ,u'Chocho':[-74.429544, 4.372452]
             ,u'ARBELAEZ':[-74.415556,4.272222]
             ,u'PANDI':[-74.487778,4.191111]
             ,u'PASCA' :[-74.300833, 4.3075]
@@ -28,7 +28,12 @@ cab={
             ,u'VENECIA':[-74.4775,4.088611]
             ,u'CABRERA':[-74.485833,3.978056]
             ,u'GRANADA':[-74.351389,4.518611]
-            ,u'FUSAGASUGA':[-74.364444,4.337222]}
+            ,u'FUSAGASUGA':[-74.364444,4.337222]
+            ,'espinalitoAlto':[-74.41746, 4.313581]
+            ,'adolfoLeon':[-74,3089,4.29012]
+            ,'FranciscoJoseCaldas':[-74,32931,4.385174]
+            ,'AntonioNariño':
+            }
 
 key=list(cab.keys())
 G.add_nodes_from(cab.keys())

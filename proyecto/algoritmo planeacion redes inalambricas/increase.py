@@ -251,10 +251,17 @@ def distancia(node1, node2 ) :
 
     distancia = m.cal_dis(lista)
     return distancia
-########################################################################################
+####################################################################################
 
 def searchIncrease(G, N, T_N,c):
-    """Retorna un arból R con un diccionario con los nodos con el atributo NPV.
+    """Retorna un arból R formado a partir de un nodo "root"y los caminos mas
+    cortos del conjunto de torres instaladas N a todas las torres viables T_N 
+    utilizando algoritmo dijkstra, con la diferencia de que no se cuenta el valor
+    de la arista, sino del nodo etiquetado con el valor NPV. Un diccionario con los 
+    nodos con el atributo NPV, ademas de una lista con los nodos
+    ordenados de mayor a menor NPV. 
+    
+    Utiliza el algoritmo searIncrease diseñado por Bernardi 2012.
     
     Parámetros
     ----------
@@ -272,8 +279,9 @@ def searchIncrease(G, N, T_N,c):
     
     Retorna
     ----------
-    R   :   NetworkX tree.
-    dicNpv  :   Dictionary.
+    R   :   NetworkX tree
+    
+    dicNpv  :   Dictionary
                 Diccionario con llave nodo y valor NPV.
                 
     listNpv :   list
@@ -731,7 +739,8 @@ if __name__ == '__main__':
     T_N=['SILVANIA','ARBELAEZ','TIBACUY','PANDI','PASCA','GRANADA','CABRERA']
 
     c= 0.05
-    R, lista= searchIncrease(G, N, T_N,c)
+    R, dic ,lista= searchIncrease(G, N, T_N,c)
+    
     
 
     plt.subplot(211)
