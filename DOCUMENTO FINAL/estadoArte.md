@@ -1075,13 +1075,19 @@ Notaciones:
 Los mapas de calor son una ayuda visual para el operador de red, ya que puede ver las áreas que más se pueden beneficiar, debido a una mejora en la cobertura del modo de operación `IncrEase` suministra el nivel más liviano de automatización disponible en `IncrEase`, dejando “el humano en el bucle” preguntándole al operador que visualmente seleccione en el mapa la visión geográfica donde la cobertura se debería mejorar.`IncrEase` entonces automáticamente identifica cuál es la celda más caliente en la región, definida como la que tiene mayor valor en la capa de calor combinada. La Aplicación determina el conjunto de torres más cercanas por ejemplo (20 en la configuración por omisión) del conjunto $T-N$ que están en línea de vista de la celda caliente para formar el conjunto de lugares candidatos que cubrirán el hotspot, considerando varias fuentes de torres, permite la selección de entre un gran número de posibles rutas de retorno, en comparación con enfocarse solo en la torre más cercana al punto de acceso (hotspot).
 El software encuentra la mejor manera de conectar cada una de esas torres a la topología de red existente (i.e., el conjunto N) atravesando enlaces en el grafo $G$. La “mejor” solución es la ruta que proporciona el valor más bajo para la diferencia $c(t) - h(t)$ para cada torre t atravesada. En este cálculo, evitamos cuidadosamente contabilizar varias veces el “calor” asociado con una celda que puede estar en línea de vista con diferentes torres, ya que sesgaría los resultados. Así que consideramos el valor de estas celdas solo una vez.
 Para pathfinding sobre el grafo $G$, IncrEase usa el algoritmo $A *$ (A-star). A utiliza la mejor búsqueda en primer lugar, basada en una función heurística de distancia más costo, encuentra la ruta de menor costo desde un nodo inicial a un nodo objetivo. 
-Nuestra implementación tiene dos pequeños cambios con el algoritmo original $A *$. Primero, toma como entrada un conjunto de nodos de inicio 
-(torres más cercanas a la celda más caliente en la región seleccionada) y un conjunto de nodos de objetivo en lugar de un solo inicio / final de nodos, ya que la ruta de retorno puede comenzar desde cualquiera de las ubicaciones candidatas y terminar en cualquiera de las torres existentes. Segundo, en el gráfo $G$, los costos son asociados con los vértices (es decir, torres) en lugar de bordes, por los que consideramos el costo de un borde ($i$, $j$) para que sea el nodo de salida $i$ (Skiena, 1998).
+Nuestra implementación tiene dos pequeños cambios con el algoritmo original $A *$. Primero, toma como entrada un conjunto de nodos de origen (torres más cercanas a la celda más caliente en la región seleccionada) y un conjunto de nodos de objetivo en lugar de un solo inicio / final de nodos, ya que la ruta de retorno puede comenzar desde cualquiera de las ubicaciones candidatas y terminar en cualquiera de las torres existentes. Segundo, en el gráfo $G$, los costos son asociados con los vértices (es decir, torres) en lugar de bordes, por los que consideramos el costo de un borde ($i$, $j$) para que sea el nodo de salida $i$.
 
-$A*$ requiere una función heurística que sea el límite mínimo inferior del posible costo de la ruta (Por ejemplo, para viajar entre dos ciudades, es la distancia por línea recta), así que en nuestro caso necesitamos diseñar una estimación de la mejor $C(t)-h(t)$ que se pueda lograr para el resto del camino desde una torre dada hasta la torre central. Nosotros adoptamos $(l/d)$ *Cmin tal como heurística, donde l es la distancia en línea recta entre la torre actual que se está analizando y cualquiera de las torres centrales, d es la máxima distancia permitida para enlazar punto a punto (ambos en km) y Cmin el mínimo $C(t)-h(t)$ de todas las torres.
+$A*$ requiere una función heurística que sea el límite mínimo inferior del posible costo de la ruta (Por ejemplo, para viajar entre dos ciudades, es la distancia por línea recta), así que en nuestro caso necesitamos diseñar una estimación de la mejor $C(t)-h(t)$ que se pueda lograr para el resto del camino desde una o mas torres dada, hasta las torres objetivo. Nosotros adoptamos $(l/d)*Cmin$ como heurística, donde:
+
+* $l$: es la distancia en línea recta entre la torre actual que se está analizando y cualquiera de las torres objetivo 
+
+* $d$ es la máxima distancia permitida para realizar un enlace punto a punto (ambos en km)  
+
+* $Cmin$ es el valor mínimo de $C(t)-h(t)$ de todas las torres
+
 Finalmente, nosotros introducimos dos modificaciones a la función de costos presentada antes. Como $A*$ requiere costos de bordes no-negativos, sumamos un valor  positivo grande constante arbitrario a todos los $C(t)-h(t)$ valores. Por último, para permitir al usuario equilibrar la importancia de ahorrar dinero y ampliar la cobertura permitimos dos coeficientes variables $Co$ y $ho$ y definimos el costo como $Co*C(t)-ho*h(t)$. 
 
-El resultado de la búsqueda de la mejor ruta se presenta como una ruta en el mapa junto con una indicación de texto de las torres que se desplegarán y su orden, como se muestra en la Figura 4.2 (d-f).
+El resultado de la búsqueda de la mejor ruta se presenta como una ruta en el mapa junto con una indicación de texto de las torres que se desplegarán y su orden, como se muestra en la Figura.
 
 
 
@@ -1105,6 +1111,48 @@ estrategias para analizar, mientras limita el riesgo de excluir unas buenas
 regiones.
 
 
+A continuación se describe el algoritmo de búsqueda estratégica, que se lanza a
+traveś del botón  "recalcular estrategias" en la interfaz de usuario de
+IncrEase.
+
+* **Paso 1** Un algoritmo de búsqueda de menor costo de múltiples fuentes se
+ejecuta en el grafo de intervisibilidad $G$ para identificar los caminos de menor costo, con costos iniciando en $C(t) -h(t)$ como antes, a partir de cada uno de los nodos en el conjunto $T-N$ (las torres disponibles) a cualquiera de los nodos  en $N$. La salida es un árbol $R$, que intuitivamente suministra el mejor camino de la red existente a cada torre disponible. Para generar $R$, `IncreEase` añade un nodo “raíz” ficticia de cero costo conectada a cada torre en $N$ y ejecuta un algortimo de Dijkstra de la raíz a dada nodo en el grafo $G$. Un ejemplo se suministra en la figura  donde (a) muestra el grafo de inter visibilidad $G$ con nodos sombreados siendo aquellos que ya están instalados y (b) los caminos $R$ resultantes luego de la ejecución del algoritmo de Dijkstra.
+
+* **Paso 2** El grafo $R$ se atravieza iniciando desde la raíz y en el transcurso la torres se etiquetan con el marcador 
+
+$$ \frac{h(r) - c(r)}{(1+C)^{distancia(r)}} $$
+
+donde $distancia(r)$ es la cuenta de las torres nuevas que se tiene que
+atravezar para alcanzar $r$ a apartir de la “raíz” de $R$ (torres que se
+pueden conectar directamente a la red tienen distancia cero). Como no todas
+las torres se pueden conectar inmediatamente a la red para ganar los
+beneficios de la cobertura asociada a cada una de ellas, otras puden tener que
+ser instaldas primero para servir como *back-hauling relays*. Para medir los
+beneficios de cubrimientos futuros para hoy tomamos el concepto financiero de
+valor presente neto (NPV) que aplica una rata de descuento constante  $C$ (por
+ejemplo 5% 0.05) a las ganancias que ocurrirán en el futuro. 
+
+Un ejemplo se muestra en la figura . Acá las dos torres $a$ y $b$ se
+podrían instalar y conectar directamente al mástil existente $n$. Los nodos
+$b$ y $f$ cada uno produce un beneficio $h(t) - c(t)$ de 100, mientras que las
+otras torres suministran un beneficio mucho menor. El parámetro $C$ es una
+medida de la voracidad de la selección: si picamos entre $a$ y $b$  basados en
+el beneficio total que ellos y sus descendientes podrían producir , podríamos
+decidir instalar la torre $a$ como se muestra en la figura 4.4(b). Sin embargo
+si incrementamos el valor de $C$ al 5% $b$ se vuelve más atractivo como se ve
+en la figura4.4(c). El NPV controla cuán lejos es posible ir para instalar
+torres que dejen ganancia, permitiendole al propietario de la red afinar la
+duración del retardo del beneficio.
+
+* **Paso 3**. $R$ se atravieza una vez más esta vez desde las hojas hasta la
+ raíz. Mientras se hace esto, actualizamos el puntaje de cada nodo $r$ a la
+ suma de su propio puntaje y sus descendientes. se muestran los puntajes
+ obtenidos después del paso tres en la figura 4.4(b) y 4.4(c).
+
+Finalmente en cada clic en el botón de "próximo movimiento sugerido" `IncrEase`pregunta el número de movimientos (torres a ser instaladas). Entonces genera una lista ordenada $L$ figura (c) que incluye la torres que se deberían instalar inmediatamente ordendas según su puntaje de beneficio, calculado en el paso 3, posteriormente extrae el nodo superior de $L$  y finalmente lo presenta en el mapa de los resultados.
+
+
+
 De estos modos de operación se obtiene una ruta de mayor cobertura (Búsqueda estratégica) y un árbol con una lista de nodos viables para conectarse (IncrEase targeted). Estas respuestas ingresan individualmente a la etapa de planeación de mínimo costo de infraestructura, es decir ingresan al algoritmo TC-Algo y alli se le asignará la antena.
 
 
@@ -1125,7 +1173,7 @@ Ahora, teniendo en cuenta esto se describirá la Heurística propuesta por *Sen*
 
 * Heuristica de planeación de antena
 
-El autor *Sen* propone una heurística que vamos a implementar la cual está dada en un tiempo complejo de $Ø(n2)$, donde n es el número de nodos hijos. Esta heurística se enfoca en disminuir el número de interferencia entre un conjunto de enlaces.  
+El autor *Sen* propone una heurística que vamos a implementar la cual está dada en un tiempo complejo de $Ø(n²)$, donde n es el número de nodos hijos. Esta heurística se enfoca en disminuir el número de interferencia entre un conjunto de enlaces.  
 
 * Heurística   
 
@@ -1159,13 +1207,233 @@ En [@rios2015] se propone el diseño de una topología de infraestructura de red
 
 4. **Salida** 
 
-Los datos de salida se obtienen una vez realizado la planeación incremental de la red y la planeación del mínimo costo de infraestructura. De acuerdo con la figura n,  a partir de el resultado generado entre Búsqueda estratégica y Algoritmo TC-Algo se obtiene un grafo con la topología de la red y la altura mínima que deben tener las torres para que haya comunicación, además de considerar la relación costo beneficio, es decir, que se pueda llevar acceso a Internet a más población pero con un costo mínimo de despliegue.Por otro lado, el resultado entre IncrEase targeted y el Algoritmo TC-Algo es una lista de nodos viables que se pueden conectar al árbol R con la altura mínima que deben tener las torres a fin de que tengan conexión. 
+Los datos de salida se obtienen una vez realizado la planeación incremental de la red y la planeación del mínimo costo de infraestructura. De acuerdo con la figura n,  a partir de el resultado generado entre Búsqueda estratégica y Algoritmo TC-Algo se obtiene un grafo con la topología de la red y la altura mínima que deben tener las torres para que haya comunicación, además de considerar la relación costo beneficio, es decir, que se pueda llevar acceso a Internet a más población pero con un costo mínimo de despliegue.Por otro lado, el resultado entre IncrEase targeted y el Algoritmo TC-Algo es una lista de nodos viables que se pueden conectar al árbol $R$ con la altura mínima que deben tener las torres a fin de que tengan conexión. 
 
 
 #### Codificación del algoritmo
 
+Para codificar IncrEase el algoritmo se utilizó el lenguaje de programación Python, puesto que es un lenguaje de alto nivel, multiparadigma y de código libre, que posee una gran cantidad de librerías y Framework que son actualizados frecuentemente por la comunidad. Esto permite una amplia variedad de herramientas, que permiten un desarrollo de software rápido y eficiente en diferentes áreas como la ingeniería; entre estas herramientas se encuentran librerías de procesamiento matemático Numpy y Scipy, además, para trabajar con estructura de datos,  Python tiene la librería Networkx, el cual es un paquete que trabaja con diferentes tipos de estructuras de datos, entre las que se encuentran grafos y árboles, permitiendo trabajar el enfoque propuesto con facilidad y eficiencia.  
 
-AQUÍ VA TODA LA CODIFICACIÓN DEL ALGORITMO 
+En este proyecto, se consideran también algunas desventajas de Python, como su tiempo de ejecución lento si se compara con otros lenguajes de programación como Java, C o C++, sin embargo, sus librerías, herramientas y la simplicidad de su sintaxis, compensan de manera significativa el tiempo de ejecución en un desarrollo eficaz, de fácil entendimiento y con posibilidad de aportar una herramienta libre, que puede ser mejorada por la comunidad. 
+
+En este trabajo se desarrollaron las funciones ` TargetedIncrease` y ` searchIncrease `, los cuales reperesentan cada uno de los modos de operación del software IncrEase propuesto en [@bernardi2012]. A continuación, se detalla la codificación de cada una de las funciones: 
+
+##### TargetedIncrease 
+
+Para codificar ` TargetedIncrease `, se utilizó y modificó la función ` astar_path ` de la librería Networkx, que retorna una lista $L$ con el camino más corto de un nodo origen a un nodo objetivo utilizando el algoritmo $A*$, sin embargo, en el algoritmo propuesto por *Bernardi*, se propone uno o más nodos fuente y objetivo, y retorna el valor mínimo de costo menos calor. ``` 
+
+``` 
+def targetIncrease(G,listSource,listTarget): 
+    """Retorna una lista de nodos en un camino de uno 
+    o más nodos origen a uno o más nodos  objetivo, 
+    con el valor mínimo de la suma de los valores de costo-calor.  
+    
+    Parámetros 
+    -----------
+    G   :   NetworkX graph 
+            Grafo con los atributos posición, 
+            costo y calor de cada uno de los nodos.         
+    listSource  :lista 
+            lista con los nodos origen. 
+    listTarget  :lista 
+            lista con los nodos objetivo. 
+    Retorna  
+    A   :   lista 
+            lista de nodos. 
+    """ 
+    miniContPath= 9999 
+    for i  in listSource: 
+        for j in listTarget: 
+            answer=astar_path(G,i,j,heuristica,listNodeTarget= listTarget) 
+            cont = 0 
+            for k in answer: 
+                cont = cont + (G.node[k]['costo'] - G.node[k]['calor'])  
+            if cont < miniContPath: 
+                miniContPath = cont  
+                A= answer 
+    return A 
+    ```
+Esta función utiliza la función astar_path con el algoritmo modificado A* como se muestra a continuación: 
+
+``` 
+def astar_path(G, source, target, heuristic=None, listNodeTarget= None): 
+
+    """Retorna una lista de nodos en un camino de un nodo origen a un nodo objetivo  
+    utilizando el algoritmo A*. 
+    Puede haber más de un camino corto, sin embargo, solo devuelve uno. 
+
+     
+    Parámetros 
+    ---------- 
+    G   :   NetworkX graph. 
+    source :    node 
+                Nodo inicial del camino. 
+    target :    node 
+                Nodo final del camino. 
+    heuristic : function 
+                Es una función que estima el valor de cada nodo recorrido  
+                con el valor de (costo - calor). En esta función toma de 
+                argumento un nodo y devuelve un valor numérico. 
+            
+    Retorna  
+    ---------- 
+    A   :   lista 
+            Lista de nodos. 
+    Raises 
+    ------ 
+    NetworkXNoPath 
+        Si no existe un camino entre un origen y un objetivo. 
+    """ 
+    if G.is_multigraph(): 
+        raise NetworkXError("astar_path() not implemented for Multi(Di)Graphs") 
+  
+    push = heappush 
+    pop = heappop 
+    #Almacena la cola prioritaria, nodo, costo de atravesarlo y padre. 
+    #Usa la libreria heapq para mantener el orden de la prioridad.  
+    #Adiciona un contador en la cola para evitar un monto subyacente  
+    #intente comparar los nodos.   
+    #prioriza y garantiza un unico para todos los nodos del grafo. 
+    c = count() 
+    queue = [(0, next(c), source, 0, None)] 
+  
+    #Asigna los nodos en cola a la distancia de las rutas descubiertas y  
+    #las heurísticas calculadas al objetivo. Evitamos calcular la heurística 
+    #más de una vez e insertar el nodo en la cola demasiadas veces. 
+    enqueued = {} 
+    # Asigna los nodos explorados al padre más cercano al origen. 
+    explored = {} 
+    minCosto=[] 
+    while queue: 
+        # Pop del elemento mas pequeño de la cola queue. 
+        _, __, curnode, dist, parent = pop(queue) 
+         
+        if curnode == target: 
+            path = [curnode] 
+            node = parent 
+            while node is not None: 
+                path.append(node) 
+                node = explored[node] 
+            path.reverse() 
+            return path 
+        if curnode in explored: 
+            continue 
+        explored[curnode] = parent 
+        maximaDist= maximaDistancia(G) 
+        for neighbor, w in G[curnode].items(): 
+            if neighbor in explored: 
+                continue 
+            ncost = dist 
+            if neighbor in enqueued: 
+                qcost, h = enqueued[neighbor] 
+                # sí qcost < ncost 
+                #queda un camino más largo hacia el vecino en cola. 
+                #Eliminarlo necesitaría filtrar toda la cola, es mejor  
+                #dejarlo allí e ignorarlo cuando visitamos el nodo por segunda vez. 
+                if qcost <= ncost: 
+                    continue 
+            else: 
+                #heurística 
+                #h = l / d * (Cmin) 
+                h = (distNodeTarget(curnode, listNodeTarget)*heuristic(neighbor))/maximaDist 
+                minCosto.append(h)
+            enqueued[neighbor] = ncost, h 
+            push(queue, (ncost + h, next(c), neighbor, ncost, curnode)) 
+    raise nx.NetworkXNoPath("Node %s not reachable from %s" % (source, target)) 
+    return minCosto 
+    ``` 
+y toma como heurística $(l/d)*Cmin$, donde cada variable es calculada por una función: 
+
+$l$ es la función ` distMinNodeTarget(G,curnode, listNodeTarget) ` que tiene como parámetro de entrada el grafo $G$, el nodo actual  $curnode$ y una lista de nodos objetivos $listNodeTarget$. La salida es la distancia mínima del nodo que se está analizando y cualquiera de los nodos objetivo. En esta función se obtiene del parametro $G$ el valor de la posición de los nodos *pos* que contiene las coordenadas de latitud y longitud, luego, mediante la función ` distancia ` que retorna la distancia en km de los enlaces para posteriormente comparar el valor de las distancias y retornar la que tiene el mínimo valor. 
+    ``` 
+    def distNodeTarget(nodo, listTarget): 
+
+        """Retorna mínima distancia entre el nodo y cualquiera
+        de los nodos objetivo. 
+        
+        Parámetros 
+        ---------- 
+        nodo    :   node 
+                    Nodo atravesado. 
+        listTarget  :   list 
+                        Lista de nodos objetivo. 
+        Retorna  
+        --------- 
+        maxDistancia    :   float 
+                            Máxima distancia. 
+        """ 
+        miniDist = 999 
+        for i in listTarget: 
+            dis = distancia(nodo, i ) 
+            if dis < miniDist: 
+                miniDist = dis 
+        return miniDist  
+    ``` 
+$d$ es la función ` maximaDistancia(G) ` que tiene como parámetro $G$ y retorna la distancia máxima en km de los enlaces. 
+    
+    ```
+    def maximaDistancia(G): 
+        """Retorna el valor de la maxima distancia de un enlace 
+        del grafo G.      
+        
+        Parámetros 
+        ---------- 
+        G   :   NetworkX graph 
+                Grafo con el atributo pos. 
+        Retorna  
+        --------- 
+        maxDistancia    :   float 
+                            Máxima distancia. 
+
+        """ 
+        pos = nx.get_node_attributes(G,'pos') 
+        lisI=[] 
+        lisF=[] 
+        lista=[] 
+        maxDistancia = 0
+        for i in pos.keys(): 
+            for j in pos.keys(): 
+                lat1=pos[i][0] 
+                lon1=pos[i][1] 
+                lisI.append(lat1) 
+                lisI.append(lon1) 
+                lat2=pos[j][0] 
+                lon2=pos[j][1] 
+                lisF.append(lat2) 
+                lisF.append(lon2) 
+                lista.append(lisI) 
+                lista.append(lisF) 
+                #distancia calculada para coordenadas 
+
+                distancia = m.cal_dis(lista) 
+
+                if distancia > maxDistancia: 
+                    maxDistancia = distancia 
+                lisI=[] 
+                lisF=[] 
+                lista=[] 
+        return maxDistancia 
+    ``` 
+$cmin$ es la función ` heuristica(nodo) `, aquí se ingresa un nodo donde se toman los valores *costos* y *calor*, después retorna la diferencia de estos. 
+    ``` 
+    def heuristica(nodo): 
+
+        """Retorna un valor numerico con el valor del atributo costo - calor 
+        de un nodo. 
+        
+        Parámetros 
+        ---------- 
+        nodo   :    node 
+                    nodos con atributo costo y calor. 
+        Retorna 
+        ---------- 
+        valor numérico de costo - calor de nodo. 
+
+    """ 
+    return(G.node[nodo]['costo'] - G.node[nodo]['calor']) 
+    ``` 
+
+Por último, se comparan los caminos que se forman al ejecutar la función ` astar_path ` y retorna una lista $L$ con el camino que tenga el valor minimo de la sumatoria de costo menos calor de cada uno de los nodos. 
 
 
 
@@ -1177,7 +1445,7 @@ AQUÍ VA TODA LA CODIFICACIÓN DEL ALGORITMO
  
 Para comprobar que el algoritmo genera una topología con el menor valor de costo/beneficio, se realizaron pruebas utilizando simulaciones numéricas donde se implementa el algoritmo propuesto por Bernardi y se comparó con una heurística simple. 
 
-Para implementar el algoritmo se creó un grafo $G$, con un número aleatorio de nodos $n$ y vértices $v$, luego, a cada nodo n se le asigna un valor aleatorio de posición $pos$, calor $M$, costo $C$ y altura h de torres para cada uno de los nodos $n$. Posteriormente, se ejecuta la función TargetedIncrease con parámetros de entrada $G$, un nodo con el menor valor de calor $H_min(n)$ que representará un nodo origen que funcionará como *backhaul relaing* y un nodo destino con el mayor valor de $H_max(n)$ que supondrá las zonas que se requieren más cobertura. Luego, se implementa la función TC_ALGO para generar un grafo $Ghmin con unsa topología que permite conectar todos los nodos con una altura mínima h dando como resultado una planeación de menor costo de instalación de infraestructura física. 
+Para implementar el algoritmo se creó un grafo $G$, con un número aleatorio de nodos $n$ y vértices $v$, luego, a cada nodo n se le asigna un valor aleatorio de posición $pos$, calor $M$, costo $C$ y altura h de torres para cada uno de los nodos $n$. Posteriormente, se ejecuta la función TargetedIncrease con parámetros de entrada $G$, un nodo con el menor valor de calor $Hmin(n)$ que representará un nodo origen que funcionará como *backhaul* y un nodo destino con el mayor valor de $Hmax(n)$ que supondrá las zonas que se requieren más cobertura. Luego, se implementa la función TC_ALGO para generar un grafo $Ghmin$ con unsa topología que permite conectar todos los nodos con una altura mínima h dando como resultado una planeación de menor costo de instalación de infraestructura física. 
 
  Esto se comparará con una heurística que consiste en generar un árbol de mínimo de expansión con unas restricciones de tamaño de enlace, luego, al igual que anteriormente se ejecuta el algoritmo TC_ALGO para reducir el valor de costo. Los resultados en ambos casos es un resultado de costo menos beneficio (calor). Esto se realiza en iteraciones y se ilustra en la siguiente imagen.
 
