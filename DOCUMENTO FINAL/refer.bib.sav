@@ -313,4 +313,7 @@
   url    = {https://docs.qgis.org/3.4/pdf/es/QGIS-3.4-UserGuide-es.pdf},
 }
 
+@Unpublished{,
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
