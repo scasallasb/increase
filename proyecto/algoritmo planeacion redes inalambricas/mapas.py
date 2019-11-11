@@ -9,8 +9,6 @@ import struct
 #funciones propias 
 import tc_algo as tc 
 
-
-
 def dibujar_grafo_unido(G=None, cab=None,Rep=None
                         ,map=None, DiM=None,nols=None,
                         no_lab=None,title=None, rt=False,s=None,**kwds):

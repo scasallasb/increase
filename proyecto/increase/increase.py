@@ -1,3 +1,5 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
 import networkx as nx
 import matplotlib.pyplot as plt
 import math
@@ -9,98 +11,97 @@ import mapas as m
 
 
 def targetIncrease(G,listSource,listTarget):
+    """Retorna una lista de nodos en un camino de uno o más nodos origen a uno o más nodos 
+    objetivo, con el valor mínimo de la suma de los valores de costo - calor. 
+    
+    parámetros
+    ----------
+    G   :   NetworkX graph
+            Grafo con los atributos posición, costo y calor de cada uno de los nodos.        
+    
+    listSource  :lista
+            lista con los nodos origen.
+    listTarget  :lista
+            lista con los nodos objetivo.
+            
+    Retorna 
+    A   :   lista
+            lista de nodos.
+        
+    """
+    miniContPath= 9999
     for i  in listSource:
         for j in listTarget:
             answer=astar_path(G,i,j,heuristica,listNodeTarget= listTarget)
-    return answer
+            cont = 0
+            for k in answer:
+                cont = cont + (G.node[k]['costo'] - G.node[k]['calor']) 
+                               
+            if cont < miniContPath:
+                miniContPath = cont 
+                A= answer
+    return A
 
-def heuristica(node1):
-    return(G.node[node1]['costo'] - G.node[node1]['calor'])
+def astar_path(G, source, target, heuristic=None, listNodeTarget= None):
+    """Retorna una lista de nodos en un camino de un nodo origen a un nodo objetivo 
+    utilizando el algoritmo A*.
     
-
-def astar_path(G, source, target, heuristic=None, weight='weight', listNodeTarget= None):
-    """Return a list of nodes in a shortest path between source and target
-    using the A* ("A-star") algorithm.
-
-    There may be more than one shortest path.  This returns only one.
-
-    Parameters
+    Puede haber más de un camino corto, sin embargo, solo devuelve uno.
+    
+    parámetros
     ----------
-    G : NetworkX graph
+    G   :   NetworkX graph.
+    
+    source :    node
+                Nodo inicial del camino.
 
-    source : node
-       Starting node for path
-
-    target : node
-       Ending node for path
-
+    target :    node
+                Nodo final del camino.
+       
     heuristic : function
-       A function to evaluate the estimate of the distance
-       from the a node to the target.  The function takes
-       two nodes arguments and must return a number.
-
-    weight: string, optional (default='weight')
-       Edge data key corresponding to the edge weight.
-
+                Es una función que estima el valor de cada nodo recorrido 
+                con el valor de (costo - calor). En esta función toma de
+                argumento un nodo y devuelve un valor numérico.
+        
+           
+    Retorna 
+    ----------
+    A   :   lista
+            Lista de nodos.
+            
     Raises
     ------
     NetworkXNoPath
-        If no path exists between source and target.
-
-    Examples
-    --------
-    >>> G=nx.path_graph(5)
-    >>> print(nx.astar_path(G,0,4))
-    [0, 1, 2, 3, 4]
-    >>> G=nx.grid_graph(dim=[3,3])  # nodes are two-tuples (x,y)
-    >>> def dist(a, b):
-    ...    (x1, y1) = a
-    ...    (x2, y2) = b
-    ...    return ((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5
-    >>> print(nx.astar_path(G,(0,0),(2,2),dist))
-    [(0, 0), (0, 1), (1, 1), (1, 2), (2, 2)]
-
-
-    See Also
-    --------
-    shortest_path, dijkstra_path
+        Si no existe un camino entre un origen y un objetivo.
 
     """
-
 
     if G.is_multigraph():
         raise NetworkXError("astar_path() not implemented for Multi(Di)Graphs")
 
-    if heuristic is None:
-        # The default heuristic is h=0 - same as Dijkstra's algorithm
-        def heuristic(u, v):
-            return 0
-
     push = heappush
     pop = heappop
-
-    # The queue stores priority, node, cost to reach, and parent.
-    # Uses Python heapq to keep in priority order.
-    # Add a counter to the queue to prevent the underlying heap from
-    # attempting to compare the nodes themselves. The hash breaks ties in the
-    # priority and is guarenteed unique for all nodes in the graph.
+    #Almacena la cola prioritaria, nodo, costo de atravesarlo y padre.
+    #Usa la libreria heapq para mantener el orden de la prioridad. 
+    #Adiciona un contador en la cola para evitar un monto subyacente 
+    #intente comparar los nodos.  
+    #prioriza y garantiza un unico para todos los nodos del grafo.
     c = count()
     queue = [(0, next(c), source, 0, None)]
 
-    # Maps enqueued nodes to distance of discovered paths and the
-    # computed heuristics to target. We avoid computing the heuristics
-    # more than once and inserting the node into the queue too many times.
+    #Asigna los nodos en cola a la distancia de las rutas descubiertas y 
+    #las heurísticas calculadas al objetivo. Evitamos calcular la heurística
+    #más de una vez e insertar el nodo en la cola demasiadas veces.
     enqueued = {}
-    # Maps explored nodes to parent closest to the source.
+    # Asigna los nodos explorados al padre más cercano al origen.
     explored = {}
 
-    costo=[]
+    minCosto=[]
 
     while queue:
-        # Pop the smallest item from queue.
+        # Pop del elemento mas pequeño de la cola queue.
         _, __, curnode, dist, parent = pop(queue)
-        #print (curnode)
-        #print (distNodeTarget(curnode, listNodeTarget))
+        
         if curnode == target:
             path = [curnode]
             node = parent
@@ -121,27 +122,65 @@ def astar_path(G, source, target, heuristic=None, weight='weight', listNodeTarge
                 continue
             ncost = dist
 
-            #ncost = distNodeTarget(curnode, listNodeTarget)*dist
             if neighbor in enqueued:
                 qcost, h = enqueued[neighbor]
-                # if qcost < ncost, a longer path to neighbor remains
-                # enqueued. Removing it would need to filter the whole
-                # queue, it's better just to leave it there and ignore
-                # it when we visit the node a second time.
+                # sí qcost < ncost
+                #queda un camino más largo hacia el vecino en cola.
+                #Eliminarlo necesitaría filtrar toda la cola, es mejor 
+                #dejarlo allí e ignorarlo cuando visitamos el nodo por segunda vez.
                 if qcost <= ncost:
                     continue
             else:
+                #heurística
+                #h = l / d * (Cmin)
                 h = (distNodeTarget(curnode, listNodeTarget)*heuristic(neighbor))/maximaDist
-                costo.append(h)
+                minCosto.append(h)
 
             enqueued[neighbor] = ncost, h
             push(queue, (ncost + h, next(c), neighbor, ncost, curnode))
 
-        #print (costo)
     raise nx.NetworkXNoPath("Node %s not reachable from %s" % (source, target))
-    return costo
+    return minCosto
+
+def distNodeTarget(nodo, listTarget):
+    """Retorna mínima distancia entre el nodo y cualquiera de los nodos objetivo.
+    
+    Parámetros
+    ----------
+    node    :   nodo
+                Nodo atravesado.
+            
+    listTarget  :   lista
+                    Lista de nodos objetivo.
+        
+    
+    Retorna 
+    ---------
+    maxDistancia    :   float
+                        Máxima distancia.
+    """
+    miniDist = 999
+    for i in listTarget:
+        dis = distancia(nodo, i )
+        if dis < miniDist:
+            miniDist = dis
+    return miniDist
+
+
 
 def maximaDistancia(G):
+    """Retorna el valor de la maxima distancia de un enlace del grafo G.
+    
+    parámetros
+    ----------
+    G   :   NetworkX graph
+            Grafo con el atributo pos.
+    
+    retorna 
+    ---------
+    maxDistancia    :   float
+                        Máxima distancia.
+    """
     pos = nx.get_node_attributes(G,'pos')
     lisI=[]
     lisF=[]
@@ -165,18 +204,34 @@ def maximaDistancia(G):
 
             lista.append(lisI)
             lista.append(lisF)
-
+            
+            #distancia calculada para coordenadas
             distancia = m.cal_dis(lista)
             if distancia > maxDistancia:
                 maxDistancia = distancia
-            #print ("la distancia entre {} y {} es {}".format(i , j , distancia ))
+            
             lisI=[]
             lisF=[]
             lista=[]
-    #print ("la maxima distancia es {}".format(maxDistancia) )
+    
     return maxDistancia
 
-def distancia(node1, node2 ) :
+def heuristica(nodo):
+    """Retorna un valor numerico con el valor del atributo costo - calor
+    de un nodo.
+    
+    Parámetros
+    ----------
+    nodo   :    node
+                nodos con atributo costo y calor.
+   
+    Retorna
+    ----------
+    Valor numérico de costo - calor de nodo.
+    """
+    return(G.node[nodo]['costo'] - G.node[nodo]['calor'])
+
+def distancia(node1, node2 ) :    
     pos = nx.get_node_attributes(G,'pos')
     lisI=[]
     lisF=[]
@@ -196,163 +251,196 @@ def distancia(node1, node2 ) :
 
     distancia = m.cal_dis(lista)
     return distancia
-
-def distNodeTarget(node1, listTarget):
-    aux = 999
-    for i in listTarget:
-        dis = distancia(node1, i )
-        if dis < aux:
-            aux = dis
-    return aux
-
-
 ########################################################################################
 
 def searchIncrease(G, N, T_N,c):
-      #agregar nodo raiz 
-      G.add_node('root', cab = [0, 0])
-      lista=[]
-      for i in N:
-            tupla=('root', i)
-            lista.append(tupla)
-      G.add_edges_from(lista)
+    """Retorna un arból R con un diccionario con los nodos con el atributo NPV.
+    
+    Parámetros
+    ----------
+    G   :    NetworkX graph.
+    
+    N   :   list
+            Lista con nodos de torres instaladas.
+            
+    T_N :   list
+            Lista con nodos de torres viables.
+    
+    c   :   float
+            coeficiente de ganancia o retorno de inversión.
+    
+    
+    Retorna
+    ----------
+    R   :   NetworkX tree.
+    dicNpv  :   Dictionary.
+                Diccionario con llave nodo y valor NPV.
+                
+    listNpv :   list
+                Lista ordenada de mayor a menor con valores NPV.
+                .
+    """
+    #agregar nodo raiz 
+    G.add_node('root', cab = [0, 0])
+    lista=[]
+    for i in N:
+        tupla=('root', i)
+        lista.append(tupla)
+    G.add_edges_from(lista)
+    listPath=[]
+    #aplicar el algoritmo Dkjistra desde el nodo raiz a cada n de G
+    R=nx.Graph()
+    v= nx.get_node_attributes(G, 'pos')
 
+    for i  in v.keys():
+        path = dijkstra_path(G, "root", i, weight='diferencia', N=N)
+        listPath.append(path)
+        for i in range(len(path)-1):
+                R.add_edge(path[i],path[i+1])
+    for i in N:
+        tupla=('root', i)
+        lista.append(tupla)
+    R.add_edges_from(lista)
 
+    #list generaciones 
+    listGen=[]
+    ###etiquetar nodos
+    #atributos de distance r : distancia al nodo raiz
+    NPV= {}
+    lista = []
+    pasado = N
+    GenR=  nextGeneration(R,N)
+    listGen.append(GenR)
+    for i in GenR:
+        NPV[i]= G.node[i]['diferencia']/(1 + c)
+    bandera=0
+    cont = 1
 
-      listPath=[]
-      #aplicar el algoritmo Dkjistra desde el nodo raiz a cada n de G
-      R=nx.Graph()
+    while bandera==0:
+        cont += 1
+        nextGen = nextGeneration(R,GenR, pasado= pasado)
+        pasado = GenR
+        GenR=nextGen
+        listGen.append(GenR)
+        for j in nextGen:
+                NPV[j]= G.node[j]['diferencia'] /(1 + c)**cont 
+        if nextGen == []:
+                bandera=1
+    nx.set_node_attributes(R,NPV,'NPV')
 
-      for i  in diferencia.keys():
-            path = dijkstra_path(G, "root", i, weight='diferencia', N=N)
-            listPath.append(path)
-            for i in range(len(path)-1):
-                  R.add_edge(path[i],path[i+1])
-
-
-
-      for i in N:
-            tupla=('root', i)
-            lista.append(tupla)
-      R.add_edges_from(lista)
-
-      #list generaciones 
-      listGen=[]
-      ###etiquetar nodos
-      #atributos de distance r : distancia al nodo raiz
-      
-      NPV= {}
-      lista = []
-      pasado = N
-      GenR=  nextGeneration(R,N)
-      listGen.append(GenR)
-      for i in GenR:
-            NPV[i]= G.node[i]['diferencia']/(1 + c)
-      bandera=0
-      cont = 1
-
-      while bandera==0:
-            cont += 1
-            nextGen = nextGeneration(R,GenR, pasado= pasado)
-            pasado = GenR
-            GenR=nextGen
-            listGen.append(GenR)
-            for j in nextGen:
-                  NPV[j]= G.node[j]['diferencia'] /(1 + c)**cont 
-            if nextGen == []:
-                  bandera=1
-      nx.set_node_attributes(R,NPV,'NPV')
-
-      #ponderar puntos 
-      u= T_N
-      for i in listGen[::-1]:
-            if  i == []:
-                  continue
-            for j in i: 
-                  path =nx.shortest_path(R, "root", j)
-                  cont=0
-                  for k in path[::-1]:
-                        if k in u :     
-                              cont += R.node[k]['NPV']
-                              R.node[k]['NPV']= cont     
-
-
-      #listar nodos con mas valor
-      listNpv= []
-      atributes =nx.get_node_attributes(R,"NPV").keys()
-      for i in atributes:
-            listNpv.append(R.node[i]['NPV'])
-      listNpv=sorted(listNpv)
-      print (listNpv[::-1])
-
-      return R , listNpv
+    #ponderar puntos 
+    u= T_N
+    for i in listGen[::-1]:
+        if  i == []:
+                continue
+        for j in i: 
+                path =nx.shortest_path(R, "root", j)
+                cont=0
+                for k in path[::-1]:
+                    if k in u :     
+                            cont += R.node[k]['NPV']
+                            R.node[k]['NPV']= cont     
+    #listar nodos con mas valor
+    listNpv= []
+    dicNpv =nx.get_node_attributes(R,"NPV")
+    for i in dicNpv.keys():
+        listNpv.append(R.node[i]['NPV'])
+    listNpv=sorted(listNpv)
+    listNpv=listNpv[::-1]
+    
+    return R , dicNpv, listNpv 
 
 
 def nextGeneration(R, N , pasado= None ):
-      #listar nodos primera generacion
-      listNeih=[]
-      for  i in N:
-            Neigh= R[i]
-            
-            neigh= [i for i in Neigh.keys() if not i =='root' and not i in N]
-            
-            if not neigh == [] :
-                  for i in neigh:
-                        if pasado == None:
-                              listNeih.append(i)
-                        else :
-                              if not i in pasado:
-                                    listNeih.append(i)
-      #borrar elementos repetidos 
-      unico=[]
-      for i in listNeih:
-            if i not in unico:
-                  unico.append(i)
-      
-      listNeih= unico
-      return listNeih
+    """ Retorna una lista con los nodos de la 
+    siguiente generación de hijos.
+    
+    Parámetros
+    ----------
+    R   :   NetworkX tree.
+    
+    N   :   list
+            Lista de nodos que funcionaran como backhaul.
+    
+    pasado  :   list
+                Lista con la generacíon de nodos pasado.
+    
+    
+    Retorna
+    ----------
+    listNeih    :   list
+                    Lista con los nodos de la siguiente generación
+                    de hijos.
+    
+    """
+    #listar nodos primera generacion
+    listNeih=[]
+    for  i in N:
+        Neigh= R[i]
+        
+        neigh= [i for i in Neigh.keys() if not i =='root' and not i in N]
+        
+        if not neigh == [] :
+                for i in neigh:
+                    if pasado == None:
+                            listNeih.append(i)
+                    else :
+                            if not i in pasado:
+                                listNeih.append(i)
+    #borrar elementos repetidos 
+    unico=[]
+    for i in listNeih:
+        if i not in unico:
+                unico.append(i)
+    
+    listNeih= unico
+    return listNeih
 
 
 def dijkstra_path(G, source, target, weight='weight',N="N"):
     """Returns the shortest path from source to target in a weighted graph G.
 
-    Parameters
+    
+    parámetros
     ----------
-    G : NetworkX graph
-
+    G   :   NetworkX graph.
+    
     source : node
-       Starting node
+        Nodo inicial del camino.
 
     target : node
-       Ending node
-
+        Nodo final del camino.
+    
     weight: string, optional (default='weight')
-       Edge data key corresponding to the edge weight
+       Edge data key corresponding to the edge weight.
+    
+    N   :   lista 
+        Lista con torres que pueden ser backhaul 
+       
+       
 
-    Returns
+    Retorna
     -------
     path : list
-       List of nodes in a shortest path.
+       Lista de nodos con el camino más corto.
 
     Raises
     ------
     NetworkXNoPath
        If no path exists between source and target.
 
-    Examples
+    Ejemplos
     --------
     >>> G=nx.path_graph(5)
     >>> print(nx.dijkstra_path(G,0,4))
     [0, 1, 2, 3, 4]
 
-    Notes
+    Nota
     ------
-    Edge weight attributes must be numerical.
-    Distances are calculated as sums of weighted edges traversed.
+    El peso del atributo debe ser numérico.
+    Las distancias son calculados con la ponderación de 
+    los nodos atravesados.
 
-    See Also
-    --------
-    bidirectional_dijkstra()
     """
     (length, path) = single_source_dijkstra(G, source, target=target,
                                             weight=weight, N=N)
@@ -364,30 +452,31 @@ def dijkstra_path(G, source, target, weight='weight',N="N"):
 
 
 def single_source_dijkstra(G, source, target=None, cutoff=None, weight='weight', N="N"):
-    """Compute shortest paths and lengths in a weighted graph G.
-
-    Uses Dijkstra's algorithm for shortest paths.
-
-    Parameters
+    """Computa el camino mas corto de las distancias con la ponderación de una función.
+    
+    Usa el algoritmo Dijkstra para encontrar el camino mas corto. 
+    
+    parámetros
     ----------
     G : NetworkX graph
 
-    source : node label
-       Starting node for path
+    source : node
+        Nodo inicial del camino.
 
-    target : node label, optional
-       Ending node for path
-
+    target : node
+        Nodo final del camino.
+    
     cutoff : integer or float, optional
-       Depth to stop the search. Only paths of length <= cutoff are returned.
+        Profundidad para detener la búsqueda. Solo se devuelven rutas de longitud <= cutoff.
+      
 
-    Returns
+    Retorna
     -------
     distance,path : dictionaries
-       Returns a tuple of two dictionaries keyed by node.
-       The first dictionary stores distance from the source.
-       The second stores the path from the source to that node.
-
+    
+    Devuelve una tupla de dos diccionarios con clave por nodo.
+    El primer diccionario almacena la distancia desde la fuente.
+    El segundo almacena la ruta desde la fuente a ese nodo.
 
     Examples
     --------
@@ -400,25 +489,16 @@ def single_source_dijkstra(G, source, target=None, cutoff=None, weight='weight',
     >>> path[4]
     [0, 1, 2, 3, 4]
 
-    Notes
+    Notas
     ---------
-    Edge weight attributes must be numerical.
-    Distances are calculated as sums of weighted edges traversed.
+    Implementar una función que da la sumatoria entre la distancia en
+    numero de aristas de distancia al nodo root al nodo actual y la
+    distancia de un enlace.
 
-    Based on the Python cookbook recipe (119466) at
+    Basado en libro "Python cookbook" recipe (119466) de
     http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/119466
-
-    This algorithm is not guaranteed to work if edge weights
-    are negative or are floating point numbers
-    (overflows and roundoff errors can cause problems).
-
-    See Also
-    --------
-    single_source_dijkstra_path()
-    single_source_dijkstra_path_length()
     """
     def func(u,v, d):
-
         if v in N :
             return 1
         
@@ -434,52 +514,55 @@ def single_source_dijkstra(G, source, target=None, cutoff=None, weight='weight',
         get_weight = lambda u, v, data: min(
             eattr.get(weight, 1) for eattr in data.values())
     else:
-        #get_weight = lambda u, v, data: data.get(weight,1)
         get_weight =  lambda u, v, data: func(u,v, data)
         
-    paths = {source: [source]}  # dictionary of paths
+    paths = {source: [source]}  # diccionario de rutas
     return _dijkstra(G, source, get_weight, paths=paths, cutoff=cutoff,
                      target=target)
 
 def _dijkstra(G, source, get_weight, pred=None, paths=None, cutoff=None,
               target=None):
-    """Implementation of Dijkstra's algorithm
-
-    Parameters
+    """Implementación del algoritmo Dijkstra con la diferencia que no itera en 
+    los vértices, sino sobre los nodos atravesados. 
+    
+    parámetros
     ----------
     G : NetworkX graph
 
-    source : node label
-       Starting node for path
+    source : node
+        Nodo inicial del camino.
 
     get_weight: function
-        Function for getting edge weight
+        Función que retorna el peso del enlace.
 
     pred: list, optional(default=None)
-        List of predecessors of a node
+        Lista de nodos predecesores.
 
     paths: dict, optional (default=None)
-        Path from the source to a target node.
-
-    target : node label, optional
-       Ending node for path
-
+        Camino del nodo fuente a nodo objetivo.
+        
+    target : node
+        Nodo final del camino.
+    
     cutoff : integer or float, optional
-       Depth to stop the search. Only paths of length <= cutoff are returned.
-
-    Returns
+        Profundidad para detener la búsqueda. Solo se devuelven rutas de longitud <= cutoff.
+    
+    Retorna
     -------
+
     distance,path : dictionaries
-       Returns a tuple of two dictionaries keyed by node.
-       The first dictionary stores distance from the source.
-       The second stores the path from the source to that node.
+    
+    Devuelve una tupla de dos diccionarios con clave por nodo.
+    El primer diccionario almacena la distancia desde la fuente.
+    El segundo almacena la ruta desde la fuente a ese nodo.
 
+    
     pred,distance : dictionaries
-       Returns two dictionaries representing a list of predecessors
-       of a node and the distance to each node.
-
+        Retorna dos diccionarios que representan una lista de nodos
+        predecesores de un nodo y la distancia de cada nodo.
+       
     distance : dictionary
-       Dictionary of shortest lengths keyed by target.
+        Diccionario del los caminos mas corto con llave y objetivo.
     """
     G_succ = G.succ if G.is_directed() else G.adj
    
@@ -497,33 +580,24 @@ def _dijkstra(G, source, get_weight, pred=None, paths=None, cutoff=None,
     
     while fringe:
         (d, _, v) = pop(fringe)
-        #print ("distancia de {} a root {}".format(v,d))
-       
-
         if v in dist:
             continue  # already searched this node.
         dist[v] = d
         if v == target:
             break
         
-        #list nodes neightbor
+        #lista de nodos vecinos
         lisNeigV=list(G_succ[v].keys())
-        #print (list(G_succ[v].keys()))
+        
         for u in lisNeigV:
 
-            #print ("nodo ={}".format(u))
-            #print ("u ={}".format(u))
             cost = get_weight(v, u, len(nx.shortest_path(G, "root", u))-1) 
             
             if cost is None:
                 continue
-            #vu_dist = dist[v] + get_weight(v, u, e)
+            
             vu_dist = dist[v] + get_weight(v, u, len(nx.shortest_path(G, "root", u))-1)
-            #print ("costo   dist[v]= {}".format(dist[v]))
-
-            #print ("distancia entre root y {} es {} ".format(u, len(nx.shortest_path(G, "root", u))-1 ))            
-            #print ("costo de nodo {} es {} ".format(u,cost))
-
+            
             if cutoff is not None:
                 if vu_dist > cutoff:
                     continue
