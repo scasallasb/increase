@@ -212,7 +212,7 @@
   editor    = {Rendon Gallon, Álvaro and Patricia Jeanneth Ludeña González,  and Andres Martinez Fernandez},
 }
 
-@MastersThesis{Sen,
+@MastersThesis{sen,
   author = {Sayandeep Sen},
   title  = {Topology Planning for Long Distance Wireless Mesh Networks},
   school = {Indian Institute of Technology,},
@@ -298,6 +298,11 @@
   pages   = {9},
   month   = apr,
   issn    = {978-1-4244-2025-4},
+}
+
+@Article{dezonas,
+  author = {de las Telecomunicaciones, Sector de Desarrollo},
+  title  = {PARA ZONAS RURALES Y DISTANTES},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

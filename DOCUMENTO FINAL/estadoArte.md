@@ -1181,7 +1181,8 @@ Para implementar el algoritmo se creó un grafo $G$, con un número aleatorio de
 
  Esto se comparará con una heurística que consiste en generar un árbol de mínimo de expansión con unas restricciones de tamaño de enlace, luego, al igual que anteriormente se ejecuta el algoritmo TC_ALGO para reducir el valor de costo. Los resultados en ambos casos es un resultado de costo menos beneficio (calor). Esto se realiza en iteraciones y se ilustra en la siguiente imagen.
 
-
+ 
+![Prueba algortimo propuesto vs heurística](pruebas.png){ width=10sss0% }
 
 ## Aplicar el algoritmo propuesto en la Red Libre de Bosachoque analizando la topología adecuada para futuras expansiones de la red en las Instituciones Educativas Rurales de la región del Sumapaz-Cundinamarca considerando la relación costo-beneficio
 

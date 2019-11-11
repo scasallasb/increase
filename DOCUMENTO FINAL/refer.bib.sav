@@ -300,4 +300,17 @@
   issn    = {978-1-4244-2025-4},
 }
 
+@Article{dezonas,
+  author = {de las Telecomunicaciones, Sector de Desarrollo},
+  title  = {PARA ZONAS RURALES Y DISTANTES},
+}
+
+@Manual{Project2019,
+  title  = {QGIS User Guide},
+  author = {QGIS Project},
+  month  = oct,
+  year   = {2019},
+  url    = {https://docs.qgis.org/3.4/pdf/es/QGIS-3.4-UserGuide-es.pdf},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
