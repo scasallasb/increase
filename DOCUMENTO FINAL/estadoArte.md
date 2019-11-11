@@ -1214,140 +1214,138 @@ Los datos de salida se obtienen una vez realizado la planeación incremental de 
 
 Para codificar IncrEase el algoritmo se utilizó el lenguaje de programación Python, puesto que es un lenguaje de alto nivel, multiparadigma y de código libre, que posee una gran cantidad de librerías y Framework que son actualizados frecuentemente por la comunidad. Esto permite una amplia variedad de herramientas, que permiten un desarrollo de software rápido y eficiente en diferentes áreas como la ingeniería; entre estas herramientas se encuentran librerías de procesamiento matemático Numpy y Scipy, además, para trabajar con estructura de datos,  Python tiene la librería Networkx, el cual es un paquete que trabaja con diferentes tipos de estructuras de datos, entre las que se encuentran grafos y árboles, permitiendo trabajar el enfoque propuesto con facilidad y eficiencia.  
 
-En este proyecto, se consideran también algunas desventajas de Python, como su tiempo de ejecución lento si se compara con otros lenguajes de programación como Java, C o C++, sin embargo, sus librerías, herramientas y la simplicidad de su sintaxis, compensan de manera significativa el tiempo de ejecución en un desarrollo eficaz, de fácil entendimiento y con posibilidad de aportar una herramienta libre, que puede ser mejorada por la comunidad. 
+En este proyecto, se consideran también algunas desventajas de Python, como su tiempo de ejecución lento si se compara con otros lenguajes de programación como Java, C o C++, sin embargo, sus librerías, herramientas y la simplicidad de su sintaxis, compensan de manera significativa el tiempo de ejecución en un desarrollo eficaz, de fácil entendimiento y con posibilidad de aportar una herramienta libre y de código abierto, que puede ser mejorada por la comunidad. 
 
-En este trabajo se desarrollaron las funciones ` TargetedIncrease` y ` searchIncrease `, los cuales reperesentan cada uno de los modos de operación del software IncrEase propuesto en [@bernardi2012]. A continuación, se detalla la codificación de cada una de las funciones: 
+En este trabajo se desarrollaron las funciones `TargetedIncrease` y `searchIncrease`, los cuales reperesentan cada uno de los modos de operación del software IncrEase propuesto en [@bernardi2012]. A continuación, se detalla la codificación de cada una de las funciones: 
 
 ##### TargetedIncrease 
 
 Para codificar ` TargetedIncrease `, se utilizó y modificó la función ` astar_path ` de la librería Networkx, que retorna una lista $L$ con el camino más corto de un nodo origen a un nodo objetivo utilizando el algoritmo $A*$, sin embargo, en el algoritmo propuesto por *Bernardi*, se propone uno o más nodos fuente y objetivo, y retorna el valor mínimo de costo menos calor. ``` 
 
-``` 
-def targetIncrease(G,listSource,listTarget): 
-    """Retorna una lista de nodos en un camino de uno 
-    o más nodos origen a uno o más nodos  objetivo, 
-    con el valor mínimo de la suma de los valores de costo-calor.  
-    
-    Parámetros 
-    -----------
-    G   :   NetworkX graph 
-            Grafo con los atributos posición, 
-            costo y calor de cada uno de los nodos.         
-    listSource  :lista 
-            lista con los nodos origen. 
-    listTarget  :lista 
-            lista con los nodos objetivo. 
-    Retorna  
-    A   :   lista 
-            lista de nodos. 
-    """ 
-    miniContPath= 9999 
-    for i  in listSource: 
-        for j in listTarget: 
-            answer=astar_path(G,i,j,heuristica,listNodeTarget= listTarget) 
-            cont = 0 
-            for k in answer: 
-                cont = cont + (G.node[k]['costo'] - G.node[k]['calor'])  
-            if cont < miniContPath: 
-                miniContPath = cont  
-                A= answer 
-    return A 
+    ```
+    def targetIncrease(G,listSource,listTarget): 
+        """Retorna una lista de nodos en un camino de uno 
+        o más nodos origen a uno o más nodos  objetivo, 
+        con el valor mínimo de la suma de los valores de costo-calor.  
+        
+        Parámetros 
+        -----------
+        G   :   NetworkX graph 
+                Grafo con los atributos posición, 
+                costo y calor de cada uno de los nodos.         
+        listSource  :lista 
+                lista con los nodos origen. 
+        listTarget  :lista 
+                lista con los nodos objetivo. 
+        Retorna  
+        A   :   lista 
+                lista de nodos. 
+        """ 
+        miniContPath= 9999 
+        for i  in listSource: 
+            for j in listTarget: 
+                answer=astar_path(G,i,j,heuristica,listNodeTarget= listTarget) 
+                cont = 0 
+                for k in answer: 
+                    cont = cont + (G.node[k]['costo'] - G.node[k]['calor'])  
+                if cont < miniContPath: 
+                    miniContPath = cont  
+                    A= answer 
+        return A 
     ```
 Esta función utiliza la función astar_path con el algoritmo modificado A* como se muestra a continuación: 
 
-``` 
-def astar_path(G, source, target, heuristic=None, listNodeTarget= None): 
+    ``` 
+    def astar_path(G, source, target, heuristic=None, listNodeTarget= None): 
 
-    """Retorna una lista de nodos en un camino de un nodo origen a un nodo objetivo  
-    utilizando el algoritmo A*. 
-    Puede haber más de un camino corto, sin embargo, solo devuelve uno. 
+        """Retorna una lista de nodos en un camino de un nodo origen a un nodo objetivo  
+        utilizando el algoritmo A*. 
+        Puede haber más de un camino corto, sin embargo, solo devuelve uno. 
 
-     
-    Parámetros 
-    ---------- 
-    G   :   NetworkX graph. 
-    source :    node 
-                Nodo inicial del camino. 
-    target :    node 
-                Nodo final del camino. 
-    heuristic : function 
-                Es una función que estima el valor de cada nodo recorrido  
-                con el valor de (costo - calor). En esta función toma de 
-                argumento un nodo y devuelve un valor numérico. 
-            
-    Retorna  
-    ---------- 
-    A   :   lista 
-            Lista de nodos. 
-    Raises 
-    ------ 
-    NetworkXNoPath 
-        Si no existe un camino entre un origen y un objetivo. 
-    """ 
-    if G.is_multigraph(): 
-        raise NetworkXError("astar_path() not implemented for Multi(Di)Graphs") 
-  
-    push = heappush 
-    pop = heappop 
-    #Almacena la cola prioritaria, nodo, costo de atravesarlo y padre. 
-    #Usa la libreria heapq para mantener el orden de la prioridad.  
-    #Adiciona un contador en la cola para evitar un monto subyacente  
-    #intente comparar los nodos.   
-    #prioriza y garantiza un unico para todos los nodos del grafo. 
-    c = count() 
-    queue = [(0, next(c), source, 0, None)] 
-  
-    #Asigna los nodos en cola a la distancia de las rutas descubiertas y  
-    #las heurísticas calculadas al objetivo. Evitamos calcular la heurística 
-    #más de una vez e insertar el nodo en la cola demasiadas veces. 
-    enqueued = {} 
-    # Asigna los nodos explorados al padre más cercano al origen. 
-    explored = {} 
-    minCosto=[] 
-    while queue: 
-        # Pop del elemento mas pequeño de la cola queue. 
-        _, __, curnode, dist, parent = pop(queue) 
-         
-        if curnode == target: 
-            path = [curnode] 
-            node = parent 
-            while node is not None: 
-                path.append(node) 
-                node = explored[node] 
-            path.reverse() 
-            return path 
-        if curnode in explored: 
-            continue 
-        explored[curnode] = parent 
-        maximaDist= maximaDistancia(G) 
-        for neighbor, w in G[curnode].items(): 
-            if neighbor in explored: 
+        
+        Parámetros 
+        ---------- 
+        G   :   NetworkX graph. 
+        source :    node 
+                    Nodo inicial del camino. 
+        target :    node 
+                    Nodo final del camino. 
+        heuristic : function 
+                    Es una función que estima el valor de cada nodo recorrido  
+                    con el valor de (costo - calor). En esta función toma de 
+                    argumento un nodo y devuelve un valor numérico. 
+                
+        Retorna  
+        ---------- 
+        A   :   lista 
+                Lista de nodos. 
+        Raises 
+        ------ 
+        NetworkXNoPath 
+            Si no existe un camino entre un origen y un objetivo. 
+        """ 
+        if G.is_multigraph(): 
+            raise NetworkXError("astar_path() not implemented for Multi(Di)Graphs") 
+    
+        push = heappush 
+        pop = heappop 
+        #Almacena la cola prioritaria, nodo, costo de atravesarlo y padre. 
+        #Usa la libreria heapq para mantener el orden de la prioridad.  
+        #Adiciona un contador en la cola para evitar un monto subyacente  
+        #intente comparar los nodos.   
+        #prioriza y garantiza un unico para todos los nodos del grafo. 
+        c = count() 
+        queue = [(0, next(c), source, 0, None)] 
+    
+        #Asigna los nodos en cola a la distancia de las rutas descubiertas y  
+        #las heurísticas calculadas al objetivo. Evitamos calcular la heurística 
+        #más de una vez e insertar el nodo en la cola demasiadas veces. 
+        enqueued = {} 
+        # Asigna los nodos explorados al padre más cercano al origen. 
+        explored = {} 
+        minCosto=[] 
+        while queue: 
+            # Pop del elemento mas pequeño de la cola queue. 
+            _, __, curnode, dist, parent = pop(queue) 
+            if curnode == target: 
+                path = [curnode] 
+                node = parent 
+                while node is not None: 
+                    path.append(node) 
+                    node = explored[node] 
+                path.reverse() 
+                return path 
+            if curnode in explored: 
                 continue 
-            ncost = dist 
-            if neighbor in enqueued: 
-                qcost, h = enqueued[neighbor] 
-                # sí qcost < ncost 
-                #queda un camino más largo hacia el vecino en cola. 
-                #Eliminarlo necesitaría filtrar toda la cola, es mejor  
-                #dejarlo allí e ignorarlo cuando visitamos el nodo por segunda vez. 
-                if qcost <= ncost: 
+            explored[curnode] = parent 
+            maximaDist= maximaDistancia(G) 
+            for neighbor, w in G[curnode].items(): 
+                if neighbor in explored: 
                     continue 
-            else: 
-                #heurística 
-                #h = l / d * (Cmin) 
-                h = (distNodeTarget(curnode, listNodeTarget)*heuristic(neighbor))/maximaDist 
-                minCosto.append(h)
-            enqueued[neighbor] = ncost, h 
-            push(queue, (ncost + h, next(c), neighbor, ncost, curnode)) 
-    raise nx.NetworkXNoPath("Node %s not reachable from %s" % (source, target)) 
-    return minCosto 
+                ncost = dist 
+                if neighbor in enqueued: 
+                    qcost, h = enqueued[neighbor] 
+                    # sí qcost < ncost 
+                    #queda un camino más largo hacia el vecino en cola. 
+                    #Eliminarlo necesitaría filtrar toda la cola, es mejor  
+                    #dejarlo allí e ignorarlo cuando visitamos el nodo por segunda vez. 
+                    if qcost <= ncost: 
+                        continue 
+                else: 
+                    #heurística 
+                    #h = l / d * (Cmin) 
+                    h = (distNodeTarget(curnode, listNodeTarget)*heuristic(neighbor))/maximaDist 
+                    minCosto.append(h)
+                enqueued[neighbor] = ncost, h 
+                push(queue, (ncost + h, next(c), neighbor, ncost, curnode)) 
+        raise nx.NetworkXNoPath("Node %s not reachable from %s" % (source, target)) 
+        return minCosto 
     ``` 
 y toma como heurística $(l/d)*Cmin$, donde cada variable es calculada por una función: 
 
-$l$ es la función ` distMinNodeTarget(G,curnode, listNodeTarget) ` que tiene como parámetro de entrada el grafo $G$, el nodo actual  $curnode$ y una lista de nodos objetivos $listNodeTarget$. La salida es la distancia mínima del nodo que se está analizando y cualquiera de los nodos objetivo. En esta función se obtiene del parametro $G$ el valor de la posición de los nodos *pos* que contiene las coordenadas de latitud y longitud, luego, mediante la función ` distancia ` que retorna la distancia en km de los enlaces para posteriormente comparar el valor de las distancias y retornar la que tiene el mínimo valor. 
+$l$ es la función `distMinNodeTarget(G,curnode, listNodeTarget)` que tiene como parámetro de entrada el grafo $G$, el nodo actual  $curnode$ y una lista de nodos objetivos $listNodeTarget$. La salida es la distancia mínima del nodo que se está analizando y cualquiera de los nodos objetivo. En esta función se obtiene del parametro $G$ el valor de la posición de los nodos *pos* que contiene las coordenadas de latitud y longitud, luego, mediante la función `distancia` que retorna la distancia en km de los enlaces para posteriormente comparar el valor de las distancias y retornar la que tiene el mínimo valor. 
     ``` 
     def distNodeTarget(nodo, listTarget): 
-
         """Retorna mínima distancia entre el nodo y cualquiera
         de los nodos objetivo. 
         
@@ -1369,8 +1367,7 @@ $l$ es la función ` distMinNodeTarget(G,curnode, listNodeTarget) ` que tiene co
                 miniDist = dis 
         return miniDist  
     ``` 
-$d$ es la función ` maximaDistancia(G) ` que tiene como parámetro $G$ y retorna la distancia máxima en km de los enlaces. 
-    
+$d$ es la función `maximaDistancia(G)` que tiene como parámetro $G$ y retorna la distancia máxima en km de los enlaces. 
     ```
     def maximaDistancia(G): 
         """Retorna el valor de la maxima distancia de un enlace 
@@ -1414,7 +1411,7 @@ $d$ es la función ` maximaDistancia(G) ` que tiene como parámetro $G$ y retorn
                 lista=[] 
         return maxDistancia 
     ``` 
-$cmin$ es la función ` heuristica(nodo) `, aquí se ingresa un nodo donde se toman los valores *costos* y *calor*, después retorna la diferencia de estos. 
+$cmin$ es la función `heuristica(nodo)`, aquí se ingresa un nodo donde se toman los valores *costos* y *calor*, después retorna la diferencia de estos. 
     ``` 
     def heuristica(nodo): 
 
@@ -1432,11 +1429,410 @@ $cmin$ es la función ` heuristica(nodo) `, aquí se ingresa un nodo donde se to
     """ 
     return(G.node[nodo]['costo'] - G.node[nodo]['calor']) 
     ``` 
+Por último, se comparan los caminos que se forman al ejecutar la función `astar_path` y retorna una lista $L$ con el camino que tenga el valor minimo de la sumatoria de costo menos calor de cada uno de los nodos. 
 
-Por último, se comparan los caminos que se forman al ejecutar la función ` astar_path ` y retorna una lista $L$ con el camino que tenga el valor minimo de la sumatoria de costo menos calor de cada uno de los nodos. 
+##### SearchIncrease 
 
+El algoritmo Search IncrEase es un algoritmo que utiliza el algoritmo Dijkstra, con alguna modificaciones propuestas por *Bernardi* en donde especifica que, en vez de medir el valor de vértices, se mide el valor de unos nodos etiquetados con un valor *NPV*, que corresponde a un concepto de financiación Net Present Value  o en español “Valor Presente Neto”, que aplica una taza de descuento y está representada con la constante $C$ (por ejemplo 5% 0.05) a las ganancias que ocurrirán en el futuro. 
 
+La función `searchIncrease(G, N, T_N,c)`, toma como parámetro el grafo $G$, una lista $N$ que contiene un conjunto de nodos, que representan las torres que están actualmente instaladas, una lista $T_N$ con un conjunto de nodos, que representan las torres viables, y, por último, una constante que dependerá el valor de taza de descuento $C$. 
 
+ Esta función crea un árbol $R$, uniendo los caminos obtenidos ejecutando el algoritmo Dijkstra desde el un nodo ficticio “*root*” que está conectado a todas las torres instaladas $N$, a cada una de las torres $T_N$, utilizando como ponderación la distancia de los enlaces, más el valor de costo – calor, de cada nodo atravesado, y luego, se crea un diccionario, de cada nodo del árbol $R$, con la etiqueta NPV, dada por la ecuación: 
+
+$$ \frac{h(r) - c(r)}{(1+C)^{distancia(r)}} $$ 
+
+Luego, al igual como se explicó en la sección anterior, el grafo es recorrido desde las hojas, hacia el nodo “*root*”, mientras tanto, se actualiza el valor *NPV*, con la suma de su propio valor y el valor de sus descendientes. Por último, una vez todos los nodos tengan actualizado, se devuelve un diccionario con llave nodo y con valor actualizado *NPV*, además, devuelve una lista con los valores de mayor a menor de *NPV*. 
+
+    ```
+    def searchIncrease(G, N, T_N,c):
+    """Retorna un arból R formado a partir de un nodo "root"y los caminos mas
+    cortos del conjunto de torres instaladas N a todas las torres viables T_N 
+    utilizando algoritmo dijkstra, con la diferencia de que no se cuenta el valor
+    de la arista, sino del nodo etiquetado con el valor NPV. Un diccionario con los 
+    nodos con el atributo NPV, ademas de una lista con los nodos
+    ordenados de mayor a menor NPV. 
+    
+    Utiliza el algoritmo searIncrease diseñado por Bernardi 2012.
+    
+    Parámetros
+    ----------
+    G   :    NetworkX graph.
+    
+    N   :   list
+            Lista con nodos de torres instaladas.
+            
+    T_N :   list
+            Lista con nodos de torres viables.
+    
+    c   :   float
+            coeficiente de ganancia o retorno de inversión.
+    
+    
+    Retorna
+    ----------
+    R   :   NetworkX tree
+    
+    dicNpv  :   Dictionary
+                Diccionario con llave nodo y valor NPV.
+                
+    listNpv :   list
+                Lista ordenada de mayor a menor con valores NPV.
+                .
+    """
+    #agregar nodo raiz 
+    G.add_node('root', cab = [0, 0])
+    lista=[]
+    for i in N:
+        tupla=('root', i)
+        lista.append(tupla)
+    G.add_edges_from(lista)
+    listPath=[]
+    #aplicar el algoritmo Dkjistra desde el nodo raiz a cada n de G
+    R=nx.Graph()
+    v= nx.get_node_attributes(G, 'pos')
+    for i  in v.keys():
+        path = dijkstra_path(G, "root", i, weight='diferencia', N=N)
+        listPath.append(path)
+        for i in range(len(path)-1):
+                R.add_edge(path[i],path[i+1])
+    for i in N:
+        tupla=('root', i)
+        lista.append(tupla)
+    R.add_edges_from(lista)
+
+    #list generaciones 
+    listGen=[]
+    ###etiquetar nodos
+    #atributos de distance r : distancia al nodo raiz
+    NPV= {}
+    lista = []
+    pasado = N
+    GenR=  nextGeneration(R,N)
+    listGen.append(GenR)
+    for i in GenR:
+        NPV[i]= G.node[i]['diferencia']/(1 + c)
+    bandera=0
+    cont = 1
+
+    while bandera==0:
+        cont += 1
+        nextGen = nextGeneration(R,GenR, pasado= pasado)
+        pasado = GenR
+        GenR=nextGen
+        listGen.append(GenR)
+        for j in nextGen:
+                NPV[j]= G.node[j]['diferencia'] /(1 + c)**cont 
+        if nextGen == []:
+                bandera=1
+    nx.set_node_attributes(R,NPV,'NPV')
+
+    #ponderar puntos 
+    u= T_N
+    for i in listGen[::-1]:
+        if  i == []:
+                continue
+        for j in i: 
+                path =nx.shortest_path(R, "root", j)
+                cont=0
+                for k in path[::-1]:
+                    if k in u :     
+                            cont += R.node[k]['NPV']
+                            R.node[k]['NPV']= cont     
+    #listar nodos con mas valor
+    listNpv= []
+    dicNpv =nx.get_node_attributes(R,"NPV")
+    for i in dicNpv.keys():
+        listNpv.append(R.node[i]['NPV'])
+    listNpv=sorted(listNpv)
+    listNpv=listNpv[::-1]
+    
+    return R , dicNpv, listNpv 
+
+    ```
+Ahora, la función search utiliza una función `nextGeneration` para listar los nodos de el arbol $R$, donde utiliza una lista con los nodos instalados y una lista con los nodos pertenecientes a la pasada generación:
+
+    ```
+    def nextGeneration(R, N , pasado= None ):
+    """Retorna una lista con los nodos de la 
+    siguiente generación de hijos.
+    
+    Parámetros
+    ----------
+    R   :   NetworkX tree.
+    
+    N   :   list
+            Lista de nodos que funcionaran como backhaul.
+    
+    pasado  :   list
+                Lista con la generacíon de nodos pasado.
+    
+    
+    Retorna
+    ----------
+    listNeih    :   list
+                    Lista con los nodos de la siguiente generación
+                    de hijos.
+    
+    """
+    #listar nodos primera generacion
+    listNeih=[]
+    for  i in N:
+        Neigh= R[i]
+        
+        neigh= [i for i in Neigh.keys() if not i =='root' and not i in N]
+        
+        if not neigh == [] :
+                for i in neigh:
+                    if pasado == None:
+                            listNeih.append(i)
+                    else :
+                            if not i in pasado:
+                                listNeih.append(i)
+    #borrar elementos repetidos 
+    unico=[]
+    for i in listNeih:
+        if i not in unico:
+                unico.append(i)
+    
+    listNeih= unico
+    return listNeih
+
+    ```
+Se modifica la función dijkstra_path de la librería Networkx.
+
+    ```     
+    def dijkstra_path(G, source, target, weight='weight',N="N"):
+        """Devuelve la ruta más corta desde el origen al destino en un 
+        grafo ponderado G.
+
+        parámetros
+        ----------
+        G   :   NetworkX graph.
+        
+        source : node
+            Nodo inicial del camino.
+
+        target : node
+            Nodo final del camino.
+        
+        weight: string, optional (default='weight')
+        Edge data key corresponding to the edge weight.
+        
+        N   :   lista 
+            Lista con torres que pueden ser backhaul 
+        
+        
+
+        Retorna
+        -------
+        path : list
+        Lista de nodos con el camino más corto.
+
+        Raises
+        ------
+        NetworkXNoPath
+        If no path exists between source and target.
+
+        Ejemplos
+        --------
+        >>> G=nx.path_graph(5)
+        >>> print(nx.dijkstra_path(G,0,4))
+        [0, 1, 2, 3, 4]
+
+        Nota
+        ------
+        El peso del atributo debe ser numérico.
+        Las distancias son calculados con la ponderación de 
+        los nodos atravesados.
+
+        """
+        (length, path) = single_source_dijkstra(G, source, target=target,
+                                                weight=weight, N=N)
+        try:
+            return path[target]
+        except KeyError:
+            raise nx.NetworkXNoPath(
+                "node %s not reachable from %s" % (source, target))
+
+    ```
+Al igual que lo propone *Bernardi*, se modifica la función `dijkstra_path` de la librería Networkx, 
+Esta a su vez utiliza la funcion single_source_dijkstra que encuentra el camino más corto 
+implementando el algoritmo Dijkstra, esta ingresa como función de ponderación de costo 
+la distancia de enlaces entre el nodo raíz al nodo evaluado y la distancia en km de los enlaces  
+utilizando la función de distancia. 
+    
+    ```
+    def single_source_dijkstra(G, source, target=None, cutoff=None, weight='weight', N="N"):
+        """Computa el camino mas corto de las distancias con la ponderación de una función.
+        
+        Usa el algoritmo Dijkstra para encontrar el camino mas corto. 
+        
+        parámetros
+        ----------
+        G : NetworkX graph
+
+        source : node
+            Nodo inicial del camino.
+
+        target : node
+            Nodo final del camino.
+        
+        cutoff : integer or float, optional
+            Profundidad para detener la búsqueda. Solo se devuelven rutas de longitud <= cutoff.
+        
+
+        Retorna
+        -------
+        distance,path : dictionaries
+        
+        Devuelve una tupla de dos diccionarios con clave por nodo.
+        El primer diccionario almacena la distancia desde la fuente.
+        El segundo almacena la ruta desde la fuente a ese nodo.
+
+        Examples
+        --------
+        >>> G=nx.path_graph(5)
+        >>> length,path=nx.single_source_dijkstra(G,0)
+        >>> print(length[4])
+        4
+        >>> print(length)
+        {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
+        >>> path[4]
+        [0, 1, 2, 3, 4]
+
+        Notas
+        ---------
+        Implementar una función que da la sumatoria entre la distancia en
+        numero de aristas de distancia al nodo root al nodo actual y la
+        distancia de un enlace.
+
+        Basado en libro "Python cookbook" recipe (119466) de
+        http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/119466
+        """
+        def func(u,v, d):
+            if v in N :
+                return 1
+            
+            if u in N :
+                return 1
+            node_v_wt = G.nodes[v].get(weight, 1)+distancia(u, v)
+            return node_v_wt
+
+        if source == target:
+            return ({source: 0}, {source: [source]})
+        
+        if G.is_multigraph():
+            get_weight = lambda u, v, data: min(
+                eattr.get(weight, 1) for eattr in data.values())
+        else:
+            get_weight =  lambda u, v, data: func(u,v, data)
+            
+        paths = {source: [source]}  # diccionario de rutas
+        return _dijkstra(G, source, get_weight, paths=paths, cutoff=cutoff,
+                        target=target)
+        ```
+Por último, se tiene la función que implementa el algoritmo Dijkstra
+    
+    ```
+    def _dijkstra(G, source, get_weight, pred=None, paths=None, cutoff=None,
+              target=None):
+        """Implementación del algoritmo Dijkstra con la diferencia que no itera en 
+        los vértices, sino sobre los nodos atravesados. 
+        
+        parámetros
+        ----------
+        G : NetworkX graph
+
+        source : node
+            Nodo inicial del camino.
+
+        get_weight: function
+            Función que retorna el peso del enlace.
+
+        pred: list, optional(default=None)
+            Lista de nodos predecesores.
+
+        paths: dict, optional (default=None)
+            Camino del nodo fuente a nodo objetivo.
+            
+        target : node
+            Nodo final del camino.
+        
+        cutoff : integer or float, optional
+            Profundidad para detener la búsqueda. Solo se devuelven rutas de longitud <= cutoff.
+        
+        Retorna
+        -------
+
+        distance,path : dictionaries
+        
+        Devuelve una tupla de dos diccionarios con clave por nodo.
+        El primer diccionario almacena la distancia desde la fuente.
+        El segundo almacena la ruta desde la fuente a ese nodo.
+
+        
+        pred,distance : dictionaries
+            Retorna dos diccionarios que representan una lista de nodos
+            predecesores de un nodo y la distancia de cada nodo.
+        
+        distance : dictionary
+            Diccionario del los caminos mas corto con llave y nodo objetivo.
+        """
+        G_succ = G.succ if G.is_directed() else G.adj
+        push = heappush
+        pop = heappop
+        
+        dist = {}  # dictionary of final distances
+        seen = {source: 0}
+        c = count()
+        fringe = []  # use heapq with (distance,label) tuples
+        push(fringe, (0, next(c), source))
+
+        
+        while fringe:
+            (d, _, v) = pop(fringe)
+            if v in dist:
+                continue  # already searched this node.
+            dist[v] = d
+            if v == target:
+                break
+            
+            #lista de nodos vecinos
+            lisNeigV=list(G_succ[v].keys())
+            
+            for u in lisNeigV:
+
+                cost = get_weight(v, u, len(nx.shortest_path(G, "root", u))-1) 
+                
+                if cost is None:
+                    continue
+                
+                vu_dist = dist[v] + get_weight(v, u, len(nx.shortest_path(G, "root", u))-1)
+                
+                if cutoff is not None:
+                    if vu_dist > cutoff:
+                        continue
+                if u in dist:
+                    if vu_dist < dist[u]:
+                        raise ValueError('Contradictory paths found:',
+                                        'negative weights?')
+                elif u not in seen or vu_dist < seen[u]:
+                    seen[u] = vu_dist
+                    push(fringe, (vu_dist, next(c), u))
+                    if paths is not None:
+                        paths[u] = paths[v] + [u]
+                    if pred is not None:
+                        pred[u] = [v]
+                elif vu_dist == seen[u]:
+                    if pred is not None:
+                        pred[u].append(v)
+
+        if paths is not None:
+            return (dist, paths)
+        if pred is not None:
+            return (pred, dist)
+        return dist
+    ```
 ## Evaluar el algoritmo mediante una simulación numérica, comparándolo con Heurística simple
 
 ### verificación 
@@ -1445,12 +1841,11 @@ Por último, se comparan los caminos que se forman al ejecutar la función ` ast
  
 Para comprobar que el algoritmo genera una topología con el menor valor de costo/beneficio, se realizaron pruebas utilizando simulaciones numéricas donde se implementa el algoritmo propuesto por Bernardi y se comparó con una heurística simple. 
 
-Para implementar el algoritmo se creó un grafo $G$, con un número aleatorio de nodos $n$ y vértices $v$, luego, a cada nodo n se le asigna un valor aleatorio de posición $pos$, calor $M$, costo $C$ y altura h de torres para cada uno de los nodos $n$. Posteriormente, se ejecuta la función TargetedIncrease con parámetros de entrada $G$, un nodo con el menor valor de calor $Hmin(n)$ que representará un nodo origen que funcionará como *backhaul* y un nodo destino con el mayor valor de $Hmax(n)$ que supondrá las zonas que se requieren más cobertura. Luego, se implementa la función TC_ALGO para generar un grafo $Ghmin$ con unsa topología que permite conectar todos los nodos con una altura mínima h dando como resultado una planeación de menor costo de instalación de infraestructura física. 
+Para implementar el algoritmo se creó un grafo $G$, con un número aleatorio de nodos $n$ y vértices $v$, luego, a cada nodo $n$ se le asigna un valor aleatorio de posición $pos$, calor $M$, costo $C$ y altura $h$ de torres para cada uno de los nodos $n$. Posteriormente, se ejecuta la función TargetedIncrease con parámetros de entrada $G$, un nodo con el menor valor de calor $Hmin(n)$ que representará un nodo origen que funcionará como *backhaul* y un nodo destino con el mayor valor de $Hmax(n)$ que supondrá las zonas que se requieren más cobertura. Luego, se implementa la función TC_ALGO para generar un grafo $Ghmin$ con unsa topología que permite conectar todos los nodos con una altura mínima h dando como resultado una planeación de menor costo de instalación de infraestructura física. 
 
  Esto se comparará con una heurística que consiste en generar un árbol de mínimo de expansión con unas restricciones de tamaño de enlace, luego, al igual que anteriormente se ejecuta el algoritmo TC_ALGO para reducir el valor de costo. Los resultados en ambos casos es un resultado de costo menos beneficio (calor). Esto se realiza en iteraciones y se ilustra en la siguiente imagen.
 
- 
-![Prueba algortimo propuesto vs heurística](pruebas.png){ width=10sss0% }
+
 
 ## Aplicar el algoritmo propuesto en la Red Libre de Bosachoque analizando la topología adecuada para futuras expansiones de la red en las Instituciones Educativas Rurales de la región del Sumapaz-Cundinamarca considerando la relación costo-beneficio
 
